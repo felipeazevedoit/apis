@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.5.0" />
+    <PackageReference Include="TServices.Comum" Version="1.0.1-CI-20190818-151415" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WpMidias.Entities\WpMidias.Entities.csproj" />
+    <ProjectReference Include="..\WpMidias.Infrastructure\WpMidias.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

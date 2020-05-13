@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20181009140343_AddingEmpresaInformations.cs" />
+    <Compile Remove="Migrations\20181009164927_EmpresaProperties.cs" />
+    <Compile Remove="Migrations\20190109162358_TipoEmpresas.cs" />
+    <Compile Remove="Migrations\20190410145316_EmpresaXEspecialidade.cs" />
+    <Compile Remove="Migrations\20190410145451_EmpresaXEspecialidade.cs" />
+    <Compile Remove="Migrations\20190507154837_ResponsavelEmpresa.cs" />
+    <Compile Remove="Migrations\20190507154837_ResponsavelEmpresa.Designer.cs" />
+    <Compile Remove="Migrations\20190507155002_ResponsavelEmpresa.cs" />
+    <Compile Remove="Migrations\20190507155002_ResponsavelEmpresa.Designer.cs" />
+    <Compile Remove="Migrations\20190507155041_ResponsavelEmpresa.cs" />
+    <Compile Remove="Migrations\20190507155041_ResponsavelEmpresa.Designer.cs" />
+    <Compile Remove="Migrations\20190507155156_ResponsavelEmpresa.cs" />
+    <Compile Remove="Migrations\20190507155156_ResponsavelEmpresa.Designer.cs" />
+    <Compile Remove="Migrations\20190507155643_ResponsavelEmpresa.cs" />
+    <Compile Remove="Migrations\20190507155643_ResponsavelEmpresa.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WpEmpresas.Entities\WpEmpresas.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "USUÁRIOS";
+    ViewBag.PageTitle = "USUÁRIOS";
+}
+
+@model IEnumerable<Admin.Models.UsuarioViewModel>
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="miolo" class="card strpied-tabled-with-hover card-wizard">
+            <div class="card-header text-center">
+                <h4 class="text-center">LISTAGEM DE USUÁRIOS</h4>
+            </div>
+            <div class="card-body">
+                <table id="example" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">Nome</th>
+                            <th class="text-center">E-mail</th>
+                            <th class="text-center">Perfil</th>
+                            <th class="text-center">Empresa</th>
+                            <th class="text-center"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model)
+                        {
+                            <tr class="text-center">
+                                <td>@user.ID</td>
+                                <td>@user.Nome</td>
+                                <td>@user.Login</td>
+                                <td>@user.Perfil</td>
+                                <td>@user.Empresa</td>
+                                <td class="td-actions text-right">
+                                    <a href="@Url.Action("Editar", "Usuario", new { user.ID })" rel="tooltip" title="" class="btn btnAcao btn-success btn-link btn-xs" data-original-title="Editar">
+                                        <i class="nc-icon nc-credit-card icon-bold"></i>
+                                    </a>
+                                    <a href="@Url.Action("Excluir", "Usuario", new { user.ID })" rel="tooltip" title="" class="btn btnAcao btn-danger btn-link btn-xs" data-original-title="Remover">
+                                        <i class="nc-icon nc-simple-remove"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/Scripts/jquery.datatables.js"></script>
+    <script>
+        //"dom": '<"top"f>rt<"bottom"lp><"clear">'
+        $(document).ready(function () {
+
+            $('.btnAcao').on('click', function () {
+                $('body').loading({
+                    theme: 'dark',
+                    message: 'Aguarde...'
+
+                });
+            });
+
+
+            $('#example').dataTable({
+                "pagingType": "numbers",
+                "columnDefs": [{
+                    "targets": '_all',
+                    "orderable": true,
+                }],
+                "dom": '<"top"f>rt' + "<'bottom col-sm-12'" +
+                            "<'row'" +
+                                "<'col-sm-6'l>" +
+                                "<'col-sm-6'p>" +
+                            ">" +
+                    ">" + '<"clear">',
+                "oLanguage": {
+                    "sLengthMenu": "_MENU_",
+                    "sZeroRecords": "Nada encontrado",
+                    "sInfo": "Mostrando oágina _PAGE_ de _PAGES_",
+                    "sInfoEmpty": "Nenhum dado para mostrar",
+                    "sInfoFiltered": "(Filtrado de _MAX_ registros)",
+                    "sSearch": "Pesquisar:",
+                },
+            });
+
+            $("[name='example_length']").addClass('pull-left');
+            $("[name='paginate_button']").addClass('pull-right');
+        });
+
+    </script>
+}

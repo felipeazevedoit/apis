@@ -1,0 +1,192 @@
+﻿@model Admin.Models.ProfissionalViewModel
+
+@{
+    ViewBag.Title = "Profissionais - Detalhes";
+    ViewBag.PageTitle = "Profissionais";
+}
+
+
+<div class="row">
+
+    <div class="col-md-12">
+        <div id="miolo" class="card strpied-tabled-with-hover card-wizard">
+            <div class="card-header text-center">
+                <h4 class="text-center">Cadastro de Profissional</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="photo">
+                            @if (string.IsNullOrEmpty(Model.Avatar))
+                            {
+                                <img src="~/img/avatar.png" width="150" height="150" />
+                            }
+                            else
+                            {
+                                <img width="150px" height="auto" src="@Model.Avatar" />
+                            }
+                        </div>
+
+                    </div>
+                    <div class="col-md-10">
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="row">
+                                    <input type="hidden" value="@Model.Id" id="mId" />
+                                    @Html.HiddenFor(p => p.UsuarioId, new { id = "uId" })
+                                    <label class="col-sm-2 control-label">NOME</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="nome" name="Nome" value="@Model.Nome" class="form-control">
+                                        @*<small class="form-text text-muted">A block of help text that breaks onto a new line.</small>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-sm-2 control-label">NASCIMENTO</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" id="nome" name="Nome" value="@Model.DataNascimento" class="form-control">
+                                    </div>
+                                    <label class="col-sm-1 control-label">Idade</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" id="nome" name="Nome" value="18" disabled="disabled" class="form-control">
+                                    </div>
+                                    <label class="col-sm-2 control-label">Cadastrado em</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" id="nome" name="Nome" value="@Model.DataCriacao.ToString("dd/MM/yyyy HH:mm")" disabled="disabled" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-sm-2 control-label">E-Mail</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" id="nome" name="Nome" value="@Model.Email" class="form-control">
+                                    </div>
+                                    <label class="col-sm-2 control-label">Telefone</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" id="nome" name="Nome" value="@Model.Telefone" disabled="disabled" ="" class="form-control">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-sm-2 control-label">Endereço</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="nome" name="Nome" value="@( $"{ Model.Endereco.Local }, { Model.Endereco.NumeroLocal } - { Model.Endereco.Bairro }, { Model.Endereco.Cidade } - { Model.Endereco.Estado }" )" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-sm-2 control-label">Trabalhos Realizados</label>
+                                    <div class="col-sm-10">
+                                        <input disabled type="text" id="jobs" name="jobs" value="@( $"{ Model.JobQuantidade }" )" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-sm-2 control-label">Agência</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" id="agencia" name="agencia" value="@Model.DadosBancarios.Agencia" disabled="disabled" class="form-control">
+                                    </div>
+                                    <label class="col-sm-1 control-label">Conta</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" id="conta" name="conta" value="@Model.DadosBancarios.Conta" disabled="disabled" class="form-control">
+                                    </div>
+                                    <label class="col-sm-2 control-label">Banco</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" id="banco" name="banco" value="@Model.DadosBancarios.Banco" disabled="disabled" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card stacked-form">
+            <div class="card-header text-center">
+                <h4 class="text-center">Controle de Documentos</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    @foreach (var item in Model.Documentos)
+                    {
+                        <div class="col-md-6">
+                            <div class="card md-6 shadow-sm">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Tipo de Documento: @item.TipoNome</label>
+                                    </div>
+                                </div>
+                                <img onclick="zoomImg(@item.Arquivo)" style="width:100%; height:auto" src="data:image/png;base64, @item.Arquivo" />
+                                <br />
+                                <div style="margin-left:15px">
+                                    <p class="card-text">
+                                        <label>Cadastrado em: @item.Data</label>
+                                        <br />
+                                        <label>Número do Documento: @item.NumeroArquivo</label>
+                                    </p>
+
+                                    <select onchange="guardaOpcao(@item.Id)" id="@item.Id" data-title="Selecione" name="currency"
+                                            class="selectpicker" data-style="btn-default btn-outline"
+                                            data-menu-style="dropdown-blue">
+                                        <option value="0">Selecione</option>
+                                        @if (ViewBag.Statuses != null)
+                                        {
+                                            foreach (var s in (ViewBag.Statuses as IEnumerable<Admin.Models.DocumentoStatus>))
+                                            {
+                                                <option @( s.ID.Equals(item.IdStatus) ? "selected" : "" ) value="@item.Id">@s.Nome</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <textarea style="height:100px;" class="form-control" placeholder="Observações..." id="observacoes">@(Model.Documentos.FirstOrDefault()?.Observacoes)</textarea>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-md-10"></div>
+                        <div class="col-md-2">
+                            <button type="submit" id="btnAtualizar" class="btn btn-fill btn-primary">Atualizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/Scripts/Pages/ProfissionaisDetalhes.js"></script>
+    <script>
+        function zoomImg(arquivo) {
+            window.open('data:image/png;base64,' + arquivo)
+        }
+    </script>
+}

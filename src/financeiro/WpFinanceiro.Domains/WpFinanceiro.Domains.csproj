@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WpFinanceiro.Entities\WpFinanceiro.Entities.csproj" />
+    <ProjectReference Include="..\WpFinanceiro.Infrastructure\WpFinanceiro.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Atendimentos";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <p><h4><strong>PENDENTES</strong></h4></p>
+        <div id="miolo" class="card strpied-tabled-with-hover card-wizard">
+            <div class="card-body">
+                <table id="tbAtendimento" class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>E-mail</th>
+                            <th>Categoria</th>
+                            <th>Data</th>
+                            <th>Origem</th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <p><h4><strong>ENCERRADOS</strong></h4></p>
+        <div id="miolo" class="card strpied-tabled-with-hover card-wizard">
+            <div class="card-body">
+                <table id="tbAtendimentoFechado" class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>E-mail</th>
+                            <th>Categoria</th>
+                            <th>Data</th>
+                            <th>Origem</th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts
+{
+    <script src="~/Scripts/Pages/AtendimentoIndex.js"></script>
+}
+
+
