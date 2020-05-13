@@ -1,0 +1,87 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<WebPixCoreIn.Models.ParametroViewModel>
+<!-- Modal -->
+<div id="parametros" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row" style="margin: 10px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Parâmetros da Ação: @ViewBag.Acao</h4>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button onclick="editarParametro()" type="button" class="btn btn-default pull-left">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button type="button" onclick="adicionarParametro(@Model.FirstOrDefault().idAcao)" class="btn btn-default pull-right">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table" id="parametros">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Tipo
+                                </th>
+                                <th>
+                                    Nome
+                                </th>
+                                <th>
+                                    Ordem
+                                </th>
+                                <th>
+                                    Ação
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="radio">
+                                            <input type="radio" name="parametroRadio" value="@item.ID" id="@item.ID">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @item.ID
+                                    </td>
+                                    <td>
+                                        @item.Tipo
+                                    </td>
+                                    <td>
+                                        @item.Nome
+                                    </td>
+                                    <td>
+                                        @item.Ordem
+                                    </td>
+                                    <td>
+                                        @item.Acao
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
