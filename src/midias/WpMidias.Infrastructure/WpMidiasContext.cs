@@ -16,9 +16,9 @@ namespace WpMidias.Infrastructure
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            //optionsBuilder.UseSqlServer(@"Server=TSERVICES\SQLEXPRESS;Database=WpMidias;Trusted_Connection=True;Integrated Security = True;");
-            //optionsBuilder.UseSqlServer(@"Data Source=18.229.17.132;Initial Catalog=WpMidias;Persist Security Info=True;User ID=sa;Password=StaffPro@123;");
-            //optionsBuilder.UseSqlServer(@"Data Source=187.84.232.164;Initial Catalog=WpMidias;Persist Security Info=True;User ID=sa;Password=StaffPro@123;");
+            //optionsBuilder.UseSqlServer(@"Server=187.84.228.245;Database=WpMidias;Trusted_Connection=True;Integrated Security = True;");
+            //optionsBuilder.UseSqlServer(@"Data Source=18.229.17.132;Initial Catalog=WpMidias;Persist Security Info=True;User ID=sa;Password=!Nm-&8;");
+            //optionsBuilder.UseSqlServer(@"Data Source=187.84.232.164;Initial Catalog=WpMidias;Persist Security Info=True;User ID=sa;Password=!Nm-&8;");
             optionsBuilder.UseSqlServer(@"Data Source=201.73.1.17;Initial Catalog=WpMidias;Persist Security Info=True;User ID=sa;Password=Talan@2019;");
         }
 
