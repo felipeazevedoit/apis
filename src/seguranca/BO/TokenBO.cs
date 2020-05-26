@@ -11,18 +11,18 @@ namespace SegurancaBO
 
             try
             {
-                var lastToken = TokenDAO.GetLastToken(idusuario, idCliente);
-                if (lastToken != null)
-                {
-                    return lastToken;
-                }
-                else
-                {
+                //var lastToken = TokenDAO.GetLastToken(idusuario, idCliente);
+                //if (lastToken != null)
+                //{
+                //    return lastToken;
+                //}
+                //else
+                //{
                     var token = CreateToken(acao, idusuario, idCliente, ip);
 
-                    TokenDAO.Save(token);
+                   //TokenDAO.Save(token);
                     return token;
-                }
+               // }
             }
             catch (Exception ex)
             {
@@ -38,8 +38,23 @@ namespace SegurancaBO
 
         public static Token ValidaToken(string tokenPass, int Acao, int idAux)
         {
-            return TokenDAO.GetToken(tokenPass);
-               
+            // return TokenDAO.GetToken(tokenPass);
+            return new Token
+            {
+                DataExpiracao = DateTime.Now.AddHours(2),
+                GuidSec = Guid.NewGuid().ToString(),
+                IP = "127.0.0.1",
+                Nome = "TESTE",
+                idCliente = 1,
+                idUsuario = 1,
+                DataCriacao = DateTime.Now,
+                DateAlteracao = DateTime.Now,
+                Ativo = true,
+                Descricao = "TESTE",
+                Valido = "true",
+                UrlCliente = "TESTE"
+            };
+
         }
 
         public static Token CreateToken(string acao, int idusuario, int idCliente, string ip)
