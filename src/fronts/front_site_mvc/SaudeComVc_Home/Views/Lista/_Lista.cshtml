@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "_Lista";
+}
+
+    <div class="modal fade" id="medico" tabindex="-1" role="dialog" aria-labelledby="registroTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Selecione o tipo de Cadastro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a href="#" onClick="carregaModalClinica()" class="defaut-btn-gradient w-100 text-center">Clínicas</a>
+                    <a href="#" onClick="carregaModalMedico()" class="defaut-btn-gradient w-100 text-center mt-1">Médico autônomo</a>
+                    <a href="#" onClick="carregaModalProfissional()" class="defaut-btn-gradient w-100 text-center mt-1">Prestadores de serviço da saúde</a>
+                    <a href="#" onClick="carregaModalFornecedor()" class="defaut-btn-gradient w-100 text-center mt-1">Fornecedores da Saúde</a>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="defaut-btn-back" onClick="carregaModalEscolha()">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,85 @@
+﻿<link href="~/Content/listagem.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "VisualizarNoticia";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+@model IEnumerable<SaudeComVoce.Models.NoticiaViewModel>
+
+<style>
+    #noticias_filter > label {
+        font-size: medium;
+    }
+
+    input[type=search] {
+        width: 300px !important;
+    }
+
+    .btnAcao {
+        font-size: medium;
+        color: #5172A8 !important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div id="miolo" class="card strpied-tabled-with-hover card-wizard">
+            <div class="card-header text-center">
+                <h4 class="text-center">LISTAGEM DE NOTÍCIAS</h4>
+                <br />
+                <a href="/Noticias/CadastrarNoticia" class="btn btn-default">Cadastrar</a>
+            </div>
+            <div class="card-body">
+                <table id="noticias" class="display table-striped table-hover" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th class="text-center ordenaLista">ID</th>
+                            <th class="text-center ordenaLista">Thumbnail</th>
+                            <th class="text-center ordenaLista">Título</th>
+                            <th class="text-center ordenaLista">Privado</th>
+                            <th class="text-center ordenaLista">Visível</th>
+                            <th class="text-center ordenaLista">Autor</th>
+                            <th class="text-center ordenaLista">Data de Publicação</th>
+                            <th class="text-center ordenaLista">Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var noticia in Model)
+                        {
+                            <tr class="text-center">
+                                <td class="lista">@noticia.ID</td>
+                                <td class="lista">@noticia.Foto</td>
+                                <td class="lista"> @noticia.Nome</td>
+                                <td class="lista">@(noticia.Privado ? "Sim" : "Não")</td>
+                                <td class="lista">@(noticia.Ativo ? "Sim" : "Não")</td>
+                                <td class="lista">@noticia.Autor</td>
+                                <td class="lista">@noticia.DataCriacao.ToShortDateString()</td>
+
+                                <td class="td-actions lista2">
+                                    <a href="@Url.Action("CadastrarNoticia", "Noticias",new { id = noticia.ID })"
+                                       rel="tooltip" title="" class="btn btn-lg btnAcao btn-success btn-link" data-original-title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/plugins/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/pages/noticias.listagem.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".ordenaLista").removeClass('sorting_asc');
+            $(".ordenaLista").removeClass('sorting');
+        });
+
+    </script>
+}
+

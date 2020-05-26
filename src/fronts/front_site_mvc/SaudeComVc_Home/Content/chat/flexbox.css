@@ -1,0 +1,75 @@
+.cabecalhoPrincipal .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cabecalhoPrincipal-nav{
+    display: flex;
+}
+
+.Principal-patrocinadores .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Principal-patrocinadores-list {
+    display: flex;
+
+}
+
+.Principal-patrocinadores-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    margin-right: 5% ;
+
+}
+
+.Principal-contatoForm {
+    width: 25%;
+}
+
+.Principal-contatoForm-fieldset {
+    display: flex;
+}
+
+.Principal-navMap-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 500px;
+}
+
+.navmap-list-title-chat{
+    display: flex;
+}
+
+.conteudoPrincipal-cursos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.conteudoPrincipal-cursos-link {
+    width: 23%;
+    margin-bottom: 1%;
+}
+
+.digitar{
+    display: flex;
+}
+/*parte mobile*/
+
+.cabecalhoPrincipal-nav {
+    flex-direction:column;
+}
+.cabecalhoPrincipal .container{
+    flex-direction:column;
+}
+
+.cabecalhoPrincipal .container{
+    direction:column;  
+    align-items: initial;
+    text-align: center;
+  }

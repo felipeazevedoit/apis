@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "_Fornecedor";
+}
+
+@model IEnumerable<SaudeComVoce.Models.ServicoViewModel>
+
+    <style>
+        .form-group {
+            margin: 0 !important;
+        }
+    </style>
+
+    <div class="modal fade" id="fornecedor" tabindex="-1" role="dialog" aria-labelledby="registroTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Fornecedor da Saúde</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body body-others">
+                    <form name="form1" id="form1">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="nome">Razão social</label>
+                                <input type="text" class="form-control" id="nome">
+                                <span class="off" id="lblNome">*Obrigatório</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="cnpj">CNPJ</label>
+                                <input type="text" class="form-control" id="cnpj" onKeyPress="MascaraCNPJ(form1.cnpj);" maxlength="18" onBlur="ValidarCNPJ(form1.cnpj);">
+                                <span class="off" id="lblCnpj">*Obrigatório</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="atuacao">Área de Atuação</label>
+                                <input type="text" class="form-control" id="atuacao">
+                                <span class="off" id="lblTelefone">*Obrigatório</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="nomeResp">Nome do Responsável</label>
+                                <input type="text" class="form-control" id="nomeResp">
+                                <span class="off" id="lblnomeResp">*Obrigatório</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="cpf">CPF do Responsável</label>
+                                <input type="text" class="form-control" id="cpf" onBlur="ValidarCPF(form1.cpf);" onKeyPress="MascaraCPF(form1.cpf);" maxlength="14">
+                                <span class="off" id="lblCpf">*Obrigatório</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="emailResp">Email do Responsável</label>
+                                <input type="text" class="form-control" id="emailResp">
+                                <span class="off" id="lblEmailResp">*Obrigatório</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="telefone">Contato Comercial</label>
+                                <input type="text" class="form-control" id="telefone" name="telefone" onKeyPress="TelMask();" maxlength="14">
+                                <span class="off" id="lblTelefone">*Obrigatório</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="site">Site</label>
+                                <input type="text" class="form-control" id="site">
+                                <span class="off" id="lblSite">*Obrigatório</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="cep">Cep</label>
+                                <input type="text" class="form-control" id="cep" onfocusout="preencherEndereco($('#cep').val())" onKeyPress="MascaraCep(form1.cep);" maxlength="9">
+                                <span class="off" id="lblCep">*Obrigatório</span>
+                            </div>
+
+                            <div class="form-group col-md-5">
+                                <label for="local">Endereço</label>
+                                <input type="text" class="form-control" id="local" readonly>
+                                <span class="off" id="lblLocal">*Obrigatório</span>
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="complemento">Complemento</label>
+                                <input type="text" class="form-control" id="complemento" onfocusout="preencherEndereco($('#cep').val())">
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="inputAddress2">Número</label>
+                                <input type="number" class="form-control" id="inputAddress2">
+                                <span class="off" id="lblNumero">*Obrigatório</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="email">E-mail</label>
+                                <input type="text" class="form-control" id="email" onfocusout="validarEmail()">
+                                <span class="off" id="lblEmail">*Obrigatório</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="confirmarEmail">Confirmar E-mail</label>
+                                <input type="text" class="form-control" id="confirmarEmail" onfocusout="validarCEmail()">
+                                <span class="off" id="lblConfirmarEmail">*Obrigatório</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="senha">Senha</label>
+                                <input type="password" class="form-control" id="senha">
+                                <span class="off" id="lblSenha">*Obrigatório</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="confirmarSenha">Confirmar senha</label>
+                                <input type="password" class="form-control" id="confirmarSenha">
+                                <span class="off" id="lblConfirmarSenha">*Obrigatório</span>
+                            </div>
+                            <span style="color:green" id="lblSpan" class="pull-right fade">Cadastro realizado com sucesso</span>
+                            <span id="lblErro" class="pull-left off"></span>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="senha">Dica de senha</label>
+                                <input type="text" class="form-control" id="dicaSenha">
+                                <!-- <span class="off" id="lblSenha">*Obrigatório</span> -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="defaut-btn-back" onClick="carregaModalLista()">Voltar</a>
+                    <a href="#" class="defaut-btn-gradient" onclick="cadastrarFornecedor()">Cadastrar</a>
+                </div>
+            </div>
+        </div>
+    </div>

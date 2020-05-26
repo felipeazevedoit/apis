@@ -1,0 +1,43 @@
+#header-pesquisa{
+    @include menu(1);
+    .top-bar{
+        text-align: center;
+        background-image: url("../images/bg-top-bar.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        .box{
+            padding: 95px 0;
+        }
+        .-title{
+            text-transform: uppercase;
+            font-size: 2em;
+            .text-book{
+                font-size: .8em;
+            }
+        }
+    }
+}
+
+section#section-pesquisa-01{
+    padding-bottom: 50px;
+    .card{
+        margin: 5px !important;
+    }
+    a{ 
+        color: $gray;
+        .card-title{
+            text-transform: uppercase;
+            font-family: 'nexa-black';
+            font-size: 25px;
+            margin: 0;
+        }
+    }
+
+    @media(max-width: $screen-xs-max){
+        .-aux{
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+}

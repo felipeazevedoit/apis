@@ -1,0 +1,83 @@
+﻿@model IEnumerable<SaudeComVc_Home.Models.PesquisaViewModel>
+@{
+    ViewBag.Title = "Resultados";
+}
+    @*<div class="row" style="margin-top:5%">
+        <div class="col-md-6 offset-md-3">
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-2">
+            @if (Model != null)
+            {
+                <table class="align-self-md-center" style="margin-bottom:10%">
+                    @foreach (var item in Model)
+                    {
+                        <tr style="padding-bottom:10%">
+                            @if (item.ImagemB64 != null)
+                            {
+                                <td><img src="data:image/@item.Extensao;base64, @item.ImagemB64" class="rounded img-responsive" alt="Alternate Text" style="width:25%; margin-left:60%;" /></td>
+                            }
+                            else
+                            {
+                                <td><img src="~/Img/avatar.png" alt="Alternate Text" class="rounded img-responsive" style="width:25%; margin-left:60%;" /></td>
+                            }
+                            <td>&nbsp;<a href="@item.Url">@item.Nome</a></td>
+                        </tr>
+                    }
+
+                </table>
+            }
+        </div>
+    </div>*@
+
+    <section id="section-pesquisa-01">
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-lg-12">
+                    <h2>Resultados:</h2>
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            if (item != null)
+                            {
+                                <a href="@item.Url">
+                                    <div class="card-deck">
+                                        <div class="card">
+                                            <div class="row no-gutters">
+                                                <div class="col-auto -aux align-self-center">
+                                                    @if (item.ImagemB64 != null && item.ImagemB64 != "")
+                                                    {
+                                                        <img src="data:image/@item.Extensao;base64, @item.ImagemB64" class="img-fluid" alt="">
+                                                    }
+                                                    else
+                                                    {
+                                                        <img src="~/Img/avatar.png" class="img-fluid" alt="">
+                                                    }
+                                                </div>
+                                                <div class="col align-self-center">
+                                                    <div class="card-block px-4">
+                                                        <h4 class="card-title text-gradient">@item.Nome</h4>
+                                                        <p class="card-text">@item.Descricao</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            }
+                            else
+                            {
+                                <h2>Nenhum resultado.</h2>
+                            }
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+

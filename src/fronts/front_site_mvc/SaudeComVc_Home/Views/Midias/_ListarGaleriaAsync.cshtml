@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SaudeComVoce.Models.MidiaViewModel>
+
+
+<div class="col-md-12 consultorios" style="margin:0; padding:0">
+
+    @foreach (var item in Model)
+    {
+        <div class="btn-wrap">
+            <img src="http://@item.CaminhoVirtual" alt="@item.Nome" id="@item.ID" class="fotoPort img-thumbnail Image" />
+            @*<button><img src="~/Icons/ic_trash.png" /></button>*@
+        </div>
+    }
+
+
+
+
+
+</div>
+
+
+@section scripts{
+
+    <script>
+
+
+    </script>
+
+}

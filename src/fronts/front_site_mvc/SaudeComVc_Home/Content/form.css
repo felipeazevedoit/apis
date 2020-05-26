@@ -1,0 +1,242 @@
+﻿/* _AdminCadastro, _PacientesCadastro, _MedicosCadastro, Cadastro de Noticia, Cadastro de Clinicas, Cadastro de Profissionais*/
+
+.card-body {
+
+}
+
+h4{
+    font-weight: bold;
+    color: #212121;
+}
+
+form {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.card-header {
+    margin-bottom: 50px;
+    color: grey;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+    .input-group {
+    box-shadow: 1px 1px 5px grey;
+}
+
+.input-group-addon {
+    background-color: #5172A8;
+    color: white;
+    z-index: 3;
+}
+
+/*.input-group:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 0.5s;
+}*/
+
+
+.arredondado {
+    border-radius: 20px;
+}
+
+.input-group {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#label {
+    color: grey;
+    font-family: 'Roboto', sans-serif;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+
+.glyphicon {
+    margin: 0;
+    padding: 0;
+}
+
+.textBox{
+    
+}
+
+#btnSalvar {
+    border-color: transparent;
+    color: #FFF;
+    margin-left: 44px;;
+    background-color: #1e4496;
+    box-shadow: 1px 1px 5px grey;
+}
+
+/* Index.cshtml*/
+
+.card {
+    width: 80%;
+    margin: auto;
+}
+
+.form-control {
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+}
+
+.card-footer {
+    position: relative;
+    right: 1%;
+}
+
+#btGetMedicos{
+    margin-top: 10%;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.ativo {
+    color: red;
+}
+
+.off {
+    color: red;
+    display: none;
+}
+
+.sucesso{
+    color: green;
+}
+
+/*icones dos formulários*/
+
+.icon::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.mapa::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f3c5";
+}
+
+.calendario::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f073";
+}
+
+.news::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f1ea";
+}
+
+.envelope::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0e0";
+}
+
+.convenio::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f56c";
+}
+
+.senha::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f023";
+}
+
+.livro::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f7e6";
+}
+
+.login::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f007";
+}
+
+
+.altura::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f548";
+}
+
+.calendario::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f073";
+}
+
+.envelope::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0e0";
+}
+
+
+.peso::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f496";
+}
+
+.globo::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f57d";
+}
+
+.oculos::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f530";
+}
+
+.celular::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f3cd";
+}
+
+.thumb::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f03e";
+}
+
+.descrition::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f15c";
+}
+.tags::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f02c";
+}
+
+.twitter::before {
+    font-family: "Font Awesome 5 Brands";
+    content: "\f099";
+}
+
+

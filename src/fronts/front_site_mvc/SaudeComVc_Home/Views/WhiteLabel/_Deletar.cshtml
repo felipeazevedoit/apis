@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "_Deletar";
+}
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="modalConfirma">
+        <div class="modal-dialog modal-sm" style="background-color:white">
+            <div class="modal-content" style="background-color:white">
+                <div class="modal-header" style="background-color:white">
+                    <input type="hidden" id="idFoto" />
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel" style="font-size:20px">Deseja deletar essa foto?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="modal-btn-si" style="font-size:20px;" onclick="excluirFoto($('#idFoto').val())">Sim</button>
+                    <button type="button" class="btn btn-success" id="modal-btn-no" style="font-size:20px;" data-dismiss="modal">Não</button>
+                </div>
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,36 @@
+#header-cadastro-portfolio{
+    @include menu(1);
+    .top-bar{
+        text-align: center;
+        background-image: url("../images/bg-top-bar.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        .box{
+            padding: 95px 0;
+        }
+        .-title{
+            text-transform: uppercase;
+            font-size: 2em;
+            .text-book{
+                font-size: .8em;
+            }
+        }
+    }
+}
+
+section#cadastro-portfolio{
+    
+    .box{
+        position: relative;
+        top: -70px;
+        z-index: 1;
+        padding: 60px;
+        background-color: $white;
+        -webkit-box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+        -moz-box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+        box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+        @include border-radius(25px);
+
+      
+    }
+}

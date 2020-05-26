@@ -1,0 +1,263 @@
+/*Bootstrap*/
+/* $pagination-active-bg:              $green !default; */
+/*responsive dynamic system*/
+@font-face {
+  font-family: 'nexa-book';
+  src: url("../fontes/nexa-book.otf"); }
+@font-face {
+  font-family: 'nexa-black';
+  src: url("../fontes/nexa-black.otf"); }
+.alerts-mobile {
+  position: fixed;
+  display: inline-flex;
+  right: 110px;
+  top: 13px;
+  z-index: 1; }
+  .alerts-mobile .-message {
+    position: relative; }
+    .alerts-mobile .-message:after {
+      content: '';
+      position: absolute;
+      background-color: red;
+      width: 10px;
+      height: 10px;
+      right: 4px;
+      top: 6px;
+      display: block;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -o-border-radius: 50%; }
+  .alerts-mobile .-bells {
+    position: relative; }
+    .alerts-mobile .-bells:after {
+      content: '';
+      position: absolute;
+      background-color: red;
+      width: 10px;
+      height: 10px;
+      right: 8px;
+      top: 6px;
+      display: block;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -o-border-radius: 50%; }
+
+/** hidden search field **/
+#searchbar {
+  display: none;
+  float: left;
+  width: 100%;
+  height: 62px;
+  border-top: 1px solid #d8d8d8;
+  padding-left: 25px;
+  padding-right: 10px;
+  z-index: 9999;
+  background: #fff;
+  position: absolute;
+  top: 52px; }
+
+#s {
+  display: block;
+  width: 88%;
+  border: 0;
+  outline: none;
+  padding: 0;
+  height: 60px;
+  line-height: 60px;
+  font-size: 1em;
+  color: #676767; }
+
+#searchsubmit {
+  display: block;
+  float: right;
+  margin-top: 20px;
+  background: none;
+  color: #717171;
+  border: 0;
+  outline: none;
+  cursor: pointer; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }
+
+.drop-menu {
+  margin-top: 0 !important; }
+  .drop-menu img {
+    margin-right: 10px; }
+  .drop-menu span {
+    font-size: 14px;
+    color: #2a2a2a;
+    font-weight: normal;
+    line-height: 14px; }
+    .drop-menu span .name {
+      font-weight: bold; }
+
+.dropdown-menu-right {
+  width: 220px !important;
+  right: 210px;
+  left: auto !important;
+  -webkit-box-shadow: 0px 0px 36px 8px rgba(0, 0, 0, 0.096);
+  -moz-box-shadow: 0px 0px 36px 8px rgba(0, 0, 0, 0.096);
+  box-shadow: 0px 0px 36px 8px rgba(0, 0, 0, 0.096);
+  border-radius: 25px !important; }
+
+.dropdown-menu .dropdown-item {
+  font-size: 14px !important;
+  color: #2a2a2a; }
+
+@media (max-width: 849px) {
+  .dropdown-menu-right {
+    right: 210px; }
+
+  .drop-menu img {
+    margin-left: 20px; }
+  .drop-menu span {
+    color: #fff; } }
+a {
+  text-decoration: none !important; }
+  a:hover {
+    color: #2a2a2a !important; }
+
+p, a {
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif; }
+
+.title-dynamic {
+  font-family: 'nexa-black'; }
+
+.-title {
+  line-height: 27px; }
+
+.text-gradient {
+  background: linear-gradient(-45deg, #6ff1ae, #52a6ee);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+.text-book {
+  font-family: 'nexa-book';
+  line-height: 27px; }
+
+.-btn-break {
+  font-weight: 700;
+  line-height: 15px; }
+  .-btn-break .line-button {
+    font-weight: 300; }
+
+.bg-dynamic-menu {
+  background-color: #fff !important;
+  position: fixed !important;
+  width: 100%;
+  height: 65px;
+  z-index: 999;
+  -webkit-box-shadow: 0px -2px 39px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px -2px 39px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px -2px 39px 0px rgba(0, 0, 0, 0.15); }
+
+.bg-tranp {
+  background-color: transparent; }
+
+.defaut-btn-white {
+  padding: 8px 20px;
+  font-size: 14px;
+  color: #2a2a2a;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px; }
+
+.defaut-btn-back {
+  padding: 8px 20px;
+  font-size: 14px;
+  color: #2a2a2a;
+  display: inline-block;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px; }
+
+.defaut-btn-gradient {
+  padding: 9px 20px;
+  font-size: 14px;
+  color: #2a2a2a;
+  display: inline-block;
+  background: linear-gradient(-45deg, #6ff1ae, #52a6ee);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  /* @include gradient($green, $blue); */ }
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+.defaut-btn-gray {
+  padding: 9px 20px;
+  font-size: 14px;
+  color: #2a2a2a;
+  display: inline-block;
+  background-color: #e4e4e4;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  /* @include gradient($green, $blue); */ }
+
+/*# sourceMappingURL=config.css.map */

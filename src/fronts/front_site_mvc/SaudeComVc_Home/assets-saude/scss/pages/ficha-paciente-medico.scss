@@ -1,0 +1,91 @@
+#header-ficha-paciente-medico-2{
+    @include menu(1);
+    .top-bar{
+        text-align: center;
+        background-image: url("../images/bg-top-bar.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-bottom: 40px;
+        .box{
+            padding: 135px 0 60px;
+        }
+        .-title{
+            text-transform: uppercase;
+            font-size: 2em;
+            .text-book{
+                font-size: .8em;
+            }
+        }
+    }
+}
+
+section#section-ficha-paciente-medico-2{
+    padding-top: 50px;
+    .img-doctor{
+        @include border-radius(25px);
+    }
+
+    .info-doctor{
+        .title{
+            font-weight: 700;
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+    }
+
+    
+    .description-doctor{
+        .title{
+            text-transform: uppercase;
+            font-size: 3em;
+            font-family: 'nexa-black';
+            color: $gray;
+        }
+    }
+
+    .title-photo{
+        text-transform: uppercase;
+        font-size: 3em;
+        font-family: 'nexa-black';
+        color: $gray;
+    }
+
+
+    .popup-gallery{
+        img{
+            @include border-radius(25px);
+        }
+    }
+  
+    .form-news{
+      text-align: right;
+      display: block;
+    }
+  
+    .card{
+      @include border-radius(25px);
+      .card-img-top{
+        @include border-radius(25px 25px 0 0);
+      }
+    }
+  
+    .btn-read-more{
+      color: $gray;
+      i{
+        font-size: 18px;
+      }
+    }
+  
+    .-btn-break{
+      margin: 30px auto;
+      text-align: center;
+      padding: 15px 25px;
+      display: table;
+    }
+  
+    @media(max-width: $screen-xs-max){
+      .form-news, .-title{
+        text-align: center;
+      }
+    }
+}

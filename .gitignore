@@ -69,3 +69,4 @@
 /src/financeiro/WpFinanceiro.Services/bin/Release/netcoreapp2.1
 /src/financeiro/WpFinanceiro.Infrastructure/obj
 /src/midias/.vs/WpMidias
+/src/documentos/.vs/Doc/v16/Server/sqlite3

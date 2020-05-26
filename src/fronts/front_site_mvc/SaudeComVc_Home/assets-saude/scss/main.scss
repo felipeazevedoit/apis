@@ -1,0 +1,25 @@
+@import 'variables';
+@import 'config';
+@import 'mixins';
+
+@import '../vendor/bootstrap/scss/bootstrap.scss'; 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+@import 'pages/index.scss';
+@import 'pages/ficha-paciente.scss';
+@import 'pages/medico-paciente.scss';
+@import 'pages/medico.scss';
+@import 'pages/paciente.scss';
+@import 'pages/medico.scss';
+@import 'pages/noticia.scss';
+@import 'pages/pesquisa-medico.scss';
+@import 'pages/parceiro.scss';
+@import 'pages/sobre.scss'; 
+@import 'pages/pesquisa.scss'; 
+@import 'pages/modals.scss'; 
+@import 'pages/cadastro-noticias.scss'; 
+@import 'pages/login.scss'; 
+@import 'pages/detalhe-medico.scss'; 
+@import 'pages/portfolio.scss'; 
+@import 'pages/chat.scss'; 
+@import 'pages/ficha-paciente-medico.scss'; 

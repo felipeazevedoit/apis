@@ -1,0 +1,53 @@
+﻿@model SaudeComVoce.Models.LoginViewModel
+<link rel="stylesheet" type="text/css" href="~/assets-saude/fontes/iconic/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" type="text/css" href="~/assets-saude/css/util.css">
+<link href="~/Css/Gradients.css" rel="stylesheet" />
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="~/Css/loginHome.css" media="screen" />
+    <title>Esqueceu senha</title>
+</head>
+
+<body class="custom-gradient">
+    <div class="container">
+        @using (Html.BeginForm("ChangePassword", "Login", FormMethod.Post, new { style = "margin-top:10%" }))
+        {
+
+            <form action="index.html" method="post">
+                <div class="text-center">
+                    <a href="@Url.Action("Index", "Home")"><img class="text-center" src="~/assets-saude/images/logo-iMedFit.png" width="200" center alt=""></a>
+                </div>
+                <h1 class="text-white tituloRecuperar">
+                    Recuperar senha
+                </h1>
+                <div class="form-content">
+
+                    @Html.TextBoxFor(l => l.Login, new { id = "email", @class = "form-control txt", type = "email", placeholder = "Email" })
+                    @if (TempData["Message"] != null && !string.IsNullOrEmpty(TempData["Message"].ToString()))
+                    {
+                        <span class="label label-success">@TempData["Message"].ToString()</span>
+                    }
+
+                    <input type="submit" class="button btn btn-lg" value="Enviar" />
+
+                </div>
+                <br />
+                <a href="@Url.Action("Index", "Login")"><p class="text-white voltarLink">Voltar</p></a>
+            </form>
+        }
+    </div>
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/loginHome.js"></script>
+    <script src="~/Scripts/pages/modais.js"></script>
+</body>
+</html>

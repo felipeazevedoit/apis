@@ -1,0 +1,128 @@
+﻿
+@model SaudeComVc_Home.Models.FeedViewModel
+
+@if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado != null && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+{
+    if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.idPerfil == 14)
+    {
+        if (Model.Medicos != null)
+        {
+            <li class="nav-item">
+                @if (Model.Medicos.Count() > 0)
+                {
+                    <div class="dropdown -message">
+                        <a class="dropdown-toggle " id="dropdownMenuLink" data-toggle="dropdown">
+                            <i class="flaticon-envelope"></i>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            @foreach (var item in Model.Medicos)
+                            {
+                                <a class="dropdown-item" href="@Url.Action("WhiteLabel", "Medico", new { nome = item.Nome, id = item.ID })">@item.Nome</a>
+                            }
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="dropdown">
+                        <a class="dropdown-toggle " id="dropdownMenuLink" data-toggle="dropdown">
+                            <i class="flaticon-envelope"></i>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            @foreach (var item in Model.Medicos)
+                            {
+                                <a class="dropdown-item" href="@Url.Action("WhiteLabel", "Medico", new { nome = item.Nome, id = item.ID })">@item.Nome</a>
+                            }
+                        </div>
+                    </div>
+                }
+
+            </li>
+        }
+    }
+    else
+    {
+        if (Model.Pacientes != null)
+        {
+            <li class="nav-item">
+                @if (Model.Pacientes.Count() > 0)
+                {
+                    <div class="dropdown -message">
+                        <a class="dropdown-toggle " id="dropdownMenuLink" data-toggle="dropdown">
+                            <i class="flaticon-envelope"></i>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            @foreach (var item in Model.Pacientes)
+                            {
+                                <a class="dropdown-item" href="@Url.Action("Visualizar", "MedicoXPaciente", new { id = item.ID })">@item.Nome</a>
+                            }
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="dropdown">
+                        <a class="dropdown-toggle " id="dropdownMenuLink" data-toggle="dropdown">
+                            <i class="flaticon-envelope"></i>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            @foreach (var item in Model.Pacientes)
+                            {
+                                <a class="dropdown-item" href="@Url.Action("Visualizar", "MedicoXPaciente", new { id = item.ID })">@item.Nome</a>
+                            }
+                        </div>
+                    </div>
+                }
+
+            </li>
+        }
+    }
+
+
+
+
+<li class="nav-item">
+    @if (Model.Notificacoes.Count() > 0)
+    {
+        <div class="dropdown -bells">
+            <a class="dropdown-toggle " id="dropdownMenuLink" data-toggle="dropdown">
+                <i class="flaticon-bell"></i>
+            </a>
+
+            <div class="dropdown-menu">
+                @foreach (var item in Model.Notificacoes)
+                {
+                    if (item.Descricao != null)
+                    {
+                        <a class="dropdown-item" href="@item.Link">@(item.Descricao.Count() > 40 ? $"{ item.Descricao.Substring(0, 37) }..." : item.Descricao)</a>
+                    }
+                }
+
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="dropdown">
+            <a class="dropdown-toggle " id="dropdownMenuLink" data-toggle="dropdown">
+                <i class="flaticon-bell"></i>
+            </a>
+
+            <div class="dropdown-menu">
+                @foreach (var item in Model.Notificacoes)
+                {
+                    if (item.Descricao != null)
+                    {
+                        <a class="dropdown-item" href="@item.Link">@(item.Descricao.Count() > 40 ? $"{ item.Descricao.Substring(0, 37) }..." : item.Descricao)</a>
+                    }
+                }
+
+            </div>
+        </div>
+    }
+</li>
+}

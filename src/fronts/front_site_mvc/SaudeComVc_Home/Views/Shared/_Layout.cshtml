@@ -1,0 +1,565 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta content="" name="ealize seu sonho e ingresse na carreira militar!" />
+    <meta content="" name="keywords" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="#">
+    <meta property="og:title" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="#">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="600">
+    <meta property="og:type" content="website">
+
+    <title>IMED FIT</title>
+
+    <meta name="theme-color" content="#3f4c34">
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+    <link rel="stylesheet" href="~/assets-saude/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.owlcarousel/1.31/owl.carousel.css">
+    <link rel="stylesheet" href="~/assets-saude/css/main.css" />
+    <link rel="stylesheet" href="~/assets-saude/css/animate.css" />
+    <link rel="stylesheet" href="~/assets-saude/fontes/flaticon.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link href="~/Content/chosen/bootstrap-chosen.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link href="~/Plugin/tagsInput/bootstrap-tagsinput.css" rel="stylesheet" />
+    <link href="~/Content/loading.css" rel="stylesheet" />
+    <link href="~/Css/jquery.loading.css" rel="stylesheet" />
+    <link href="~/assets-saude/css/chat.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .boxm {
+            padding-bottom: 20px !important;
+            padding-top: 80px !important;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <input type="hidden" id="lblNomeUserL" value="@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome" />
+        <input type="hidden" id="lblIdUsuarioL" value="@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario" />
+        <input type="hidden" id="lblIdPerfilUsuarioL" value="@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.idPerfil" />
+        @if (HttpContext.Current.Request.Url.AbsolutePath == "/" || HttpContext.Current.Request.Url.AbsolutePath == "/Home/Index")
+        {
+            <header id="header-home">
+                @Html.Action("_ColapseMenu", "Shared")
+                <section id="mainSlider">
+                    <div id="owl-main" class="owl-carousel height-lg owl-inner-nav owl-ui-lg">
+                        <div class="item" style="background-image: url(/assets-saude/images/XD7ejLl.webp);">
+                            <div class="container">
+                                <div class="caption vertical-center">
+                                    <h1 class="fadeInDown-1">
+                                        <span class="sub">Aconselhamento</span><br>gratuito de<br> médicos e<br>profissionais <br>da <span class="gradient-text">saúde</span>
+                                    </h1>
+                                    <!-- <p class="fadeInDown-2 medium-color">Create your online portfolio in minutes with the professionally and lovingly designed REEN website template. Customize your site with versatile and easy to use features.</p> -->
+                                    <!-- <div class="fadeInDown-3">
+                                        <a href="#" class="defaut-btn-gradient -btn-slide"><i class="flaticon-clock"></i><span class="line-text">Agende a</span><br>sua consulta agora</a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item" style="background-image: url(/assets-saude/images/uZHTsBS.webp);">
+                            <div class="container">
+                                <div class="caption vertical-center">
+                                    <h1 class="fadeInDown-1"><span class="sub">Organize</span><br>suas informações <br><span class="gradient-text">médicas aqui!</span></h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item" style="background-image: url(/assets-saude/images/pFk3oRn.webp);">
+                            <div class="container">
+                                <div class="caption vertical-center">
+                                    <h1 class="fadeInDown-1"><span class="sub">Saiba como ser</span><br>mais saudável,<br>emagrecer <br>gerenciar dor<br> <span class="gradient-text">stress, ansiedade</span></h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item" style="background-image: url(/assets-saude/images/h7bVLeA.webp);">
+                            <div class="container">
+                                <div class="caption vertical-center">
+                                    <h1 class="fadeInDown-1"><span class="sub">Comunique-se</span><br>com os melhores<br>profissionais <br>da <span class="gradient-text">saúde</span></h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item" style="background-image: url(/assets-saude/images/OVksj61.webp);">
+                            <div class="container">
+                                <div class="caption vertical-center">
+                                    <h1 class="fadeInDown-1"><span class="sub">Saiba como</span><br>evitar doenças<br>graves e <span class="gradient-text">crônicas</span></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @Html.Action("_Navbar", "Shared")
+            </header>
+        }
+        else if (HttpContext.Current.Request.Url.AbsolutePath == "/Paciente/Formulario")
+        {
+            <header id="header-ficha-paciente">
+                @Html.Action("_ColapseMenu", "Shared")
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="box">
+                                    <h3 class="title-dynamic -title"><span class="text-book">Ficha de saúde</span><br><span class="text-gradient">@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.Action("_Navbar", "Shared")
+            </header>
+        }
+        else if (HttpContext.Current.Request.Url.PathAndQuery == "/Paciente/Search?i=0&p=3&num=1" || HttpContext.Current.Request.Url.PathAndQuery == "/Paciente/Search?i=0&p=3&num=2" || HttpContext.Current.Request.Url.PathAndQuery == "/Paciente/Search?i=0&p=3&num=3" || HttpContext.Current.Request.Url.PathAndQuery == "/Paciente/Search?i=0&p=3&num=4" || HttpContext.Current.Request.Url.PathAndQuery == "/Paciente/Search?i=0&p=3&num=5" || HttpContext.Current.Request.Url.PathAndQuery == "/Paciente/Search?i=0&p=3&num=6" || HttpContext.Current.Request.Url.PathAndQuery == "/Paciente/Search?i=0&p=3&num=7" || HttpContext.Current.Request.Url.PathAndQuery == "/Paciente/Search?i=0&p=3&num=8" || HttpContext.Current.Request.Url.PathAndQuery == "/Paciente/Search?i=0&p=3&num=9")
+        {
+            <header id="header-ficha-paciente">
+                @Html.Action("_ColapseMenu", "Shared")
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="box">
+                                    <h3 class="title-dynamic -title"><span class="text-book">Ficha de saúde</span><br><span class="text-gradient">@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.Action("_Navbar", "Shared")
+            </header>
+        }
+        else if (HttpContext.Current.Request.Url.AbsolutePath == "/Login")
+        {
+
+        }
+        else if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/About")
+        {
+            <header id="header-sobre">
+                @Html.Action("_ColapseMenu", "Shared")
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="boxm">
+                                    <h3 class="title-dynamic -title"><span class="text-book">Conheça o</span><br><span class="text-gradient">Imed.fit</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.Action("_Navbar", "Shared")
+            </header>
+        }
+        else if (HttpContext.Current.Request.Url.AbsolutePath == "/Medico/ListagemMedico")
+        {
+            <header id="header-pesquisa-medico">
+                @Html.Action("_ColapseMenu", "Shared")
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="boxm">
+                                    <h3 class="title-dynamic -title"><span class="text-book">Lista de</span><br><span class="text-gradient">Médicos</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.Action("_Navbar", "Shared")
+            </header>
+        }
+        else if (HttpContext.Current.Request.Url.AbsolutePath == "/Medico/ResultadosMedicos")
+        {
+            <header id="header-pesquisa">
+                @Html.Action("_ColapseMenu", "Shared")
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="box">
+                                    <h3 class="title-dynamic -title"><span class="text-book">Você pesquisou por um</span><br><span class="text-gradient">Médico</span></h3>
+                                    <form class="form-inline d-flex justify-content-center mt-3" action="pesquisa.php">
+                                        @*<select class="form-control mb-2 mr-sm-2" id="inlineFormCustomSelectPref">
+                                                <option selected>Escolha a especialidade</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>*@
+                                        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Pesquisar por nome">
+                                        <button type="submit" class="btn btn-primary mb-2"><i class="flaticon-magnifying-glass"></i> Pesquisar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.Action("_Navbar", "Shared")
+            </header>
+        }
+        else if (HttpContext.Current.Request.Url.AbsolutePath == "/Noticias/ListaNoticias")
+        {
+            <header id="header-noticias">
+                @Html.Action("_ColapseMenu", "Shared")
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="box">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.Action("_Navbar", "Shared")
+            </header>
+        }
+        else if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/Parceiros")
+        {
+            <header id="header-parceiros">
+                @Html.Action("_ColapseMenu", "Shared")
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="boxm">
+                                    <h3 class="title-dynamic -title"><span class="text-book">Conheça os</span><br><span class="text-gradient">Parceiros do Imed.fit</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.Action("_Navbar", "Shared")
+            </header>
+        }
+        else if (HttpContext.Current.Request.Url.AbsolutePath == "/Noticias/CadastrarNoticia")
+        {
+            <header id="header-cadastro-noticia">
+                @Html.Action("_ColapseMenu", "Shared")
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="box">
+                                    <h3 class="title-dynamic -title"><span class="text-book">Cadastro</span><br><span class="text-gradient">de notícias</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.Action("_Navbar", "Shared")
+            </header>
+        }
+        else if (HttpContext.Current.Request.Url.AbsolutePath == "/Chat/Index")
+        {
+            <header id="header-chat">
+                @Html.Action("_ColapseMenu", "Shared")
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="box">
+                                    <h3 class="title-dynamic -title"><span class="text-book">Chat</span><br><span class="text-gradient">médico</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.Action("_Navbar", "Shared")
+            </header>
+        }
+        else if (HttpContext.Current.Request.Url.AbsolutePath == "/WhiteLabel/Pessoal")
+        {
+            <header id="header-cadastro-medico">
+                @Html.Action("_ColapseMenu", "Shared")
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="box">
+                                    <h3 class="title-dynamic -title"><span class="text-book">Apresentação</span><br><span class="text-gradient">pessoal</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.Action("_Navbar", "Shared")
+            </header>
+        }
+        else if (HttpContext.Current.Request.Url.AbsolutePath == "/WhiteLabel/Portifolio")
+        {
+            <header id="header-cadastro-portfolio">
+                @Html.Action("_ColapseMenu", "Shared")
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="box">
+                                    <h3 class="title-dynamic -title"><span class="text-book">Portifólio</span><br><span class="text-gradient">médico</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.Action("_Navbar", "Shared")
+            </header>
+        }
+        else if (HttpContext.Current.Request.Url.AbsolutePath == "/Paciente/Feed")
+        {
+            <header id="header-paciente-admin">
+                @Html.Action("_ColapseMenu", "Shared")
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="box">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.Action("_Navbar", "Shared")
+            </header>
+        }
+        else
+        {
+            <header id="header-paciente-admin">
+                @Html.Action("_ColapseMenu", "Shared")
+                <div class="top-bar" style="background-color:#fff;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="boxm">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.Action("_Navbar", "Shared")
+            </header>
+        }
+        @RenderBody()
+
+        <div id="modal"></div>
+
+    </div>
+    @if (HttpContext.Current.Request.Url.AbsolutePath != "/Login")
+    {
+        <section id="section-06">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="box">
+                            <h3 class="title-dynamic -title"><span class="text-book">Quer recebeber novidades em seu e-mail?</span><br>Cadastre-se em nossas newsletter e fique por dentro</h3>
+                            <form class="form-inline">
+                                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Digite seu nome">
+                                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Digite seu e-maiil">
+                                <button type="submit" class="btn btn-primary mb-2"><i class="flaticon-mail-send"></i> Cadastrar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="~/assets-saude/images/logo-iMedFit.png" width="140" />
+                        <h3 class="title-dynamic -title"><span class="text-book">Clínica</span><br>Imed.fit</h3>
+                        <p><b>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</b></p>
+                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+                    </div>
+
+                    <div class="col-lg-2 offset-lg-1">
+                        <h5 class="title-dynamic -title">Mapa do site</h5>
+                        <ul class="list-unstyled menu-footer">
+                            <li><a href="/Home/Index">Home</a></li>
+                            <li><a href="/Home/About">Sobre</a></li>
+                            @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+                            {
+                                <li><a href="/Medico/ListagemMedico">Médicos</a></li>
+                            }
+                            <li><a href="/Noticias/ListaNoticias">Notícias</a></li>
+                            <li><a href="/Home/Parceiros">Parceiros</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3">
+
+                    </div>
+
+                    <div class="col-lg-2">
+                        <h5 class="title-dynamic -title">Redes sociais</h5>
+                        <ul class="list-unstyled list-inline social">
+                            <li class="list-inline-item">
+                                <a href="#" target="_BLANK"><i class="flaticon-facebook-letter-logo"></i></a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="#" target="_BLANK"><i class="flaticon-instagram"></i></a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="#" target="_BLANK"><i class="flaticon-whatsapp"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row border-row mt-4">
+                    <div class="col-lg-6 align-self-center">
+                        <p class="m-0 copy">Todos os direitos autorais reservados. 2019 | <a href="#">Imed.fit</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    }
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    @*<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.owlcarousel/1.31/owl.carousel.js"></script>
+    <script src="~/assets-saude/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets-saude/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <script src="~/assets/js/plugins/loading.js"></script>
+    <script src="~/assets/js/plugins/jquery.loading.js"></script>
+    <script src="~/assets-saude/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/plugins/chosen.jquery.js"></script>
+    <script src="~/Scripts/plugins/bootstrap-paginator.js"></script>
+    <script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
+    <script src="~/Scripts/pages/TelDoctor.js"></script>
+    @*<script src="~/Scripts/pages/modais.js"></script>*@
+    <script src="~/Scripts/plugins/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/plugins/bootstrap-tagsinput.js"></script>
+    <script src="~/Scripts/masks.js"></script>
+    <!--Paciente-->
+    <script src="~/Scripts/pages/paciente.js"></script>
+    <script src="~/Scripts/pages/validacaoPaciente.js"></script>
+    <!--Clinica-->
+    <script src="~/Scripts/buscarCep.js"></script>
+    <script src="~/Scripts/pages/clinica.js"></script>
+    <script src="~/Scripts/pages/validacaoClinica.js"></script>
+    <!--Medico-->
+    <script src="~/Scripts/pages/medico.js"></script>
+    <script src="~/Scripts/pages/validacaoMedico.js"></script>
+    <!--Profissional-->
+    <script src="~/Scripts/pages/validacaoProfissional.js"></script>
+    <script src="~/Scripts/pages/profissional.js"></script>
+    <!--Fornecedor-->
+    <script src="~/Scripts/pages/validacaoFornecedor.js"></script>
+    <script src="~/Scripts/pages/fornecedor.js"></script>
+    @*<script src="~/Scripts/masks.js"></script>*@
+    @*<script src="~/Scripts/pages/TelDoctor.js"></script>*@
+    <script src="~/Scripts/pages/modais.js"></script>
+
+    <script>
+
+        //$(function () {
+
+        //    var settings = {
+        //        "async": true,
+        //        "crossdomain": true,
+        //        "url": '/Pesquisa/PesquisarJsonAsync?texto=' + $("#search").val(),
+        //        "method": "GET"
+        //    };
+
+        //    $.ajax(settings).done(function (response) {
+        //        $("#search").autocomplete({
+        //            source: response
+        //        });
+        //        $("#ui-id-1").css("padding-top", "20px");
+
+        //    });
+        //});
+
+
+        function pesquisar() {
+            window.location.href = '/Pesquisa/Resultado?texto=' + $("#s ").val();
+        };
+
+    </script>
+
+    <script>
+        function PesquisarAp() {
+            var $searchlink = $('#searchtoggl i');
+            var $searchbar = $('#searchbar');
+
+            $('#topnav li .-search').on('click', function (e) {
+                e.preventDefault();
+
+                if ($(this).attr('id') == 'searchtoggl') {
+                    if (!$searchbar.is(":visible")) {
+                        // if invisible we switch the icon to appear collapsable
+                        $searchlink.removeClass('flaticon-magnifying-glass').addClass('flaticon-magnifying-glass');
+                    } else {
+                        // if visible we switch the icon to appear as a toggle
+                        $searchlink.removeClass('flaticon-magnifying-glass').addClass('flaticon-magnifying-glass');
+                    }
+
+                    $searchbar.slideToggle(300, function () {
+                        // callback after search bar animation
+                    });
+                }
+            });
+
+            $('#searchform').submit(function (e) {
+                e.preventDefault(); // stop form submission
+            });
+        }
+    </script>
+
+    <script>
+        sendEvent = function (sel, step) {
+            var sel_event = new CustomEvent('next.m.' + step, { detail: { step: step } });
+            window.dispatchEvent(sel_event);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript">
+        //Clear any session cookies
+        (function () {
+            var i;
+            var cookiesArr;
+            var cItem;
+
+            cookiesArr = document.cookie.split("; ");
+            for (i = 0; i < cookiesArr.length; i++) {
+                cItem = cookiesArr[i].split("=");
+                if (cItem.length > 0 && cItem[0].indexOf("ASPSESSIONID") == 0) {
+                    deleteCookie(cItem[0]);
+                }
+            }
+
+            function deleteCookie(name) {
+                var expDate = new Date();
+                expDate.setTime(expDate.getTime() - 86400000); //-1 day
+                var value = "; expires=" + expDate.toGMTString() + ";path=/";
+                document.cookie = name + "=" + value;
+            }
+        })();
+    </script>
+    <script src="~/Scripts/notify.js"></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>
