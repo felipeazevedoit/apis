@@ -3,6 +3,7 @@
 ################################################################################
 
 /.vs/Framework/v16
+/.vs/slnx.sqlite
 /src/mensagens/Mensagens.Infrastructure/obj/Debug
 /src/documentos/Doc.Dominio/bin
 /src/documentos/Doc.Infra.Cross/bin
