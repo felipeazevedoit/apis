@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\seguranca"
   ],
-  "SelectedNode": "\\src\\principal",
+  "SelectedNode": "\\src\\seguranca\\WebPixSeguranca.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -8,7 +8,7 @@ namespace WpMidias.Entities
 {
     public class Midia : Base
     {
-        private const string _basePath = @"C:\inetpub\wwwroot\talanservices.com.br\";
+        private const string _basePath = @"C:\inetpub\wwwroot\midias\";
 
         [NotMapped]
         public byte[] Arquivo { get { return SetArquivo(); } set { } }
