@@ -11,11 +11,11 @@ senha:		@Japede20
 ==================================================
 VM: 		187.84.228.245
 usuario		administrator
-senha:		%XGWi1!104
+senha:		LXnQBOV*ZqlU 
 
 ==================================================
 -- Base
 ==================================================
 endereço: 	187.84.228.245
 usuario: 	sa
-senha:		!Nm-&8
+senha:		LXnQBOV*ZqlU
