@@ -1,0 +1,76 @@
+﻿<h2>Adicionar Usuario</h2>
+
+<form id="FormularioCriacaoDeusuario">
+    
+    <div class="form-horizontal">
+        <hr />
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Nome:</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Nome" name="Nome" type="text" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Sobrenome:</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Sobrenome" name="Sobrenome" type="text" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Email:</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Email" name="Email" type="text" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Login:</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Login" name="Login" type="text" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Senha:</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Senha" name="Senha" type="password" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" value="Criar" class="btn btn-default" onclick="EnviaFormulario()" />
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    function EnviaFormulario() {
+
+        var data = JSON.stringify({
+            "Nome": $("#Nome").val(),
+            "Sobrenome": $("#Sobrenome").val(),
+            "Email": $("#Email").val(),
+            "Login": $("#Login").val(),
+            "Senha": $("#Senha").val()
+        });
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                console.log(this.responseText);
+            }
+        });
+
+        xhr.open("POST", "http://localhost:50761/api/usuario");
+        xhr.setRequestHeader("content-type", "application/json");
+        xhr.setRequestHeader("cache-control", "no-cache");
+        xhr.send(data);
+
+    }
+</script>

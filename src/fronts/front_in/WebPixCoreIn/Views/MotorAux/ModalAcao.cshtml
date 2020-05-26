@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+
+@model WebPixCoreIn.Models.AcaoViewModel
+
+<!DOCTYPE html>
+<div id="modalAcao" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Ação do Motor: @ViewBag.Motor</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="id">ID</label>
+                                <input type="text" disabled class="form-control" id="id" value="@Model.ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="nome">Nome:</label>
+                                <input type="text" class="form-control" id="nome" value="@Model.Nome">
+                            </div>
+                            <div class="form-group">
+                                <label for="descricao">Descrição:</label>
+                                <input type="text" class="form-control" id="descricao" value="@Model.Descricao">
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="ativo" checked="@Convert.ToBoolean(Model.Ativo)"> Ativo</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="status">Status:</label>
+                                <input type="number" class="form-control" id="status" value="@Model.Status">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="idCliente">Id Cliente:</label>
+                                <input type="number" class="form-control" id="idCliente" value="@Model.idCliente">
+                            </div>
+                            <div class="form-group">
+                                <label for="idTipoAcao">Id Tipo Ação:</label>
+                                <input type="number" class="form-control" id="idTipoAcao" value="@Model.idTipoAcao">
+                            </div>
+                            <div class="form-group">
+                                <label for="caminho">Caminho:</label>
+                                <input type="text" class="form-control" id="caminho" value="@Model.Caminho">
+                            </div>
+                            <div class="form-group">
+                                <label for="idMotorAux">Id Motor Auxiliar:</label>
+                                <input type="number" disabled class="form-control" id="idMotorAux" value="@Model.idMotorAux">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" onclick="salvaAcao()" class="btn btn-default">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
