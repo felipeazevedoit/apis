@@ -8,6 +8,7 @@ namespace SegurancaBO
     {
         public static Token GerateTokenValido(string acao, int idusuario, int idCliente, string ip)
         {
+
             try
             {
                 var lastToken = TokenDAO.GetLastToken(idusuario, idCliente);
@@ -17,7 +18,7 @@ namespace SegurancaBO
                 }
                 else
                 {
-                    var token = CreateToken(acao, idusuario,idCliente, ip);
+                    var token = CreateToken(acao, idusuario, idCliente, ip);
 
                     TokenDAO.Save(token);
                     return token;
