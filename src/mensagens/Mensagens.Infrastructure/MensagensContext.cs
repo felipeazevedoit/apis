@@ -12,9 +12,9 @@ namespace Mensagens.Infrastructure
     {
         public DbSet<Mensagem> Mensagens { get; set; }
         public MensagensContext()
-            : base("Data Source=187.84.232.164;Initial Catalog=Mensagens;Persist Security Info=True;User ID=sa;Password=StaffPro@123;")
+            : base("Data Source=187.84.232.164;Initial Catalog=Mensagens;Persist Security Info=True;User ID=sa;Password=!Nm-&8;")
         //public MensagensContext()
-        //   : base(@"data source=TSERVICES\SQLEXPRESS;database=Mensagens;Integrated Security=SSPI;persist security info=True;")
+        //   : base(@"data source=187.84.228.245;database=Mensagens;Integrated Security=SSPI;persist security info=True;")
         {
             var ensureDLLIsCopied =
                 System.Data.Entity.SqlServer.SqlProviderServices.Instance;

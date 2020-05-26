@@ -15,8 +15,8 @@ namespace WpFinanceiro.Infrastructure
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"Server=TSERVICES\SQLEXPRESS;Database=StaffProFinanceiro;Trusted_Connection=True;Integrated Security = True;");
-            //optionsBuilder.UseSqlServer(@"Data Source=34.226.175.244;Initial Catalog=StaffProFinanceiro;Persist Security Info=True;User ID=sa;Password=StaffPro@123;");
+            optionsBuilder.UseSqlServer(@"Server=187.84.228.245;Database=StaffProFinanceiro;Trusted_Connection=True;Integrated Security = True;");
+            //optionsBuilder.UseSqlServer(@"Data Source=34.226.175.244;Initial Catalog=StaffProFinanceiro;Persist Security Info=True;User ID=sa;Password=!Nm-&8;");
         }
     }
 }

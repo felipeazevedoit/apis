@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\fronts",
+    "\\src\\fronts\\front_core_admin"
   ],
-  "SelectedNode": "\\src\\principal",
+  "SelectedNode": "\\src\\fronts\\front_core_admin\\WebPixUIAdmin.sln",
   "PreviewInSolutionExplorer": false
 }
