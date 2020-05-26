@@ -1,0 +1,96 @@
+﻿@model IEnumerable<SaudeComVoce.Models.NoticiaViewModel>
+
+
+@{
+    ViewBag.Title = "Todas Notícias";
+}
+
+<section id="section-noticias-01">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box">
+                    <div class="avatar">
+                        <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                                <h3 class="title-dynamic -title"><span class="text-book">Últimas</span> Notícias</h3>
+                            </div>
+
+                            <div class="col-lg-6 align-self-center">
+                                <form class="form-inline form-paciente">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Pesquisar notícia">
+                                    <button type="button" class="btn btn-primary mb-2" onclick="buscarN()"><i class="flaticon-magnifying-glass"></i> Pesquisar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                        @foreach (var item in Model)
+                        {
+                            <a href="/Noticias/Index/@item.ID">
+                                <div class="row scrollpane">
+                                    <div class="col-lg-12" id="result-pai">
+                                        <div class="-news" id="result">
+                                            @if (item.Midia != null)
+                                            {
+                                                <img src="data:image/@item.Midia.Extensao.Replace(".", "");base64,@item.Midia.ArquivoB64" style="width:100% !important; height:500px !important" class="img-news img-fluid" />
+                                            }
+                                            <div class="title-news mt-3">
+                                                <ul class="list-unstyled list-inline m-0">
+                                                    <li class="list-inline-item"><i class="flaticon-calendar-1"></i> @item.DataCriacao.ToString("dd/MM/yyyy")</li>
+                                                </ul>
+                                                <h5 class="title-dynamic m-0">@item.Nome</h5>
+                                                <p class="card-text">@item.Descricao</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="response"></div>
+                                </div>
+                            </a>
+                        }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts
+    {
+    @*<script>
+        function loadResults() {
+            var result = $('#repitir').clone();
+            $(".response").html('<i class="fas fa-spinner fa-spin"></i>');
+            var $results = $("#repitir");
+            $(".loading").fadeOut('fast', function () {
+                $(this).remove();
+            });
+            var $data = result;
+            $data.hide();
+            $results.append(result);
+            $data.fadeIn();
+            $(".response").html('');
+
+            //alert('aaaa')
+        };
+
+        $(function () {
+            loadResults();
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 800) {
+                    //alert($(window).scrollTop())
+                    loadResults();
+                    /* $('html,body').animate({
+                        scrollTop: $(document).height() - $(window).height()
+                    }, 'slow'); */
+                }
+            });
+
+        });
+    </script>*@
+<script>
+    function buscarN() {
+            window.location.href = '/Pesquisa/Resultado?texto=' + $("#inlineFormInputName2").val();
+        };
+    </script>
+}
+

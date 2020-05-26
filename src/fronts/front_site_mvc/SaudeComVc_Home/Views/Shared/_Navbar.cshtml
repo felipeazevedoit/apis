@@ -1,0 +1,127 @@
+﻿
+<nav class="navbar navbar-expand-lg bg-tranp">
+    <div class="container position-relative">
+        <a class="navbar-brand menu-mobile d-sm-none logo-mobile" href="/Home/Index"><img src="~/assets-saude/images/logo-iMedFit.png" width="120" /></a>
+        <span class="menu-mobile d-sm-none" onclick="openNav()">&#9776; Menu</span>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="/Home/Index"><img src="~/assets-saude/images/logo-iMedFit.png" width="140" /></a>
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0" id="topnav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Home/Index" title="Home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Home/About" title="Sobre">Sobre</a>
+                </li>
+                @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.idPerfil != 12)
+                {
+
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#" title="Telemedicina">Telemedicina</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Noticias/ListaNoticias" title="Notícias">Notícias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Parceiros" title="Parceiros">Parceiros</a>
+                    </li>
+                }
+                @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado != null && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0 && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.idPerfil != 12)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Medico/ListagemMedico" title="Médicos">Médicos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" title="Consulte-se Agora" onclick="consulteseAgr()">Consulte-se Agora</a>
+                    </li>
+                }
+
+                @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.idPerfil == 12)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle drop-menu d-flex align-items-center" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gerenciamento de Notícias</a>
+                        <div class="dropdown-menu" style="margin-left:65%">
+                            <a class="dropdown-item" href="@Url.Action("CadastrarNoticia", "Noticias")">Cadastrar Notícias</a>
+                            <a class="dropdown-item" href="@Url.Action("VisualizarNoticia", "Noticias")">Visualizar Notícias</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle drop-menu d-flex align-items-center" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Minha Página</a>
+                        <div class="dropdown-menu" style="margin-left:65%">
+                            <a class="dropdown-item" href="@Url.Action("Pessoal", "WhiteLabel")">Apresentação Pessoal</a>
+                            <a class="dropdown-item" href="@Url.Action("Portifolio", "WhiteLabel")">Cadastrar Portifólio</a>
+                            <a class="dropdown-item" href="@Url.Action("WhiteLabel", "Medico", new { nome = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome, id = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario }))">Visualizar Minha Página</a>
+                        </div>
+                    </li>
+                }
+
+                @Html.Action("Notificacoes", "Shared")
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link -search" id="searchtoggl"><i class="flaticon-magnifying-glass"></i></a>
+                </li>
+
+                @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado != null && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+                {
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle drop-menu d-flex align-items-center" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            @if (!string.IsNullOrEmpty(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar))
+                            {
+                                <img class="rounded-circle" width="40px"
+                                     src="data:image/@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.AvatarExtension.Replace(".", "");base64,@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar" />
+                            }
+                            else
+                            {
+                                <img width="40px" class="rounded-circle" src="~/Img/avatar.png" />
+                            }
+
+                            <span>Bem-vindo(a)!<br><span class="name">@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome</span></span>
+                        </a>
+
+                        @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.idPerfil == 12) //Medicos
+                        {
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="@Url.Action("EditarAsync", "Usuarios", new { id = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario })">Meus Dados</a>
+                                <a class="dropdown-item" href="#" onclick="carregarModalConvite()">Convidar um Paciente</a>
+                                <a class="dropdown-item" href="@Url.Action("Index", "MedicoXPaciente")">Meus Pacientes</a>
+                                <a class="dropdown-item" href="/Chat/Index">Chat</a>
+                                <a class="dropdown-item" href="@Url.Action("Sair", "Login")">Sair</a>
+                            </div>
+                        }
+                        else if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.idPerfil == 14) //Pacientes
+                        {
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="@Url.Action("Editar", "Paciente", new { id = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario })">Meus Dados</a>
+                        <a class="dropdown-item" href="@Url.Action("Formulario", "Paciente")">Ficha de Saúde</a>
+                        <a class="dropdown-item" href="@Url.Action("Feed", "Paciente")">Feed de Notícias</a>
+                        <a class="dropdown-item" href="/Chat/Index">Chat</a>
+                        <a class="dropdown-item" href="@Url.Action("Sair", "Login")">Sair</a>
+                    </div>
+                        }
+                        else
+                        {
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="@Url.Action("Sair", "Login")">Sair</a>
+                            </div>
+                        }
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="defaut-btn-gray" href="#" title="Contato" onclick="carregaModalEscolha()">Cadastre-se</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="defaut-btn-gradient ml-2" href="@Url.Action("Index", "Login")" title="Contato"><i class="flaticon-user"></i> Entrar</a>
+                    </li>
+                }
+            </ul>
+            <div id="searchbar" class="clearfix">
+                <form id="searchform" method="get" action="searchpage.php">
+                    <button type="submit" id="searchsubmit" class="fa fa-search" onclick="pesquisar()"></button>
+                    <input type="search" name="s" id="s" placeholder="Pesquisar..." autocomplete="off">
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>

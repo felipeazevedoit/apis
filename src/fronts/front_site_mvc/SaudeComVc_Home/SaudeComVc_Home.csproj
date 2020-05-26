@@ -1,0 +1,1512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C2D14B49-7397-4202-A14B-7250071E4E00}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SaudeComVc_Home</RootNamespace>
+    <AssemblyName>SaudeComVc_Home</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.6</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.7\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.7.3\lib\net461\Rotativa.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ComentariosController.cs" />
+    <Compile Include="Controllers\ConviteController.cs" />
+    <Compile Include="Controllers\CurriculoController.cs" />
+    <Compile Include="Controllers\MedicoXPacienteController.cs" />
+    <Compile Include="Controllers\MidiasController.cs" />
+    <Compile Include="Controllers\PesquisaController.cs" />
+    <Compile Include="Controllers\TermosController.cs" />
+    <Compile Include="Controllers\VisualizarFichaController.cs" />
+    <Compile Include="Controllers\WhatsControllController.cs" />
+    <Compile Include="Controllers\WhiteLabelController.cs" />
+    <Compile Include="Exceptions\DocumentoException.cs" />
+    <Compile Include="Exceptions\MidiaException.cs" />
+    <Compile Include="Helpers\ConsumingApiRest.cs" />
+    <Compile Include="Models\CategoriaViewModel.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
+    <Compile Include="Models\ChatViewModel.cs" />
+    <Compile Include="Models\DocStatusObservacoes.cs" />
+    <Compile Include="Models\DocumentoStatus.cs" />
+    <Compile Include="Models\DocumentoTipo.cs" />
+    <Compile Include="Models\DocumentoViewModel.cs" />
+    <Compile Include="Models\EnderecoViewModel.cs" />
+    <Compile Include="Models\FeedViewModel.cs" />
+    <Compile Include="Models\FichaFeed.cs" />
+    <Compile Include="Models\FichaMedicaController.cs" />
+    <Compile Include="Models\GrupoViewModel.cs" />
+    <Compile Include="Models\MedicoEnderecoViewModel.cs" />
+    <Compile Include="Models\MedicoXPacienteViewModel.cs" />
+    <Compile Include="Models\NoticiaXPacienteViewModel.cs" />
+    <Compile Include="Models\MensagemViewModel.cs" />
+    <Compile Include="Models\NotificacaoViewModel.cs" />
+    <Compile Include="Models\PacienteEnderecoViewModel.cs" />
+    <Compile Include="Models\PacienteXGrupoViewModel.cs" />
+    <Compile Include="Models\PesquisaViewModel.cs" />
+    <Compile Include="Models\PaginaXPacienteViewModel.cs" />
+    <Compile Include="Models\TelefonePacienteViewModel.cs" />
+    <Compile Include="Models\TelefoneViewModel.cs" />
+    <Compile Include="Controllers\ClinicaController.cs" />
+    <Compile Include="Controllers\FornecedorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LandingPageController.cs" />
+    <Compile Include="Controllers\ListaController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MedicoController.cs" />
+    <Compile Include="Controllers\NoticiasController.cs" />
+    <Compile Include="Controllers\PacienteController.cs" />
+    <Compile Include="Controllers\ProfissionalController.cs" />
+    <Compile Include="Controllers\TelDoctorController.cs" />
+    <Compile Include="Exceptions\PerguntasException.cs" />
+    <Compile Include="Helpers\RemetenteObject.cs" />
+    <Compile Include="Models\ConvenioViewModel.cs" />
+    <Compile Include="Models\ConviteViewModel.cs" />
+    <Compile Include="Models\EmailModel.cs" />
+    <Compile Include="Models\EmpresasViewModel.cs" />
+    <Compile Include="Models\EspecialidadeViewModel.cs" />
+    <Compile Include="Models\HistoricoViewModel.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\Mail.cs" />
+    <Compile Include="Models\MedicoXEspecialidadeViewModel.cs" />
+    <Compile Include="Models\MedicoXPaciente.cs" />
+    <Compile Include="Models\PaginaViewModel.cs" />
+    <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Exceptions\NoticiaException.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Log.cs" />
+    <Compile Include="Helpers\NoticiaObject.cs" />
+    <Compile Include="Helpers\PixCoreValues.cs" />
+    <Compile Include="Helpers\ServiceHelper.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\ClienteViewModel.cs" />
+    <Compile Include="Models\ComentarioViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\LogModel.cs" />
+    <Compile Include="Models\MedicoViewModel.cs" />
+    <Compile Include="Models\MidiaViewModel.cs" />
+    <Compile Include="Models\NoticiaViewModel.cs" />
+    <Compile Include="Models\PacienteViewModel.cs" />
+    <Compile Include="Models\PageViewModel.cs" />
+    <Compile Include="Models\PerfilViewModel.cs" />
+    <Compile Include="Models\PerguntaViewModel.cs" />
+    <Compile Include="Models\PermissaoViewModel.cs" />
+    <Compile Include="Models\ProfissionalViewModel.cs" />
+    <Compile Include="Models\RespostaViewModel.cs" />
+    <Compile Include="Models\ServicoViewModel.cs" />
+    <Compile Include="Models\TamanhoViewModel.cs" />
+    <Compile Include="Models\TelDoctorResultViewModel.cs" />
+    <Compile Include="Models\TelDoctorViewModel.cs" />
+    <Compile Include="Models\TipoRespostaViewModel.cs" />
+    <Compile Include="Models\UsuarioTDViewModel.cs" />
+    <Compile Include="Models\UsuarioViewModel.cs" />
+    <Compile Include="Models\UsuarioXPerfilViewModel.cs" />
+    <Compile Include="Models\WhatsControlViewModel.cs" />
+    <Compile Include="Models\WhiteLabelAViewModel.cs" />
+    <Compile Include="Models\WhiteLabelViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets-saude\css\animate.css" />
+    <Content Include="assets-saude\css\chat.css" />
+    <Content Include="assets-saude\css\main.css" />
+    <Content Include="assets-saude\css\util.css" />
+    <Content Include="assets-saude\fontes\flaticon.css" />
+    <Content Include="assets-saude\fontes\flaticon.html" />
+    <Content Include="assets-saude\fontes\Flaticon.svg" />
+    <Content Include="assets-saude\fontes\iconic\css\material-design-iconic-font.css" />
+    <Content Include="assets-saude\fontes\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="assets-saude\fontes\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="assets-saude\images\avatar.jpg" />
+    <Content Include="assets-saude\images\bg-login.jpg" />
+    <Content Include="assets-saude\images\bg-news.jpg" />
+    <Content Include="assets-saude\images\bg-search-medical.png" />
+    <Content Include="assets-saude\images\bg-search.jpg" />
+    <Content Include="assets-saude\images\bg-top-bar.jpg" />
+    <Content Include="assets-saude\images\doctor-01.jpg" />
+    <Content Include="assets-saude\images\doctor.jpg" />
+    <Content Include="assets-saude\images\doctor.png" />
+    <Content Include="assets-saude\images\Homem.png" />
+    <Content Include="assets-saude\images\image-news.jpg" />
+    <Content Include="assets-saude\images\iMedFit_logo-dark.jpg" />
+    <Content Include="assets-saude\images\logo-dark.png" />
+    <Content Include="assets-saude\images\logo-iMedFit.png" />
+    <Content Include="assets-saude\images\logo.png" />
+    <Content Include="assets-saude\images\Mulher.png" />
+    <Content Include="assets-saude\images\parceiro-01.jpg" />
+    <Content Include="assets-saude\images\parceiro-02.jpg" />
+    <Content Include="assets-saude\images\slide-01.jpg" />
+    <Content Include="assets-saude\images\slide-02.jpg" />
+    <Content Include="assets-saude\images\slide-03.jpg" />
+    <Content Include="assets-saude\images\slide-04.jpg" />
+    <Content Include="assets-saude\images\slide-05.jpg" />
+    <Content Include="assets-saude\images\space-01.jpg" />
+    <Content Include="assets-saude\js\app.js" />
+    <Content Include="assets-saude\js\bs-custom-file-input.js" />
+    <Content Include="assets-saude\js\jquery.min.js" />
+    <Content Include="assets-saude\js\tagsinput.js" />
+    <Content Include="assets-saude\scss\config.css" />
+    <Content Include="assets-saude\scss\main.css" />
+    <Content Include="assets-saude\scss\mixins.css" />
+    <Content Include="assets-saude\scss\pages\cadastro-noticias.css" />
+    <Content Include="assets-saude\scss\pages\chat.css" />
+    <Content Include="assets-saude\scss\pages\detalhe-medico.css" />
+    <Content Include="assets-saude\scss\pages\ficha-paciente.css" />
+    <Content Include="assets-saude\scss\pages\index.css" />
+    <Content Include="assets-saude\scss\pages\login.css" />
+    <Content Include="assets-saude\scss\pages\medico-paciente.css" />
+    <Content Include="assets-saude\scss\pages\medico.css" />
+    <Content Include="assets-saude\scss\pages\modals.css" />
+    <Content Include="assets-saude\scss\pages\noticia.css" />
+    <Content Include="assets-saude\scss\pages\paciente.css" />
+    <Content Include="assets-saude\scss\pages\parceiro.css" />
+    <Content Include="assets-saude\scss\pages\pesquisa-medico.css" />
+    <Content Include="assets-saude\scss\pages\pesquisa.css" />
+    <Content Include="assets-saude\scss\pages\portfolio.css" />
+    <Content Include="assets-saude\scss\pages\sobre.css" />
+    <Content Include="assets-saude\scss\variables.css" />
+    <Content Include="assets-saude\vendor\bootstrap\.babelrc.js" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\brand\bootstrap-outline.svg" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\brand\bootstrap-punchout.svg" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\brand\bootstrap-social-logo.png" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\brand\bootstrap-social.png" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\brand\bootstrap-solid.svg" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\css\docs.min.css" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\bootstrap-stack.png" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\bootstrap-themes.png" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\favicons\android-chrome-192x192.png" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\favicons\android-chrome-512x512.png" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\favicons\apple-touch-icon.png" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\favicons\browserconfig.xml" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\favicons\favicon-16x16.png" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\favicons\favicon-32x32.png" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\favicons\mstile-144x144.png" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\favicons\mstile-150x150.png" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\favicons\mstile-310x150.png" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\favicons\mstile-310x310.png" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\favicons\mstile-70x70.png" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\favicons\safari-pinned-tab.svg" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\js\docs.min.js" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\js\src\application.js" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\js\src\ie-emulation-modes-warning.js" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\js\src\pwa.js" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\js\vendor\anchor.min.js" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\js\vendor\clipboard.min.js" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\js\vendor\holder.min.js" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\js\vendor\jquery-slim.min.js" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\js\vendor\popper.min.js" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\docs.css" />
+    <Content Include="assets-saude\vendor\bootstrap\build\change-version.js" />
+    <Content Include="assets-saude\vendor\bootstrap\build\generate-sri.js" />
+    <Content Include="assets-saude\vendor\bootstrap\build\lint-vars.js" />
+    <Content Include="assets-saude\vendor\bootstrap\build\postcss.config.js" />
+    <Content Include="assets-saude\vendor\bootstrap\build\rollup.config.js" />
+    <Content Include="assets-saude\vendor\bootstrap\build\saucelabs-unit-test.js" />
+    <Content Include="assets-saude\vendor\bootstrap\build\vnu-jar.js" />
+    <Content Include="assets-saude\vendor\bootstrap\build\workbox.js" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\album\album.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\album\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\blog\blog.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\blog\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\carousel\carousel.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\carousel\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\checkout\form-validation.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\checkout\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\cover\cover.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\cover\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\dashboard\dashboard.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\dashboard\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\floating-labels\floating-labels.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\floating-labels\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\grid\grid.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\grid\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\jumbotron\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\jumbotron\jumbotron.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\navbar-bottom\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\navbar-fixed\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\navbar-fixed\navbar-top-fixed.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\navbar-static\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\navbar-static\navbar-top.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\navbars\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\navbars\navbar.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\offcanvas\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\offcanvas\offcanvas.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\offcanvas\offcanvas.js" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\pricing\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\pricing\pricing.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\product\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\product\product.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\album.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\blog.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\carousel.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\checkout.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\cover.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\dashboard.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\floating-labels.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\grid.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\jumbotron.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\navbar-bottom.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\navbar-fixed.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\navbar-static.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\navbars.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\offcanvas.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\pricing.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\product.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\sign-in.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\starter-template.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\sticky-footer-navbar.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\screenshots\sticky-footer.png" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\sign-in\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\sign-in\signin.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\starter-template\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\starter-template\starter-template.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\sticky-footer-navbar\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\sticky-footer-navbar\sticky-footer-navbar.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\sticky-footer\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\sticky-footer\sticky-footer.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\tooltip-viewport\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\tooltip-viewport\tooltip-viewport.css" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\tooltip-viewport\tooltip-viewport.js" />
+    <Content Include="assets-saude\vendor\bootstrap\favicon.ico" />
+    <Content Include="assets-saude\vendor\bootstrap\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\alert.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\button.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\carousel.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\collapse.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\dropdown.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\index.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\modal.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\popover.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\scrollspy.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\tab.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\tooltip.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\util.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\src\alert.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\src\button.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\src\carousel.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\src\collapse.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\src\dropdown.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\src\index.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\src\modal.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\src\popover.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\src\scrollspy.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\src\tab.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\src\tooltip.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\src\util.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\index.html" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\karma.conf.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\unit\alert.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\unit\button.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\unit\carousel.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\unit\collapse.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\unit\dropdown.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\unit\modal.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\unit\popover.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\unit\scrollspy.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\unit\tab.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\unit\tooltip.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\unit\util.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\vendor\jquery-1.9.1.min.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\vendor\qunit.css" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\vendor\qunit.js" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\visual\alert.html" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\visual\button.html" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\visual\carousel.html" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\visual\collapse.html" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\visual\dropdown.html" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\visual\modal.html" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\visual\popover.html" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\visual\scrollspy.html" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\visual\tab.html" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\visual\tooltip.html" />
+    <Content Include="assets-saude\vendor\bootstrap\package.js" />
+    <Content Include="assets-saude\vendor\bootstrap\robots.txt" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\bootstrap-grid.css" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\bootstrap-reboot.css" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\bootstrap.css" />
+    <Content Include="assets-saude\vendor\bootstrap\sw.js" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\ads.html" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\docs-navbar.html" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\docs-sidebar.html" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\favicons.html" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\footer.html" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\header.html" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\icons\bootstrap.svg" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\icons\download.svg" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\icons\github.svg" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\icons\import.svg" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\icons\lightning.svg" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\icons\menu.svg" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\icons\slack.svg" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\icons\twitter.svg" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\scripts.html" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\social.html" />
+    <Content Include="assets-saude\vendor\bootstrap\_layouts\default.html" />
+    <Content Include="assets-saude\vendor\bootstrap\_layouts\docs.html" />
+    <Content Include="assets-saude\vendor\bootstrap\_layouts\examples.html" />
+    <Content Include="assets-saude\vendor\bootstrap\_layouts\home.html" />
+    <Content Include="assets-saude\vendor\bootstrap\_layouts\redirect.html" />
+    <Content Include="assets-saude\vendor\bootstrap\_layouts\simple.html" />
+    <Content Include="assets-saude\vendor\owl-carousel\owl.carousel.min.css" />
+    <Content Include="assets-saude\vendor\owl-carousel\owl.carousel.min.js" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\demo.css" />
+    <Content Include="assets\css\documentation.css" />
+    <Content Include="assets\css\light-bootstrap-dashboard.css" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\fonts\nucleo-icons.svg" />
+    <Content Include="assets\img\apple-icon.png" />
+    <Content Include="assets\img\bg11.jpg" />
+    <Content Include="assets\img\bg4.jpg" />
+    <Content Include="assets\img\bg5.jpg" />
+    <Content Include="assets\img\bg6.jpg" />
+    <Content Include="assets\img\bg7.jpg" />
+    <Content Include="assets\img\bg8.jpg" />
+    <Content Include="assets\img\blog-1.jpg" />
+    <Content Include="assets\img\blog-2.jpg" />
+    <Content Include="assets\img\blog-3.jpg" />
+    <Content Include="assets\img\blog-4.jpg" />
+    <Content Include="assets\img\blog-5.jpg" />
+    <Content Include="assets\img\carousel_1.jpg" />
+    <Content Include="assets\img\carousel_2.jpg" />
+    <Content Include="assets\img\carousel_3.jpg" />
+    <Content Include="assets\img\default-avatar.png" />
+    <Content Include="assets\img\faces\face-0.jpg" />
+    <Content Include="assets\img\faces\face-1.jpg" />
+    <Content Include="assets\img\faces\face-2.jpg" />
+    <Content Include="assets\img\faces\face-3.jpg" />
+    <Content Include="assets\img\faces\face-4.jpg" />
+    <Content Include="assets\img\faces\face-5.jpg" />
+    <Content Include="assets\img\faces\face-6.jpg" />
+    <Content Include="assets\img\faces\face-7.jpg" />
+    <Content Include="assets\img\faces\margot.jpg" />
+    <Content Include="assets\img\faces\tim_vector.jpe" />
+    <Content Include="assets\img\favicon.ico" />
+    <Content Include="assets\img\flags\AD.png" />
+    <Content Include="assets\img\flags\AE.png" />
+    <Content Include="assets\img\flags\AG.png" />
+    <Content Include="assets\img\flags\AM.png" />
+    <Content Include="assets\img\flags\AR.png" />
+    <Content Include="assets\img\flags\AT.png" />
+    <Content Include="assets\img\flags\AU.png" />
+    <Content Include="assets\img\flags\BE.png" />
+    <Content Include="assets\img\flags\BF.png" />
+    <Content Include="assets\img\flags\BG.png" />
+    <Content Include="assets\img\flags\BO.png" />
+    <Content Include="assets\img\flags\BR.png" />
+    <Content Include="assets\img\flags\CA.png" />
+    <Content Include="assets\img\flags\CD.png" />
+    <Content Include="assets\img\flags\CG.png" />
+    <Content Include="assets\img\flags\CH.png" />
+    <Content Include="assets\img\flags\CL.png" />
+    <Content Include="assets\img\flags\CM.png" />
+    <Content Include="assets\img\flags\CN.png" />
+    <Content Include="assets\img\flags\CO.png" />
+    <Content Include="assets\img\flags\CZ.png" />
+    <Content Include="assets\img\flags\DE.png" />
+    <Content Include="assets\img\flags\DJ.png" />
+    <Content Include="assets\img\flags\DK.png" />
+    <Content Include="assets\img\flags\DZ.png" />
+    <Content Include="assets\img\flags\EE.png" />
+    <Content Include="assets\img\flags\EG.png" />
+    <Content Include="assets\img\flags\ES.png" />
+    <Content Include="assets\img\flags\FI.png" />
+    <Content Include="assets\img\flags\FR.png" />
+    <Content Include="assets\img\flags\GA.png" />
+    <Content Include="assets\img\flags\GB.png" />
+    <Content Include="assets\img\flags\GM.png" />
+    <Content Include="assets\img\flags\GT.png" />
+    <Content Include="assets\img\flags\HN.png" />
+    <Content Include="assets\img\flags\HT.png" />
+    <Content Include="assets\img\flags\HU.png" />
+    <Content Include="assets\img\flags\ID.png" />
+    <Content Include="assets\img\flags\IE.png" />
+    <Content Include="assets\img\flags\IL.png" />
+    <Content Include="assets\img\flags\IN.png" />
+    <Content Include="assets\img\flags\IQ.png" />
+    <Content Include="assets\img\flags\IR.png" />
+    <Content Include="assets\img\flags\IT.png" />
+    <Content Include="assets\img\flags\JM.png" />
+    <Content Include="assets\img\flags\JO.png" />
+    <Content Include="assets\img\flags\JP.png" />
+    <Content Include="assets\img\flags\KG.png" />
+    <Content Include="assets\img\flags\KN.png" />
+    <Content Include="assets\img\flags\KP.png" />
+    <Content Include="assets\img\flags\KR.png" />
+    <Content Include="assets\img\flags\KW.png" />
+    <Content Include="assets\img\flags\KZ.png" />
+    <Content Include="assets\img\flags\LA.png" />
+    <Content Include="assets\img\flags\LB.png" />
+    <Content Include="assets\img\flags\LC.png" />
+    <Content Include="assets\img\flags\LS.png" />
+    <Content Include="assets\img\flags\LU.png" />
+    <Content Include="assets\img\flags\LV.png" />
+    <Content Include="assets\img\flags\MG.png" />
+    <Content Include="assets\img\flags\MK.png" />
+    <Content Include="assets\img\flags\ML.png" />
+    <Content Include="assets\img\flags\MM.png" />
+    <Content Include="assets\img\flags\MT.png" />
+    <Content Include="assets\img\flags\MX.png" />
+    <Content Include="assets\img\flags\NA.png" />
+    <Content Include="assets\img\flags\NE.png" />
+    <Content Include="assets\img\flags\NG.png" />
+    <Content Include="assets\img\flags\NI.png" />
+    <Content Include="assets\img\flags\NL.png" />
+    <Content Include="assets\img\flags\NO.png" />
+    <Content Include="assets\img\flags\OM.png" />
+    <Content Include="assets\img\flags\PA.png" />
+    <Content Include="assets\img\flags\PE.png" />
+    <Content Include="assets\img\flags\PG.png" />
+    <Content Include="assets\img\flags\PK.png" />
+    <Content Include="assets\img\flags\PL.png" />
+    <Content Include="assets\img\flags\PT.png" />
+    <Content Include="assets\img\flags\PY.png" />
+    <Content Include="assets\img\flags\QA.png" />
+    <Content Include="assets\img\flags\RO.png" />
+    <Content Include="assets\img\flags\RU.png" />
+    <Content Include="assets\img\flags\RW.png" />
+    <Content Include="assets\img\flags\SA.png" />
+    <Content Include="assets\img\flags\SE.png" />
+    <Content Include="assets\img\flags\SG.png" />
+    <Content Include="assets\img\flags\SL.png" />
+    <Content Include="assets\img\flags\SN.png" />
+    <Content Include="assets\img\flags\SO.png" />
+    <Content Include="assets\img\flags\SV.png" />
+    <Content Include="assets\img\flags\TD.png" />
+    <Content Include="assets\img\flags\TJ.png" />
+    <Content Include="assets\img\flags\TL.png" />
+    <Content Include="assets\img\flags\TR.png" />
+    <Content Include="assets\img\flags\TZ.png" />
+    <Content Include="assets\img\flags\UA.png" />
+    <Content Include="assets\img\flags\US.png" />
+    <Content Include="assets\img\flags\VE.png" />
+    <Content Include="assets\img\flags\VN.png" />
+    <Content Include="assets\img\flags\YE.png" />
+    <Content Include="assets\img\full-screen-image-1.jpg" />
+    <Content Include="assets\img\full-screen-image-2.jpg" />
+    <Content Include="assets\img\full-screen-image-3.jpg" />
+    <Content Include="assets\img\full-screen-image-4.jpg" />
+    <Content Include="assets\img\loading-bubbles.svg" />
+    <Content Include="assets\img\margot.jpg" />
+    <Content Include="assets\img\mask.png" />
+    <Content Include="assets\img\new_logo.png" />
+    <Content Include="assets\img\sidebar-1.jpg" />
+    <Content Include="assets\img\sidebar-2.jpg" />
+    <Content Include="assets\img\sidebar-3.jpg" />
+    <Content Include="assets\img\sidebar-4.jpg" />
+    <Content Include="assets\img\sidebar-5.jpg" />
+    <Content Include="assets\img\tim_80x80.png" />
+    <Content Include="assets\js\core\popper.min.js" />
+    <Content Include="assets\js\demo.js" />
+    <Content Include="assets\js\light-bootstrap-dashboard.js" />
+    <Content Include="assets\js\plugins\bootstrap-datetimepicker.js" />
+    <Content Include="assets\js\plugins\bootstrap-notify.js" />
+    <Content Include="assets\js\plugins\bootstrap-paginator.js" />
+    <Content Include="assets\js\plugins\bootstrap-selectpicker.js" />
+    <Content Include="assets\js\plugins\bootstrap-switch.js" />
+    <Content Include="assets\js\plugins\bootstrap-table.js" />
+    <Content Include="assets\js\plugins\bootstrap-tagsinput.js" />
+    <Content Include="assets\js\plugins\chartist.min.js" />
+    <Content Include="assets\js\plugins\chosen.jquery.js" />
+    <Content Include="assets\js\plugins\fullcalendar.min.js" />
+    <Content Include="assets\js\plugins\jasny-bootstrap.min.js" />
+    <Content Include="assets\js\plugins\jquery-jvectormap.js" />
+    <Content Include="assets\js\plugins\jquery.bootstrap-wizard.js" />
+    <Content Include="assets\js\plugins\jquery.dataTables.min.js" />
+    <Content Include="assets\js\plugins\jquery.loading.js" />
+    <Content Include="assets\js\plugins\jquery.mask.js" />
+    <Content Include="assets\js\plugins\jquery.validate.min.js" />
+    <Content Include="assets\js\plugins\loading.js" />
+    <Content Include="assets\js\plugins\moment.min.js" />
+    <Content Include="assets\js\plugins\nouislider.js" />
+    <Content Include="assets\js\plugins\perfect-scrollbar.jquery.min.js" />
+    <Content Include="assets\js\plugins\sweetalert2.min.js" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-tagsinput.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\chat\chat.css" />
+    <Content Include="Content\chat\flexbox.css" />
+    <Content Include="Content\chat\reset.css" />
+    <Content Include="Content\chosen\bootstrap-chosen.css" />
+    <Content Include="Content\chosen\chosen-sprite%402x.png" />
+    <Content Include="Content\chosen\chosen-sprite.png" />
+    <Content Include="Content\css.css" />
+    <Content Include="Content\easy-autocomplete.css" />
+    <Content Include="Content\easy-autocomplete.min.css" />
+    <Content Include="Content\easy-autocomplete.themes.css" />
+    <Content Include="Content\easy-autocomplete.themes.min.css" />
+    <Content Include="Content\editar.css" />
+    <Content Include="Content\feed\assets\img\LogoSWhite.png" />
+    <Content Include="Content\feed\assets\img\saudavel.jpg" />
+    <Content Include="Content\feed\css\styles.css" />
+    <Content Include="Content\ficha.css" />
+    <Content Include="Content\form.css" />
+    <Content Include="Content\Formulario.css" />
+    <Content Include="Content\FormularioPerguntas.css" />
+    <Content Include="Content\listagem.css" />
+    <Content Include="Content\loading.css" />
+    <Content Include="Content\semantic.css" />
+    <Content Include="Content\templateFinal.css" />
+    <Content Include="Content\_PacientesCadastro.css" />
+    <Content Include="Css\2.0.css" />
+    <Content Include="Css\bootstrap-select.css" />
+    <Content Include="Css\bootstrap-select.min.css" />
+    <Content Include="Css\Gradients.css" />
+    <Content Include="Css\CssDrAdriano.css" />
+    <Content Include="Css\CssDrAndrianoTempDois.css" />
+    <Content Include="Css\FichaDeSaude.css" />
+    <Content Include="Css\form-clinica.css" />
+    <Content Include="Css\form-fornecedor.css" />
+    <Content Include="Css\form-login.css" />
+    <Content Include="Css\form-medico.css" />
+    <Content Include="Css\form-modal.css" />
+    <Content Include="Css\form-paciente.css" />
+    <Content Include="Css\form-profissional.css" />
+    <Content Include="Css\formulario.css" />
+    <Content Include="Css\FormularioPerguntas.css" />
+    <Content Include="Css\jquery.loading.css" />
+    <Content Include="Css\Listagem.css" />
+    <Content Include="Css\loginHome.css" />
+    <Content Include="Css\medico-images.css" />
+    <Content Include="Css\meusDados.css" />
+    <Content Include="Css\ModalPerguntas.css" />
+    <Content Include="Css\noticia.css" />
+    <Content Include="Css\Responsivo.css" />
+    <Content Include="Css\ResponsivoParceiros.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Icons\edit.png" />
+    <Content Include="Icons\facebook-icon.png" />
+    <Content Include="Icons\facebook.png" />
+    <Content Include="Icons\facebook1.png" />
+    <Content Include="Icons\instagram-icon.png" />
+    <Content Include="Icons\instagram.png" />
+    <Content Include="Icons\instagram1.png" />
+    <Content Include="Icons\lamp.png" />
+    <Content Include="Icons\menu.png" />
+    <Content Include="Icons\search %281%29.png" />
+    <Content Include="Icons\search %282%29.png" />
+    <Content Include="Icons\search.png" />
+    <Content Include="Icons\time.png" />
+    <Content Include="Icons\tools.png" />
+    <Content Include="Icons\twitter-icon.png" />
+    <Content Include="Icons\twitter.png" />
+    <Content Include="Icons\whatsapp-logo.png" />
+    <Content Include="Icons\whatsapp.png" />
+    <Content Include="Icons\whatsapp1.png" />
+    <Content Include="Img\001.jpg" />
+    <Content Include="Img\41263122_2187986468153390_5253088627523424838_n.jpg" />
+    <Content Include="Img\alongamento5-832x520.jpg" />
+    <Content Include="Img\Antes-e-depois-de-pessoas-que-emagreceram-em-um-programa-de-TV-1.jpg" />
+    <Content Include="Img\avatar.png" />
+    <Content Include="Img\balão-de-mensagem-png.png" />
+    <Content Include="Img\banner.jpg" />
+    <Content Include="Img\bannerHome.bmp" />
+    <Content Include="Img\Canal-do-Medico.jpg" />
+    <Content Include="Img\destaque-5.jpg" />
+    <Content Include="Img\doutor-de-sorriso-no-trabalho-19524898.jpg" />
+    <Content Include="Img\exame.jpg" />
+    <Content Include="Img\Fabiana-Karla.jpg" />
+    <Content Include="Img\facebook1.png" />
+    <Content Include="Img\generic-user-purple.png" />
+    <Content Include="Img\gravida.jpg" />
+    <Content Include="Img\Homem.png" />
+    <Content Include="assets-saude\images\iMedFit_logo-white.png" />
+    <Content Include="Img\img_materia_exercicios.jpg" />
+    <Content Include="Img\ingles-medico.png" />
+    <Content Include="Img\instagram1.png" />
+    <Content Include="Img\interior1.jpg" />
+    <Content Include="Img\interior2.jpg" />
+    <Content Include="Img\logo-dark.png" />
+    <Content Include="Img\Logo-grande.png" />
+    <Content Include="Img\logo-positiva.png" />
+    <Content Include="Img\Logo.png" />
+    <Content Include="Img\Logo150x40.png" />
+    <Content Include="Img\Logo150x40Azul.png" />
+    <Content Include="Img\Logo150x40Branca.png" />
+    <Content Include="Img\medico.jpg" />
+    <Content Include="Img\medico.png" />
+    <Content Include="Img\Mulher.png" />
+    <Content Include="Img\O-QUE-FAZ-UM-NEFROLOGISTA.jpg" />
+    <Content Include="Img\og9z5k0-5388366.jpg" />
+    <Content Include="Img\paciente.jpg" />
+    <Content Include="Img\paciente.png" />
+    <Content Include="Img\probióticos.jpg" />
+    <Content Include="Img\quais-sao-as-principais-caracteristicas-do-mobiliario-para-consultorio-medico.jpeg" />
+    <Content Include="Img\SaudeComVc-logo.png" />
+    <Content Include="Img\Screenshot_2.png" />
+    <Content Include="Img\searchicon.png" />
+    <Content Include="Img\Sono.jpg" />
+    <Content Include="Img\TeldoctorLogo.png" />
+    <Content Include="Img\Teldoctor\1.png" />
+    <Content Include="Img\Teldoctor\2.png" />
+    <Content Include="Img\Teldoctor\3.png" />
+    <Content Include="Img\Teldoctor\4.png" />
+    <Content Include="Img\Teldoctor\Imagem1.png" />
+    <Content Include="Img\Teldoctor\Imagem10.png" />
+    <Content Include="Img\Teldoctor\Imagem11.png" />
+    <Content Include="Img\Teldoctor\Imagem12.png" />
+    <Content Include="Img\Teldoctor\Imagem2.png" />
+    <Content Include="Img\Teldoctor\Imagem3.png" />
+    <Content Include="Img\Teldoctor\Imagem4.png" />
+    <Content Include="Img\Teldoctor\Imagem5.png" />
+    <Content Include="Img\Teldoctor\Imagem6.png" />
+    <Content Include="Img\Teldoctor\Imagem7.png" />
+    <Content Include="Img\Teldoctor\Imagem8.png" />
+    <Content Include="Img\Teldoctor\Imagem9.png" />
+    <Content Include="Img\Teldoctor\Screenshot_50.png" />
+    <Content Include="Img\Teldoctor\Screenshot_51.png" />
+    <Content Include="Img\Teldoctor\Screenshot_52.png" />
+    <Content Include="Img\Teldoctor\Screenshot_53.png" />
+    <Content Include="Img\thinkstockphotos-538362292.jpg" />
+    <Content Include="Img\WhatsApp Image 2019-04-10 at 20.45.14.jpeg" />
+    <Content Include="Img\whatsapp1.png" />
+    <Content Include="Img\{9D5BDD8C-4991-42BC-BCA7-09BCB070EF8A}_IMG_6969.jpg" />
+    <Content Include="Plugin\Cropper\cropper.common.js" />
+    <Content Include="Plugin\Cropper\cropper.css" />
+    <Content Include="Plugin\Cropper\cropper.esm.js" />
+    <Content Include="Plugin\Cropper\cropper.js" />
+    <Content Include="Plugin\Cropper\cropper.min.css" />
+    <Content Include="Plugin\Cropper\cropper.min.js" />
+    <Content Include="Plugin\Croppie\croppie.css" />
+    <Content Include="Plugin\Croppie\croppie.js" />
+    <Content Include="Plugin\dropZone\dropzone.min.css" />
+    <Content Include="Plugin\dropZone\dropzone.min.js" />
+    <Content Include="Plugin\jquery.imgareaselect-0.9.10\css\border-anim-h.gif" />
+    <Content Include="Plugin\jquery.imgareaselect-0.9.10\css\border-anim-v.gif" />
+    <Content Include="Plugin\jquery.imgareaselect-0.9.10\css\border-h.gif" />
+    <Content Include="Plugin\jquery.imgareaselect-0.9.10\css\border-v.gif" />
+    <Content Include="Plugin\jquery.imgareaselect-0.9.10\css\imgareaselect-animated.css" />
+    <Content Include="Plugin\jquery.imgareaselect-0.9.10\css\imgareaselect-default.css" />
+    <Content Include="Plugin\jquery.imgareaselect-0.9.10\css\imgareaselect-deprecated.css" />
+    <Content Include="Plugin\jquery.imgareaselect-0.9.10\scripts\jquery.imgareaselect.js" />
+    <Content Include="Plugin\jquery.imgareaselect-0.9.10\scripts\jquery.imgareaselect.min.js" />
+    <Content Include="Plugin\jquery.imgareaselect-0.9.10\scripts\jquery.imgareaselect.pack.js" />
+    <Content Include="Plugin\jquery.imgareaselect-0.9.10\scripts\jquery.min.js" />
+    <Content Include="Plugin\tafify\tagify.js" />
+    <Content Include="Plugin\tafify\tagify.polyfills.js" />
+    <Content Include="Plugin\tagsInput\bootstrap-tagsinput.css" />
+    <Content Include="Plugin\tagsInput\bootstrap-tagsinput.js" />
+    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
+    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
+    <Content Include="Rotativa\wkhtmltoimage.exe" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\buscarCep.js" />
+    <Content Include="Scripts\chamarLoading.js" />
+    <Content Include="Scripts\CollapseMenu.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.loading.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\loginHome.js" />
+    <Content Include="Scripts\masks.js" />
+    <Content Include="Scripts\modal-form.js" />
+    <Content Include="Scripts\navbar-animation-fix.js" />
+    <Content Include="Css\Css.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Img\Screenshot_16.png" />
+    <Content Include="Content\chosen\bootstrap-chosen-variables.less" />
+    <Content Include="Content\chosen\bootstrap-chosen-variables.scss" />
+    <Content Include="Content\chosen\bootstrap-chosen.less" />
+    <Content Include="Content\chosen\bootstrap-chosen.scss" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\fonts\nucleo-icons.eot" />
+    <Content Include="assets\fonts\nucleo-icons.ttf" />
+    <Content Include="assets\fonts\nucleo-icons.woff" />
+    <Content Include="assets\fonts\nucleo-icons.woff2" />
+    <Content Include="App_Browsers\qt.browser" />
+    <Content Include="Css\bootstrap-select.css.map" />
+    <Content Include="Plugin\tafify\tagify.scss" />
+    <Content Include="assets-saude\css\main.css.map" />
+    <Content Include="assets-saude\fontes\Flaticon.eot" />
+    <Content Include="assets-saude\fontes\Flaticon.ttf" />
+    <Content Include="assets-saude\fontes\Flaticon.woff" />
+    <Content Include="assets-saude\fontes\Flaticon.woff2" />
+    <Content Include="assets-saude\fontes\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="assets-saude\fontes\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="assets-saude\fontes\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="assets-saude\fontes\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="assets-saude\fontes\nexa-black.otf" />
+    <Content Include="assets-saude\fontes\nexa-book.otf" />
+    <Content Include="assets-saude\fontes\_flaticon.scss" />
+    <Content Include="assets-saude\scss\config.css.map" />
+    <Content Include="assets-saude\scss\config.scss" />
+    <Content Include="assets-saude\scss\main.css.map" />
+    <Content Include="assets-saude\scss\main.scss" />
+    <Content Include="assets-saude\scss\mixins.css.map" />
+    <Content Include="assets-saude\scss\mixins.scss" />
+    <Content Include="assets-saude\scss\pages\cadastro-noticias.scss" />
+    <Content Include="assets-saude\scss\pages\chat.scss" />
+    <Content Include="assets-saude\scss\pages\detalhe-medico.scss" />
+    <Content Include="assets-saude\scss\pages\ficha-paciente-medico.scss" />
+    <Content Include="assets-saude\scss\pages\ficha-paciente.scss" />
+    <Content Include="assets-saude\scss\pages\index.scss" />
+    <Content Include="assets-saude\scss\pages\login.scss" />
+    <Content Include="assets-saude\scss\pages\medico-paciente.scss" />
+    <Content Include="assets-saude\scss\pages\medico.scss" />
+    <Content Include="assets-saude\scss\pages\modals.scss" />
+    <Content Include="assets-saude\scss\pages\noticia.scss" />
+    <Content Include="assets-saude\scss\pages\paciente.scss" />
+    <Content Include="assets-saude\scss\pages\parceiro.scss" />
+    <Content Include="assets-saude\scss\pages\pesquisa-medico.scss" />
+    <Content Include="assets-saude\scss\pages\pesquisa.scss" />
+    <Content Include="assets-saude\scss\pages\portfolio.scss" />
+    <Content Include="assets-saude\scss\pages\sobre.scss" />
+    <Content Include="assets-saude\scss\variables.css.map" />
+    <Content Include="assets-saude\scss\variables.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\.editorconfig" />
+    <Content Include="assets-saude\vendor\bootstrap\.eslintignore" />
+    <Content Include="assets-saude\vendor\bootstrap\.eslintrc.json" />
+    <Content Include="assets-saude\vendor\bootstrap\.gitattributes" />
+    <Content Include="assets-saude\vendor\bootstrap\.github\CONTRIBUTING.md" />
+    <Content Include="assets-saude\vendor\bootstrap\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="assets-saude\vendor\bootstrap\.gitignore" />
+    <Content Include="assets-saude\vendor\bootstrap\.stylelintignore" />
+    <Content Include="assets-saude\vendor\bootstrap\.stylelintrc" />
+    <Content Include="assets-saude\vendor\bootstrap\.travis.yml" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\css\docs.min.css.map" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\img\favicons\manifest.json" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\js\.eslintrc.json" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\docs.css.map" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\docs.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_ads.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_algolia.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_anchor.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_brand.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_browser-bugs.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_buttons.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_callouts.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_clipboard-js.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_colors.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_component-examples.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_content.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_examples.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_footer.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_masthead.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_nav.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_sidebar.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_skiplink.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_syntax.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\assets\scss\_variables.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\build\.eslintrc.json" />
+    <Content Include="assets-saude\vendor\bootstrap\build\.htmllintrc" />
+    <Content Include="assets-saude\vendor\bootstrap\build\gcp-key.json.enc" />
+    <Content Include="assets-saude\vendor\bootstrap\build\sauce_browsers.json" />
+    <Content Include="assets-saude\vendor\bootstrap\build\ship.sh" />
+    <Content Include="assets-saude\vendor\bootstrap\build\upload-preview.sh" />
+    <Content Include="assets-saude\vendor\bootstrap\build\workbox.config.json" />
+    <Content Include="assets-saude\vendor\bootstrap\CNAME" />
+    <Content Include="assets-saude\vendor\bootstrap\CODE_OF_CONDUCT.md" />
+    <Content Include="assets-saude\vendor\bootstrap\composer.json" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\about\brand.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\about\license.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\about\overview.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\about\translations.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\browser-bugs.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\alerts.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\badge.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\breadcrumb.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\button-group.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\buttons.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\card.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\carousel.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\collapse.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\dropdowns.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\forms.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\input-group.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\jumbotron.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\list-group.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\modal.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\navbar.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\navs.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\pagination.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\popovers.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\progress.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\scrollspy.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\components\tooltips.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\content\code.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\content\figures.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\content\images.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\content\reboot.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\content\tables.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\content\typography.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\.eslintrc.json" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\examples\.stylelintrc" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\extend\approach.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\extend\icons.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\extend\index.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\getting-started\accessibility.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\getting-started\best-practices.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\getting-started\browsers-devices.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\getting-started\build-tools.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\getting-started\contents.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\getting-started\download.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\getting-started\introduction.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\getting-started\javascript.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\getting-started\theming.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\getting-started\webpack.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\layout\grid.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\layout\media-object.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\layout\overview.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\layout\utilities-for-layout.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\migration.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\borders.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\clearfix.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\close-icon.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\colors.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\display.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\embed.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\flex.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\float.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\image-replacement.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\position.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\screenreaders.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\sizing.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\spacing.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\text.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\vertical-align.md" />
+    <Content Include="assets-saude\vendor\bootstrap\docs\4.0\utilities\visibility.md" />
+    <Content Include="assets-saude\vendor\bootstrap\Gemfile" />
+    <Content Include="assets-saude\vendor\bootstrap\Gemfile.lock" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\alert.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\button.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\carousel.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\collapse.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\dropdown.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\index.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\modal.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\popover.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\scrollspy.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\tab.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\tooltip.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\js\dist\util.js.map" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\README.md" />
+    <Content Include="assets-saude\vendor\bootstrap\js\tests\unit\.eslintrc.json" />
+    <Content Include="assets-saude\vendor\bootstrap\LICENSE" />
+    <Content Include="assets-saude\vendor\bootstrap\nuget\bootstrap.nuspec" />
+    <Content Include="assets-saude\vendor\bootstrap\nuget\bootstrap.sass.nuspec" />
+    <Content Include="assets-saude\vendor\bootstrap\nuget\MyGet.ps1" />
+    <Content Include="assets-saude\vendor\bootstrap\package-lock.json" />
+    <Content Include="assets-saude\vendor\bootstrap\package.json" />
+    <Content Include="assets-saude\vendor\bootstrap\README.md" />
+    <Content Include="assets-saude\vendor\bootstrap\sache.json" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\bootstrap-grid.css.map" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\bootstrap-reboot.css.map" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\bootstrap.css.map" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\bootstrap.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_background-variant.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_badge.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_float.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_grid-framework.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_hover.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_nav-divider.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_navbar-align.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_screen-reader.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_size.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_table-row.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_text-emphasis.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_text-hide.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\mixins\_visibility.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\utilities\_align.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\utilities\_background.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\utilities\_borders.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\utilities\_clearfix.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\utilities\_display.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\utilities\_embed.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\utilities\_flex.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\utilities\_float.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\utilities\_position.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\utilities\_screenreaders.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\utilities\_sizing.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\utilities\_spacing.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\utilities\_text.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\utilities\_visibility.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_alert.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_badge.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_button-group.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_buttons.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_card.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_carousel.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_close.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_code.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_custom-forms.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_dropdown.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_forms.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_functions.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_grid.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_images.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_input-group.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_jumbotron.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_list-group.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_media.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_mixins.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_modal.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_nav.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_navbar.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_pagination.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_popover.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_print.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_progress.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_reboot.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_root.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_tables.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_tooltip.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_transitions.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_type.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_utilities.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\scss\_variables.scss" />
+    <Content Include="assets-saude\vendor\bootstrap\_config.yml" />
+    <Content Include="assets-saude\vendor\bootstrap\_data\breakpoints.yml" />
+    <Content Include="assets-saude\vendor\bootstrap\_data\browser-bugs.yml" />
+    <Content Include="assets-saude\vendor\bootstrap\_data\browser-features.yml" />
+    <Content Include="assets-saude\vendor\bootstrap\_data\colors.yml" />
+    <Content Include="assets-saude\vendor\bootstrap\_data\examples.yml" />
+    <Content Include="assets-saude\vendor\bootstrap\_data\grays.yml" />
+    <Content Include="assets-saude\vendor\bootstrap\_data\nav.yml" />
+    <Content Include="assets-saude\vendor\bootstrap\_data\theme-colors.yml" />
+    <Content Include="assets-saude\vendor\bootstrap\_data\translations.yml" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\callout-danger-async-methods.md" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\callout-info-mediaqueries-breakpoints.md" />
+    <Content Include="assets-saude\vendor\bootstrap\_includes\callout-warning-color-assistive-technologies.md" />
+    <Content Include="assets-saude\vendor\bootstrap\_plugins\bugify.rb" />
+    <Content Include="assets-saude\vendor\bootstrap\_plugins\callout.rb" />
+    <Content Include="assets-saude\vendor\bootstrap\_plugins\example.rb" />
+    <Content Include="assets-saude\vendor\bootstrap\_plugins\markdown-block.rb" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\notify.js" />
+    <Content Include="Scripts\pages\clinica.js" />
+    <Content Include="Scripts\pages\convite.js" />
+    <Content Include="Scripts\pages\curriculo.js" />
+    <Content Include="Scripts\pages\empresas-listagem.js" />
+    <Content Include="Scripts\pages\feed\notifyScreen.js" />
+    <Content Include="Scripts\pages\feed\scripts.js" />
+    <Content Include="Scripts\pages\fornecedor.js" />
+    <Content Include="Scripts\pages\home.js" />
+    <Content Include="Scripts\pages\login.js" />
+    <Content Include="Scripts\pages\medico.js" />
+    <Content Include="Scripts\pages\MedicoXPaciente.js" />
+    <Content Include="Scripts\pages\modais.js" />
+    <Content Include="Scripts\pages\noticia.js" />
+    <Content Include="Scripts\pages\paciente.js" />
+    <Content Include="Scripts\pages\pesquisa.js" />
+    <Content Include="Scripts\pages\profissional.js" />
+    <Content Include="Scripts\pages\TelDoctor.js" />
+    <Content Include="Scripts\pages\temporizador.js" />
+    <Content Include="Scripts\pages\usuario-editar.js" />
+    <Content Include="Scripts\pages\validacaoClinica.js" />
+    <Content Include="Scripts\pages\validacaoFornecedor.js" />
+    <Content Include="Scripts\pages\validacaoMedico.js" />
+    <Content Include="Scripts\pages\validacaoPaciente.js" />
+    <Content Include="Scripts\pages\validacaoProfissional.js" />
+    <Content Include="Scripts\pages\whiteLabel.js" />
+    <Content Include="Scripts\plugins\bootstrap-paginator.js" />
+    <Content Include="Scripts\plugins\bootstrap-select.js" />
+    <Content Include="Scripts\plugins\bootstrap-select.min.js" />
+    <Content Include="Scripts\plugins\bootstrap-tagsinput.js" />
+    <Content Include="Scripts\plugins\chosen.jquery.js" />
+    <Content Include="Scripts\plugins\easy\jquery.easy-autocomplete.js" />
+    <Content Include="Scripts\plugins\easy\jquery.easy-autocomplete.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-am_ET.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-am_ET.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-ar_AR.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-ar_AR.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-bg_BG.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-bg_BG.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-cs_CZ.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-da_DK.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-da_DK.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-de_DE.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-de_DE.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-en_US.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-en_US.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-es_CL.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-es_CL.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-es_ES.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-es_ES.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-et_EE.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-et_EE.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-eu.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-eu.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-fa_IR.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-fa_IR.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-fi_FI.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-fi_FI.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-fr_FR.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-fr_FR.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-hr_HR.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-hr_HR.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-hu_HU.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-hu_HU.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-id_ID.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-id_ID.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-it_IT.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-it_IT.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-ja_JP.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-ja_JP.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-kh_KM.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-kh_KM.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-ko_KR.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-ko_KR.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-lt_LT.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-lt_LT.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-lv_LV.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-lv_LV.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-nb_NO.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-nb_NO.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-nl_NL.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-nl_NL.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-pl_PL.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-pl_PL.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-pt_BR.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-pt_BR.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-pt_PT.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-pt_PT.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-ro_RO.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-ro_RO.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-ru_RU.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-ru_RU.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-sk_SK.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-sk_SK.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-sl_SI.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-sl_SI.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-sv_SE.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-sv_SE.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-tr_TR.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-tr_TR.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-ua_UA.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-ua_UA.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-vi_VN.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-vi_VN.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-zh_CN.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-zh_CN.min.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-zh_TW.js" />
+    <Content Include="Scripts\plugins\i18n\defaults-zh_TW.min.js" />
+    <Content Include="Scripts\plugins\jquery.bootpag.js" />
+    <Content Include="Scripts\plugins\jquery.bootpag.min.js" />
+    <Content Include="Scripts\plugins\jquery.dataTables.min.js" />
+    <Content Include="Scripts\plugins\semantic\semantic.js" />
+    <Content Include="Scripts\plugins\semantic\semantic.min.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\teste.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <None Include="Views\Paciente\step_1.cshtml" />
+    <None Include="Views\Paciente\step_2.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\DrAdriano.cshtml" />
+    <Content Include="Views\Home\DrAdrianoTemp2.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Paciente\Editar.cshtml" />
+    <Content Include="Views\Noticias\Index.cshtml" />
+    <Content Include="Views\Medico\WhiteLabel.cshtml" />
+    <Content Include="Views\Clinica\_Clinica.cshtml" />
+    <Content Include="Views\Lista\_Lista.cshtml" />
+    <Content Include="Views\Fornecedor\_Fornecedor.cshtml" />
+    <Content Include="Views\Medico\_Medico.cshtml" />
+    <Content Include="Views\Paciente\_Paciente.cshtml" />
+    <Content Include="Views\Profissional\_Profissional.cshtml" />
+    <Content Include="Views\Home\_Escolha.cshtml" />
+    <Content Include="Views\Medico\_Historico.cshtml" />
+    <Content Include="Views\LandingPage\Index.cshtml" />
+    <Content Include="Views\Home\_Perguntas.cshtml" />
+    <Content Include="Views\Medico\ListagemMedico.cshtml" />
+    <Content Include="Views\TelDoctor\_TelDoctor.cshtml" />
+    <Content Include="Views\Paciente\FichadeSaudeVisualizar.cshtml" />
+    <Content Include="Views\Paciente\FichaSaude.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\EsqueceuSenha.cshtml" />
+    <Content Include="Views\Home\_News.cshtml" />
+    <Content Include="Scripts\plugins\bootstrap-select.js.map" />
+    <Content Include="Scripts\plugins\bootstrap-select.min.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-am_ET.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-ar_AR.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-bg_BG.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-cs_CZ.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-da_DK.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-de_DE.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-en_US.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-es_CL.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-es_ES.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-et_EE.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-eu.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-fa_IR.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-fi_FI.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-fr_FR.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-hr_HR.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-hu_HU.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-id_ID.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-it_IT.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-ja_JP.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-kh_KM.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-ko_KR.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-lt_LT.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-lv_LV.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-nb_NO.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-nl_NL.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-pl_PL.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-pt_BR.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-pt_PT.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-ro_RO.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-ru_RU.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-sk_SK.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-sl_SI.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-sv_SE.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-tr_TR.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-ua_UA.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-vi_VN.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-zh_CN.js.map" />
+    <Content Include="Scripts\plugins\i18n\defaults-zh_TW.js.map" />
+    <Content Include="Views\Noticias\CadastrarNoticia.cshtml" />
+    <Content Include="Views\Noticias\VisualizarNoticia.cshtml" />
+    <Content Include="Views\Convite\_Convite.cshtml" />
+    <Content Include="Views\MedicoXPaciente\Index.cshtml" />
+    <Content Include="Views\MedicoXPaciente\Visualizar.cshtml" />
+    <Content Include="Views\VisualizarFicha\Index.cshtml" />
+    <Content Include="Views\FichaMedica\FichaSaude.cshtml" />
+    <Content Include="Views\Usuarios\Editar.cshtml" />
+    <Content Include="Views\Usuarios\EditarAsync.cshtml" />
+    <Content Include="Views\WhiteLabel\_Deletar.cshtml" />
+    <Content Include="Views\WhiteLabel\Index.cshtml" />
+    <Content Include="Views\Midias\_ListarGaleriaAsync.cshtml" />
+    <Content Include="Views\Midias\Upload.cshtml" />
+    <Content Include="Views\WhiteLabel\Portifolio.cshtml" />
+    <Content Include="Views\WhiteLabel\Pessoal.cshtml" />
+    <Content Include="Views\Pesquisa\Index.cshtml" />
+    <Content Include="Views\Paciente\Formulario.cshtml" />
+    <Content Include="Views\Paciente\Feed.cshtml" />
+    <Content Include="Views\Shared\_Notificacoes.cshtml" />
+    <Content Include="Views\Medico\ResultadosMedicos.cshtml" />
+    <Content Include="Views\Noticias\ListaNoticias.cshtml" />
+    <Content Include="Views\Home\Parceiros.cshtml" />
+    <Content Include="Views\Medico\_listarMedicos.cshtml" />
+    <Content Include="Views\Shared\_ColapseMenu.cshtml" />
+    <Content Include="Views\Shared\_Navbar.cshtml" />
+    <Content Include="Views\Chat\Index.cshtml" />
+    <Content Include="Views\Termos\Index.cshtml" />
+    <Content Include="Views\Noticias\NoticiasMedico.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Comentarios\" />
+    <Folder Include="Views\Curriculo\" />
+    <Folder Include="Views\WhatsControll\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56077</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56077/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

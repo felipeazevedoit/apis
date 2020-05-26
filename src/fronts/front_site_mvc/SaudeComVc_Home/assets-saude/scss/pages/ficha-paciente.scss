@@ -1,0 +1,184 @@
+#header-ficha-paciente{
+    @include menu(1);
+    .top-bar{
+        text-align: center;
+        background-image: url("../images/bg-top-bar.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-bottom: 40px;
+        .box{
+            padding: 95px 0;
+        }
+        .-title{
+            text-transform: uppercase;
+            font-size: 2em;
+            .text-book{
+                font-size: .8em;
+            }
+        }
+    }
+}
+
+section#section-ficha{
+    .box{
+        position: relative;
+        top: -70px;
+        z-index: 1;
+        background-color: $white;
+        -webkit-box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+        -moz-box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+        box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+        @include border-radius(25px);
+
+        .-ficha{
+            padding: 30px;
+            .avatar{
+                .photo-mask{
+                    position: relative;
+                    text-align: center;
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: -4px;
+                        z-index: -1;
+                        margin: -80px auto;
+                        width: 160px;
+                        height: 160px;
+                        @include gradient-animation($green, $blue);  
+                        @include border-radius(50%);
+                    }
+                    .photo{
+                        width: 140px;
+                        height: 140px;
+                        @include border-radius(50%);
+                    }
+                }
+                .name{
+                    font-weight: bold;
+                    font-size: 22px;
+                    line-height: 19px;
+                    span{
+                        color: #888888;
+                        font-weight: normal;
+                        font-size: 14px;
+                    }
+                }
+
+                .buttons{
+                    text-align: right;
+                    .-before{
+                        color: $gray;
+                    }
+                }
+            }
+
+            .questions{
+                .question{
+                    p{
+                        font-size: 20px;
+                    }
+                    .description{
+                        color: #888888;
+                        line-height: 22px;
+                    }
+                }
+            }
+
+            .yes-no{
+                text-align: right;
+            }
+        }
+
+        .buttons{
+            .-before{
+                color: $gray;
+            }
+        }
+
+        .pagination{
+            justify-content: flex-end;
+            margin: 0;
+            .page-item.active .page-link{
+                font-weight: 700;
+                @include gradient-animation($green, $blue);  
+                @include border-radius(50px);
+                width: 40px;
+                height: 40px;
+                text-align: center;
+            }
+            .page-item{
+                .page-link{
+                    line-height: 25px;
+                    border: 0;
+                    color: $gray;
+                }
+            }
+        }
+    }
+
+    @media(max-width: $screen-xs-max){
+        .box{
+            .-ficha{
+                padding: 30px;
+                .avatar{
+                    .photo-mask{
+                        &:after{
+                            display: none;
+                        }
+                    }
+                    .name{
+                        text-align: center;
+                        line-height: 22px;
+                    }
+    
+                    .buttons{
+                        text-align: center;
+                        
+                    }
+                }
+    
+                .questions{
+                    .question{
+                        p{
+                            font-size: 14px;
+                        }
+                        .description{
+                            line-height: 22px;
+                        }
+                    }
+                }
+    
+                .yes-no{
+                    text-align: left;
+                }
+
+                .answer{
+                    label{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .buttons{
+            text-align: center;
+        }
+
+        .pagination{
+            justify-content: center!important;
+            margin: 0;
+            padding-top: 30px;
+            .page-item.active .page-link{
+               width: 30px;
+               height: 30px;
+            }
+            .page-item{
+                .page-link{
+                    font-size: 10px;
+                    line-height: 16px;
+                }
+            }
+        }
+    }
+}

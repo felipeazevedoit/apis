@@ -1,0 +1,174 @@
+#header-medico-admin{
+    @include menu(1);
+    .top-bar{
+        text-align: center;
+        background-image: url("../images/bg-top-bar.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-bottom: 40px;
+        .box{
+            padding: 120px 0;
+        }
+        .-title{
+            text-transform: uppercase;
+            font-size: 2em;
+            .text-book{
+                font-size: .8em;
+            }
+        }
+    }
+}
+
+section#section-medico-admin{
+    .box{
+        position: relative;
+        top: -150px;
+        z-index: 1;
+        
+        .avatar{
+            .photo-mask{
+                position: relative;
+                text-align: center;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: -10px;
+                    z-index: -1;
+                    margin: -80px auto;
+                    width: 160px;
+                    height: 160px;
+                    @include gradient-animation($green, $blue);  
+                    @include border-radius(50%);
+                }
+                .photo{
+                    width: 140px;
+                    height: 140px;
+                    @include border-radius(50%);
+                }
+            }
+            .name{
+                font-weight: bold;
+                font-size: 22px;
+                line-height: 19px;
+                span{
+                    color: #888888;
+                    font-weight: normal;
+                    font-size: 14px;
+                }
+            }
+
+            .form-paciente{
+                text-align: right;
+                display: block;
+            }
+        }
+
+        .-aux{
+            padding: 3px 8px;
+            font-size: 14px;
+            color: $gray!important;
+            display: inline-block;
+            border: 1px solid $gray;
+            @include border-radius(10px);
+
+            
+        }
+
+        .box-card{
+            padding: 10px 25px;
+            -webkit-box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+            -moz-box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+            box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+            background-color: $white;
+            @include border-radius(25px);
+            .-title{
+              line-height: 20px;
+              font-size: 1.3em;
+            }
+            .-icon-box{
+              font-size: 4.7em;
+            }
+            &:hover{
+                @include gradient-animation($green, $blue);  
+                .-title,.-icon-box{
+                    color: $white;
+                    @include gradient-animation($white, $white); 
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+
+        .box-info{
+            background-color: $gray-ultra-light;
+            padding: 15px 45px;
+            @include border-radius(25px);
+
+            i{
+                font-size: 3em;
+            }
+
+            ul{
+                li{
+                    p{
+                        font-weight: bold;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .menu-fixed{
+        position: relative;
+        top: -127px;
+        padding: 25px 25px;
+        -webkit-box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+        -moz-box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+        box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+        background-color: $white;
+        @include border-radius(25px);
+        li{
+            a{
+                color: $gray;
+                @include transition(.5s);
+                &:hover{
+                    @include gradient-animation($white, $white); 
+                }
+            }
+        }
+    }
+
+    @media(max-width: $screen-xs-max){
+        .box{
+            padding: 30px;
+            .avatar{
+                .photo-mask{
+                    &:after{
+                        display: none;
+                    }
+                }
+                .name{
+                    text-align: center;
+                    line-height: 22px;
+                }
+
+                .form-paciente{
+                    text-align: center;
+                }
+            }
+
+            .box-card{
+                text-align: center;
+                margin: 10px auto;
+                padding: 15px 0 45px 0;
+            }
+        }
+
+        .buttons{
+            text-align: center;
+        }
+      
+    }
+}

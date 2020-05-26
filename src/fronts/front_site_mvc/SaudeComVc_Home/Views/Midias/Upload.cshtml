@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Upload";
+}
+
+<div id="imagens"></div>
+
+<input type="file" name="filebase" onchange="SubmitButtonOnclick()" value="" id="upload" />
+@*<button type="button"  id="btnSalvar">salvar</button>*@
+@section scripts{
+
+    <script>
+        ListarGaleria();
+        loadclickImg();
+
+        function SubmitButtonOnclick() {
+            var formData = new FormData();
+            var imagefile = document.getElementById("upload").files[0];
+            formData.append("filebase", imagefile);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/Midias/CadastrarGaleriaAsync", true);
+            xhr.addEventListener("load", function (evt) { UploadComplete(evt); }, false);
+            xhr.addEventListener("error", function (evt) { UploadFailed(evt); }, false);
+            xhr.send(formData);
+
+        }
+        function UploadComplete(evt) {
+            if (evt.target.status == 200) {
+                ListarGaleria();
+            }
+
+
+            else
+                alert("Error Uploading File");
+        }
+
+
+        function ListarGaleria() {
+
+            $('#imagens').html("");
+            $.ajax({
+                url: '/Midias/_ListarGaleriaAsync',
+                processData: false,
+                contentType: false,
+                type: 'GET',
+                success: function (data) {
+                   // console.log(data);
+                    $('#imagens').html(data);
+                    loadclickImg();
+
+                }
+            });
+        }
+
+
+        function loadclickImg() {
+            $('.Image').click(function () {
+                alert($(this).attr('id'));
+                $('#imagens').html("");
+                var id = $(this).attr('id');
+                $.ajax({
+                    url: '/Midias/ExcluirAsync/' + id,
+                    processData: false,
+                    contentType: false,
+                    type: 'GET',
+                    success: function (data) {
+                        // console.log(data);
+                        $('#imagens').html(data);
+
+                    }
+                });
+            });
+
+        }
+
+
+    </script>
+}
+

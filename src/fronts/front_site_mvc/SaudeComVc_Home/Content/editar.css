@@ -1,0 +1,41 @@
+﻿.card-body {
+    border: #b4b4b4 solid 1px;
+}
+
+.card-header {
+    margin-bottom: 2%;
+    padding-top: 0%;
+    margin-top: 0%;
+    margin-right: 5%;
+}
+
+#btnSalvar {
+    border-color: transparent;
+    color: #FFF;
+    margin: 3% 0%;
+    margin-bottom: 20%;
+    background-color: #1e4496;
+    box-shadow: rgb(0, 27, 85);
+}
+
+.card {
+
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+#nameLabel {
+    color: grey;
+    font-family: 'Roboto', sans-serif;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.form-control {
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+}

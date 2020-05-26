@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@model IEnumerable<SaudeComVoce.Models.PacienteViewModel>
+
+<style>
+    #listagemTable_filter > label {
+        font-size: medium;
+    }
+
+    input[type=search] {
+        width: 300px !important;
+    }
+
+    .btnAcao {
+        font-size: medium;
+        color: #5172A8 !important;
+    }
+</style>
+
+<div class="row" style="margin-top:10%;">
+    <div class="col-sm-12">
+        <div id="miolo" class="card strpied-tabled-with-hover card-wizard">
+            <div class="card-header text-center">
+                <strong class="text-center">LISTAGEM DE PACIENTES</strong>
+            </div>
+            <div class="card-body">
+                <table id="listagemTable" class="display table-striped table-hover" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">Nome</th>
+                            <th class="text-center">Email</th>
+                            <th class="text-center">Sexo</th>
+                            <th class="text-center">Peso</th>
+                            <th class="text-center">Altura</th>
+                            <th class="text-center"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var p in Model)
+                        {
+                            <tr class="text-center">
+                                <td>@p.ID</td>
+                                <td>@p.Nome</td>
+                                <td>@p.Login</td>
+                                <td>@p.Sexo</td>
+                                <td>@p.Peso</td>
+                                <td>@p.Altura</td>
+                                <td class="td-actions text-right">
+                                    @if (p.Termo == true)
+                                    {
+                                        <a href="@Url.Action("Index", "VisualizarFicha", new { id = p.CodigoExterno })"
+                                           rel="tooltip" title="" class="btn btnAcao btn-success btn-link btn-xs" data-original-title="Visualizar Ficha Médica">
+                                            @*<i class="nc-icon nc-paper-2"></i>*@ Ver Ficha
+                                        </a>
+                                    }
+                                    <a href="@Url.Action("Visualizar", "MedicoXPaciente", new { id = p.ID })"
+                                       rel="tooltip" title="" class="btn btnAcao btn-success btn-link btn-xs" data-original-title="Visualizar">
+                                        @*<i class="nc-icon nc-bullet-list-67"></i>*@ Ver Perfil
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/pages/empresas-listagem.js"></script>
+}
+
+

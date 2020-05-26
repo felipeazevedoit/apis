@@ -1,0 +1,133 @@
+﻿
+
+/*CHROME*/
+
+@-webkit-keyframes cores {
+
+    20% {
+        color: #fff;
+        background-color: #01ECB4;
+    }
+
+    40% {
+        color: #fff;
+        background-color: #00DCC2;
+    }
+
+    60% {
+        color: #fff;
+        background-color: #01ECB4;
+    }
+
+    80% {
+        color: #fff;
+        background-color: #00C4D7;
+    }
+
+    100% {
+        color: #fff;
+        background-color: #01ECB4;
+    }
+}
+
+/*FIREFOX*/
+@-moz-keyframes cores {
+    20% {
+        color: #fff;
+        background-color: #01ECB4;
+    }
+
+    40% {
+        color: #fff;
+        background-color: #00DCC2;
+    }
+
+    60% {
+        color: #fff;
+        background-color: #01ECB4;
+    }
+
+    80% {
+        color: #fff;
+        background-color: #00C4D7;
+    }
+
+    100% {
+        color: #fff;
+        background-color: #01ECB4;
+    }
+}
+
+/* OPERA */
+@-o-keyframes cores {
+    20% {
+        color: #fff;
+        background-color: #01ECB4;
+    }
+
+    40% {
+        color: #fff;
+        background-color: #00DCC2;
+    }
+
+    60% {
+        color: #fff;
+        background-color: #01ECB4;
+    }
+
+    80% {
+        color: #fff;
+        background-color: #00C4D7;
+    }
+
+    100% {
+        color: #fff;
+        background-color: #01ECB4;
+    }
+}
+
+/* IE */
+@keyframes cores {
+    20% {
+        color: #fff;
+        background-color: #01ECB4;
+    }
+
+    40% {
+        color: #fff;
+        background-color: #00DCC2;
+    }
+
+    60% {
+        color: #fff;
+        background-color: #01ECB4;
+    }
+
+    80% {
+        color: #fff;
+        background-color: #00C4D7;
+    }
+
+    100% {
+        color: #fff;
+        background-color: #01ECB4;
+    }
+}
+
+.box-flex {
+    color: #fff;
+    border: none;
+    -webkit-animation: cores 50s linear infinite;
+    -moz-animation: cores 50s linear infinite;
+    -o-animation: cores 50s linear infinite;
+    animation: cores 50s linear infinite;
+}
+
+#miolo {
+    margin-top: 5%;
+}
+
+.card-footer {
+    background: transparent;
+    border: none;
+}

@@ -1,0 +1,154 @@
+﻿<link href="~/Css/bootstrap-select.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "_Clinica";
+}
+
+<div class="modal fade" id="clinica" tabindex="-1" role="dialog" aria-labelledby="registroTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Clínica</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body body-others">
+                <form name="form1" id="form1">
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="nome">Razão Social</label>
+                            <input type="text" class="form-control" id="nome">
+                            <span class="off" id="lblNome">*Obrigatório</span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="cnpj">CNPJ</label>
+                            <input type="text" class="form-control" id="cnpj" onKeyPress="MascaraCNPJ(form1.cnpj);" maxlength="18" onBlur="ValidarCNPJ(form1.cnpj);">
+                            <span class="off" id="lblCnpj">*Obrigatório</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="cep">Cep</label>
+                            <input type="text" class="form-control" id="cep" onfocusout="preencherEndereco($('#cep').val())" onKeyPress="MascaraCep(form1.cep);" maxlength="9">
+                            <span class="off" id="lblCep">*Obrigatório</span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="local">Endereço</label>
+                            <input type="text" class="form-control" id="local" readonly>
+                            <span class="off" id="lblLocal">*Obrigatório</span>
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="numero">Número</label>
+                            <input type="number" class="form-control" id="numero">
+                            <span class="off" id="lblNumero">*Obrigatório</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="responsavel">Médico Responsável</label>
+                            <input type="text" class="form-control" id="responsavel">
+                            <span class="off" id="lblResponsavel">*Obrigatório</span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="especialidades">Especialidade</label>
+                            <select id="especialidades" class="form-control selectpicker" multiple>
+                                <option selected>Escolha uma especialidade...</option>
+                                @foreach (var item in TempData["Especialidades"] as IEnumerable<SaudeComVoce.Models.EspecialidadeViewModel>)
+                                {
+                                    <option value="@item.ID" id="@item.ID">@item.Nome</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="crm">CRM</label>
+                            <input type="text" class="form-control" id="crm" maxlength="7">
+                            <span class="off" id="lblCrm">*Obrigatório</span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="cmbUfCrm">UF_CRM</label>
+                            <select id="cmbUfCrm" class="form-control chosen-select">
+                                <option selected>Escolha um estado...</option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AM">AM</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MT">MT</option>
+                                <option value="MS">MS</option>
+                                <option value="MG">MG</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PR">PR</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RS">RS</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="SC">SC</option>
+                                <option value="SP">SP</option>
+                                <option value="SE">SE</option>
+                                <option value="TO">TO</option>
+                            </select>
+                            <span class="off" id="lblUfCrm">*Obrigatório</span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="telefone">Telefone comercial</label>
+                            <input type="text" class="form-control" id="telefone" onKeyPress="TelMask();" maxlength="14">
+                            <span class="off" id="lblTelefone">*Obrigatório</span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="email">E-mail</label>
+                            <input type="text" class="form-control" id="email" onfocusout="validarEmail()">
+                            <span class="off" id="lblEmail">*Obrigatório</span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="confirmarEmail">Confirmar E-mail</label>
+                            <input type="text" class="form-control" id="confirmarEmail" onfocusout="validarCEmail()">
+                            <span class="off" id="lblConfirmarEmail">*Obrigatório</span>
+                        </div>
+                        <span style="color:green" id="lblSpan" class="pull-right fade">Cadastro realizado com sucesso, em breve entraremos em contato</span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="defaut-btn-back" onClick="carregaModalLista()">Voltar</a>
+                <a href="#" class="defaut-btn-gradient" onclick="cadastrarClinica()">Cadastrar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".chosen-select").chosen({ no_results_text: "Nada encontrado!" });
+    $(".chosen-select").chosen({ allow_single_deselect: true });
+
+    $(".chosen-container").css("width", '100%');
+</script>
+
+<script src="~/Scripts/plugins/bootstrap-select.min.js"></script>
+<script>
+    if ($(".selectpicker").length != 0) {
+        $(".selectpicker").selectpicker();
+    }
+
+
+</script>

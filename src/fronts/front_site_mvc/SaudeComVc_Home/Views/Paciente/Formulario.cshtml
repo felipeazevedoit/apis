@@ -1,0 +1,260 @@
+﻿@model IEnumerable<SaudeComVc_Home.Models.PerguntaViewModel>
+@{
+    ViewBag.Title = "Formulario";
+}
+@{ 
+    int nPagina = TempData["NumeroPagina"] == null ? 1 : (int)TempData["NumeroPagina"];
+}
+
+    <style>
+        .boxm{
+            padding-bottom:150px !important;
+            padding-top:95px !important;
+        }
+    </style>
+
+<section id="section-ficha">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box">
+                    <div class="-ficha">
+                        <div class="avatar">
+                            <div class="row">
+                                <div class="col-lg-2 align-self-center">
+                                    <div class="photo-mask">
+                                        @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar != null)
+                                        {
+                                            <img src="data:image/@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.AvatarExtension;base64, @SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar" class="photo" />
+                                        }
+                                        else
+                                        {
+                                            <img src="~/Img/avatar.png" class="photo" />
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 align-self-center">
+                                    <p class="name"><span>Ficha técnica de saúde</span><br>@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome</p>
+                                </div>
+
+                                <div class="col-lg-6 align-self-center">
+                                    <div class="buttons">
+                                        <a class="defaut-btn-gradient" href="@Url.Action("FichadeSaudeVisualizar","Paciente", new { id = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario })" target="_blank">Visualizar ficha completa</a>
+                                        <a class="ml-2 -before" href="/Home/Index">Responder depois</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="bar">
+
+                    <div class="-ficha">
+                        <div class="questions -01">
+                            @foreach (var item in Model)
+                            {
+                                if (item.TipoRespostaId == 3)
+                                {
+                                    <div class="row">
+                                        <div class="col-lg-8 align-self-center">
+                                            <div class="question">
+                                                <p class="m-0"><strong>@item.Nome</strong></p>
+                                                <p class="m-0 description">@item.Descricao</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 align-self-center">
+                                            <div class="yes-no">
+                                                <div class="custom-control custom-radio custom-control-inline">
+                                                    <input type="radio" @(item.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "checked" : "") onclick="responder(@item.ID, $(this))" class="" value="Sim" name="@item.ID"
+                                                           id="@(item.Respostas.FirstOrDefault() == null ? "0" : item.Respostas.FirstOrDefault().ID.ToString())">
+                                                    <label class="">Sim</label>
+                                                </div>
+
+                                                <div class="custom-control custom-radio custom-control-inline">
+                                                    <input type="radio" @(item.Respostas.FirstOrDefault()?.Descricao == "Não" ? "checked" : "") onclick="ignorar(@item.ID, $(this))"   class="" value="Nao" name="@item.ID" 
+                                                           id="@(item.Respostas.FirstOrDefault() == null ? "0" : item.Respostas.FirstOrDefault().ID.ToString())" >
+                                                    <label class="">Não</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    if (item.PerguntasFilho != null && item.PerguntasFilho.Count() > 0)
+                                    {
+                                        <div class="row @item.ID" @(item.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "style=display:normal" : "style=display:none")>
+                                            <div class="col-lg-8">
+                                                <div class="answer mt-3">
+                                                    <p class="@item.ID @(item.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "" : "hidden")" id="quais"><b>Qual(is)?</b></p>
+                                                    @foreach (var sub in item.PerguntasFilho)
+                                                    {
+                                                        if (sub.TipoRespostaId == 3)
+                                                        {
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <label class="mr-sm-2">@sub.Nome</label>
+                                                                </div>
+                                                                <div class="col-8">
+                                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                                        <input type="radio" @(sub.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "checked" : "")
+                                                                                        name="@sub.ID"
+                                                                                        id="@(sub.Respostas.FirstOrDefault() == null ? "0" : sub.Respostas.FirstOrDefault().ID.ToString())"
+                                                                                        onclick="responder(@sub.ID, $(this), false)" class="">
+                                                                        <label class="" >Sim</label>
+                                                                    </div>
+
+                                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                                        <input type="radio" @(sub.Respostas.FirstOrDefault()?.Descricao == "Não" ? "checked" : "")
+                                                                                        name="@sub.ID"
+                                                                                        id="@(sub.Respostas.FirstOrDefault() == null ? "0" : sub.Respostas.FirstOrDefault().ID.ToString())"
+                                                                                        onclick="ignorar(@sub.ID, $(this))" class="">
+                                                                        <label class="">Não</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                        else
+                                                        {
+                                                            <div class="row @item.ID" @(item.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "style=display:normal" : "style=display:none")>
+                                                                <div class="col-4">
+                                                                    <label class="mr-sm-2">@sub.Nome</label>
+                                                                </div>
+                                                                <div class="col-8">
+                                                                    <div class="custom-control custom-radio custom-control-inline" style="padding-left:0">
+                                                                        <input type="text" value="@(sub.Respostas.FirstOrDefault()?.Descricao)"
+                                                                   id="@(sub.Respostas.FirstOrDefault() == null ? "0" : sub.Respostas.FirstOrDefault().ID.ToString())"
+                                                                   onfocusout="responderTexto(@sub.ID, $(this), false)" class="form-control mb-2 mr-sm-2" maxlength="200" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                        <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                                <div class="question">
+                                    <p class="m-0"><strong>@item.Nome</strong></p>
+                                    <p class="m-0 description">@item.Descricao</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="custom-control custom-radio custom-control-inline" style="padding-left:0">
+                                    <input type="text" value="@(item.Respostas.FirstOrDefault()?.Descricao)"
+                                           id="@(item.Respostas.FirstOrDefault() == null ? "0" : item.Respostas.FirstOrDefault().ID.ToString())"
+                                           onfocusout="responderTexto(@item.ID, $(this), false)" class="form-control mb-2 mr-sm-2" maxlength="200" />
+                                </div>
+                            </div>
+                        </div>
+                                }
+                            }
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col-lg-6 align-self-center">
+                                <div class="buttons">
+                                    <a class="defaut-btn-gradient" href="@Url.Action("FichadeSaudeVisualizar","Paciente", new { id = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario })" target="_blank">Visualizar ficha completa</a>
+                                    <a class="ml-2 -before" href="/Home/Index">Responder depois</a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 align-self-center">
+                                <input type="hidden" id="qtd" value="@(Convert.ToInt32(ViewBag.Quantidade) + 1)" class="pull-right" />
+                                <nav>
+                                    <ul class="pagination">
+                                        <li class="page-item">
+                                            <a href="@Url.Action("Search", "Paciente", new { i = (nPagina - 1), p = 3, id = @TempData["ID"], num = (nPagina-1) })" class="page-link"><i class="flaticon-double-left-chevron"></i></a>
+                                        </li>
+
+                                        @for (int i = 0; i <= Convert.ToInt32(ViewBag.Quantidade); i++)
+                                        {
+                                            <li class="page-item" id="@(i+1)"><a href="@Url.Action("Search", "Paciente", new { i, p = 3, id = @TempData["ID"], num = (i+1) })" class="page-link">@(i + 1)</a></li>
+                                        }
+
+                                        @*<li class="page-item"><a class="page-link" href="#">1</a></li>
+
+                                        <li class="page-item active">
+                                            <span class="page-link">2</span>
+                                        </li>
+
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">7</a></li>*@
+
+
+                                        <li class="page-item">
+                                            <a class="page-link" href="@Url.Action("Search", "Paciente", new { i = (nPagina + 1), p = 3, id = @TempData["ID"], num = (nPagina+1) })"><i class="flaticon-double-angle-pointing-to-right"></i></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts
+    {
+    <script>
+        $(function () {
+            var options = {
+                totalPages: 10
+            };
+
+            $('#pagination').bootstrapPaginator(options);
+            mudarCor(@TempData["NumeroPagina"]);
+        });
+
+    function mudarCor(id) {
+        $('#' + id).addClass("active");
+        }
+
+        function responder(id, field) {
+            $("." + id).css("display","");
+
+            $.ajax({
+                method: "POST",
+                url: "/Paciente/Responder",
+                data: { ID: $(field).attr('id'), Descricao: "Sim", PerguntaId: id }
+            }).done(function (msg) {
+                console.log("Respondido.");
+                $(field).prop('id', msg.ID + "S");
+            });
+        }
+
+        function ignorar(id, field) {
+            $("." + id).css({"display": "none"});
+
+            $.ajax({
+                method: "POST",
+                url: "/Paciente/Responder",
+                data: { ID: $(field).attr('id'), Descricao: "Não", PerguntaId: id }
+            }).done(function (msg) {
+                console.log("Respondido.");
+                $(field).prop('id', msg.ID + "N");
+            });
+        }
+
+        function responderTexto(id, field) {
+            if ($("#" + id).val() != '') {
+                $.ajax({
+                    method: "POST",
+                    url: "/Paciente/Responder",
+                    data: { ID: $(field).attr('id'), Descricao: $(field).val(), PerguntaId: id }
+                }).done(function (msg) {
+                    console.log("Respondido.");
+                    $(field).prop('id', msg.ID);
+                });
+            }
+        }
+    </script>
+    }

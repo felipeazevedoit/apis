@@ -1,0 +1,107 @@
+﻿@model IEnumerable<SaudeComVoce.Models.MedicoViewModel>
+@{
+    ViewBag.Title = "Precisando de um médico?";
+}
+
+<section id="section-pesquisa-01">
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-lg-12">
+                <h2 class="text-gradient title-dynamic -title pt-5">FILTROS:</h2>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="cidade">Cidade em que o médico se encontra</label>
+                            <input type="text" class="form-control" id="cidade">
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label for="especialidade">Especialidade</label>
+                            <select id="especialidade" class="form-control chosen-select">
+                                <option id="0" value="0" selected>Escolha uma especialidade...</option>
+                                @foreach (var item in TempData["Especialidades"] as IEnumerable<SaudeComVoce.Models.EspecialidadeViewModel>)
+                                {
+                                    <option id="@item.ID" value="@item.ID">@item.Nome</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <br />
+                            <a href="#" class="defaut-btn-gradient mt-2" onclick="buscarMedicos()" id="btnCadastrar">Aplicar Filtros</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-12">
+                <h2 class="text-gradient title-dynamic -title pt-5">MÉDICOS</h2>
+                @foreach (var item in Model)
+                {
+                    <a href="#" onclick="getwhitelabel('@item.Nome', @item.CodigoExterno)">
+                        <div class="card-deck">
+                            <div class="card">
+                                <div class="row no-gutters">
+                                    <div class="col-md-3 align-self-center">
+                                        @if (item.Foto != null && item.Foto != "")
+                                        {
+                                            <img src="data:image/@item.Extensao;base64, @item.Foto" class="img-responsive img-fluid" style="height: 226px!important" alt="">
+                                        }
+                                        else
+                                        {
+                                            <img src="~/Img/avatar.png" width="80%" class="img-fluid img-responsive" alt="">
+                                        }
+                                    </div>
+                                    <div class="col-md-9 align-self-center">
+                                        <div class="card-block px-4">
+                                            <h4 class="card-title text-gradient">@item.Nome</h4>
+                                            <p class="card-text">@item.Especialidade</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script>
+        function getwhitelabel(nome, id) {
+            window.location.href = '/medico/whitelabel/' + id + '?nome=' + nome;
+        }
+    </script>
+    <script>
+        function buscarMedicos() {
+            epsc = $("#especialidade option:selected").text();
+            cidade = $("#cidade").val();
+            if ($("#especialidade option:selected").val() == 0) {
+                window.location.href = '/medico/ListagemMedico?cidade=' + cidade;
+            }
+            else {
+                window.location.href = '/medico/ListagemMedico?cidade=' + cidade + '&espc=' + epsc;
+            }
+        }
+    </script>
+    <script>
+        function WhatsControll(id) {
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "POST",
+                url: "/WhatsControll/WhatsControll?idMedico=" + id,
+                contentType: 'application/json; charset=utf-8',
+                success: function (response) {
+                    console.log(response);
+                    if (response != null) {
+                        //var nome = "teste";
+                        window.location.href = "https://api.whatsapp.com/send?phone=5511977145322&text=Nome:%20" + response.Nome + "%0D%0AMedico%20:%20" + response.NomeMedico + "%0D%0AConvenio%20:%20" + response.Convenio + "%0D%0A=====================";
+                    }
+                }
+            });
+
+        }
+    </script>
+}

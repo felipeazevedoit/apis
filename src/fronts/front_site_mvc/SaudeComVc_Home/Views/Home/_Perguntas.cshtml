@@ -1,0 +1,231 @@
+﻿
+@model SaudeComVc_Home.Models.PerguntaViewModel
+
+<form class="modal multi-step" id="perguntas">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title step-1" data-step="1">Perguntas da Ficha Médica</h4>
+                <div class="m-progress">
+                    <div class="m-progress-bar-wrapper">
+                        <div class="m-progress-bar">
+                        </div>
+                    </div>
+                    <div class="m-progress-stats">
+                        <span class="m-progress-current">
+                        </span>
+                        <span class="m-progress-total">
+                        </span>
+                    </div>
+                    <div class="m-progress-complete">
+                    </div>
+                </div>
+                <button type="button" class="close close-aux" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body step-1" data-step="1">
+                <input type="hidden" id="pId" value="@Model.ID" />
+                <div class="-ficha">
+                    <div class="questions -01">
+                        @if (Model.TipoRespostaId == 3)
+                        {
+                            <div class="row" id="first">
+                                <div class="col-lg-8 align-self-center">
+                                    <div class="question">
+                                        <p class="m-0"><strong>@Model.Nome</strong></p>
+                                        <p class="m-0 description">@Model.Descricao</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 align-self-center">
+                                    <div class="yes-no">
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="" value="Sim" @(Model.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "checked" : "")
+                                                   onclick="responder(@Model.ID, $(this), @Json.Encode(Model.PerguntasFilho != null && Model.PerguntasFilho.Count() > 0))" name="@Model.ID"
+                                                   id="@(Model.Respostas.FirstOrDefault() == null ? "0" : Model.Respostas.FirstOrDefault().ID.ToString())S">
+                                            <label class="" id="perg" for="@(Model.Respostas.FirstOrDefault() == null ? "0" : Model.Respostas.FirstOrDefault().ID.ToString())S">Sim</label>
+                                        </div>
+
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="" value="Nao" @(Model.Respostas.FirstOrDefault()?.Descricao == "Não" ? "checked" : "")
+                                                   onclick="ignorar(@Model.ID, $(this))" name="@Model.ID"
+                                                   id="@(Model.Respostas.FirstOrDefault() == null ? "0" : Model.Respostas.FirstOrDefault().ID.ToString())N">
+                                            <label class="" id="pergN" for="@(Model.Respostas.FirstOrDefault() == null ? "0" : Model.Respostas.FirstOrDefault().ID.ToString())N">Não</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            if (Model.PerguntasFilho != null && Model.PerguntasFilho.Count() > 0)
+                            {
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="answer mt-3">
+                                            <p class="@Model.ID" @(Model.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "style=display:normal" : "style=display:none") id="quaisP"><b>Qual(is)?</b></p>
+                                            @foreach (var item in Model.PerguntasFilho)
+                                            {
+                                                if (item.TipoRespostaId == 3)
+                                                {
+                                                    <div class="row @Model.ID" @(Model.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "style=display:normal" : "style=display:none")>
+                                                        <div class="col-4">
+                                                            <label class="mr-sm-2">@item.Nome</label>
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <div class="custom-control custom-radio custom-control-inline">
+                                                                <input type="radio" class="" @(item.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "checked" : "")
+                                                                       name="@item.ID"
+                                                                       id="@(item.Respostas.FirstOrDefault() == null ? "0" : item.Respostas.FirstOrDefault().ID.ToString())S"
+                                                                       onclick="responder(@item.ID, $(this), false)">
+                                                                <label class="" id="pergF" for="@(item.Respostas.FirstOrDefault() == null ? "0" : item.Respostas.FirstOrDefault().ID.ToString())S">Sim</label>
+                                                            </div>
+
+                                                            <div class="custom-control custom-radio custom-control-inline">
+                                                                <input type="radio" class="" @(item.Respostas.FirstOrDefault()?.Descricao == "Não" ? "checked" : "")
+                                                                       name="@item.ID"
+                                                                       id="@(item.Respostas.FirstOrDefault() == null ? "0" : item.Respostas.FirstOrDefault().ID.ToString())N"
+                                                                       onclick="ignorar(@item.ID, $(this))">
+                                                                <label class="" id="pergFN" for="@(item.Respostas.FirstOrDefault() == null ? "0" : item.Respostas.FirstOrDefault().ID.ToString())N">Não</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="row @Model.ID" @(Model.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "style=display:normal" : "style=display:none")>
+                                                        <div class="col-4">
+                                                            <label class="mr-sm-2">@item.Nome</label>
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <div class="custom-control custom-radio custom-control-inline">
+                                                                <input type="text" value="@(item.Respostas.FirstOrDefault()?.Descricao)"
+                                                                       id="@(item.Respostas.FirstOrDefault() == null ? "0" : item.Respostas.FirstOrDefault().ID.ToString())"
+                                                                       onfocusout="responderTexto(@item.ID, $(this), false)" class="form-control mb-2 mr-sm-2" maxlength="200" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        }
+                        else
+                        {
+                            <div class="row">
+                                <div class="col-lg-12 align-self-center">
+                                    <div class="question">
+                                        <p class="m-0"><strong>@Model.Nome</strong></p>
+                                        <p class="m-0 description">@Model.Descricao</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="answer mt-3">
+                                        <div class="custom-control custom-radio custom-control-inline p-0">
+                                            <input type="text" value="@(Model.Respostas.FirstOrDefault()?.Descricao)"
+                                                   id="@(Model.Respostas.FirstOrDefault() == null ? "0" : Model.Respostas.FirstOrDefault().ID.ToString())"
+                                                   onfocusout="responderTexto(@Model.ID, $(this), false)" class="form-control mb-2 mr-sm-2" maxlength="200" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="defaut-btn-back" data-dismiss="modal">Responder depois</a>
+                <a href="#" class="defaut-btn-gradient" onclick="proximaPergunta()">Próxima pergunta</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    function setClasses(pai) {
+        if (pai == true) {
+            if ($("#first").hasClass('hidden') == false) {
+                $("#first").addClass('hidden');
+            }
+        }
+    }
+
+    function proximaPergunta() {
+        $.ajax({
+            method: "GET",
+            url: '/Home/ProximaPergunta/' + $('#pId').val(),
+            success: function (response) {
+                console.log(response);
+                $('.modal-backdrop').remove();
+                $('#modalPerguntas').html(response);
+                $('#perguntas').modal('show');
+            },
+            error: function () {
+                $('#closePerg').click();
+            }
+        });
+    }
+
+    function responder(id, field, pai) {
+        $("." + id).css("display", "");
+
+        $.ajax({
+            method: "POST",
+            url: "/Home/Responder",
+            data: { ID: $(field).attr('id').replace("S", ""), Descricao: "Sim", PerguntaId: id },
+            success: function (msg) {
+                console.log("Respondido.");
+                $(field).prop('id', msg.ID);
+                $("#perg").attr('for', msg.ID);
+                setClasses(pai);
+            },
+            error: function (result) {
+                $(field).attr("checked", false);
+                $("." + id).addClass('hidden');
+                setClasses(pai);
+            }
+        });
+    }
+
+    function ignorar(id, field) {
+        $("." + id).css({ "display": "none" });
+
+        $.ajax({
+            method: "POST",
+            url: "/Home/Responder",
+            data: { ID: $(field).attr('id').replace("N", ""), Descricao: "Não", PerguntaId: id },
+            success: function (msg) {
+                console.log(msg);
+                $(field).prop('id', msg.ID);
+                $("#pergN").attr('for', msg.ID);
+                proximaPergunta();
+            },
+            error: function (result) {
+                $(field).attr("checked", false);
+                $("." + id).addClass('hidden');
+            }
+        });
+    }
+
+    function responderTexto(id, field, pai) {
+        if ($("#" + id).val() != '') {
+            $.ajax({
+                method: "POST",
+                url: "/Home/Responder",
+                data: { ID: $(field).attr('id'), Descricao: $(field).val(), PerguntaId: id },
+                success: function (msg) {
+                    console.log("Respondido.");
+                    $(field).prop('id', msg.ID);
+                    setClasses(pai);
+                },
+                error: function (result) {
+                    $(field).attr("value", "");
+                    setClasses(pai);
+                }
+            });
+        }
+    }
+</script>

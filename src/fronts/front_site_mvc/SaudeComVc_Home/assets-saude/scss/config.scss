@@ -1,0 +1,237 @@
+@import 'variables';
+@import 'mixins';
+@font-face {
+    font-family: 'nexa-book';
+    src: url('../fontes/nexa-book.otf');
+}
+
+@font-face {
+    font-family: 'nexa-black';
+    src: url('../fontes/nexa-black.otf');
+}
+
+
+
+.alerts-mobile{
+    position: fixed;
+    display: inline-flex;
+    right: 110px;
+    top: 13px;
+    z-index: 1;
+
+
+      .-message{
+        position: relative;
+        &:after{
+          content: '';
+          position: absolute;
+          background-color: red;
+          width: 10px;
+          height: 10px;
+          right: 4px;
+          top: 6px;
+          display: block;
+          @include border-radius(50%);
+        }
+      }
+
+      .-bells{
+        position: relative;
+        &:after{
+          content: '';
+          position: absolute;
+          background-color: red;
+          width: 10px;
+          height: 10px;
+          right: 8px;
+          top: 6px;
+          display: block;
+          @include border-radius(50%);
+        }
+      }
+}
+
+/** hidden search field **/
+
+#searchbar {
+    display: none;
+    float: left;
+    width: 100%;
+    height: 62px;
+    border-top: 1px solid #d8d8d8;
+    padding-left: 25px;
+    padding-right: 10px;
+    z-index: 9999;
+    background: #fff;
+    position: absolute;
+    top: 52px;
+  }
+  
+  #s {
+    display: block;
+    width: 88%;
+    border: 0;
+    outline: none;
+    padding: 0;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1em;
+    color: #676767;
+  }
+  
+  #searchsubmit {
+    display: block;
+    float: right;
+    margin-top: 20px;
+    background: none;
+    color: #717171;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block; }
+
+.drop-menu{
+    margin-top: 0!important;
+    img{
+        margin-right: 10px;
+    }
+    span{
+        font-size: 14px;
+        color: $gray;
+        font-weight: normal;
+        line-height: 14px;
+        .name{
+            font-weight: bold;
+        }
+    }
+}
+
+.dropdown-menu-right{
+    width: 220px!important;
+        right: 210px;
+    left: auto!important;
+    -webkit-box-shadow: 0px 0px 36px 8px rgba(0, 0, 0, 0.096);
+    -moz-box-shadow: 0px 0px 36px 8px rgba(0,0,0,0.096);
+    box-shadow: 0px 0px 36px 8px rgba(0,0,0,0.096); 
+    border-radius: 25px!important;
+}
+
+.dropdown-menu{
+    .dropdown-item{
+        font-size: 14px!important;
+        color: $gray;
+    }
+  }
+
+  @media(max-width: $screen-xs-max){
+    .dropdown-menu-right{
+        right: 210px;
+        
+    }
+    .drop-menu{
+        img{
+            margin-left: 20px;
+        }
+        span{
+            color: $white;
+        }
+    }
+  }
+
+
+a{
+    text-decoration: none!important;
+    &:hover{
+        color: $gray!important;
+    }
+}
+
+p, a{
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.title-dynamic{
+    font-family: 'nexa-black';
+}
+
+.-title{
+    line-height: 27px;
+}
+
+.text-gradient{
+    @include gradient-animation($green, $blue); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-book{
+    font-family: 'nexa-book';
+    line-height: 27px;
+}
+
+.-btn-break{
+    font-weight: 700;
+    line-height: 15px;
+    .line-button{
+        font-weight: 300;
+    }
+}
+
+
+.bg-dynamic-menu{
+    background-color: $white!important;
+    position: fixed!important;
+    width: 100%;
+    height: 65px;
+    z-index: 999;
+    -webkit-box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px -2px 39px 0px rgba(0,0,0,0.15);
+}
+
+.bg-tranp{
+    background-color: transparent;
+}
+
+.defaut-btn-white{
+    padding: 8px 20px;
+    font-size: 14px;
+    color: $gray;
+    display: inline-block;
+    background-color: $white;
+    @include border-radius(10px);
+}
+
+.defaut-btn-back{
+    padding: 8px 20px;
+    font-size: 14px;
+    color: $gray;
+    display: inline-block;
+    border: 1px solid $gray;    
+    @include border-radius(10px);
+}
+
+.defaut-btn-gradient{
+    padding: 9px 20px;
+    font-size: 14px;
+    color: $gray;
+    display: inline-block;
+    @include gradient-animation($green, $blue); 
+    @include border-radius(10px);
+    /* @include gradient($green, $blue); */
+}
+
+.defaut-btn-gray{
+    padding: 9px 20px;
+    font-size: 14px;
+    color: $gray;
+    display: inline-block;
+    background-color: $gray-light;
+    @include border-radius(10px);
+    /* @include gradient($green, $blue); */
+}
+
