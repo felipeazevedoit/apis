@@ -145,105 +145,107 @@
         </div>
 
         <div class="row mt-4">
-
-            @if (Model.Noticias.Count() < 3)
+            @if (Model.Noticias.Any())
             {
-                <div class="col-lg-12">
-                    @foreach (var item in Model.Noticias)
-                    {
-                        <div class="card-deck">
+                @if (Model.Noticias.Count() < 3)
+                {
+                    <div class="col-lg-12">
+                        @foreach (var item in Model.Noticias)
+                        {
+                            <div class="card-deck">
 
-                            <div class="card">
-                                <img class="card-img-top" src="data:image/@item.Midia.Extensao.Replace(".", "");base64,@item.Midia.ArquivoB64" height="250" />
-                                <div class="card-body">
-                                    <ul class="list-unstyled list-inline m-0">
-                                        <li class="list-inline-item"><i class="flaticon-calendar-1"></i> 25/05/2019</li>
-                                        @*<li class="list-inline-item">135 visualizações</li>*@
-                                    </ul>
-                                    <h5 class="title-dynamic text-gradient m-0">@item.Nome</h5>
-                                    <p class="card-text">@item.Descricao</p>
-                                    <a href="/Noticias/Index/@item.ID" class="btn-read-more">Continuar lendo <i class="flaticon-right-arrow"></i></a>
+                                <div class="card">
+                                    <img class="card-img-top" src="data:image/@item.Midia.Extensao.Replace(".", "");base64,@item.Midia.ArquivoB64" height="250" />
+                                    <div class="card-body">
+                                        <ul class="list-unstyled list-inline m-0">
+                                            <li class="list-inline-item"><i class="flaticon-calendar-1"></i> 25/05/2019</li>
+                                            @*<li class="list-inline-item">135 visualizações</li>*@
+                                        </ul>
+                                        <h5 class="title-dynamic text-gradient m-0">@item.Nome</h5>
+                                        <p class="card-text">@item.Descricao</p>
+                                        <a href="/Noticias/Index/@item.ID" class="btn-read-more">Continuar lendo <i class="flaticon-right-arrow"></i></a>
+                                    </div>
                                 </div>
+                                <a href="#" class="defaut-btn-gradient -btn-break"><span class="line-button">Ver todas as notícias</span></a>
                             </div>
-                            <a href="#" class="defaut-btn-gradient -btn-break"><span class="line-button">Ver todas as notícias</span></a>
+                        }
+
+                    </div>
+                }
+                else
+                {
+                    for (int i = 0; i < Model.Noticias.Count(); i++)
+                    {
+                        <div class="col-lg-12" style="margin-top:10px;">
+                            <div class="card-deck">
+                                @if (Model.Noticias.ElementAtOrDefault(i) != null)
+                                {
+                                    <div class="card">
+                                        <img class="card-img-top" src="data:image/@Model.Noticias.ElementAtOrDefault(i).Midia.Extensao.Replace(".", "");base64,@Model.Noticias.ElementAtOrDefault(i).Midia.ArquivoB64" height="250" />
+                                        <div class="card-body">
+                                            <ul class="list-unstyled list-inline m-0">
+                                                <li class="list-inline-item"><i class="flaticon-calendar-1"></i> @Model.Noticias.ElementAtOrDefault(i).DataCriacao.ToString("dd/MM/yyyy")</li>
+                                                @*<li class="list-inline-item">135 visualizações</li>*@
+                                            </ul>
+                                            <h5 class="title-dynamic text-gradient m-0">@Model.Noticias.ElementAtOrDefault(i).Nome</h5>
+                                            <p class="card-text">@Model.Noticias.ElementAtOrDefault(i).Descricao</p>
+                                            <a href="/Noticias/Index/@Model.Noticias.ElementAtOrDefault(i).ID" class="btn-read-more">Continuar lendo <i class="flaticon-right-arrow"></i></a>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="card" style="visibility:hidden !important"></div>
+                                }
+
+                                @if (Model.Noticias.ElementAtOrDefault(i + 1) != null)
+                                {
+                                    <div class="card">
+                                        <img class="card-img-top" src="data:image/@Model.Noticias.ElementAtOrDefault(i + 1).Midia.Extensao.Replace(".", "");base64,@Model.Noticias.ElementAtOrDefault(i + 1).Midia.ArquivoB64" height="250" />
+                                        <div class="card-body">
+                                            <ul class="list-unstyled list-inline m-0">
+                                                <li class="list-inline-item"><i class="flaticon-calendar-1"></i> @Model.Noticias.ElementAtOrDefault(i + 1).DataCriacao.ToString("dd/MM/yyyy")</li>
+                                                @*<li class="list-inline-item">135 visualizações</li>*@
+                                            </ul>
+                                            <h5 class="title-dynamic text-gradient m-0">@Model.Noticias.ElementAtOrDefault(i + 1).Nome</h5>
+                                            <p class="card-text">@Model.Noticias.ElementAtOrDefault(i + 1).Descricao</p>
+                                            <a href="/Noticias/Index/@Model.Noticias.ElementAtOrDefault(i + 1).ID" class="btn-read-more">Continuar lendo <i class="flaticon-right-arrow"></i></a>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="card" style="visibility:hidden !important"></div>
+                                }
+
+                                @if (Model.Noticias.ElementAtOrDefault(i + 2) != null)
+                                {
+                                    <div class="card">
+                                        <img class="card-img-top" src="data:image/@Model.Noticias.ElementAtOrDefault(i + 2).Midia.Extensao.Replace(".", "");base64,@Model.Noticias.ElementAtOrDefault(i + 2).Midia.ArquivoB64" height="250" />
+                                        <div class="card-body">
+                                            <ul class="list-unstyled list-inline m-0">
+                                                <li class="list-inline-item"><i class="flaticon-calendar-1"></i> @Model.Noticias.ElementAtOrDefault(i + 2).DataCriacao.ToString("dd/MM/yyyy")</li>
+                                                @*<li class="list-inline-item">135 visualizações</li>*@
+                                            </ul>
+                                            <h5 class="title-dynamic text-gradient m-0">@Model.Noticias.ElementAtOrDefault(i + 2).Nome</h5>
+                                            <p class="card-text">@Model.Noticias.ElementAtOrDefault(i + 2).Descricao</p>
+                                            <a href="/Noticias/Index/@Model.Noticias.ElementAtOrDefault(i + 2).ID" class="btn-read-more">Continuar lendo <i class="flaticon-right-arrow"></i></a>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="card" style="visibility:hidden !important"></div>
+                                }
+                            </div>
                         </div>
+                        i = i + 2;
                     }
 
-                </div>
-            }
-            else
-            {
-                for (int i = 0; i < Model.Noticias.Count(); i++)
-                {
-                    <div class="col-lg-12" style="margin-top:10px;">
-                        <div class="card-deck">
-                            @if (Model.Noticias.ElementAtOrDefault(i) != null)
-                            {
-                                <div class="card">
-                                    <img class="card-img-top" src="data:image/@Model.Noticias.ElementAtOrDefault(i).Midia.Extensao.Replace(".", "");base64,@Model.Noticias.ElementAtOrDefault(i).Midia.ArquivoB64" height="250" />
-                                    <div class="card-body">
-                                        <ul class="list-unstyled list-inline m-0">
-                                            <li class="list-inline-item"><i class="flaticon-calendar-1"></i> @Model.Noticias.ElementAtOrDefault(i).DataCriacao.ToString("dd/MM/yyyy")</li>
-                                            @*<li class="list-inline-item">135 visualizações</li>*@
-                                        </ul>
-                                        <h5 class="title-dynamic text-gradient m-0">@Model.Noticias.ElementAtOrDefault(i).Nome</h5>
-                                        <p class="card-text">@Model.Noticias.ElementAtOrDefault(i).Descricao</p>
-                                        <a href="/Noticias/Index/@Model.Noticias.ElementAtOrDefault(i).ID" class="btn-read-more">Continuar lendo <i class="flaticon-right-arrow"></i></a>
-                                    </div>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="card" style="visibility:hidden !important"></div>
-                            }
-
-                            @if (Model.Noticias.ElementAtOrDefault(i + 1) != null)
-                            {
-                                <div class="card">
-                                    <img class="card-img-top" src="data:image/@Model.Noticias.ElementAtOrDefault(i+1).Midia.Extensao.Replace(".", "");base64,@Model.Noticias.ElementAtOrDefault(i+1).Midia.ArquivoB64" height="250" />
-                                    <div class="card-body">
-                                        <ul class="list-unstyled list-inline m-0">
-                                            <li class="list-inline-item"><i class="flaticon-calendar-1"></i> @Model.Noticias.ElementAtOrDefault(i + 1).DataCriacao.ToString("dd/MM/yyyy")</li>
-                                            @*<li class="list-inline-item">135 visualizações</li>*@
-                                        </ul>
-                                        <h5 class="title-dynamic text-gradient m-0">@Model.Noticias.ElementAtOrDefault(i + 1).Nome</h5>
-                                        <p class="card-text">@Model.Noticias.ElementAtOrDefault(i + 1).Descricao</p>
-                                        <a href="/Noticias/Index/@Model.Noticias.ElementAtOrDefault(i+1).ID" class="btn-read-more">Continuar lendo <i class="flaticon-right-arrow"></i></a>
-                                    </div>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="card" style="visibility:hidden !important"></div>
-                            }
-
-                            @if (Model.Noticias.ElementAtOrDefault(i + 2) != null)
-                            {
-                                <div class="card">
-                                    <img class="card-img-top" src="data:image/@Model.Noticias.ElementAtOrDefault(i + 2).Midia.Extensao.Replace(".", "");base64,@Model.Noticias.ElementAtOrDefault(i + 2).Midia.ArquivoB64" height="250" />
-                                    <div class="card-body">
-                                        <ul class="list-unstyled list-inline m-0">
-                                            <li class="list-inline-item"><i class="flaticon-calendar-1"></i> @Model.Noticias.ElementAtOrDefault(i + 2).DataCriacao.ToString("dd/MM/yyyy")</li>
-                                            @*<li class="list-inline-item">135 visualizações</li>*@
-                                        </ul>
-                                        <h5 class="title-dynamic text-gradient m-0">@Model.Noticias.ElementAtOrDefault(i + 2).Nome</h5>
-                                        <p class="card-text">@Model.Noticias.ElementAtOrDefault(i + 2).Descricao</p>
-                                        <a href="/Noticias/Index/@Model.Noticias.ElementAtOrDefault(i + 2).ID" class="btn-read-more">Continuar lendo <i class="flaticon-right-arrow"></i></a>
-                                    </div>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="card" style="visibility:hidden !important"></div>
-                            }
-                        </div>
-                    </div>
-                    i = i + 2;
+                    <a href="@Url.Action("ListaNoticias", "Noticias")" class="defaut-btn-gradient -btn-break"><span class="line-button">Ver todas as notícias</span></a>
                 }
-
-                <a href="@Url.Action("ListaNoticias", "Noticias")" class="defaut-btn-gradient -btn-break"><span class="line-button">Ver todas as notícias</span></a>
             }
-        </div>
+            </div>
     </div>
 </section>
 <div id="modalPerguntas"></div>

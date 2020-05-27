@@ -1,0 +1,177 @@
+﻿@model IEnumerable<SaudeComVoce.Models.MedicoViewModel>
+@{
+    ViewBag.Title = "ListatgemMedico";
+}
+    <style>
+        #tblMedico_filter > label {
+            font-size: x-large;
+        }
+
+        input[type=search] {
+            width: 800px !important;
+        }
+    </style>
+
+
+<link href="~/assets/css/light-bootstrap-dashboard.css" rel="stylesheet" />
+<link href="~/Css/Listagem.css" rel="stylesheet" />
+
+<div class="container" style="margin-top:6%; margin-bottom:30%">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center"></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="card-body">
+                @*<div class="row">
+                    <div class="col-md-4" style="padding:0">
+                        <label style="font-weight:normal">Especialidade</label>
+                        <select id="especialidades" class="form-control chosen-select">
+                            @foreach (var item in TempData["Especialidades"] as IEnumerable<SaudeComVoce.Models.EspecialidadeViewModel>)
+                            {
+                                <option value="@item.ID" id="@item.ID">@item.Nome</option>
+                            }
+                        </select>
+                    </div>
+                </div>*@
+                <div class="row">
+                    <br />
+                    <table id="tblMedico" class="display table-striped table-hover" style="margin-top:1%">
+                        <thead>
+                            <tr>
+                                <th class="ordenaLista text-center" style="width:20%">
+
+                                </th>
+                                <th class="ordenaLista text-center">
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="lista text-center">
+                                        @if (item.Foto != null && item.Foto != "")
+                                        {
+                                            <img src="data:image/@item.Extensao;base64, @item.Foto" class="img-rounded" alt="Alternate Text" style="width:40%" />
+                                        }
+                                        else
+                                        {
+                                            <img src="~/Img/generic-user-purple.png" alt="Alternate Text" class="img-rounded" style="width:40%" />
+                                        }
+
+                                    </td>
+                                    <td class="lista">
+                                        <a href="#" onclick="getWhiteLabel('@item.Nome', @item.CodigoExterno)" style="font-size:25px;">Dr. @item.Nome - @item.Especialidade - @item.UF_CRM</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        function getwhitelabel(nome, id) {
+            window.location.href = '/medico/whitelabel/' + id + '?nome=' + nome;
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $('#tblMedico').dataTable({
+                "order": [[0, "desc"]],
+                "pagingType": "numbers",
+                "columnDefs": [{
+                    "targets": "_all",
+                    "orderable": false,
+                }],
+                "dom": '<"top"f>rt' + "<'bottom col-sm-12'" +
+                    "<'row'" +
+                    "<'col-sm-6'l>" +
+                    "<'col-sm-6'p>" +
+                    ">" +
+                    ">" + '<"clear">',
+                "oLanguage": {
+                    "sLengthMenu": "_MENU_",
+                    "sZeroRecords": "Nenhum registro encontrado.",
+                    "sInfo": "Mostrando página _PAGE_ de _PAGES_",
+                    "sInfoEmpty": "Nenhum dado para mostrar",
+                    "sInfoFiltered": "(Filtrado de _MAX_ registros)",
+                    "sSearch": "Pesquisar:"
+                },
+            });
+
+            $(".sorting_desc").removeClass('sorting_desc');
+            $("#tblMedico_filter").addClass('pull-left');
+            $(".form-control-sm").css({ width: "100%", "margin-top": "5%" });
+
+            //$('#especialidades').on('change', function () {
+            //    window.location.href = '/Medico/ListagemMedico?id=' + this.value;
+
+
+                //$.ajax({
+                //    headers: {
+                //        'Accept': 'application/json',
+                //        'Content-Type': 'application/json'
+                //    },
+                //    url: '/Medico/BuscarMedicoEspecialidades?id=' + this.value,
+                //    type: 'GET',
+                //    contentType: 'application/json; charset=utf-8',
+                //    success: function (data) {
+
+                //        if ($.fn.DataTable.isDataTable("#tblMedico")) {
+                //            $('#tblMedico').DataTable().clear().destroy();
+                //        }
+                //        $('#tblMedico tbody').empty();   
+
+                //        $.each(data, function (index, element, array) {
+                //            console.log(element);
+                //            $("#tbRelatorio > tbody").append("<tr>" +
+                //                //"<td>" + element.Codigo + "</td>" +
+                //                "<td class='lista text-center'>" + element.Foto == null ? "<img src='~/Img/generic-user-purple.png' alt='Alternate Text' style='width: 50%' />" : "<img src='data:image/" + element.Extensao + ";base64," + element.Foto + " alt='Alternate Text' style='width: 50%' />" + "</td>" +
+                //                "<td class='lista'> <a href='#' onclick='getWhiteLabel(" + element.Nome + ", " + element.CodigoExterno + ")'><b>" + element.Nome + "</b > <p style='font-size: 15px'>" + element.Especialidade + " - " + element.UF_CRM + "</p > <p class='p'>" + element.DescricaoWhiteLabel + "</p ></a > </td >" +
+                //                "</tr>");
+                //        });
+
+                //        $('#tblMedico').DataTable({
+                //            "order": [[0, "desc"]],
+                //            "pagingType": "numbers",
+                //            "columnDefs": [{
+                //                "targets": "_all",
+                //                "orderable": false,
+                //            }],
+                //            "dom": '<"top"f>rt' + "<'bottom col-sm-12'" +
+                //                "<'row'" +
+                //                "<'col-sm-6'l>" +
+                //                "<'col-sm-6'p>" +
+                //                ">" +
+                //                ">" + '<"clear">',
+                //            "oLanguage": {
+                //                "sLengthMenu": "_MENU_",
+                //                "sZeroRecords": "Nenhum registro encontrado.",
+                //                "sInfo": "Mostrando página _PAGE_ de _PAGES_",
+                //                "sInfoEmpty": "Nenhum dado para mostrar",
+                //                "sInfoFiltered": "(Filtrado de _MAX_ registros)",
+                //                "sSearch": "Pesquisar:"
+                //            },
+                //        });
+                //    },
+                //});
+            });
+        //});
+    </script>
+    <script src="~/assets/js/light-bootstrap-dashboard.js"></script>
+    <script src="~/assets/js/plugins/bootstrap-table.js"></script>
+    <script src="~/assets/js/core/popper.min.js"></script>
+}
+

@@ -1,0 +1,37 @@
+﻿<link href="~/Css/Responsivo.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "_Escolha";
+}
+
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header container-fluid">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="colorWhite">&times;</span></button>
+                <h4 class="modal-title colorWhite" id="myModalLabel">Selecione o tipo de Cadastro</h4>
+            </div>
+
+
+            <div class="col-md-6" id="medico">
+                <img class="img-responsive" src="~/Img/Homem.png">
+            </div>
+
+            <div class="col-md-6" id="paciente">
+                <img class="img-responsive" src="~/Img/Mulher.png">
+            </div>
+
+            <div class="col-md-12 col-xl-12" id="logo">
+                <div class="col-md-4"></div>
+                <img class="img-responsive col-md-4" src="~/Img/Logo.png">
+                <div class="col-md-4"></div>
+            </div>
+
+            <div class="col-md-12 col-sm-12" style="margin:0; padding:0;">
+                <a href="#" id="btnLista" class="btn btn-primary col-md-6 col-sm-6" onclick="carregaModalLista()">Você é da área da saúde?</a>
+                <a href="#" id="btnPaciente" class="btn btn-success col-md-6 col-sm-6" onclick="carregaModalPaciente()">Você é paciente?</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+

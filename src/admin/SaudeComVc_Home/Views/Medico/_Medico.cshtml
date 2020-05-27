@@ -1,0 +1,198 @@
+﻿<link href="~/Css/form-medico.css" rel="stylesheet" />
+<link href="~/Css/bootstrap-select.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "_Medico";
+}
+
+@model IEnumerable<SaudeComVoce.Models.EspecialidadeViewModel>
+<div class="modal fade bs-example-modal-lg" id="modalMedico" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="form col-md-12 container-fluid" style="margin:0">
+
+            <form name="form1" id="form1">
+                <div class="col-md-12" style="padding-bottom:3%;margin-top:3%">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <h1>Médico Autônomo&nbsp;<i class="fas fa-user-md"></i></h1>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label for="exampleInputEmail1" class="lbl">Nome Completo</label>
+                    <input type="text" class="form-control txt" id="nome" aria-describedby="emailHelp" style="padding-left:1%">
+                    <span class="off" id="lblNome">*Obrigatório</span>
+                </div>
+
+                <div class="form-group col-md-6 container-fluid">
+                    <label for="exampleInputEmail1" class="lblc">CPF</label>
+                    <input type="text" class="form-control txt" id="cpf" aria-describedby="emailHelp" onBlur="ValidarCPF(form1.cpf);" onKeyPress="MascaraCPF(form1.cpf);" maxlength="14" style="padding-left:1%">
+                    <span class="off" id="lblCpf">*Obrigatório</span>
+                </div>
+
+
+
+                <div class="form-group col-md-6 col-sm-6  container-fluid">
+                    <label>Data de Nascimento </label>
+                    <input type="date" class="form-control" placeholder="" id="dataNascimento" style="padding-left:1%">
+                    <span style="color:transparent" id="lblData">*Obrigatório</span>
+                </div>
+
+                <div class="form-group col-md-6 container-fluid">
+                    <label for="exampleInputEmail1" class="lblc">CRM</label>
+                    <input type="number" class="form-control txt" id="crm" aria-describedby="emailHelp" style="padding-left:1%" maxlength="7">
+                    <span class="off" id="lblCrm">*Obrigatório</span>
+                </div>
+
+
+
+                <div class="form-group col-md-2 container-fluid">
+                    <label for="exampleInputEmail1" class="lblc">UF</label>
+                    <select class="form-control chosen-select" id="cmbUf">
+                        <option value="Acre">AC</option>
+                        <option value="Alagoas">AL</option>
+                        <option value="Amapá">AP</option>
+                        <option value="Amazonas">AM</option>
+                        <option value="Bahia">BA</option>
+                        <option value="Ceará">CE</option>
+                        <option value="Distrito Federal">DF</option>
+                        <option value="Espírito Santo">ES</option>
+                        <option value="Goiás">GO</option>
+                        <option value="Maranhão">MA</option>
+                        <option value="Mato Grosso">MT</option>
+                        <option value="Mato Grosso do Sul">MS</option>
+                        <option value="Minas Gerais">MG</option>
+                        <option value="Pará">PA</option>
+                        <option value="Paraíba">PB</option>
+                        <option value="Paraná">PR</option>
+                        <option value="Pernambuco">PE</option>
+                        <option value="Piauí">PI</option>
+                        <option value="Rio de Janeiro">RJ</option>
+                        <option value="Rio Grande do Norte">RN</option>
+                        <option value="Rio Grande do Sul">RS</option>
+                        <option value="Rondônia">RO</option>
+                        <option value="Roraima">RR</option>
+                        <option value="Santa Catarina">SC</option>
+                        <option value="São Paulo">SP</option>
+                        <option value="Sergipe">SE</option>
+                        <option value="Tocantins">TO</option>
+                    </select>
+                    <span class="off" id="lblUfCrm">*Obrigatório</span>
+                </div>
+
+
+
+                <div class="form-group col-md-4 container-fluid">
+                    <label>Especialidade</label>
+                    <select class="form-control chosen-select" id="cmbEspecialidade">
+                        @foreach (var I in Model)
+                        {
+                            <option value="@I.ID">@I.Nome</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group container-fluid col-md-6">
+                    <label>Clinicas</label>
+                    <select class="form-control selectpicker" id="clinicas" multiple>
+                        <option id="0" value="0">Não possui clinica</option>
+                        @foreach (var item in TempData["Clinicas"] as IEnumerable<SaudeComVc_Home.Models.EmpresasViewModel>)
+                        {
+                            <option id="@item.ID" value="@item.ID">@item.Nome</option>
+                        }
+                    </select>
+                </div>
+
+
+
+                <div class="form-group col-md-6 container-fluid p-0" >
+                    <label for="exampleInputEmail1" class="lblc">Telefone</label>
+                    <input type="text" class="form-control" onclick="verdados();" placeholder="" id="telefone" name="telefone" onKeyPress="TelMask();" maxlength="14" style="padding-left:1%">
+                    <span class="off" id="lblTelefone">*Obrigatório</span><br>
+                </div>
+
+                <div class="form-group col-md-3 container-fluid">
+                    <label for="exampleInputEmail1" class="lblc">CEP</label>
+                    <input type="text" class="form-control txt" id="cep" aria-describedby="emailHelp" onfocusout="preencherEndereco($('#cep').val())" onKeyPress="MascaraCep(form1.cep);" maxlength="9" style="padding-left:1%">
+                    <span class="off" id="lblCep">*Obrigatório</span>
+                </div>
+                <div class="form-group col-md-7 container-fluid">
+                    <label for="exampleInputEmail1" class="lblc">Endereço</label>
+                    <input type="text" class="form-control txt" id="local" aria-describedby="emailHelp" style="padding-left:1%">
+                    <span class="off" id="lblLocal">*Obrigatório</span>
+                </div>
+                <div class="form-group col-md-2 container-fluid">
+                    <label for="exampleInputEmail1" class="lblc">Número</label>
+                    <input type="number" class="form-control txt" id="numero" aria-describedby="emailHelp" style="padding-left:1%" onfocusout="preencherEndereco($('#cep').val())">
+                    <span class="off" id="lblNumero">*Obrigatório</span>
+                </div>
+
+                <div class="col-md-12 container-fluid" style="margin:0;padding:0">
+                    <div class="form-group col-md-6 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc">Email</label>
+                        <input type="email" class="form-control txt" id="email" aria-describedby="emailHelp" onfocusout="validarEmail()" style="padding-left:1%">
+                        <span class="off" id="lblEmail">*Obrigatório</span>
+                    </div>
+
+                    <div class="form-group col-md-6 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc">Confirmar Email</label>
+                        <input type="email" class="form-control txt" id="confirmarEmail" onfocusout="validarCEmail()" aria-describedby="emailHelp" style="padding-left:1%">
+                        <span class="off" id="lblConfirmarEmail">*Obrigatório</span>
+                    </div>
+                </div>
+
+
+                <div class="form-group col-md-6 container-fluid">
+                    <label for="exampleInputEmail1" class="lblc">Senha</label>
+                    <input type="password" class="form-control txt" id="senha"
+                           aria-describedby="emailHelp" style="padding-left:1%">
+                    <span class="off" id="lblSenha">*Obrigatório</span>
+                </div>
+
+                <div class="form-group col-md-6 container-fluid">
+                    <label for="exampleInputEmail1" class="lblc"> Confirmar senha</label>
+                    <input type="password" class="form-control txt" id="confirmarSenha"
+                           aria-describedby="emailHelp" style="padding-left:1%">
+                    <span class="off" id="lblConfirmarSenha">*Obrigatório</span>
+                </div>
+
+                <span style="color:green" id="lblSpan" class="pull-right fade">Cadastro realizado com sucesso</span>
+                <span class="off pull-left" id="lblErro"></span>
+                <div class="col-md-12">
+                    <div>
+                        <a href="#" class="link pull-left" onclick="carregaModalLista()">Voltar</a>
+                        <button type="button" id="btnCadastrar" onclick="cadastrarMedico()" class="btn btn-default btn-lg btn-cadastrar pull-right">Cadastrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@*<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/plugins/chosen.jquery.js"></script>
+    <script>
+        $(function () {
+            $(".chosen-select").chosen({ no_results_text: "Nada encontrado!" });
+            $(".chosen-select").chosen({ allow_single_deselect: true });
+        });
+        </script>*@
+
+<script src="~/Scripts/plugins/bootstrap-select.min.js"></script>
+<script>
+    if ($(".selectpicker").length != 0) {
+        $(".selectpicker").selectpicker();
+        }
+
+    
+</script>
+<script>
+    function verdados() {
+        console.log($('.selectpicker').val());
+    }
+</script>

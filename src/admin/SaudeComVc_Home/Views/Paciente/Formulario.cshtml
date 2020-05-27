@@ -1,0 +1,324 @@
+﻿@model IEnumerable<SaudeComVc_Home.Models.PerguntaViewModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Formulario</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Css/Css.css" rel="stylesheet" />
+    <link href="~/Css/form-modal.css" rel="stylesheet" />
+    <link href="~/Css/jquery.loading.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon" />
+    <link href="~/Content/chosen/bootstrap-chosen.css" rel="stylesheet" />
+    <link href="~/Css/formulario.css" rel="stylesheet" />
+    <link href="~/Css/FormularioPerguntas.css" rel="stylesheet" />
+</head>
+<body style="background-color: #fff; margin-right:0;padding-right: 0 !important">
+    <header id="headPerg">
+
+        <nav class="col-md-12 container-fluid pesquisar navbar-fixed-top">
+            <div class="navbar-header" style="margin-right:1%; margin-left:1%">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" @*data-target="#collapse-navbar"*@ data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="background-color:grey; opacity: 0.5" id="btnMenu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span style="background-color:white;" class="icon-bar"></span>
+                    <span style="background-color:white;" class="icon-bar"></span>
+                    <span style="background-color:white;" class="icon-bar"></span>
+                </button>
+                @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+                {
+                    <a class="navbar-brand" id="imgLogado" href="@Url.Action("Index","Home")">
+                        <img src="~/Img/Logo150x40Azul.png" style="width:75%" />
+                        @*<img src="~/Img/Logo.png" style="height:40px; width:40px;" />*@
+                    </a>
+                }
+                else
+                {
+                    <a class="navbar-brand" id="logoTop" href="@Url.Action("Index","Home")">
+                        <img src="~/Img/Logo150x40Branca.png" />
+                        @*<img src="~/Img/Logo.png" style="height:40px; width:40px;" />*@
+                    </a>
+                }
+
+            </div>
+
+            <div class="collapse navbar-collapse" @*id="collapse-navbar"*@ id="bs-example-navbar-collapse-1">
+                <input type="hidden" id="selected_menu_item" value="=$selectedMenuId; ?>" />
+
+                <ul class="nav nav-pills head-menu" style="color:white;">
+
+                    @*<li style="margin-top:0.6%; font-size:15px" role="presentation">
+                        <form>
+                            <input type="text" id="search">
+                        </form>
+                    </li>*@
+                    <li style="margin-top:0.6%; font-size:15px" role="presentation" id="left"><a class="pesquisarTxt" href="/Home/Index">Notícias</a></li>
+                    <li style="margin-top:0.6%; font-size:15px" role="presentation"><a class="pesquisarTxt" href="/Medico/ListagemMedico">Médicos</a></li>
+                    <li style="margin-top:0.6%; font-size:15px" role="presentation"><a class="pesquisarTxt" href="/Home/About">TeleMedicina</a></li>
+                    <li style="margin-top:0.6%; font-size:15px" role="presentation"><a class="pesquisarTxt" href="/Home/About">Parceiros</a></li>
+                    <li style="margin-top:0.6%; font-size:15px" role="presentation"><a class="pesquisarTxt" href="/Home/About">Sobre</a></li>
+                    <li style="margin-top:0.6%; font-size:15px" role="presentation"><a class="pesquisarTxt" href="/Home/About">NewsLetter</a></li>
+                    @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado != null && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+                    {
+                        <li style="margin-top:0.6%; font-size:15px" role="presentation">
+                            <a href="#" class="pesquisarTxt" onclick="consulteseAgr()">Consulte-se Agora</a>
+                        </li>
+                    }
+                    @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado != null && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+                    {
+                        <li role="presentation" class="dropdown pull-right" style="font-size:15px">
+                            <a class="dropdown-toggle pesquisarTxt" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        @if (!string.IsNullOrEmpty(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar))
+                                        {
+                                            <img src="data:image/@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.AvatarExtension;base64,@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar"
+                                                 style="width:60px; height:40px; margin:0%" class="img-circle img-thumbnail" />
+                                        }
+                                        else
+                                        {
+                                            <img src="~/Img/generic-user-purple.png" style="width:60px; height:40px; margin-top:0%" class="img-circle img-thumbnail" />
+                                        }
+                                    </div>
+                                    <div class="col-md-7" style="margin:0%; margin-top:5%; padding:0%">
+                                        @* .Substring(0, SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome.IndexOf(' ')) *@
+                                        @SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome<span class="caret"></span>
+                                    </div>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Editar", "Paciente", new { id = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario })">Meus dados</a></li>
+                                <li><a href="@Url.Action("Formulario", "Paciente")">Ficha Médica</a></li>
+                                <li><a href="@Url.Action("Sair", "Login")">Sair</a></li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="pull-right" style="margin-top:0.6%; font-size:15px" role="presentation"><a href="#" id="btnEntrar" class="pesquisarTxt">ENTRAR&nbsp;</a></li>
+                        <li class="pull-right" style="margin-top:0.6%; font-size:15px; border: 1px solid white; border-radius: 8px" role="presentation"><a href="#" onclick="carregaModalEscolha()" id="btnEscolha" class="pesquisarTxt">CADASTRAR-SE&nbsp;</a></li>
+                    }
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container" style="margin-top:5%;">
+        <div class="row form" id="rows">
+            <div class="col-md-11 col-sm-12 ">
+                <div id="miolo" class="card striped-tabled-with-hover card-wizard">
+                    <div class="card-header text-center" id="cardC">
+                        <div class="col-md-4 col-sm-4"></div>
+                        <div class="col-md-3 col-sm-3" id="omd3">
+                            <p class="pull-right text-justify tituloNome"><b>Ficha de saúde do <span>@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome</span></b></p>
+                        </div>
+                        <div class="col-md-5 col-sm-5" id="omd3">
+                            @if (!string.IsNullOrEmpty(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.AvatarExtension) && !string.IsNullOrEmpty(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar))
+                            {
+                                <img src="data:image/@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.AvatarExtension;base64, @SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar" id="imgCara" class="img-circle pull-left bordaFoto" />
+                            }
+                            else
+                            {
+                                <img src="~/Img/generic-user-purple.png" id="imgCara" class="img-circle pull-left bordaFoto" />
+                            }
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="tab1" role="tabpanel">
+
+                                @foreach (var item in Model)
+                                {
+                                    if (item.TipoRespostaId == 3)
+                                    {
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <p class="text-justify TituloP"><b>@item.Nome</b></p>
+                                                <br />
+                                                <p class="text-justify DescriP">@item.Descricao</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="row">
+                                                    <div class="col-md-3" id="md3">
+                                                        <label>
+                                                            Sim &nbsp;<input type="radio" @(item.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "checked" : "")
+                                                                             onclick="responder(@item.ID, $(this))" name="@item.ID"
+                                                                             id="@(item.Respostas.FirstOrDefault() == null ? "0" : item.Respostas.FirstOrDefault().ID.ToString())">
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-md-3" id="omd3">
+                                                        <label>
+                                                            Não &nbsp;<input type="radio" @(item.Respostas.FirstOrDefault()?.Descricao == "Não" ? "checked" : "")
+                                                                             onclick="ignorar(@item.ID, $(this))" name="@item.ID"
+                                                                             id="@(item.Respostas.FirstOrDefault() == null ? "0" : item.Respostas.FirstOrDefault().ID.ToString())">
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        if (item.PerguntasFilho != null && item.PerguntasFilho.Count() > 0)
+                                        {
+                                            <p class="@item.ID @(item.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "" : "hidden")" id="quais"><b>Qual(is)?</b></p>
+                                            foreach (var sub in item.PerguntasFilho)
+                                            {
+                                                if (sub.TipoRespostaId == 3)
+                                                {
+                                                    <div class="row @(item.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "" : "hidden")  @item.ID">
+                                                        <div class="col-md-3 pull-left" id="questao">
+                                                            <p class="text-justify"><b>@sub.Nome</b></p>
+                                                            <h6>@sub.Descricao</h6>
+                                                        </div>
+                                                        <div class="col-md-7" id="buttons">
+                                                            <div class="row" id="row">
+                                                                <div class="col-md-3" id="md3">
+                                                                    <label>
+                                                                        Sim&nbsp;<input type="radio" @(sub.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "checked" : "")
+                                                                                        name="@sub.ID"
+                                                                                        id="@(sub.Respostas.FirstOrDefault() == null ? "0" : sub.Respostas.FirstOrDefault().ID.ToString())"
+                                                                                        onclick="responder(@sub.ID, $(this), false)">
+                                                                    </label>
+                                                                </div>
+                                                                <div class="col-md-3" id="omd3">
+                                                                    <label>
+                                                                        Não&nbsp;<input type="radio" @(sub.Respostas.FirstOrDefault()?.Descricao == "Não" ? "checked" : "")
+                                                                                        name="@sub.ID"
+                                                                                        id="@(sub.Respostas.FirstOrDefault() == null ? "0" : sub.Respostas.FirstOrDefault().ID.ToString())"
+                                                                                        onclick="ignorar(@sub.ID, $(this))">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="row @(item.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "" : "hidden") @item.ID" id="orow">
+                                                        <div class="col-md-2">
+                                                            <p class="pull-left text-justify" id="op"><b>@sub.Nome</b></p>
+                                                            <h6>@sub.Descricao</h6>
+                                                        </div>
+                                                        <div class="col-md-10" id="md10">
+                                                            <input type="text" value="@(sub.Respostas.FirstOrDefault()?.Descricao)"
+                                                                   id="@(sub.Respostas.FirstOrDefault() == null ? "0" : sub.Respostas.FirstOrDefault().ID.ToString())"
+                                                                   onfocusout="responderTexto(@sub.ID, $(this), false)" class="form-control border pull-left opa" maxlength="200" />
+                                                        </div>
+                                                    </div>
+                                                }
+                                            }
+                                        }
+                                        <br />
+                                    }
+                                    else
+                                    {
+                                        <div class="row">
+                                            <div class="col-md-12" id="md12">
+                                                <p class="text-justify TituloP"><b>@item.Nome</b></p>
+                                                <h6>@item.Descricao</h6>
+                                            </div>
+                                            <div class="row">
+                                                <input type="text" value="@(item.Respostas.FirstOrDefault()?.Descricao)"
+                                                       id="@(item.Respostas.FirstOrDefault() == null ? "0" : item.Respostas.FirstOrDefault().ID.ToString())"
+                                                       onfocusout="responderTexto(@item.ID, $(this), false)" class="form-control border outrot" maxlength="200" />
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <a href="@Url.Action("Index","Home")" class="btn btnPxQ" id="btnMais"><b>Responder mais tarde</b></a>
+                                <a href="@Url.Action("FichadeSaudeVisualizar","Paciente", new { id = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario })" target="_blank" class="btn btnPxQ" id="btnMais"><b>Visualizar Ficha Completa</b></a>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="hidden" id="qtd" value="@(Convert.ToInt32(ViewBag.Quantidade) + 1)" class="pull-right" />
+                                <div class="card-footer">
+                                    <ul class="pagination paginacao pull-right">
+                                        @for (int i = 0; i <= Convert.ToInt32(ViewBag.Quantidade); i++)
+                                        {
+                                            <li><a href="@Url.Action("Search", "Paciente", new { i, p = 3, id = @TempData["ID"], num = (i+1) })" style="background-color:rgb(30, 68, 150);color:white;border:1px gray solid;border-radius:24px" id="@(i+1)" onclick="mudarCor(@(i + 1))">@(i + 1)</a></li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    @*<script src="~/Scripts/jquery.js"></script>*@
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/navbar-animation-fix.js"></script>
+    <script src="~/Scripts/jquery.loading.js"></script>
+    <script src="~/Scripts/plugins/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/plugins/bootstrap-paginator.js"></script>
+    <script>
+        $(function () {
+            var options = {
+                totalPages: 10
+            };
+
+            $('#paginacao').bootstrapPaginator(options);
+            mudarCor(@TempData["NumeroPagina"]);
+        });
+
+        function mudarCor(id) {
+            $('#' + id).css({ "background-color": "", "color": "black" });
+        }
+
+        function responder(id, field) {
+            $("." + id).removeClass('hidden');
+
+            $.ajax({
+                method: "POST",
+                url: "/Paciente/Responder",
+                data: { ID: $(field).attr('id'), Descricao: "Sim", PerguntaId: id }
+            }).done(function (msg) {
+                console.log("Respondido.");
+                $(field).prop('id', msg.ID);
+            });
+        }
+
+        function ignorar(id, field) {
+            $("." + id).addClass('hidden');
+
+            $.ajax({
+                method: "POST",
+                url: "/Paciente/Responder",
+                data: { ID: $(field).attr('id'), Descricao: "Não", PerguntaId: id }
+            }).done(function (msg) {
+                console.log("Respondido.");
+                $(field).prop('id', msg.ID);
+            });
+        }
+
+        function responderTexto(id, field) {
+            if ($("#" + id).val() != '') {
+                $.ajax({
+                    method: "POST",
+                    url: "/Paciente/Responder",
+                    data: { ID: $(field).attr('id'), Descricao: $(field).val(), PerguntaId: id }
+                }).done(function (msg) {
+                    console.log("Respondido.");
+                    $(field).prop('id', msg.ID);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

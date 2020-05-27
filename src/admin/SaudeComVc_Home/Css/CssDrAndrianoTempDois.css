@@ -1,0 +1,116 @@
+﻿.back {
+    background-image: url('../Img/001.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin:0;
+    padding:0;
+}
+
+
+.sobreT {
+    color: white;
+    font-size: 250%;
+    font-family: 'Oswald', sans-serif;
+    margin-top: 5%;
+}
+
+.sobreTexto {
+    font-family: 'Oswald', sans-serif;
+    color:white;
+    padding-bottom:10%;
+}
+
+.sobreL{
+    color: white;
+    font-size: 250%;
+    font-family: 'Oswald', sans-serif;
+    margin-top:5%;
+}
+
+.margingTable {
+    margin-left: 1%;
+
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size:80%;
+}
+
+    .link:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+.mTop{
+    margin-bottom:95%;
+}
+
+.fTrans{
+    background-color:rgba(0, 0, 0, 0.80);
+}
+
+.consultorios {
+    background-color: #251761;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+.consul {
+    width: 80%;
+    padding-bottom: 5%;
+}
+
+.tableF{
+    margin-left:5%;
+    margin-top:2%;
+}
+
+.tituloBlog {
+    font-size: 250%;
+    font-family: 'Oswald', sans-serif;
+    margin-top: 5%;
+}
+
+.imgBlog {
+    width: 100%;
+}
+
+.tableBlog {
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.tableTitulo {
+    font-size: 250%;
+    font-family: 'Oswald', sans-serif;
+    color: red;
+    padding-left: 5%;
+    text-transform: uppercase;
+}
+
+.tableConteudo {
+    font-size: 100%;
+    font-family: 'Oswald', sans-serif;
+    color: black;
+    padding-left: 5%;
+}
+
+.tableLink {
+    font-family: 'Oswald', sans-serif;
+    padding-left: 5%;
+}
+
+.tableTop {
+    padding-top: 2%;
+}
+
+.margf {
+    background-color: #09064A;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    margin-top: 5%
+}
+

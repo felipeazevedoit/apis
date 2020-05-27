@@ -1,0 +1,12 @@
+﻿@media only screen and (max-width: 600px) {
+    #btnPaciente
+    {
+        width:50%
+    }
+    #usuarioEditar {
+    margin-top:10%
+    }
+    #userPhoto{
+        margin-left:35%;
+    }
+}
