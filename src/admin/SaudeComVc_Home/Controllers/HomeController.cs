@@ -160,10 +160,14 @@ namespace SaudeComVc_Home.Controllers
                 };
 
                 var helper = new ServiceHelper();
-                var result = await helper.PostAsync<IEnumerable<MedicoViewModel>>(keyUrl, "/Seguranca/WpMedicos/BuscarPorCodigos/" + 12 + "/" + 999, envio);
-              
-                return result.Where(r => r.Ativo);
-
+                var result =     await helper.PostAsync<IEnumerable<MedicoViewModel>>(keyUrl, "/Seguranca/WpMedicos/BuscarPorCodigos/" + 12 + "/" + 999, envio);
+                if (result != null)
+                    return result.Where(r => r.Ativo);
+                else
+                    return new List<MedicoViewModel>()
+                    {
+                        new MedicoViewModel()
+                    };
             }
             catch (Exception e)
             {

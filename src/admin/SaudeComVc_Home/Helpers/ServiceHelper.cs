@@ -34,31 +34,39 @@ namespace SaudeComVoce.Helpers
 
         public async Task<T> PostAsync<T>(string serverUrl, string resource, object envio)
         {
-            var data = JsonConvert.SerializeObject(envio);
-
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create($"{ serverUrl }{ resource }");
-            httpWebRequest.ReadWriteTimeout = Timeout.Infinite;
-            httpWebRequest.Timeout = Timeout.Infinite;
-            httpWebRequest.ContentType = "application/json";
-            httpWebRequest.Method = "POST";
-
-            using (var streamWriter = new StreamWriter(await httpWebRequest.GetRequestStreamAsync()))
+            try
             {
-                await streamWriter.WriteAsync(data);
-                await streamWriter.FlushAsync();
-                streamWriter.Close();
-            }
+                var data = JsonConvert.SerializeObject(envio);
 
-            var result = string.Empty;
-            var httpResponse = (HttpWebResponse)await httpWebRequest.GetResponseAsync();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create($"{ serverUrl }{ resource }");
+                httpWebRequest.ReadWriteTimeout = Timeout.Infinite;
+                httpWebRequest.Timeout = Timeout.Infinite;
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+
+                using (var streamWriter = new StreamWriter(await httpWebRequest.GetRequestStreamAsync()))
+                {
+                    await streamWriter.WriteAsync(data);
+                    await streamWriter.FlushAsync();
+                    streamWriter.Close();
+                }
+
+                var result = string.Empty;
+                var httpResponse = (HttpWebResponse)await httpWebRequest.GetResponseAsync();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    result = await streamReader.ReadToEndAsync();
+                }
+
+                var response = JsonConvert.DeserializeObject<T>(result);
+
+                return response;
+            }
+            catch (System.Exception)
             {
-                result = await streamReader.ReadToEndAsync();
+                return JsonConvert.DeserializeObject<T>("");
             }
-
-            var response = JsonConvert.DeserializeObject<T>(result);
-
-            return response;
+         
         }
     }
 }
