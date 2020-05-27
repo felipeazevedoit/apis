@@ -1,0 +1,263 @@
+﻿
+@model SaudeComVc_Home.Models.WhiteLabelViewModel
+<link href="~/Content/templateFinal.css" rel="stylesheet" />
+<link href="~/Css/medico-images.css" rel="stylesheet" />
+<header class="container" style="margin-top:2%">
+    <div class="row">
+        <div class="col-md-5 escrito content " style="height:910px;">
+            @Html.HiddenFor(w => w.IdMedico, new { id = "medicoId" })
+            @Html.HiddenFor(w => w.Nome, new { id = "medicoNome" })
+            <br />
+            <br />
+
+            @if (TempData["Logo"] != null)
+            {
+                <a href="@Url.Action("Index", "Home")"><img class="img-responsive logo-banner" src="data:image/@TempData["ExtensaoLogo"].ToString();base64, @TempData["Logo"].ToString()" /></a>
+            }
+            else
+            {
+                <a href="@Url.Action("Index", "Home")"><img class="img-responsive logo-banner" src="~/Img/SaudeComVc-logo.png" /></a>
+            }
+
+            @if (!string.IsNullOrEmpty(Model.Nome))
+            {
+                <h1>Dr. @Model.Nome</h1>
+            }
+            else
+            {
+                <h1>Dr. Adriano Almeida</h1>
+            }
+
+            @if (Model.Pagina != null && !string.IsNullOrEmpty(Model.Pagina.Apresentacao))
+            {
+                <p>@Model.Pagina.Apresentacao</p>
+            }
+            else
+            {
+                <p class="text-justify">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been
+                    the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                    of type and scrambled it to make a type specimen book.It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining essentially unchanged.It was
+                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus PageMaker including versions of
+                    Lorem Ipsum.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been
+                    the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                    of type and scrambled it to make a type specimen book.It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining essentially unchanged.It was
+                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus PageMaker including versions of
+                    Lorem Ipsum.
+                </p>
+            }
+
+            @if (Model.Historico != null && Model.Historico.Count() > 0)
+            {
+                <button type="button" onclick="carregaModalHistorico()" class="button efeito efeito-3">Histórico Profissional</button>
+            }
+        </div>
+        <div class="col-md-7 banner container-fluid">
+
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <!-- <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                       <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li> -->
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        @if (Model.Pagina != null && Model.Pagina.Banner != null)
+                        {
+                            <img src="data:image/png;base64,@Convert.ToBase64String(Model.Pagina.Banner)" style="height:910px; width:100%" />
+                        }
+                        else
+                        {
+                            <img src="~/Img/banner.jpg" />
+                        }
+                        <div class="carousel-caption">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="container-fluid all-interior">
+        <h2 style="margin-top:1%">Portifólio</h2>
+        <div class="row">
+            <div class="col-md-12">
+                @if (Model.Galeria != null && Model.Galeria.Count() > 0)
+                {
+                    foreach (var item in Model.Galeria)
+                    {
+                        <div class=" col-md-3 col-sm-8 container">
+                            <img class="img-responsive" onclick="showImage($(this))"
+                                 src="data:image/png;base64,@Convert.ToBase64String(item.Arquivo)" />
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class=" col-md-3 col-sm-8 container">
+                        <img class="img-responsive" onclick="showImage($(this))" src="~/Img/interior1.jpg" />
+                    </div>
+
+                    <div class=" col-md-3 col-sm-8 container">
+                        <img class="img-responsive" onclick="showImage($(this))" src="~/Img/interior1.jpg" />
+                    </div>
+
+                    <div class=" col-md-3 col-sm-8 container">
+                        <img class="img-responsive" onclick="showImage($(this))" src="~/Img/interior1.jpg" />
+                    </div>
+
+                    <div class=" col-md-3 col-sm-8 container">
+                        <img class="img-responsive" onclick="showImage($(this))" src="~/Img/interior1.jpg" />
+                    </div>
+                    <div class=" col-md-3 col-sm-8 container">
+                        <img class="img-responsive" onclick="showImage($(this))" src="~/Img/interior2.jpg" />
+                    </div>
+
+                    <div class=" col-md-3 col-sm-8 container">
+                        <img class="img-responsive" onclick="showImage($(this))" src="~/Img/interior2.jpg" />
+                    </div>
+
+                    <div class="col-md-3 col-sm-8 container">
+                        <img class="img-responsive" onclick="showImage($(this))" src="~/Img/interior2.jpg" />
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+    <section class="container all-blog">
+        @if (!string.IsNullOrEmpty(Model.Nome))
+        {
+            <h2>@Model.Nome</h2>
+        }
+        else
+        {
+            <h2>Blog do Adriano</h2>
+        }
+
+        <div class="col-md-12">
+            @if (Model.Noticias != null && Model.Noticias.Count() > 0)
+            {
+                foreach (var item in Model.Noticias)
+                {
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="/Noticias/Index/@item.ID" class="leia-mais">
+                                <div class=" col-md-5 container">
+                                    <img class="img-responsive"
+                                         src="data:image/@item.Midia.Extensao.Replace(".", "");base64,@Convert.ToBase64String(item.Midia.Arquivo)" />
+                                </div>
+
+                                <div class="col-md-7">
+                                    <h3>@item.Nome</h3>
+                                    <p>
+                                        @item.Descricao
+                                    </p>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class=" col-md-5 container">
+                            <img class="img-responsive" src="~/Img/Fabiana-Karla.jpg" />
+                        </div>
+
+                        <div class="col-md-7">
+                            <h3>Lorem Ipsum is simply dummy text of the</h3>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummyLorem Ipsum is simply dummy text of the printing
+                                and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy
+                            </p>
+                            <a href="#" class="leia-mais">Leia mais</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class=" col-md-5 container">
+                            <img class="img-responsive" src="~/Img/gravida.jpg" />
+                        </div>
+
+                        <div class="col-md-7">
+                            <h3>Lorem Ipsum is simply dummy text of the</h3>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummyLorem Ipsum is simply dummy text of the printing
+                                and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy
+                            </p>
+                            <a href="#" class="leia-mais">Leia mais</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class=" col-md-5 container">
+                            <img class="img-responsive" src="~/Img/exame.jpg" />
+                        </div>
+
+                        <div class="col-md-7">
+                            <h3>Lorem Ipsum is simply dummy text of the</h3>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy
+                            </p>
+                            <a href="#" class="leia-mais">Leia mais</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+</header>
+<div id="historicoModal"></div>
+
+<div id="imageModal" style="margin-top:3.5%" class="modal modalImage">
+
+    <!-- The Close Button -->
+    <span class="close" onclick="closeImage()" style="color:white;">&times;</span>
+
+    <!-- Modal Content (The Image) -->
+    <img class="modalImage-content modal-content" id="img01">
+
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/pages/whitelabel.js"></script>
+    <script src="~/Scripts/pages/modais.js"></script>
+    <script>
+        function showImage(image) {
+            $("#imageModal").css("display", "block");
+            $("#imageModal").css("overflow", "hidden");
+            $("#img01").prop("src", $(image).attr("src"));
+        }
+
+        function closeImage() {
+            $("#imageModal").css("display", "none");
+        }
+    </script>
+}

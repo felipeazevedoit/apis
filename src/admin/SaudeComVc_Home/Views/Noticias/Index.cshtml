@@ -1,0 +1,137 @@
+﻿<link href="~/Css/noticia.css" rel="stylesheet" />
+@model SaudeComVoce.Models.NoticiaViewModel
+
+<div class="row" id="rolew">
+    <div class="container" style="background-color:white;">
+        <br />
+        <input type="hidden" id="user" value="@Model.CodigoExterno" />
+        <input type="hidden" id="noticia" value="@Model.ID" />
+        <input type="hidden" id="tags" value="@Model.Tags" />
+        <div class="col-md-12 img-thumbnail" style="background-color:white; margin:0; padding:0;">
+            <div class="row" style="background-color:#f5f5f5 ; width:98%;margin-left:1%;margin-top:3%;border-radius:6px;">
+                @if (Model.CodigoExterno > 0)
+                {
+                    <div class="col-md-1 col-sm-1" style="margin-right:0; padding-right:0;">
+                        <a href="#" onclick="getWhiteLabel($('#txtNome').text(), $('#user').val());"><img src="~/Img/generic-user-purple.png" id="imgMedico" class="img-circle img-responsive" /></a>
+                    </div>
+                    <div class="col-md-4 col-sm-4" style="margin:0; padding:0; margin-top:2%">
+                        <a href="#" onclick="getWhiteLabel($('#txtNome').text(), $('#user').val());"><span class="text-justify"><b class="text-justify" id="txtNome"></b></span></a>
+                    </div>
+                }
+            </div>
+            <div class="col-md-12">
+                <h1 class="text-center" style="font-family: 'Open Sans', sans-serif;">@Model.Nome</h1>
+                <h4 class="text-center" style="color:gray;">@Model.Descricao</h4>
+                <p style="margin-left:7.9%; color:gray">Data de Criação:@Model.DataCriacao</p>
+                <hr />
+                <div class="text-justify">
+                    @Html.Raw(Model.Conteudo.Replace("\r\n", "<br />"))
+                    <hr />
+                    <div>
+                        <h1 class="text-center"><b id="lblNumero"></b> COMENTÁRIO(S)</h1>
+                    </div>
+                    @*<hr />*@
+                    @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado != null && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+                    {
+                        <div class="row">
+                            <form id="form1">
+                                <div class="col-md-1 col-sm-1"></div>
+                                <div class="col-md-2 col-sm-1">
+                                    @if (!string.IsNullOrEmpty(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar))
+                                    {
+                                        <img src="data:image/@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.AvatarExtension;base64,@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar" id="pcbMedico" class="img-circle img-responsive center-block" style="width:50%;padding-bottom:5%" />
+                                    }
+                                    else
+                                    {
+                                        <img src="~/Img/generic-user-purple.png" id="pcbMedico" class="img-circle img-responsive center-block" style="width:50%;padding-bottom:5%" />
+                                    }
+                                </div>
+                                <div class="col-md-6 col-sm-8 balaoImg" id="balao" style="margin:0; padding:0;">
+                                    <textarea style="width:93%;margin-left:6%; resize:none;" class="pull-left textAreaBalao" id="lblDescricaoComent" placeholder="Escreva um comentário...">&nbsp;&nbsp;</textarea>
+                                </div>
+                                <div class="col-md-2 col-sm-2" style="margin:0; padding:0;">
+                                    <input type="button" id="btnComentario" value="Enviar" class="pull-left btn btn-warning center-block" />
+                                </div>
+                            </form>
+                        </div>
+                    }
+                    <br />
+
+
+
+
+                    @*<div class="row">
+                        @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+                        {
+                            <div class="col-md-12 col-sm-12" style="background-color:white">
+                                <form id="form1">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-2 col-sm-3" style="margin:0; padding:0;">
+                                        
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 balaoImg" style="margin:0; padding:0;">
+                                        <textarea style="margin-top:1%;width:93%;margin-left:6%" class="pull-left textAreaBalao" id="lblDescricaoComent" placeholder="Escreva um comentário..."></textarea>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3" style="margin:0; padding:0;">
+                                        <input type="button" id="btnComentario" value="Enviar" class="pull-left btn btn-warning pull-left" style="margin-top:0.5%; height:48px; width:30%" />
+                                    </div>
+                                </form>
+                                <br />
+                                <br />
+                            </div>
+                        }
+                    </div>*@
+                    <div class="row">
+                    <div id="pai">
+                        @*<div class="img-thumbnail" style="width:80%">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="~/Img/generic-user-purple.png" id="imgMedico" class="img-circle img-responsive" style="width:50%; margin:5%; margin-left:50%" />
+                                    </div>
+                                    <div class="col-md-9" style="margin:0; padding:0">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h3 class="pull-left">Nera</h3>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><h4 class="pull-left">Conteudo</h4></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>*@
+                    </div>
+                        </div>
+                    <hr />
+                    <h1 class="text-center">Notícias Relacionadas</h1>
+                    <hr />
+                    <div id="mae">
+                        @*<div class="row ">
+                                <div>
+                                    <div class="col-md-2">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="~/Img/destaque-5.jpg" style="width:100%; margin-left:1%;" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p class="tituloNoticias">Bariatrica</p>
+                                        <p class="tituloNoticias"><b>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, O Lorem Ipsum é um texto mode</b></p>
+                                        <p style="margin-left:1%;">O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, O Lorem Ipsum é um texto mode</p>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                            </div>
+                                </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal"></div>
+@section Scripts{
+    <script src="~/Scripts/pages/noticia.js"></script>
+    <script src="~/Scripts/pages/modais.js"></script>
+}

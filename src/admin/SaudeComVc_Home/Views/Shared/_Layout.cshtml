@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>@ViewBag.Title</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Css/Css.css" rel="stylesheet" />
+    <link href="~/Css/form-modal.css" rel="stylesheet" />
+    <link href="~/Css/jquery.loading.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon" />
+    <link href="~/Content/chosen/bootstrap-chosen.css" rel="stylesheet" />
+    <!--Login-->
+    <link href="~/Css/form-login.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <!--Paciente-->
+    <link href="~/Css/form-paciente.css" rel="stylesheet" />
+    <!--Lista-->
+    <link href="~/Css/2.0.css" rel="stylesheet" />
+    <!--Clinica-->
+    <link href="~/Css/form-clinica.css" rel="stylesheet" />
+    <!--Medico-->
+    <link href="~/Css/form-medico.css" rel="stylesheet" />
+    <!--Profissional-->
+    <link href="~/Css/form-profissional.css" rel="stylesheet" />
+    <!--Fornecedor-->
+    <link href="~/Css/form-fornecedor.css" rel="stylesheet" />
+    @RenderSection("css", false)
+
+
+</head>
+
+<body style="background-color: #fff; margin-right:0;padding-right: 0 !important">
+    <header>
+        
+        <nav class="col-md-12 container-fluid pesquisar navbar-fixed-top">
+            <div class="navbar-header" style="margin-right:1%; margin-left:1%">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" @*data-target="#collapse-navbar"*@ data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="background-color:grey; opacity: 0.5" id="btnMenu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span style="background-color:white;" class="icon-bar"></span>
+                    <span style="background-color:white;" class="icon-bar"></span>
+                    <span style="background-color:white;" class="icon-bar"></span>
+                </button>
+                @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+                {
+                    <a class="navbar-brand" id="imgLogado" href="@Url.Action("Index","Home")">
+                        <img src="~/Img/Logo150x40Azul.png" style="width:75%" />
+                        @*<img src="~/Img/Logo.png" style="height:40px; width:40px;" />*@
+                    </a>
+                }
+                else
+                {
+                    <a class="navbar-brand" id="logoTop" href="@Url.Action("Index","Home")">
+                        <img src="~/Img/Logo150x40Branca.png" />
+                        @*<img src="~/Img/Logo.png" style="height:40px; width:40px;" />*@
+                    </a>
+                }
+
+            </div>
+
+            <div class="collapse navbar-collapse" @*id="collapse-navbar"*@ id="bs-example-navbar-collapse-1">
+                <input type="hidden" id="selected_menu_item" value="=$selectedMenuId; ?>" />
+                <ul class="nav nav-pills head-menu" style="color:white;">
+
+                    @*<li style="margin-top:0.6%; font-size:15px" role="presentation">
+                        <form>
+                            <input type="text" id="search">
+                        </form>
+                    </li>*@
+
+                    <li style="margin-top:0.6%;" role="presentation" id="left"><a class="pesquisarTxt" href="/Home/Index">Notícias</a></li>
+                    <li style="margin-top:0.6%;" role="presentation"><a class="pesquisarTxt" id="pesquisarTxt" href="/Medico/ListagemMedico">Médicos</a></li>
+                    <li style="margin-top:0.6%;" role="presentation"><a class="pesquisarTxt" href="/Home/About">TeleMedicina</a></li>
+                    <li style="margin-top:0.6%;" role="presentation"><a class="pesquisarTxt" href="/Home/About">Parceiros</a></li>
+                    <li style="margin-top:0.6%;" role="presentation"><a class="pesquisarTxt" href="/Home/About">Sobre</a></li>
+                    <li style="margin-top:0.6%;" role="presentation"><a class="pesquisarTxt" href="#" id="news">NewsLetter</a></li>
+                    @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado != null && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+                    {
+                        <li style="margin-top:0.6%;" role="presentation">
+                            <a href="#" class="pesquisarTxt" onclick="consulteseAgr()">Consulte-se Agora</a>
+                        </li>
+                    }
+                    @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado != null && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+                    {
+                        <li role="presentation" class="dropdown pull-right" style="font-size:15px">
+                            <a class="dropdown-toggle pesquisarTxt" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        @if (!string.IsNullOrEmpty(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar))
+                                        {
+                                            <img src="data:image/@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.AvatarExtension;base64,@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar"
+                                                 style="width:80px; height:40px; margin:0%" class="img-circle img-thumbnail" />
+                                        }
+                                        else
+                                        {
+                                            <img src="~/Img/generic-user-purple.png" style="width:80px; height:40px; margin-top:0%" class="img-circle img-thumbnail perfilLogado" />
+                                        }
+                                    </div>
+                                    <div class="col-md-7" style="margin:0%; margin-top:5%; padding:0%">
+                                        @* .Substring(0, SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome.IndexOf(' ')) *@
+                                        @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome.IndexOf(' ') > 0)
+                                        {
+                                            @SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome.Substring(0, SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome.IndexOf(' '))<span class="caret"></span>
+                                        }
+                                        else
+                                        {
+                                            @SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome<span class="caret"></span>
+                                        }
+                                    </div>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Editar", "Paciente", new { id = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario })">Meus dados</a></li>
+                                <li><a href="@Url.Action("Formulario", "Paciente")">Ficha Médica</a></li>
+                                <li><a href="@Url.Action("Sair", "Login")">Sair</a></li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="pull-right" style="margin-top:0.6%;" role="presentation"><a href="@Url.Action("TelaLogin","Login")" id="" class="pesquisarTxt">ENTRAR&nbsp;</a></li>
+                        <li class="pull-right" style="margin-top:0.6%;  border: 1px solid white; border-radius: 8px" role="presentation"><a href="#" onclick="carregaModalEscolha()" id="btnEscolha" class="pesquisarTxt">CADASTRAR-SE&nbsp;</a></li>
+                    }
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <input type="hidden" id="lblNomeUserL" value="@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome" />
+        <input type="hidden" id="lblIdUsuarioL" value="@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario" />
+        @RenderBody()
+
+        <div id="modal"></div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row" style=" color:#337ab7;">
+                <div class="col-md-5 ">
+                    @*<img src="~/Img/SaudeComVc-logo.png" style="width:80%;" />
+        <p style="text-shadow: 1px 2px 2px #e0e0e0;">Copyright &copy; 2019 - SaudeCom.Vc. Todos Direitos Reservados.</p>*@
+                    <table style="width:30%;margin-top:7%;">
+                        <tr>
+                            <td class="margfoo"><a href="#" class="link"><img src="~/Icons/facebook1.png" style="background-image: radial-gradient(#515151, #515151, #515151,#515151, #e0e0e0, #e0e0e0); box-shadow: 3px 3px 3px grey; border-radius: 30px;" /></a></td>
+                            <td class="margfoo"><a href="#" class="link"><img src="~/Icons/instagram1.png" style="background-image: radial-gradient(#515151, #515151, #515151,#515151, #e0e0e0, #e0e0e0); box-shadow: 3px 3px 3px grey; border-radius: 30px;" /></a></td>
+                            <td class="margfoo"><a href="#" class="link"><img src="~/Icons/whatsapp1.png" style="background-image: radial-gradient(#515151, #515151, #515151,#515151, #e0e0e0, #e0e0e0); box-shadow: 3px 3px 3px grey; border-radius: 30px;" /></a></td>
+                        </tr>
+                    </table>
+                    <br />
+                    <p style="text-shadow: 1px 2px 2px #e0e0e0;">Copyright &copy; 2019 - SaudeCom.Vc. Todos Direitos Reservados.</p>
+                </div>
+                <div class="col-md-3">
+                    @*<table style="width:30%;margin-top:15%;">
+                            <tr>
+                                <td class="margfoo"><a href="#" class="link"><img src="~/Icons/facebook1.png" style="background-image: radial-gradient(#515151, #515151, #515151,#515151, #e0e0e0, #e0e0e0); box-shadow: 3px 3px 3px grey; border-radius: 30px;" /></a></td>
+                                <td class="margfoo"><a href="#" class="link"><img src="~/Icons/instagram1.png" style="background-image: radial-gradient(#515151, #515151, #515151,#515151, #e0e0e0, #e0e0e0); box-shadow: 3px 3px 3px grey; border-radius: 30px;" /></a></td>
+                                <td class="margfoo"><a href="#" class="link"><img src="~/Icons/whatsapp1.png" style="background-image: radial-gradient(#515151, #515151, #515151,#515151, #e0e0e0, #e0e0e0); box-shadow: 3px 3px 3px grey; border-radius: 30px;" /></a></td>
+                            </tr>
+                        </table>*@
+                </div>
+                <div class="col-md-4" style="margin-top:2%;">
+                    <div class="form-group" style="margin-left:35%;">
+                        <label class="text-center" style="text-shadow: 1px 2px 2px #e0e0e0; font-size:15px" for="email">Deseja receber nossa newsletter?</label><br />
+                        <button type="button" class="btn" style="width:47%; box-shadow: 3px 3px 3px grey; background-color:green; color:white">Sim</button>
+                        <button type="button" class="btn" style="width:47%; box-shadow: 3px 3px 3px grey; background-color:red; color:white">Não</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    @*<script src="~/Scripts/jquery.js"></script>*@
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/navbar-animation-fix.js"></script>
+    <script src="~/Scripts/jquery.loading.js"></script>
+    <script src="~/Scripts/plugins/jquery.dataTables.min.js"></script>
+    <!--Login-->
+    <script src="~/Scripts/pages/login.js"></script>
+    <!--Paciente-->
+    <script src="~/Scripts/pages/paciente.js"></script>
+    <script src="~/Scripts/pages/validacaoPaciente.js"></script>
+    <!--Clinica-->
+    <script src="~/Scripts/buscarCep.js"></script>
+    <script src="~/Scripts/pages/clinica.js"></script>
+    <script src="~/Scripts/pages/validacaoClinica.js"></script>
+    <!--Medico-->
+    <script src="~/Scripts/pages/medico.js"></script>
+    <script src="~/Scripts/pages/validacaoMedico.js"></script>
+    <!--Profissional-->
+    <script src="~/Scripts/pages/validacaoProfissional.js"></script>
+    <script src="~/Scripts/pages/profissional.js"></script>
+    <!--Fornecedor-->
+    <script src="~/Scripts/pages/validacaoFornecedor.js"></script>
+    <script src="~/Scripts/pages/fornecedor.js"></script>
+    <script src="~/Scripts/masks.js"></script>
+    <script src="~/Scripts/pages/TelDoctor.js"></script>
+    <script src="~/Scripts/pages/modais.js"></script>
+    <!--Collapse Menu Hamburguer-->
+    <script src="~/Scripts/CollapseMenu.js"></script>
+    <script>
+        function getWhiteLabel(nome, id) {
+            window.location.href = '/Medico/WhiteLabel/' + id + '?nome=' + nome;
+        }
+    </script>
+    <script>
+        $(".btnA").on("click", function () {
+            $(".input").toggleClass("inclicked");
+            $(".btnA").toggleClass("close");
+        })
+    </script>
+    <script src="~/Scripts/plugins/chosen.jquery.js"></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>

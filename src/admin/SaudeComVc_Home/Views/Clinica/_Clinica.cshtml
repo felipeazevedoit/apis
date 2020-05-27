@@ -1,0 +1,161 @@
+﻿<link href="~/Css/form-clinica.css" rel="stylesheet" />
+<link href="~/Css/bootstrap-select.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "_Clinica";
+}
+
+<div class="modal fade bs-example-modal-lg" id="modalClinica" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="form col-md-12">
+            <form name="form1" id="form1">
+                <div class="col-md-12" style="padding-bottom:3%;margin-top:3%">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <h1>Clínica&nbsp;<i class="fas fa-clinic-medical"></i></h1>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group col-md-8 container-fluid">
+                        <label for="exampleInputEmail1" class="lbl">Razão Social</label>
+                        <input type="text" class="form-control txt" id="nome" aria-describedby="emailHelp" style="padding-left:1%">
+                        <span class="off" id="lblNome">*Obrigatório</span>
+                    </div>
+
+                    <div class="form-group col-md-4 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc">CNPJ</label>
+                        <input type="text" class="form-control txt" id="cnpj" aria-describedby="emailHelp" onKeyPress="MascaraCNPJ(form1.cnpj);" maxlength="18" onBlur="ValidarCNPJ(form1.cnpj);" style="padding-left:1%">
+                        <span class="off" id="lblCnpj">*Obrigatório</span>
+                    </div>
+
+                    <div class="form-group col-md-3 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc">CEP</label>
+                        <input type="text" class="form-control txt" id="cep" aria-describedby="emailHelp" onfocusout="preencherEndereco($('#cep').val())" onKeyPress="MascaraCep(form1.cep);" maxlength="9" style="padding-left:1%">
+                        <span class="off" id="lblCep">*Obrigatório</span>
+                    </div>
+                    <div class="form-group col-md-7 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc">Endereço</label>
+                        <input type="text" class="form-control txt" id="local" aria-describedby="emailHelp" style="padding-left:1%">
+                        <span class="off" id="lblLocal">*Obrigatório</span>
+                    </div>
+                    <div class="form-group col-md-2 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc">Número</label>
+                        <input type="number" class="form-control txt" id="numero" aria-describedby="emailHelp" style="padding-left:1%" onfocusout="preencherEndereco($('#cep').val())">
+                        <span class="off" id="lblNumero">*Obrigatório</span>
+                    </div>
+
+                    <div class="form-group col-md-6 container-fluid">
+                        <label for="exampleInputEmail1" class="lbl">Médico Responsável</label>
+                        <input type="text" class="form-control txt" id="responsavel" aria-describedby="emailHelp" style="padding-left:1%">
+                        <span class="off" id="lblResponsavel">*Obrigatório</span>
+                    </div>
+
+                    <div class="form-group col-md-6 container-fluid">
+                        <label for="exampleInputEmail1" class="lbl">Especialidade</label>
+                        <select id="especialidades" class="form-control selectpicker" multiple>
+                            @foreach (var item in TempData["Especialidades"] as IEnumerable<SaudeComVoce.Models.EspecialidadeViewModel>)
+                            {
+                                <option value="@item.ID" id="@item.ID">@item.Nome</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-6 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc">CRM</label>
+                        <input type="number" class="form-control txt" id="crm" aria-describedby="emailHelp" style="padding-left:1%">
+                        <span class="off" id="lblCrm">*Obrigatório</span>
+                    </div>
+
+                    <div class="form-group col-md-2 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc">UF_CRM</label>
+                        <select class="form-control chosen-select" id="cmbUfCrm">
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                        <span class="off" id="lblUfCrm">*Obrigatório</span>
+                    </div>
+
+
+                    <div class="form-group col-md-4 container-fluid">
+                        <label>Telefone Comercial</label>
+                        <input type="text" class="form-control" placeholder="" id="telefone" name="telefone" onKeyPress="TelMask();" maxlength="14" style="padding-left:1%">
+                        <span class="off" id="lblTelefone">*Obrigatório</span><br>
+                    </div>
+
+
+                    <div class="col-md-12" style="margin:0; padding:0">
+                        <div class="form-group col-md-6 container-fluid">
+                            <label for="exampleInputEmail1" class="lblc">Email</label>
+                            <input type="email" class="form-control txt" id="email" aria-describedby="emailHelp" onfocusout="validarEmail()" style="padding-left:1%">
+                            <span class="off" id="lblEmail">*Obrigatório</span>
+                        </div>
+
+                        <div class="form-group col-md-6 container-fluid">
+                            <label for="exampleInputEmail1" class="lblc">Confirmar Email</label>
+                            <input type="email" class="form-control txt" id="confirmarEmail" onfocusout="validarCEmail()" aria-describedby="emailHelp" style="padding-left:1%">
+                            <span class="off" id="lblConfirmarEmail">*Obrigatório</span>
+                        </div>
+                    </div>
+
+                    <span style="color:green" id="lblSpan" class="pull-right fade">Cadastro realizado com sucesso, em breve entraremos em contato</span>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div>
+
+                                <a href="#" class="link pull-left" onclick="carregaModalLista()">Voltar</a>
+                                <button type="button" id="btnCadastrar" onclick="cadastrarClinica()" class="btn btn-default btn-lg btn-cadastrar pull-right">Cadastrar</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".chosen-select").chosen({ no_results_text: "Nada encontrado!" });
+    $(".chosen-select").chosen({ allow_single_deselect: true });
+
+    $(".chosen-container").css("width", '100%');
+</script>
+
+<script src="~/Scripts/plugins/bootstrap-select.min.js"></script>
+<script>
+    if ($(".selectpicker").length != 0) {
+        $(".selectpicker").selectpicker();
+    }
+
+
+</script>

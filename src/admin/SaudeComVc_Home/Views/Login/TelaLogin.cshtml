@@ -1,0 +1,56 @@
+﻿@model SaudeComVoce.Models.LoginViewModel
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="~/Css/loginHome.css" media="screen" />
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+        @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { style = "margin-top:10%" }))
+        {
+            <form action="index.html" method="post">
+                <a href="@Url.Action("Index", "Home")">Voltar</a>
+                <h1>
+                    Login
+                </h1>
+                <div class="form-content">
+                    @*<input id="email" name="email"  type="text" />*@
+                    @Html.TextBoxFor(l => l.Login, new { id = "email", @class = "form-control txt", type = "email", placeholder = "Usuário" })
+                    @*<input id="senha" name="senha"  type="password" />*@
+                    @Html.TextBoxFor(l => l.Senha, new { id = "senha", @class = "form-control txt", type = "password", placeholder = "Senha" })
+                    @if (TempData["loginResult"] != null)
+                    {
+                    <span class="label label-warning fade text-center" id="return" style="font-size:75%; margin-left:5%; color:red">*@TempData["loginResult"].ToString()</span>
+
+                    }
+                    <br />
+                    <input type="submit" class="button" value="Entrar" />
+                    <br />
+                    <div class="signup-message">
+                        <a href="@Url.Action("EsqueceuSenha","Login")">Esqueceu a senha?</a>
+                    </div>
+                </div>
+
+                @*<div class="g-recaptcha" data-sitekey="6Lc8RKIUAAAAAMjFlzrkhMQB6kstb4Q6JhQOe3Rd" style="margin-top: 20px;"></div>*@
+            </form>
+        }
+    </div>
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/loginHome.js"></script>
+    <script src="~/Scripts/pages/modais.js"></script>
+</body>
+</html>

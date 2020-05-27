@@ -1,0 +1,270 @@
+﻿@model IEnumerable<SaudeComVc_Home.Models.PerguntaViewModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ficha de Saúde</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="~/Content/ficha.css" media="print" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            widows: 30;
+            orphans: 30;
+        }
+
+        tr, td {
+            page-break-inside: avoid !important;
+        }
+
+        .cabecalho {
+            border: solid black 1px;
+            margin: 2%;
+            width: 96%
+        }
+
+        .bFicha {
+            border-left: black solid 1px;
+            border-right: black solid 1px;
+            text-align: center;
+        }
+
+        .tdCabecalho {
+            width: 25%;
+            padding-bottom: 5%;
+            text-align: center;
+        }
+
+        .label {
+            font-weight: bold;
+            margin-left: 2%;
+        }
+
+        .dados {
+            border: solid black 1px;
+            margin-left: 2%;
+            width: 68%;
+            display: inline;
+            float: left;
+            height: 114px;
+        }
+
+        .conteudo {
+            display: block;
+            float: left;
+        }
+
+        .dados-foto {
+            margin-left: 0.5%;
+            margin-right: 2%;
+            border: solid black 1px;
+            display: inline;
+            float: right;
+            width: 25%;
+            height: 114px;
+        }
+
+        .textos {
+            margin: 0%;
+        }
+
+        .foto {
+            margin-left: 35%;
+            width: 100px;
+            height: 105px
+        }
+
+        .circle {
+            background-color: #aaa;
+            border-radius: 50%;
+            width: 105px;
+            height: 105px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 1%;
+            margin-left: 50%
+        }
+
+            .circle img {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
+
+        .tabelaDoenca {
+            margin: 2%;
+            width: 96%;
+        }
+    </style>
+</head>
+<body>
+    <table class="cabecalho">
+        <tr>
+            <td class="tdCabecalho">
+                <p>Data de Impressão:</p>
+                <p id="data"></p>
+            </td>
+            <td class="bFicha">
+                <h1>FICHA DE SAÚDE</h1>
+            </td>
+            <td class="tdCabecalho">
+                <p>Folha:</p>
+            </td>
+        </tr>
+    </table>
+    <label class="label">Dados do Paciente</label>
+    <div>
+        <table class="dados">
+            <tr>
+                <td>
+                    <p class="textos">Nome Completo:@TempData["NomeFicha"].ToString()</p>
+                    <p class="textos">Data de Nascimento:@TempData["Data"].ToString()</p>
+                    <p class="textos">Idade:@TempData["Idade"].ToString() Anos</p>
+                    <p class="textos">CPF:@TempData["CPF"].ToString()</p>
+                    <p class="textos">Peso:@TempData["Peso"].ToString() Kg</p>
+                    <p class="textos">Altura:@TempData["Altura"].ToString() Metros</p>
+                    <br />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <table class="dados-foto">
+            <tr>
+                <td>
+                    @if (TempData["Foto"] != null && !string.IsNullOrEmpty(TempData["Foto"].ToString()))
+                    {
+                        <img src="data:image/@TempData["Extensao"].ToString();base64, @TempData["Foto"].ToString()" alt="Alternate Text" class="circle" />
+                    }
+                    else
+                    {
+                        <img src="~/Img/generic-user-purple.png" alt="Alternate Text" class="circle" />
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--Descer Texto-->
+    <p style="color:transparent">a</p>
+    <p style="color:transparent">a</p>
+    <p style="color:transparent">a</p>
+    <!--//-->
+    <br />
+    <label class="label">Declaração de Saúde</label>
+
+    @foreach (var item in Model)
+    {
+        if (item.TipoRespostaId == 3)
+        {
+            <div>
+                <table class="tabelaDoenca" border="1" cellspacing="0" cellpadding="2">
+                    <thead>
+                        <tr>
+                            <th style="width:600px; text-align:justify">
+                                <span style="text-align:justify">@item.Nome</span> <br />
+                                <span style="font-size:15px; font-weight:100;">@item.Descricao</span>
+                            </th>
+                            <th>
+                                SIM
+                                    <input type="radio" @(item.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "checked" : "")
+                                           onclick="responder(@item.ID, $(this))" name="@item.ID"
+                                           id="@(item.Respostas.FirstOrDefault() == null ? "0" : item.Respostas.FirstOrDefault().ID.ToString())">
+
+                            </th>
+                            <th>
+                                NÃO
+                                    <input type="radio" @(item.Respostas.FirstOrDefault()?.Descricao == "Não" ? "checked" : "")
+                                           onclick="ignorar(@item.ID, $(this))" name="@item.ID"
+                                           id="@(item.Respostas.FirstOrDefault() == null ? "0" : item.Respostas.FirstOrDefault().ID.ToString())">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (item.PerguntasFilho != null)
+                        {
+                            foreach (var sub in item.PerguntasFilho)
+                            {
+                                if (sub.TipoRespostaId == 3)
+                                {
+                                    <tr>
+                                        <td>
+                                            @sub.Nome
+                                        </td>
+                                        <td style="text-align:center">
+                                            @*<input type="radio" @(sub.Respostas.FirstOrDefault()?.Descricao == "Sim" ? "checked" : "")
+                                                name="@sub.ID"
+                                                id="@(sub.Respostas.FirstOrDefault() == null ? "0" : sub.Respostas.FirstOrDefault().ID.ToString())"
+                                                onclick="responder(@sub.ID, $(this))">*@
+                                            @if (sub.Respostas.FirstOrDefault()?.Descricao == "Sim")
+                                            {
+                                                <strong>X</strong>
+                                            }
+                                        </td>
+                                        <td style="text-align:center">
+                                            @*<input type="radio" @(sub.Respostas.FirstOrDefault()?.Descricao == "Não" ? "checked" : "")
+                                                name="@sub.ID"
+                                                id="@(sub.Respostas.FirstOrDefault() == null ? "0" : sub.Respostas.FirstOrDefault().ID.ToString())"
+                                                onclick="ignorar(@sub.ID, $(this))">*@
+                                            @if (sub.Respostas.FirstOrDefault()?.Descricao == "Não")
+                                            {
+                                                <strong>X</strong>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="3">
+                                            <span>@sub.Nome</span>
+                                            <br />
+                                            <p style="text-align:justify;width:100%;">@(sub.Respostas.FirstOrDefault()?.Descricao)</p>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div>
+                <table class="tabelaDoenca" border="1" cellspacing="0" cellpadding="2">
+                    <thead>
+                        <tr>
+                            <th style="width:600px; text-align:justify">
+                                <span style="text-align:justify">@item.Nome</span> <br />
+                                <span style="font-size:15px; font-weight:100;">@item.Descricao</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>@(item.Respostas.FirstOrDefault()?.Descricao)</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        }
+    }
+    <p style="font-size:10px; margin-left:10%;margin-right:1%;text-align:justify">Esta ficha de saúde foi gerada no sistema saúde com vc, todos os dados e informações prestadas são de responsabilidade única e exclusiva do paciente, que preencheu a mesma.</p>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script>
+        var d = new Date();
+
+        $(function () {
+            $("#data").text(d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear());
+        });
+
+    </script>
+</body>
+</html>

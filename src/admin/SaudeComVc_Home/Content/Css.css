@@ -1,0 +1,14 @@
+﻿.tudao {
+    width: auto;
+    margin: 0;
+}
+
+.backgorundGray {
+    background-image: linear-gradient(#fff, #dfdfdf);
+    border: #b4b4b4 solid 1px;
+}
+
+.logoForm {
+    width: 60%;
+    margin-left: 20%;
+}

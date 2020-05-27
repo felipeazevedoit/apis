@@ -1,0 +1,150 @@
+﻿<link href="~/Css/form-paciente.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "_Paciente";
+}
+
+@model IEnumerable<SaudeComVc_Home.Models.ConvenioViewModel>
+
+<div class="modal fade bs-example-modal-lg" id="modalPaciente" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        @if (@TempData["convite"] != null && !string.IsNullOrEmpty(TempData["convite"].ToString()))
+        {
+            <input type="hidden" id="token" value="@TempData["convite"]" />
+        }
+        <div class="form col-md-12" style="margin:0">
+            <form name="form1">
+                <div class="col-md-12" style="padding-bottom:3%;margin-top:3%">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <h1>Paciente&nbsp;<i class="fas fa-user-injured"></i></h1>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group has-purple container-fluid">
+                        <label for="exampleInputEmail1" class="lbl">Nome Completo</label>
+                        <input type="text" class="form-control txt" id="nome" aria-describedby="emailHelp" style="padding-left:1%">
+                        <span class="off" id="lblNome">*Obrigatório</span>
+                    </div>
+
+                    <div class="form-group container-fluid col-md-6">
+                        <label for="exampleInputEmail1" class="lblc">CPF</label>
+                        <input type="text" class="form-control txt" id="cpf" aria-describedby="emailHelp" onBlur="ValidarCPF(form1.cpf);" onKeyPress="MascaraCPF(form1.cpf);" maxlength="14" style="padding-left:1%">
+                        <span class="off" id="lblCpf">*Obrigatórioo</span>
+                    </div>
+
+                    <div class="form-group container-fluid col-md-6">
+                        <label>Convênios</label>
+                        <select class="form-control chosen-select" id="cbmConvenio">
+                            <option id="0" value="0">Selecione</option>
+                            @foreach (var item in Model)
+                            {
+                                <option id="@item.ID" value="@item.ID">@item.Nome</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-6  container-fluid">
+                        <label>Sexo</label>
+                        <select class="form-control chosen-select" id="cmbSexo">
+                            <option>Masculino</option>
+                            <option>Feminino</option>
+                            <option>Outros...</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6  container-fluid">
+                        <label>Data de Nascimento </label>
+                        <input type="date" class="form-control" placeholder="" id="datanascimento" style="padding-left:1%">
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+
+                    <div class="form-group col-md-6 container-fluid">
+                        <label for="exampleInputEmail1" class="lbl">Peso(Kilogramas)</label>
+                        <input type="text" class="form-control txt" id="peso" aria-describedby="emailHelp" onKeyPress="MascaraPeso();" maxlength="5" style="padding-left:1%">
+                        <span class="off" id="lblPeso">*Obrigatório</span>
+                    </div>
+                    <div class="form-group col-md-6 container-fluid">
+                        <label for="exampleInputEmail1" class="lbl">Altura(Metros)</label>
+                        <input type="text" class="form-control txt" id="altura" aria-describedby="emailHelp" onKeyPress="MascaraAltura();" maxlength="4" style="padding-left:1%">
+                        <span class="off" id="lblAltura">*Obrigatório</span>
+                    </div>
+
+                    <div class="form-group col-md-12 container-fluid p-0">
+                        <label for="exampleInputEmail1" class="lblc">Telefone</label>
+                        <input type="text" class="form-control" placeholder="" id="telefone" name="telefone" onKeyPress="TelMask();" maxlength="14" style="padding-left:1%">
+                        <span class="off" id="lblTelefone">*Obrigatório</span><br>
+                    </div>
+
+                    <div class="form-group col-md-3 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc">CEP</label>
+                        <input type="text" class="form-control txt" id="cep" aria-describedby="emailHelp" onfocusout="preencherEndereco($('#cep').val())" onKeyPress="MascaraCep(form1.cep);" maxlength="9" style="padding-left:1%">
+                        <span class="off" id="lblCep">*Obrigatório</span>
+                    </div>
+                    <div class="form-group col-md-7 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc">Endereço</label>
+                        <input type="text" class="form-control txt" id="local" aria-describedby="emailHelp" style="padding-left:1%">
+                        <span class="off" id="lblLocal">*Obrigatório</span>
+                    </div>
+                    <div class="form-group col-md-2 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc">Número</label>
+                        <input type="number" class="form-control txt" id="numero" aria-describedby="emailHelp" style="padding-left:1%" onfocusout="preencherEndereco($('#cep').val())">
+                        <span class="off" id="lblNumero">*Obrigatório</span>
+                    </div>
+                </div>
+
+                
+
+                <div class="col-md-12">
+                    <div class="form-group col-md-6 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc">Email</label>
+                        <input type="email" class="form-control txt" id="email" aria-describedby="emailHelp" onfocusout="validarEmail()" style="padding-left:1%">
+                        <span class="off" id="lblEmail">*Obrigatório</span>
+                    </div>
+
+                    <div class="form-group col-md-6 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc">Confirmar Email</label>
+                        <input type="email" class="form-control txt" id="confirmarEmail" onfocusout="validarCEmail()" aria-describedby="emailHelp" style="padding-left:1%">
+                        <span class="off" id="lblConfirmarEmail">*Obrigatório</span>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group col-md-6 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc">Senha</label>
+                        <input type="password" class="form-control txt" id="senha"
+                               aria-describedby="emailHelp" style="padding-left:1%">
+                        <span class="off" id="lblSenha">*Obrigatório</span>
+                    </div>
+
+                    <div class="form-group col-md-6 container-fluid">
+                        <label for="exampleInputEmail1" class="lblc"> Confirmar senha</label>
+                        <input type="password" class="form-control txt" id="confirmarSenha"
+                               aria-describedby="emailHelp" style="padding-left:1%">
+                        <span class="off" id="lblConfirmarSenha">*Obrigatório</span>
+                    </div>
+                    <div class="checkbox col-md-6">
+                        <label>
+                            <input type="checkbox" id="ckbTermos"> Você aceita os <a href="#">Termos de Uso</a> do Sistema?
+                        </label>
+                        <br />
+                        <span class="off" id="lblTermos">*Obrigatório</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div>
+                                <a href="#" class="link pull-left" onclick="carregaModalEscolha()">Voltar</a>
+                                <button type="button" class="btn btn-default btn-lg btn-cadastrar pull-right" onclick="cadastrarPaciente()" id="btnCadastrar">Cadastrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

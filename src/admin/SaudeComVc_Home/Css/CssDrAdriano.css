@@ -1,0 +1,109 @@
+﻿.fundo {
+    background-color: #0B0335;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.subTit{
+    font-size:150%;
+    padding-top:3%;
+}
+
+.centerTPl{
+    margin-left:10%;
+    margin-top:3%;
+}
+
+.consul{
+    width:80%;
+    padding-bottom:5%;
+}
+
+.consulU{
+    width: 80%;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+    .link:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+.margingTable {
+    margin-left: 1%;
+    margin-bottom: 1%;
+    margin-top: 13.8%;
+}
+
+.backblack{
+    background-color:rgba(0, 0, 0, 0.43);
+}
+
+.sobre {
+    background-color: #7E6B5D;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+.tituloSobre{
+    margin-left:5%;
+    padding-top:2%;
+    font-size:250%;
+}
+
+.textoSobre {
+    margin-left: 5%;
+    padding-bottom:4%;
+}
+
+.tituloBlog {
+    font-size: 250%;
+    font-family: 'Oswald', sans-serif;
+    margin-top:5%;
+}
+
+.imgBlog{
+    width:100%;
+}
+
+.tableBlog{
+    margin-left:5%;
+    margin-top:2%;
+}
+
+.tableTitulo{
+    font-size: 250%;
+    font-family: 'Oswald', sans-serif;
+    color:red;
+    padding-left:5%;
+    text-transform:uppercase;
+}
+
+.tableConteudo{
+    font-size: 100%;
+    font-family: 'Oswald', sans-serif;
+    color: black;
+    padding-left: 5%;
+}
+
+.tableLink {
+    font-family: 'Oswald', sans-serif;
+    padding-left: 5%;
+}
+
+.tableTop{
+    padding-top:2%;
+}
+
+.margf {
+    background-color: #09064A;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    margin-top:5%
+}

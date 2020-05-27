@@ -1,0 +1,214 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<!--Comentario-->
+<!--Comentario-->
+@model SaudeComVc_Home.Models.HomeViewModel
+<div class="container tuamain" style="box-shadow: 0px 0px 10px #bdbdbd; margin-top:1%">
+    <div class="row">
+        @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado != null && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+        {
+            <input type="hidden" id="user" value="@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario" />
+        }
+
+        @if (TempData["convite"] != null)
+        {
+            <input type="hidden" id="token" value="@TempData["convite"]" />
+        }
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="margin:0;margin-top: 6%;padding:0;background-color:white;">
+            <div class="infos text-center">
+                <div class="row">
+                    <div class="col-md-1">
+
+                    </div>
+                    <div class="col-md-6" id="md6">
+                        <iframe style="width: 570px; height:325px;" class="img-responsive" src="https://www.youtube.com/embed/VyFQaLvTc_U" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-md-4 text-center" id="md4">
+                        <a href="@Url.Action("About","Home")" target="_blank"><img style="border: 1px solid #e0e0e0;" class="img-responsive" src="~/Img/bannerHome.bmp" /></a>
+                    </div>
+                    <div class="col-md-1">
+
+                    </div>
+                </div>
+                <br />
+                <hr class="hrTamanho">
+            </div>
+        </div>
+        <div class="row" id="noticias" style="background-color:white; box-shadow: 1px 5px 5px 1px #e0e0e0;">
+            <div class="blocoNew">
+                <div class="row" id="blocoUm" style="margin:0;padding:0">
+                    <div class="col-md-1 col-sm-1"></div>
+                    <div id="newsUm">
+                        @*<div class="col-md-5 col-sm-5" style="margin-top:2%">
+                                    <a href="/Noticias/Index/"><img src="~/Img/thinkstockphotos-538362292.jpg" style="width:100%; height:250px" /></a>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="blocoDeLetras">
+                                                <div class="row">
+                                                    <div class="col-md-12 text-center">
+                                                        <h1>Nera</h1>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-1"></div>
+                                                    <div class="col-md-10">
+                                                        <p class="text-justify">asdasdsadasdasdsadsadsadasdsadasdsa</p>
+                                                    </div>
+                                                    <div class="col-md-1"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-sm-5" style="margin-top:2%">
+                                    <img src="~/Img/probióticos.jpg" style="width:100%; height:250px" />
+                                    <div class="blocoDeLetras">
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                                <h1>Nera</h1>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-10">
+                                                <p class="text-justify">asdasdsadasdasdsadsadsadasdsadasdsa</p>
+                                            </div>
+                                            <div class="col-md-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>*@
+                    </div>
+                </div>
+                <br />
+                <div class="row" id="blocoDois" style="margin:0;padding:0;">
+                    <div class="col-md-1 col-sm-1"></div>
+                    <div id="newsDois">
+                        @*<div class="col-md-5 col-sm-5" style="margin-top:2%">
+                                    Bloco de Noticias
+                                    <img src="~/Img/thinkstockphotos-538362292.jpg" style="width:100%; height:250px" />
+                                    <div class="blocoDeLetras">
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                                <h1>Nera</h1>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-10">
+                                                <p class="text-justify">asdasdsadasdasdsadsadsadasdsadasdsa</p>
+                                            </div>
+                                            <div class="col-md-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-sm-5" style="margin-top:2%">
+                                    <img src="~/Img/probióticos.jpg" style="width:100%; height:250px" />
+                                    <div class="blocoDeLetras">
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                                <h1>Nera</h1>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-10">
+                                                <p class="text-justify">asdasdsadasdasdsadsadsadasdsadasdsa</p>
+                                            </div>
+                                            <div class="col-md-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>*@
+                        @*<div class="col-md-1 col-sm-1"></div>*@
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="margin:0; padding:0;">
+                <div id="pai" style="background-color:white; box-shadow: 1px 5px 5px 1px #e0e0e0;">
+                    <br />
+                    @*<div class="row topp">
+                            <div>
+                                <div class="col-md-2">
+                                </div>
+                                <div class="col-md-4">
+                                    <hr />
+                                    <img src="~/Img/destaque-5.jpg" style="width:100%; margin-left:1%;" />
+                                </div>
+                                <div class="col-md-4">
+                                    <hr />
+                                    <p class="titulonew">Bariatrica</p>
+                                    <p class="titulonew"><b>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, O Lorem Ipsum é um texto mode</b></p>
+                                    <p style="margin-left:1%;">O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, O Lorem Ipsum é um texto mode</p>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                        </div>
+                        <div class="row topp">
+                            <div>
+                                <div class="col-md-2">
+                                </div>
+                                <div class="col-md-4">
+                                    <hr />
+                                    <img src="~/Img/destaque-5.jpg" style="width:100%; margin-left:1%;" />
+                                </div>
+                                <div class="col-md-4">
+                                    <hr />
+                                    <p class="titulonew">Bariatrica</p>
+                                    <p class="titulonew"><b>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, O Lorem Ipsum é um texto mode</b></p>
+                                    <p style="margin-left:1%;">O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, O Lorem Ipsum é um texto mode</p>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalPerguntas"></div>
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/pages/home.js"></script>
+    <script src="~/Scripts/plugins/chosen.jquery.js"></script>
+    
+    <!-- hamburguer menu-->
+    @*<script src="~/Scripts/jquery.js"></script>*@
+    <script src="~/Scripts/navbar-animation-fix.js"></script>
+    @*<script src="~/Scripts/pages/modais.js"></script>*@
+    <script>
+        $(function () {
+            var result = '@TempData["loginResult"]';
+
+            if (result != '') {
+                carregaModalLogin(result);
+            };
+
+            var usuario = @Json.Encode(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado != null && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0);
+
+            if(usuario)
+            {
+                var temPerguntas = @Json.Encode(Model.Perguntas != null && @Model.Perguntas.Count() > 0);
+                if (temPerguntas) {
+                    $.ajax({
+                        method: "GET",
+                        url: '@Url.Action("_Perguntas", "Home", new { id = Model.Perguntas == null ? 0 : Model.Perguntas.FirstOrDefault()?.ID })',
+                    }).done(function (response) {
+                        console.log(response);
+                        $('#modalPerguntas').html(response);
+                        $('#perguntas').modal('show');
+                    });
+                };
+            }
+
+            $(".chosen-select").chosen({ no_results_text: "Nada encontrado!" });
+            $(".chosen-select").chosen({ allow_single_deselect: true });
+        });
+    </script>
+}

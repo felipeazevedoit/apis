@@ -1,0 +1,167 @@
+﻿<link href="~/Css/form-profissional.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "_Profissional";
+}
+@model IEnumerable<SaudeComVoce.Models.ServicoViewModel>
+<div class="modal fade bs-example-modal-lg" id="modalProfissional" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+            <div class="form col-md-12">
+                <form name="form1" id="form1">
+                    <div class="col-md-12" style="padding-bottom:3%;margin-top:3%">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <h1>Prestadores de Serviço da Saúde&nbsp;<i class="fas fa-user-nurse"></i></h1>
+                            </div>
+                            <div class="col-md-1">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                        </div>                        
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group col-md-12 container-fluid">
+                            <label for="exampleInputEmail1" class="lbl">Nome Completo</label>
+                            <input type="text" class="form-control txt" id="nome" aria-describedby="emailHelp" style="padding-left:1%">
+                            <span class="off" id="lblNome">*Obrigatório</span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group container-fluid" style="margin:0;padding:0">
+                                <label for="exampleInputEmail1" class="lblc">CPF</label>
+                                <input type="text" class="form-control txt" id="cpf" aria-describedby="emailHelp" onBlur="ValidarCPF(form1.cpf);" onKeyPress="MascaraCPF(form1.cpf);" maxlength="14" style="padding-left:1%">
+                                <span class="off" id="lblCpf">*Obrigatório</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6  container-fluid">
+                            <label>Data de Nascimento</label>
+                            <input type="date" class="form-control" placeholder="" id="dataNascimento" style="padding-left:1%">
+                            <span class="off" id="lblData">*Obrigatório</span>
+                        </div>
+
+                        <div class="form-group col-md-4 container-fluid">
+                            <label for="exampleInputEmail1" class="lbl">Área de Atuação</label>
+                            <select class="form-control chosen-select" id="cmbArea">
+                                @foreach (var i in Model)
+                                {
+                                    <option value="@i.ID">@i.Nome</option>
+                                }
+                            </select>
+                            <span class="off" id="lblSobrenome">*Por favor preencha o campo</span>
+                        </div>
+
+                        <div class="form-group col-md-5 container-fluid">
+                            <label for="exampleInputEmail1" class="lbl">Registro Profissional</label>
+                            <input type="number" class="form-control txt" id="registro" aria-describedby="emailHelp" style="padding-left:1%">
+                            <span class="off" id="lblRegistro">*Obrigatório</span>
+                        </div>
+
+                        <div class="form-group col-md-3 container-fluid">
+                            <label for="exampleInputEmail1" class="lblc">UF</label>
+                            <select class="form-control chosen-select" id="cmbUf">
+                                <option value="Acre">AC</option>
+                                <option value="Alagoas">AL</option>
+                                <option value="Amapá">AP</option>
+                                <option value="Amazonas">AM</option>
+                                <option value="Bahia">BA</option>
+                                <option value="Ceará">CE</option>
+                                <option value="Distrito Federal">DF</option>
+                                <option value="Espírito Santo">ES</option>
+                                <option value="Goiás">GO</option>
+                                <option value="Maranhão">MA</option>
+                                <option value="Mato Grosso">MT</option>
+                                <option value="Mato Grosso do Sul">MS</option>
+                                <option value="Minas Gerais">MG</option>
+                                <option value="Pará">PA</option>
+                                <option value="Paraíba">PB</option>
+                                <option value="Paraná">PR</option>
+                                <option value="Pernambuco">PE</option>
+                                <option value="Piauí">PI</option>
+                                <option value="Rio de Janeiro">RJ</option>
+                                <option value="Rio Grande do Norte">RN</option>
+                                <option value="Rio Grande do Sul">RS</option>
+                                <option value="Rondônia">RO</option>
+                                <option value="Roraima">RR</option>
+                                <option value="Santa Catarina">SC</option>
+                                <option value="São Paulo">SP</option>
+                                <option value="Sergipe">SE</option>
+                                <option value="Tocantins">TO</option>
+                            </select>
+                            <span class="off" id="lblUf">*Obrigatório</span>
+                        </div>
+
+                        <div class="row" style="margin-left:0%">
+
+                            <div class="row" style="margin-left:0%">
+                                <div class="form-group col-md-3 container-fluid">
+                                    <label for="exampleInputEmail1" class="lblc">CEP</label>
+                                    <input type="text" class="form-control txt" id="cep" aria-describedby="emailHelp" onfocusout="preencherEndereco($('#cep').val())" onKeyPress="MascaraCep(form1.cep);" maxlength="9" style="padding-left:1%">
+                                    <span class="off" id="lblCep">*Obrigatório</span>
+                                </div>
+
+                                <div class="form-group col-md-7 container-fluid">
+                                    <label for="exampleInputEmail1" class="lblc">Endereço Profissional</label>
+                                    <input type="text" class="form-control txt" id="local" aria-describedby="emailHelp" style="padding-left:1%">
+                                    <span class="off" id="lblLocal">*Obrigatório</span>
+                                </div>
+                                <div class="form-group col-md-2 container-fluid">
+                                    <label for="exampleInputEmail1" class="lblc">Número</label>
+                                    <input type="number" style="width:76%; padding-left:1%" class="form-control txt" id="numero" aria-describedby="emailHelp">
+                                    <span class="off" id="lblNumero">*Obrigatório</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group container-fluid">
+                            <label>Telefone</label>
+                            <input type="text" style="padding-left:1%" class="form-control" placeholder="" id="telefone" name="telefone" onKeyPress="TelMask();" maxlength="14">
+                            <span class="off" id="lblTelefone">*Obrigatório</span>
+
+                        </div>
+                        <div class="col-md-12" style="padding:0; margin:0">
+                            <div class="form-group col-md-6 container-fluid">
+                                <label for="exampleInputEmail1" class="lblc">Email</label>
+                                <input type="email" class="form-control txt" id="email" aria-describedby="emailHelp" onfocusout="validarEmail()" style="padding-left:1%">
+                                <span class="off" id="lblEmail">*Obrigatório</span>
+                            </div>
+
+                            <div class="form-group col-md-6 container-fluid">
+                                <label for="exampleInputEmail1" class="lblc">Confirmar Email</label>
+                                <input type="email" class="form-control txt" id="confirmarEmail" onfocusout="validarCEmail()" aria-describedby="emailHelp" style="padding-left:1%">
+                                <span class="off" id="lblConfirmarEmail">*Obrigatório</span>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-left:0%">
+
+
+
+                            <div class="col-md-7"></div>
+
+                            <div class="form-group col-md-6 container-fluid">
+                                <label for="exampleInputEmail1" class="lblc">Senha</label>
+                                <input type="password" class="form-control txt" id="senha"
+                                       aria-describedby="emailHelp" style="padding-left:1%">
+                                <span class="off" id="lblSenha">*Obrigatório</span>
+                            </div>
+
+                            <div class="form-group col-md-6 container-fluid">
+                                <label for="exampleInputEmail1" class="lblc"> Confirmar senha</label>
+                                <input type="password" style="width:96%; padding-left:1%" class="form-control txt" id="confirmarSenha"
+                                       aria-describedby="emailHelp">
+                                <span class="off" id="lblConfrimarSenha">*Obrigatório</span>
+                            </div>
+                            <span style="color:green" id="lblSpan" class="pull-right fade">Cadastro realizado com sucesso</span>
+                            <span id="lblErro" class="pull-left off"></span>
+                            <div class="col-md-12">
+                                <div>
+                                    <a href="#" class="link pull-left" onclick="carregaModalLista()">Voltar</a>
+                                    <button type="button" id="btnCadastrar" class="btn btn-default btn-lg btn-cadastrar pull-right" onclick="cadastrarProfissional()">Cadastrar</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+

@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "_Lista";
+}
+
+<div class="modal fade bs-example-modal-lg" id="modalLista" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="form col-md-12 container-fluid">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <form>
+
+                <h2 class="col-md-12" style="margin-top:5%">Selecione o tipo de Cadastro</h2>
+
+                <div class="col-md-12 container container-fluid">
+
+                    <div class="btns container col-md-12">
+
+                        <div class="col-md-1"></div>
+                        <a href="#" class="btn col-md-10  efeito efeito-3" id="btnClinicas" onclick="carregaModalClinica()">Clinicas</a>
+                        <div class="col-md-1"></div>
+
+                    </div>
+
+                    <div class="btns container col-md-12">
+
+                        <div class="col-md-1"></div>
+                        <a href="#" class="btn col-md-10  efeito efeito-3" id="btnMedicos" onclick="carregaModalMedico()">Médico Autônomo</a>
+                        <div class="col-md-1"></div>
+
+                    </div>
+
+                    <div class="btns container-fluid col-md-12">
+
+                        <div class="col-md-1"></div>
+                        <a href="#" class="btn col-md-10  efeito efeito-3" id="btnPrestador" onclick="carregaModalProfissional()">Prestadores de Serviço da Saúde</a>
+                        <div class="col-md-1"></div>
+
+                    </div>
+
+                    <div class="btns container col-md-12">
+
+                        <div class="col-md-1"></div>
+                        <a href="#" class="btn col-md-10  efeito efeito-3" id="btnFornecedor" onclick="carregaModalFornecedor()">Fornecedores da Saúde</a>
+                        <div class="col-md-1"></div>
+
+                    </div>
+                </div>
+            </form>
+            <a href="#" class="link pull-left" onclick="carregaModalEscolha()" style="padding-bottom:2.5%;">Voltar</a>
+        </div>
+        </div>
+        </div>

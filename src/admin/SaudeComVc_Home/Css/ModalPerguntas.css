@@ -1,0 +1,225 @@
+﻿.form {
+    margin-top: 15%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: rgb(180, 180, 180) solid 1px;
+    border-radius: 5%;
+    width: 80%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.pergM {
+    margin-top: 15%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: rgb(180, 180, 180) solid 1px;
+    border-radius: 5%;
+    width: 80%;
+    font-family: 'Roboto', sans-serif;
+}
+
+    .pergM .pergM-logo {
+        width: 50%;
+        margin-top: 0;
+    }
+
+.btn-cadastrar {
+    border-color: transparent;
+    margin: 3% 0%;
+    color: #FFF;
+    background-color: rgb(30, 68, 150);
+    box-shadow: rgb(7, 61, 14);
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+body {
+    background-color: rgb(223, 223, 223);
+}
+
+header {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: grey;
+}
+
+.txt:focus {
+    border-color: rgb(57, 181, 74);
+}
+
+.ativo {
+    color: red;
+}
+
+.off {
+    color: red;
+    display: none;
+}
+
+.btn-voltar {
+    border-color: transparent;
+    color: #FFF;
+    margin: 3% 0%;
+    background-color: gray;
+    box-shadow: rgb(0, 27, 85);
+}
+.btnPxQ {
+    color: white;
+    background-color: rgb(30, 68, 150);
+    border-radius: 24px;
+    width: 90%;
+    height: 50px;
+}
+
+    .btnPxQ:hover {
+        color: white;
+    }
+
+.border {
+    border-top: 0 none;
+    border-left: 0 none;
+    border-right: 0 none;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+
+
+@media only screen and (max-width: 650px) {
+    .DescriP {
+        font-size: 180%;
+        margin-left: 5%;
+        margin-right: 5%;
+        color: gray;
+    }
+    .TituloP {
+        font-size: 230%;
+        margin-left: 5%;
+        margin-right: 5%
+    }
+    .Radio {
+        width: 25px;
+        height: 35px;
+        position:absolute;
+        bottom:1%;
+    
+    }
+    .TextoTitulo {
+        font-size: 25px;
+        margin-top: 50%;
+        margin-left: 5%;
+    }
+    .TextoTituloD {
+        margin-left: 5%;
+        font-size: 25px;
+        margin-top: 25%;
+    }
+    .RMT {
+        color: black;
+        font-size: 16px;
+        margin-left: 5%;
+    }
+    .btnPxQ {
+        color: white;
+        background-color: rgb(30, 68, 150);
+        border-radius: 24px;
+        width: 100%;
+        height: 50px;
+    }
+    #quaisP {
+        font-size: 45px;
+        color: gray;
+        margin-left: 5%;
+        padding-bottom: 5%;
+    }
+    #md6P{
+        margin-right:5%;
+    }
+    .textOutr {
+        width: 65%;
+    }
+    #outrasP {
+        margin-left: 3.5%
+    }
+}
+@media only screen and (min-width: 650px) {
+    .TituloP {
+        font-size: 230%;
+        margin-left: 5%;
+        margin-right: 5%
+    }
+
+    .DescriP {
+        font-size: 180%;
+        margin-left: 5%;
+        margin-right: 5%;
+        color: gray;
+    }
+
+    .Radio {
+        width: 25px;
+        height: 35px;
+    }
+
+    .RadioE {
+        margin-left: 70%;
+        margin-right: 50%;
+        padding-bottom: 25%;
+    }
+
+    .RadioD {
+        margin-left: 20%;
+        margin-right: 50%;
+        padding-bottom: 25%;
+    }
+
+    .TextoTitulo {
+        margin-left: 67%;
+        font-size: 25px;
+        margin-top: 25%;
+    }
+
+    .TextoTituloD {
+        margin-left: 17%;
+        font-size: 25px;
+        margin-top: 25%;
+    }
+
+    .RMT {
+        color: black;
+        font-size: 16px;
+        margin-left: 14%;
+        margin-top:25%;
+    }
+    .MTDD {
+        margin-top: 15%;
+    }
+    #radioP {
+        margin-top: 15%
+    }
+    #quaisP {
+        font-size: 45px;
+        color: gray;
+        margin-left: 5%;
+        padding-bottom: 5%;
+    }
+    #md4P {
+        margin-left: 40%;
+    }
+    #omd4P {
+        margin: 0;
+        padding: 0;
+    }
+    #outrasP {
+        margin-left: 35%
+    }
+    .textOutr {
+        width: 95%;
+    }
+    #omd3P{
+        margin:0;
+        padding:0;
+    }
+}

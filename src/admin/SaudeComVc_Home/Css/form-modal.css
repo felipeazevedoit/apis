@@ -1,0 +1,78 @@
+body{
+    background-color: rgb(223, 223, 223);
+}
+
+header {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-transform: uppercase;
+    color: white;
+}
+
+h4{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.modal-header {
+    background-color: #09064A;
+}
+
+#medico{
+margin: 0%;
+padding: 0%;
+}
+
+
+#paciente{
+    margin: 0% 0%;
+    padding: 0%;
+}
+
+
+.btn-medico {
+    border: none;
+    background-color: rgb(30, 68, 150);
+    text-transform: uppercase;
+}
+
+.btn-paciente{
+    border: none;
+    background-color: rgb(57, 181, 74);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#logo{
+
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+transition: .3s;
+}
+
+@media(min-width: 992px) {
+	#logo {
+		left: 0;
+		transform: translate(0, -80%);
+		width: 50%;
+	}
+}
+
+@media(min-width: 1024px) {
+	#logo {
+		left: 0;
+		transform: translate(22%, 30%);
+		width: 70%;
+	}
+}
+
+.width{
+    width:100%;
+}
+
+.colorWhite{
+    color:white;
+}
