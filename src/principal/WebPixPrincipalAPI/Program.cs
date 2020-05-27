@@ -19,7 +19,7 @@ namespace WebPixPrincipalAPI
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                //.UseUrls(url.Url)
+                .UseUrls(url.Url)
                 #if DEBUG
                 .UseUrls("http://localhost:5000")
                 #endif
