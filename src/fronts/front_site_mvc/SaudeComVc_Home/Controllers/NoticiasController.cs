@@ -875,37 +875,50 @@ namespace SaudeComVc_Home.Controllers
 
         public IEnumerable<NoticiaViewModel> BuscarPublicasAsync()
         {
-            var url = ConfigurationManager.AppSettings["UrlAPI"];
+            try
+            {
+                var url = ConfigurationManager.AppSettings["UrlAPI"];
 
-            var helper = new ServiceHelper();
-            //var result = await helper.GetAsync<IEnumerable<NoticiaViewModel>>(url,
-            //    $"/Seguranca/WpNoticias/BuscarPublicas/12/999");
+                var helper = new ServiceHelper();
+                //var result = await helper.GetAsync<IEnumerable<NoticiaViewModel>>(url,
+                //    $"/Seguranca/WpNoticias/BuscarPublicas/12/999");
 
-            var serviceConsuming = new ConsumingApiRest(url, string.Empty);
-            var result = serviceConsuming.Execute<List<NoticiaViewModel>>("/Seguranca/WpNoticias/BuscarPublicas/12/999", null, RestSharp.Method.GET, RestSharp.ParameterType.QueryString);
+                var serviceConsuming = new ConsumingApiRest(url, string.Empty);
+                var result = serviceConsuming.Execute<List<NoticiaViewModel>>("/Seguranca/WpNoticias/BuscarPublicas/12/999", null, RestSharp.Method.GET, RestSharp.ParameterType.QueryString);
 
-            //TODO: Achar uma forma de melhorar essa busca
-            result
-                .ForEach(n =>
-                {
-                    var midia = BuscarMidiaAsync(n.ID);
-                    if (midia != null)
+                //TODO: Achar uma forma de melhorar essa busca
+                result
+                    .ForEach(n =>
                     {
-                        midia.Extensao = midia.Extensao.Replace(".", string.Empty);
-                        midia.ArquivoB64 = Convert.ToBase64String(midia.Arquivo);
-                        n.Midia = midia;
-                    }
-                });
+                        var midia = BuscarMidiaAsync(n.ID);
+                        if (midia != null)
+                        {
+                            midia.Extensao = midia.Extensao.Replace(".", string.Empty);
+                            midia.ArquivoB64 = Convert.ToBase64String(midia.Arquivo);
+                            n.Midia = midia;
+                        }
+                    });
 
-            //foreach (var n in result)
-            //{
-            //    var midia = await BuscarMidiaAsync(n.ID);
-            //    midia.Extensao = midia.Extensao.Replace(".", string.Empty);
-            //    midia.ArquivoB64 = Convert.ToBase64String(midia.Arquivo);
-            //    n.Midia = midia;
-            //}
+                //foreach (var n in result)
+                //{
+                //    var midia = await BuscarMidiaAsync(n.ID);
+                //    midia.Extensao = midia.Extensao.Replace(".", string.Empty);
+                //    midia.ArquivoB64 = Convert.ToBase64String(midia.Arquivo);
+                //    n.Midia = midia;
+                //}
 
-            return result.Where(n => n.Ativo);
+                return result.Where(n => n.Ativo);
+            }
+            catch (Exception ex)
+            {
+
+                return new List<NoticiaViewModel>
+                {
+                    new NoticiaViewModel()
+                };
+
+            }
+
         }
 
         public string BuscarNoticiasPrivadasAsync(int id)
