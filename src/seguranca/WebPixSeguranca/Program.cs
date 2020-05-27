@@ -24,6 +24,7 @@ namespace WebPixSeguranca
                 #if(DEBUG)
                 .UseUrls("http://localhost:5300")
                 #endif
+                .UseUrls(url.Url)
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .UseApplicationInsights()
