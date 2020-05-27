@@ -18,7 +18,7 @@ namespace WebPixPrincipalRepository
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer(@"Server=187.84.228.245;Database=WebPixPrincipal;Trusted_Connection=True;Integrated Security = True;");
-            optionsBuilder.UseSqlServer(@"Data Source=187.84.228.245;Initial Catalog=WebPixPrincipal2;Persist Security Info=True;User ID=sa;Password=!Nm-&8;");
+            optionsBuilder.UseSqlServer(@"Data Source=187.84.228.245;Initial Catalog=WebPixPrincipal;Persist Security Info=True;User ID=sa;Password=!Nm-&8;");
         }
     }
 }

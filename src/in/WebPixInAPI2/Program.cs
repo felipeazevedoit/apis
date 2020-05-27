@@ -15,10 +15,7 @@ namespace WebPixInAPI2
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                #if DEBUG
-                .UseUrls("http://localhost:5400")       
-                #endif
-                .UseIISIntegration()
+                .UseUrls("http://inapi.mundowebpix.com.br:5400")       
                 .UseStartup<Startup>()
                 .UseApplicationInsights()
                 .Build();
