@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\seguranca"
+    "\\src\\produto",
+    "\\src\\produto\\Produto",
+    "\\src\\produto\\Produto\\WebPixProdutos",
+    "\\src\\produto\\Produto\\WebPixProdutos\\wpProdutos"
   ],
-  "SelectedNode": "\\src\\seguranca\\WebPixSeguranca.sln",
   "PreviewInSolutionExplorer": false
 }
