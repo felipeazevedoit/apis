@@ -87,3 +87,4 @@ F:\work\Framework\src\fronts\WebPixInCore2\WebPixInCore2\WebPixInCore2\obj\Relea
 F:\work\Framework\src\fronts\WebPixInCore2\WebPixInCore2\WebPixInCore2\obj\Release\WebPixInCore2.csproj.CopyComplete
 F:\work\Framework\src\fronts\WebPixInCore2\WebPixInCore2\WebPixInCore2\obj\Release\WebPixInCore2.dll
 F:\work\Framework\src\fronts\WebPixInCore2\WebPixInCore2\WebPixInCore2\obj\Release\WebPixInCore2.pdb
+F:\work\Framework\src\fronts\WebPixInCore2\WebPixInCore2\WebPixInCore2\obj\Release\WebPixInCore2.csprojAssemblyReference.cache

@@ -1162,10 +1162,10 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>07/29/2020 19:19:24</publishTime>
     </File>
     <File Include="Views/MotorAux/ModalAcao.cshtml">
-      <publishTime>07/29/2020 19:19:24</publishTime>
+      <publishTime>07/30/2020 14:07:33</publishTime>
     </File>
     <File Include="Views/MotorAux/ModalAcoes.cshtml">
-      <publishTime>07/29/2020 19:19:24</publishTime>
+      <publishTime>07/30/2020 14:07:24</publishTime>
     </File>
     <File Include="Views/MotorAux/ModalParametro.cshtml">
       <publishTime>07/29/2020 19:19:24</publishTime>
