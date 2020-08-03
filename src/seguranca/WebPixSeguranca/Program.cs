@@ -23,8 +23,9 @@ namespace WebPixSeguranca
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 #if(DEBUG)
                 .UseUrls("http://localhost:5300")
-                #endif
+                #else
                 .UseUrls(url.Url)
+                #endif
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .UseApplicationInsights()
