@@ -38,10 +38,11 @@ namespace WebPixCoreUI.Controllers
             PageViewModel[] Pagina = jss.Deserialize<PageViewModel[]>(result);
 
             var modelo = Pagina.Where(x => x.ID == id).FirstOrDefault();
-            var base64EncodedBytes = System.Convert.FromBase64String(modelo.pagina);
+            var base64EncodedBytes = System.Convert.FromBase64String(modelo.Conteudo);
             string converted = System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
             ViewBag.Title = modelo.Titulo;
 
+            modelo.Conteudo = converted;
            return View(modelo);
         }
         public ContentResult GetCss()

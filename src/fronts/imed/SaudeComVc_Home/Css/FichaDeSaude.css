@@ -1,0 +1,138 @@
+﻿body {
+    font-family: 'Roboto', sans-serif;
+    widows: 30;
+    orphans: 30;
+    background: rgb(204,204,204);
+}
+
+.cabecalho {
+    border: solid black 1px;
+    margin: 2%;
+    width: 96%
+}
+
+.bFicha {
+    border-left: black solid 1px;
+    border-right: black solid 1px;
+    text-align: center;
+}
+
+.tdCabecalho {
+    width: 25%;
+    padding-bottom: 5%;
+    text-align: center;
+}
+
+.label {
+    font-weight: bold;
+    margin-left: 2%;
+}
+
+.dados {
+    border: solid black 1px;
+    margin-left: 2%;
+    width: 68%;
+    display: inline;
+    float: left;
+    height: 114px;
+}
+
+.conteudo {
+    display: block;
+    float: left;
+}
+
+.dados-foto {
+    margin-left: 0.5%;
+    margin-right: 2%;
+    border: solid black 1px;
+    display: inline;
+    float: right;
+    width: 25%;
+    height: 114px;
+}
+
+.textos {
+    margin: 0%;
+}
+
+.foto {
+    margin-left: 35%;
+    width: 100px;
+    height: 105px
+}
+
+.circle {
+    background-color: #aaa;
+    border-radius: 50%;
+    width: 105px;
+    height: 105px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 1%;
+    margin-left: 50%
+}
+
+    .circle img {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+.tabelaDoenca {
+    margin: 2%;
+    width: 96%;
+}
+
+page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+
+    page[size="A4"] {
+        width: 21cm;
+        height: auto;
+    }
+
+        page[size="A4"][layout="landscape"] {
+            width: 29.7cm;
+            height: 21cm;
+        }
+
+    page[size="A3"] {
+        width: 29.7cm;
+        height: 42cm;
+    }
+
+        page[size="A3"][layout="landscape"] {
+            width: 42cm;
+            height: 29.7cm;
+        }
+
+    page[size="A5"] {
+        width: 14.8cm;
+        height: 21cm;
+    }
+
+        page[size="A5"][layout="landscape"] {
+            width: 21cm;
+            height: 14.8cm;
+        }
+
+@media print {
+    body, page {
+        margin: 0;
+        box-shadow: 0;
+    }
+}
+
+.btnImprimir
+{
+    border:none;
+    margin-top:3%;
+    background-color:transparent;
+    margin-left:90%;
+}

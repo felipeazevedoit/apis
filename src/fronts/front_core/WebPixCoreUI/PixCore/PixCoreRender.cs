@@ -122,7 +122,7 @@ namespace WebPixCoreUI.PixCore {
             }
 
             PageViewModel page = Cliente.Where (x => x.Url == urlDoCliente).FirstOrDefault ();
-            if (page != null) {
+            if (page != null) { 
                 if (HttpContext.Current.Request.Url.AbsoluteUri != (urlDoCliente + "page/index/" + page.ID.ToString ())) {
                     //HttpContext.Current.Response.Status = "301 Moved Permanently";
                     // HttpContext.Current.Response.AddHeader("Location", DefaultSiteUrl + "page/index/" + page.ID.ToString());

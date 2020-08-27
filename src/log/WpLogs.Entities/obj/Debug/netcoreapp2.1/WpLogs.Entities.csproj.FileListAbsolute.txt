@@ -1,0 +1,9 @@
+F:\work\Framework\src\log\WpLogs.Entities\bin\Debug\netcoreapp2.1\WpLogs.Entities.deps.json
+F:\work\Framework\src\log\WpLogs.Entities\bin\Debug\netcoreapp2.1\WpLogs.Entities.dll
+F:\work\Framework\src\log\WpLogs.Entities\bin\Debug\netcoreapp2.1\WpLogs.Entities.pdb
+F:\work\Framework\src\log\WpLogs.Entities\obj\Debug\netcoreapp2.1\WpLogs.Entities.csprojAssemblyReference.cache
+F:\work\Framework\src\log\WpLogs.Entities\obj\Debug\netcoreapp2.1\WpLogs.Entities.csproj.CoreCompileInputs.cache
+F:\work\Framework\src\log\WpLogs.Entities\obj\Debug\netcoreapp2.1\WpLogs.Entities.AssemblyInfoInputs.cache
+F:\work\Framework\src\log\WpLogs.Entities\obj\Debug\netcoreapp2.1\WpLogs.Entities.AssemblyInfo.cs
+F:\work\Framework\src\log\WpLogs.Entities\obj\Debug\netcoreapp2.1\WpLogs.Entities.dll
+F:\work\Framework\src\log\WpLogs.Entities\obj\Debug\netcoreapp2.1\WpLogs.Entities.pdb

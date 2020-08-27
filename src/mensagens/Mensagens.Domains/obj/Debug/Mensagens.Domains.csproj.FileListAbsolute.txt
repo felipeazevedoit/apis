@@ -1,0 +1,16 @@
+F:\work\Framework\src\mensagens\Mensagens.Domains\bin\Debug\Mensagens.Domains.dll
+F:\work\Framework\src\mensagens\Mensagens.Domains\bin\Debug\Mensagens.Domains.pdb
+F:\work\Framework\src\mensagens\Mensagens.Domains\bin\Debug\Mensagens.Entities.dll
+F:\work\Framework\src\mensagens\Mensagens.Domains\bin\Debug\Mensagens.Infrastructure.dll
+F:\work\Framework\src\mensagens\Mensagens.Domains\bin\Debug\EntityFramework.dll
+F:\work\Framework\src\mensagens\Mensagens.Domains\bin\Debug\EntityFramework.SqlServer.dll
+F:\work\Framework\src\mensagens\Mensagens.Domains\bin\Debug\Mensagens.Entities.pdb
+F:\work\Framework\src\mensagens\Mensagens.Domains\bin\Debug\Mensagens.Infrastructure.pdb
+F:\work\Framework\src\mensagens\Mensagens.Domains\bin\Debug\Mensagens.Infrastructure.dll.config
+F:\work\Framework\src\mensagens\Mensagens.Domains\bin\Debug\EntityFramework.xml
+F:\work\Framework\src\mensagens\Mensagens.Domains\bin\Debug\EntityFramework.SqlServer.xml
+F:\work\Framework\src\mensagens\Mensagens.Domains\obj\Debug\Mensagens.Domains.csprojAssemblyReference.cache
+F:\work\Framework\src\mensagens\Mensagens.Domains\obj\Debug\Mensagens.Domains.csproj.CoreCompileInputs.cache
+F:\work\Framework\src\mensagens\Mensagens.Domains\obj\Debug\Mensagens.Domains.csproj.CopyComplete
+F:\work\Framework\src\mensagens\Mensagens.Domains\obj\Debug\Mensagens.Domains.dll
+F:\work\Framework\src\mensagens\Mensagens.Domains\obj\Debug\Mensagens.Domains.pdb

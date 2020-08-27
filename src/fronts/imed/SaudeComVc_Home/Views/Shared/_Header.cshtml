@@ -1,0 +1,44 @@
+﻿@if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado != null && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+{
+    <div class="col-md-4">
+        <div class="dropdown pull-right">
+            <input type="hidden" id="lblNomeUser" value="@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome" />
+            <input type="hidden" id="lblIdUsuario" value="@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario" />
+            @if (!string.IsNullOrEmpty(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar))
+            {
+                <img src="data:image/@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.AvatarExtension;base64,@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar " style="width:50px; height:50px; margin-top:5%" class="img-circle img-thumbnail" />
+            }
+            else
+            {
+                <img src="~/Img/generic-user-purple.png" style="width:50px; height:50px; margin-top:5%" class="img-circle img-thumbnail" />
+            }
+            <button class="btn btn-primary dropdown-toggle buttonTop logado" type="button" data-toggle="dropdown">
+                @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome.IndexOf(' ') > 0)
+                {
+                    <span class="font">  @SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome.Substring(0, SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome.IndexOf(' '))</span>
+                }
+                else
+                {
+                    <span class="font">  @SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome</span>
+                }
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Editar", "Paciente", new { id = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario })">Meus dados</a></li>
+                <li><a href="@Url.Action("Formulario", "Paciente")">Ficha Médica</a></li>
+                <li><a href="@Url.Action("Feed", "Paciente")">Feed de Notícias</a></li>
+                <li><a href="@Url.Action("Sair", "Login")">Sair</a></li>
+            </ul>
+        </div>
+    </div>
+}
+else
+{
+    <div class="col-md-4 pull-right" style="margin-top:1%; margin-bottom:2%">
+        @*@Html.ActionLink("ENTRAR", new { @class = "btn btn-primary buttonTop", id = "btnEntrar"})*@
+        @*<a href="#" id="btnEntrar" class="btn btn-default buttonTop pull-right" style="color:white;background-color:rgb(30, 68, 150);border-radius:12px;">ENTRAR&nbsp;<i class="fas fa-sign-in-alt"></i></a>
+        <button type="button" id="btnEscolha" class="btn btn-default buttonTop pull-right" style="margin-right:2%;color:white;background-color:rgb(57, 181, 74);border-radius:12px;">CADASTRAR&nbsp;<i class="fas fa-save"></i></button>*@
+    </div>
+}
+
+

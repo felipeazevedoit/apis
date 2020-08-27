@@ -12,7 +12,7 @@ namespace Paginas.Api.Infrastructure
         {
             base.OnConfiguring(optionsBuilder);
             //optionsBuilder.UseSqlServer(@"Server=TSERVICES\SQLEXPRESS;Database=Paginas;Trusted_Connection=True;Integrated Security = True;");
-            optionsBuilder.UseSqlServer(@"Data Source=187.84.232.164;Initial Catalog=Paginas;Persist Security Info=True;User ID=sa;Password=StaffPro@123;");
+            optionsBuilder.UseSqlServer(@"Data Source=179.188.38.126;Initial Catalog=Paginas;Persist Security Info=True;User ID=sa;Password=WebPix@2020;");
         }
     }
 }

@@ -1,0 +1,105 @@
+﻿
+    <div id="mySidenav" class="sidenav">
+        @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0 && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.idPerfil == 14)
+        {
+            <div class="nav-item dropdown">
+                <a class="dropdown-toggle drop-menu d-flex align-items-center" data-toggle="dropdown"
+                   href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    @if (!string.IsNullOrEmpty(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar))
+                    {
+                        <img class="rounded-circle" width="40px" src="data:image/@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.AvatarExtension.Replace(".", "");base64,@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar" />
+                    }
+                    else
+                    {
+                        <img class="rounded-circle" width="40px" src="~/Img/avatar.png" />
+                    }
+                    <span>Bem-vindo(a)!<br><span class="name">@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome</span></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="@Url.Action("Editar", "Paciente", new { id = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario })">Meus Dados</a>
+                    <a class="dropdown-item" href="@Url.Action("Formulario", "Paciente")">Formulário Médico</a>
+                    <a class="dropdown-item" href="@Url.Action("Feed", "Paciente")">Feed de Notícias</a>
+                    <a class="dropdown-item" href="@Url.Action("Sair", "Login")">Sair</a>
+                </div>
+            </div>
+        }
+        @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0 && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.idPerfil == 12)
+        {
+            <div class="nav-item dropdown">
+                <a class="dropdown-toggle drop-menu d-flex align-items-center" data-toggle="dropdown"
+                   href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    @if (!string.IsNullOrEmpty(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar))
+                    {
+                        <img class="rounded-circle" width="40px" src="data:image/@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.AvatarExtension.Replace(".", "");base64,@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar" />
+                    }
+                    else
+                    {
+                        <img class="rounded-circle" width="40px" src="~/Img/avatar.png" />
+                    }
+                    <span>Bem-vindo(a)!<br><span class="name">@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome</span></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="@Url.Action("EditarAsync", "Usuarios", new { id = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario })">Meus Dados</a>
+                    <a class="dropdown-item" href="#" onclick="carregarModalConvite()">Convidar um Paciente</a>
+                    <a class="dropdown-item" href="@Url.Action("Index", "MedicoXPaciente")">Meus Pacientes</a>
+                    <a class="dropdown-item" href="/Chat/Index">Chat</a>
+                    <a class="dropdown-item" href="@Url.Action("Sair", "Login")">Sair</a>
+                    <a href="#" class="dropdown-divider">Gerenciamento de Notícias</a>
+                    <a class="dropdown-item" href="@Url.Action("CadastrarNoticia", "Noticias")">Cadastrar Notícias</a>
+                    <a class="dropdown-item" href="@Url.Action("VisualizarNoticia", "Noticias")">Visualizar Notícias</a>
+                    <a href="#" class="dropdown-divider">Minha Página</a>
+                    <a class="dropdown-item" href="@Url.Action("Pessoal", "WhiteLabel")">Apresentação Pessoal</a>
+                    <a class="dropdown-item" href="@Url.Action("Portifolio", "WhiteLabel")">Cadastrar Portifólio</a>
+                    <a class="dropdown-item" href="@Url.Action("WhiteLabel", "Medico", new { nome = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome, id = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario }))">Visualizar Minha Página</a>
+                </div>
+            </div>
+        }
+        <a href="javascript:void(0)" class="closebtn link-sidebar" onclick="closeNav()">&times;</a>
+        <a href="/Home/Index" class="link-sidebar">Home</a>
+        <a href="/Home/About" class="link-sidebar">Sobre</a>
+        <a href="/Noticias/ListaNoticias" class="link-sidebar">Notícias</a>
+        <a href="/Home/Parceiros" class="link-sidebar">Parceiros</a>
+        @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario == 0)
+        {
+            <a href="/Login/Index" class="link-sidebar">Login</a>
+            <a href="#" class="link-sidebar" onclick="carregaModalEscolha()">Cadastre-se</a>
+        }
+        @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0 && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.idPerfil == 14)
+        {
+            <a href="/Medico/ListagemMedico" class="link-sidebar">Médicos</a>
+            <a href="#" class="link-sidebar" onclick="consulteseAgr()">Consulte-se Agora</a>
+            <a class="link-sidebar" href="/Chat/Index">Chat</a>
+        }
+
+        <div class="-footer">
+            <div class="mail">
+                <span><i class="fas fa-envelope"></i> contato@saudecomvc.com.br</span>
+            </div>
+
+            <div class="phone">
+                <span><i class="fas fa-phone"></i> (11) 2626-2526 | (11) 94855-5585</span>
+            </div>
+        </div>
+
+        <ul class="list-unstyled list-inline -social-networks">
+            <li class="list-inline-item">
+                <a href="#" class="link-social" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </li>
+
+            <li class="list-inline-item">
+                <a href="#" class="link-social" target="_blank"><i class="fab fa-instagram"></i></a>
+            </li>
+
+            <li class="list-inline-item">
+                <a href="#" class="link-social" target="_blank"><i class="fab fa-youtube"></i></a>
+            </li>
+
+            <li class="list-inline-item">
+                <a href="#" class="link-social" target="_blank"><i class="far fa-comments"></i></a>
+            </li>
+        </ul>
+    </div>
+
+

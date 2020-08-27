@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using SaudeComVc_Home.Helpers;
 using TServices.Comum.Helpers;
 using TServices.Comum.Helpers.Token;
 using WpMidias.Domains;
@@ -86,10 +87,14 @@ namespace WpMidias
             var tokenConfigurations = new TokenConfiguration();
             var configToken = new List<ConfiguracaoApp>();
 
-            ConsumingApiRest _appConsumingApi = new ConsumingApiRest(Configuration["Seguranca-Host"], string.Empty);
-
-            var ret = _appConsumingApi.Execute(Configuration["Seguranca-Configuracao-Api"],
-                           null, RestSharp.Method.POST, RestSharp.ParameterType.QueryString).Result;
+            
+            var serviceConsuming = new ConsumingApiRest(Configuration["Seguranca-Host"],string.Empty);
+            List<string> str = new List<string>();
+            var ret = serviceConsuming.Execute<List<TokenConfiguration>>(
+                Configuration["Seguranca-Configuracao-Api"].ToString(),
+                           null,
+                           RestSharp.Method.POST,
+                           RestSharp.ParameterType.QueryString);
             if (ret != null)
             {
                 var result = Newtonsoft.Json.JsonConvert.DeserializeObject<Entities.RequestResponse<List<ConfiguracaoApp>>>(ret.Content);

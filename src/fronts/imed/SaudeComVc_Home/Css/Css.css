@@ -1,0 +1,649 @@
+﻿body {
+    font-family: 'Roboto', sans-serif;
+    padding-right: 0 !important;
+}
+
+*{
+    transition:0.2s ease-in-out;
+}
+
+.nave {
+    /*background-image: url('../Img/og9z5k0-5388366.jpg');*/
+    background-size: 100%;
+    transition: 0.3ms;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-color: #FFF;
+    background-position: center;
+    box-shadow: 0px 0px 10px #bdbdbd;
+}
+
+.marginht {
+    padding-top: 0.3%;
+    padding-right: 1%;
+    padding-left: 1%;
+    display:inline;
+}
+
+.padbutton {
+    padding-right: 1%;
+}
+
+.foto{
+    width:100%;
+    background-repeat:no-repeat;
+}
+
+.pesquisar {
+    background-color: #546e7a;
+    padding-bottom: 0.5%;
+    padding-top: 0.5%;
+    box-shadow: 0px 0px 10px #bdbdbd;
+    color: #fff;
+}
+
+.pesquisarTxt{
+    color: #fff;
+    font-size:15px;
+    padding: 0;
+    margin:0;       
+}
+
+.marginsearch {
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-bottom:1%;
+    width:100%;
+}
+
+.iconsbutton{
+    width:65%;
+}
+
+.txt{
+    width:100%;
+}
+.topp{
+    margin-top:1%;
+    padding-bottom:2%;
+}
+
+.infos{
+    background-color:white;
+    margin-top:2%;
+}
+
+.passos {
+    color: #09064A;
+    margin-left: 5%;
+    padding-top: 3%;
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.bemicon{
+    width:10%;
+    margin-left:45%;
+    margin-top:10%;
+
+}
+
+.texto {
+    font-family: 'Open Sans', sans-serif;
+    color: #09064A;
+    margin-left: 15%;
+    padding-top:5%;
+}
+
+.carding{
+    width:100%;
+}
+
+.topothumg{
+    margin-top:5%;
+}
+
+.topotable {
+    margin-top: 5%;
+}
+
+.thums {
+    background-image: url('../Img/og9z5k0-5388366.jpg');
+    background-size:100%;
+    background-repeat:no-repeat;
+    border:gray solid 1px;
+    margin-top:5%;
+    margin-right:5%;
+    margin-left:5%;
+}
+
+.backthumb {
+    margin-top: 20%;
+    padding-left: 5%;
+    background-color: rgba(50, 105, 255, 0.60);
+    color: white;
+}
+
+.backthumbd {
+    margin-top: 79%;
+    padding-left: 5%;
+    background-color: rgba(50, 105, 255, 0.60);
+    color: white;
+}
+
+.thumsd {
+    background-image: url('../Img/og9z5k0-5388366.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: gray solid 1px;
+    margin-top: 1%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.borda{
+    border:black solid 1px;     
+}
+
+.titulonew {
+    color: red;
+    margin-left: 1%;
+    margin-top: 5%;
+    font-size:200%;
+}
+
+.tituloNoticias {
+    color: red;
+    margin-left: 1%;
+    margin-top: 5%;
+}
+
+.conteudoNew {
+    color: red;
+    margin-left: 1%;
+    
+}
+
+.margf{
+    padding-top:1%;
+    color:white;
+}
+
+.margfoo {
+    padding-left: 20%;   
+}
+
+.buttonTop{
+    margin-top:5%;
+    margin-bottom:2%;
+}
+
+.btnMedico{
+    background-color:transparent;
+    color:white;
+}
+
+    .btnMedico:hover {
+        background-color: blue;
+        color: white;
+    }
+    .btnMedico:focus {
+        background-color: blue;
+        color: white;
+    }
+    .btnMedico:checked {
+        background-color: blue;
+        color: white;
+    }
+
+.btnCategoria{
+    background-color: transparent;
+    color:white;
+}
+    .btnCategoria:hover {
+        background-color: red;
+        color: white;
+    }
+
+    .btnCategoria:focus {
+        background-color: red;
+        color: white;
+    }
+
+    .btnCategoria:checked {
+        background-color: red;
+        color: white;
+    }
+
+.fundoTextoFoto {
+    background-color: rgba(128, 128, 128, 0.93);
+    width: 100%;
+    position: absolute;
+    font-size:100%;
+    bottom: 0.1%;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.linhaFotos{
+    display: inline-block;
+    position: relative;
+}
+
+.pTexto {
+    font-size: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.font {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btnBordEntrar{
+    background-color:transparent;
+    border: solid 2px green;
+    border-radius: 6px;
+    color:green;
+}
+
+    .btnBordEntrar:hover {
+        background-color: green;
+        color: white;
+    }
+
+.btnBordCad {
+    background-color: transparent;
+    border: solid 2px #3591FF;
+    border-radius: 6px;
+    color: #3591FF;
+}
+
+    .btnBordCad:hover {
+        background-color: #3591FF;
+        color: white;
+    }
+
+hr {
+    border-color: #e0e0e0;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.logado{
+    background-color:transparent;
+    border:transparent;
+    border-radius:6px;
+    color:dodgerblue;
+}
+
+.blocoNew{
+    margin-top:1%;
+}
+
+.topLowMargin {
+    margin-top: 1%;
+}
+
+.balaoImg {
+    background-image: url('../Img/balão-de-mensagem-png.png');
+    background-size:100%;
+    background-position:right;
+}
+
+.textAreaBalao{
+    background:transparent;
+    border:transparent;
+}
+
+.hrTamanho{
+    border-color: #e0e0e0;
+    margin-top:1%;
+    margin-bottom:2.5%;
+
+}
+
+.distanciaTop{
+    padding-top:2%;
+}
+
+
+
+.link{
+    color:gray;
+    font-size:24px;
+    margin-top:2.5%;
+}
+
+.errorEmail{
+    border:red solid 1px;
+}
+
+.btnEntrar {
+    color: white;
+    font-weight: bold;
+    background-color: rgb(30, 68, 150);
+    border: white 2px solid;
+    width: 25%;
+    border-radius: 12px;
+    padding:2%;
+}
+
+
+.btnCadastrar {
+    color: white;
+    font-weight: bold;
+    background-color: rgb(57, 181, 74);
+    border: white 2px solid;
+    width: 35%;
+    border-radius: 12px;
+    padding:2%;
+    
+}
+
+
+
+
+@media only screen and (max-width: 650px) {
+    #md6
+    {
+        margin-top:15%;
+    }
+    #logoTop {
+        margin-bottom:5%
+    }
+    #btnMenu
+    {
+        margin-top:5%;
+    }
+    #imgLogado
+    {
+        margin-bottom:5%;
+    }
+    body
+    {
+        margin-left:4%;
+    }
+    #pesquisat {
+        width: 95%;
+    }
+    .blocoDeLetras {
+        background-color: rgba(128, 128, 128, 0.55);
+        width: 92%;
+        position: absolute;
+        bottom: 0.1%;
+        color: white;
+    }
+    #search {
+        width: 95%;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url(/Img/searchicon.png);
+        background-position: 10px 8px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 2px 40px;
+    }
+}
+
+
+
+@media only screen and (min-width: 650px) {
+        #logoTop {
+        margin-top: 1%;
+        padding: 0%;
+    }
+    #imgLogado {
+        margin-top: 3%;
+        padding: 0%;
+    }
+    #left{
+        margin-left:2%;
+        transition: all 0.3s ease-in-out;
+    }
+    #pesquisat {
+        margin-top:4%;
+        width:150%;
+    }
+    .blocoDeLetras {
+        background-color: rgba(128, 128, 128, 0.55);
+        width: 94%;
+        position: absolute;
+        bottom: 0.1%;
+        color: white;
+    }
+
+    #search {
+        width: 30px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url(/Img/searchicon.png);
+        background-position: 10px 8px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 2px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+
+        #search:focus {
+            width: 100%;
+        }
+}
+
+
+@media only screen and (min-width: 768px) {
+    #left {
+        margin-left: 4%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .pesquisarTxt {
+        font-size: 8px;
+        margin-top: 15%;
+    }
+
+    #logoTop {
+        margin-left: -20%;
+        width: 110px;
+    }
+}
+
+@media only screen and (min-width: 885px) {
+    #left {
+        margin-left: 0%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .pesquisarTxt {
+        font-size: 10px;
+        margin-top: 8%;
+    }
+
+    #logoTop {
+        margin-left: -8%;
+        width: 130px;
+    }
+}
+
+
+
+@media only screen and (min-width: 999px) {
+    #left {
+        margin-left: 0%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .pesquisarTxt {
+        font-size: 10px;
+        margin-top: 8%;
+    }
+
+    #logoTop {
+        margin-left: -8%;
+    }
+
+}
+
+@media only screen and (min-width: 1020px) {
+    #left {
+        margin-left: 3%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .pesquisarTxt {
+        font-size: 12px;
+        margin-top: 5%;
+    }
+}
+
+@media only screen and (min-width: 1119px) {
+    #left {
+        margin-left: 5%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .pesquisarTxt {
+        font-size: 12px;
+        margin-top: 5%;
+    }
+
+    #left {
+        margin-left: 10%;
+    }
+}
+
+@media only screen and (width: 1356px) {
+    #left {
+        margin-left: 10%;
+    }
+}
+
+@media only screen and (width: 1366px) {
+    #left {
+        margin-left: 15%;
+    }
+
+    .pesquisarTxt {
+        margin: 0% !important;
+        padding: 15px !important;
+    }
+
+    #logoTop {
+        margin-top: 8% !important;
+    }
+
+    .pesquisar {
+        margin: 0 !important;
+    }
+}
+
+@media only screen and (min-width: 1367px) {
+    .pesquisarTxt {
+        margin: 0% !important;
+        padding: 15px !important;
+    }
+
+    #logoTop {
+        margin-top: 8% !important;
+    }
+
+    .pesquisar {
+        margin: 0 !important;
+    }
+
+    #left {
+        margin-left: 25%;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .perfilLogado {
+        width: 30px !important;
+        height: 25px !important;
+    }
+}
+
+.pesquisarTxt{
+    box-sizing:border-box;
+}
+    .txtPesquisar {
+        border-radius: 24px;
+        border: gray solid 1px;
+        color: black;
+    }
+
+    input#pesquisat {
+        font-family: "FontAwesome";
+        content: "\f002";
+    }
+
+    .input {
+        width: 25px;
+        height: 25px;
+        background: none;
+        border-radius: 50%;
+        border: 4px solid #ffffff;
+        box-sizing: border-box;
+        outline: none;
+        transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
+        transition-delay: 0.4s;
+        color: white;
+        font-size: 20px;
+    }
+
+    .btnA {
+        position: absolute;
+        width: 45px;
+        height: 60px;
+        right: 0;
+        bottom: 15%;
+        box-sizing: border-box;
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+        .btnA::before {
+            content: "";
+            width: 4px;
+            height: 25px;
+            background: white;
+            position: absolute;
+            transform: rotate(-45deg);
+            bottom: -16px;
+            right: -6px;
+            transition: 0.3s;
+        }
+
+    .inclicked {
+        width: 360px;
+        border-radius: 0;
+    }
+
+    .close::before, .close:after {
+        content: "";
+        width: 4px;
+        height: 34px;
+        background: white;
+        position: absolute;
+        bottom: 12px;
+        right: 28px;
+        padding-top: 55%;
+    }
+
+    .close::before {
+        transform: rotate(-45deg);
+    }
+
+    .close::after {
+        transform: rotate(45deg);
+    }
+
+
+

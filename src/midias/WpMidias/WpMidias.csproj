@@ -16,7 +16,6 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="RestSharp" Version="106.6.10" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
-    <PackageReference Include="TServices.Comum" Version="1.0.1-CI-20190818-151415" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +23,12 @@
     <ProjectReference Include="..\WpMidias.Entities\WpMidias.Entities.csproj" />
     <ProjectReference Include="..\WpMidias.Infrastructure\WpMidias.Infrastructure.csproj" />
     <ProjectReference Include="..\WpMidias.Services\WpMidias.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="TServices.Comum">
+      <HintPath>..\..\common\bin\Debug\netcoreapp2.1\TServices.Comum.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

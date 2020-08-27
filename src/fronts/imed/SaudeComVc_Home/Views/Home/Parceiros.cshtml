@@ -1,0 +1,164 @@
+﻿<link href="~/Css/ResponsivoParceiros.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Parceiros";
+}
+<section id="section-parceiros-01">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <a href="https://teldoctor.com.br/" target="_BLANK"><img src="~/assets-saude/images/parceiro-01.jpg" class="img-fluid" /></a>
+                @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+                {
+                    <a onclick="consulteseAgr()" href="#" class="defaut-btn-gradient -btn-break text-white w-100" style="font-size:22px;height:15%;background: linear-gradient(to bottom, #ffd65e 0%,#febf04 100%);"><img src="~/Img/TeldoctorLogo.png" height="50" width="50" alt="Alternate Text" /> &nbsp;Consulte-se Agora</a>
+                }
+            </div>
+            <div class="col-lg-8 align-self-center text-center">
+                <br />
+                <br />
+                <h5><b>CONHEÇA A TELDOCTOR, NOSSO PARCEIRO EM TELEMEDICNA</b></h5>
+                <div class="video">
+                    <iframe width="100%" height="390" src="https://www.youtube.com/embed/RVKe2SDO_L0" style="border-radius:12px" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                @*<a class="defaut-btn-gradient" href="https://teldoctor.com.br/" target="_BLANK">Acessar o site</a>*@
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4 align-self-center text-center">
+                <h5>OQUE É A TELEMEDICINA?</h5>
+            </div>
+            <div class="col-lg-8 align-self-center text-justify">
+                <p>É o atendimento médico, regulado pelo Conselho Federal de Medicina, sem contato ou consulta, realizazdo através de comunicação Digital Eletrônica</p>
+                <p>Atendimento Médico feito a distância.</p>
+                <p>Preenchendo uum prontuário, com o auxílio do médico, da Inteligência Artificial, e realizando uma analise de dados, o médico determina uma conduta a ser seguida pelo paciente.</p>
+                <p>Esta plataforma segue controles da Sociedade Brasileira de Informática e Sáude(SBIS) e os documentos e prescrições enviadas ao paciente possuem assinaturas digitais e Protocolos de Chaves Públicas validando todo tramite de atendimento para a segurança de ambos.</p>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4 align-self-center text-center">
+                <h5>PASSO A PASSO</h5>
+            </div>
+            <div class="col-lg-8 align-self-center">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="~/Img/Teldoctor/1.png" alt="Alternate Text" width="50%" style="margin-left:25%" />
+                        <p class="text-center">O paciente se cadastara em nossa plataforma</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="~/Img/Teldoctor/2.png" alt="Alternate Text" width="50%" style="margin-left:25%" />
+                        <p class="text-center">Nosso sistema redirecionará o paciente para a página da teldoctor já logado</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="~/Img/Teldoctor/3.png" alt="Alternate Text" width="50%" style="margin-left:25%" />
+                        <p class="text-center">O usuário selecionará a opção de realizar consulta, seguindo as orientaões da Teldoctor</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="~/Img/Teldoctor/4.png" alt="Alternate Text" width="50%" style="margin-left:25%" />
+                        <p class="text-center">Realize sua consulta com os médicos Teldoctor de onde estiver</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4 align-self-center text-center">
+                <h5>BENEFÍCIOS</h5>
+            </div>
+            <div class="col-lg-8 align-self-center">
+                @*<div class="row">
+                        <div class="col-md-4">
+                            <img src="~/Img/Teldoctor/Imagem1.png" alt="Alternate Text" width="30%" style="margin-left:35%" />
+                            <p class="text-center"><b>Agilidade</b></p>
+                            <p class="text-center">
+                                Agilidade no atendimento,no pedido e realização de exames.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="~/Img/Teldoctor/Imagem2.png" alt="Alternate Text" width="30%" style="margin-left:35%" />
+                            <p class="text-center"><b>Informação & Orientação</b></p>
+                            <p class="text-center">
+                                Informação e orientação correta numa plataforma digital acessível de qualquer lugar.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="~/Img/Teldoctor/Imagem3.png" alt="Alternate Text" width="30%" style="margin-left:35%" />
+                            <p class="text-center"><b>Segmentação</b></p>
+                            <p class="text-center">
+                                Atendimento segmentado e individualizado, facilitando a comunicação entre o Médico e o Paciente.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="~/Img/Teldoctor/Imagem4.png" alt="Alternate Text" width="30%" style="margin-left:35%" />
+                            <p class="text-center"><b>Território</b></p>
+                            <p class="text-center">Acesso de qualquer lugar do mundo com acesso a internet.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="~/Img/Teldoctor/Imagem5.png" alt="Alternate Text" width="30%" style="margin-left:35%" />
+                            <p class="text-center"><b>Know-how</b></p>
+                            <p class="text-center">
+                                A plataforma digital oferece a distribuição de conhecimento, e o compartilhamento rápido de diagnósticos e tratamentos.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="~/Img/Teldoctor/Imagem6.png" alt="Alternate Text" width="30%" style="margin-left:35%" />
+                            <p class="text-center"><b>Resultados</b></p>
+                            <p class="text-center">
+                                Resultados financeiros superiores a qualquer outro convenio, clinica ou consultório, através de método legal, testado e comprovado.
+                            </p>
+                        </div>
+                    </div>*@
+                <div class="row">
+                    <img src="~/Img/Teldoctor/Imagem1.png" alt="Alternate Text" width="99%" />
+                </div>
+                <div class="row">
+                    <img src="~/Img/Teldoctor/Imagem4.png" alt="Alternate Text" width="99%" />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4 align-self-center text-center">
+                <h5>ESPECIALIDADES</h5>
+            </div>
+            <div class="col-lg-8 align-self-center">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="~/Img/Teldoctor/Imagem7.png" alt="Alternate Text" class="img1" width="40%" />
+                    </div>
+                    <div class="col-md-4">
+                        <img src="~/Img/Teldoctor/Imagem8.png" alt="Alternate Text" class="img2" width="45%" />
+                    </div>
+                    <div class="col-md-4">
+                        <img src="~/Img/Teldoctor/Imagem9.png" alt="Alternate Text" class="img3" width="40%" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="~/Img/Teldoctor/Imagem10.png" alt="Alternate Text" class="img4" width="55%" />
+                    </div>
+                    <div class="col-md-4">
+                        <img src="~/Img/Teldoctor/Imagem11.png" alt="Alternate Text" class="img5" width="55%" />
+                    </div>
+                    <div class="col-md-4">
+                        <img src="~/Img/Teldoctor/Imagem12.png" alt="Alternate Text" class="img3" width="40%" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        @* PARCEIRA PLURAL
+                <div class="row mt-4">
+                <div class="col-lg-8 order-2 order-lg-1 align-self-center">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget gravida justo. Fusce facilisis sem non neque varius tincidunt. Nulla lobortis urna eu enim auctor, id auctor dolor mattis. Cras porta congue mauris, id rutrum lorem varius eu. Morbi ac est et lorem feugiat volutpat. Nunc quis sapien sit amet mi tristique gravida non vitae ex. Aenean vel sem dolor. In rhoncus, elit vel molestie mattis, orci lacus facilisis erat, sit amet euismod arcu metus vitae ex. Quisque et tincidunt nisi. Pellentesque volutpat enim vitae lacinia pellentesque. Donec nec gravida felis, vitae cursus massa. Vivamus blandit, purus eu aliquet congue.</p>
+                    <a class="defaut-btn-gradient" href="http://www.pluralsaude.com.br/" target="_BLANK">Acessar o site</a>
+                </div>
+                <div class="col-lg-4 order-1 order-lg-2 align-self-center">
+                    <a href="http://www.pluralsaude.com.br/" target="_BLANK"><img src="~/assets-saude/images/parceiro-02.jpg" class="img-fluid" /></a>
+                </div>
+            </div>*@
+
+    </div>
+</section>

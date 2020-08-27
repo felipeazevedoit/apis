@@ -1,0 +1,136 @@
+﻿<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+
+@{
+    ViewBag.Title = "Pessoal";
+}
+
+@model SaudeComVc_Home.Models.WhiteLabelAViewModel
+
+
+<section id="cadastro-medico">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box">
+                    <form action="/whitelabel/Cadastrar" method="post" enctype="multipart/form-data" id="wlForm">
+                        <input type="hidden" name="Id" value="@Model.ID" />
+                        <input type="hidden" name="codigoExterno" value="@Model.CodigoExterno" />
+                        <input type="hidden" name="idCliente" value="@Model.IdCliente" />
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <div class="input-group mb-2 mr-sm-2">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="file" name="Imagem" onchange="ImagemSucess()">
+                                        <label class="custom-file-label imgF" for="file" aria-describedby="inputGroupFileAddon"> Selecione a imagem</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <div class="input-group mb-2 mr-sm-2">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="curriculo">
+                                        <label class="custom-file-label imgC" for="curriculo" aria-describedby="inputGroupFileAddon"> Envie seu currículo</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" style="background-color:forestgreen;color:white" id="curriculoB" onclick="enviarDados()">Upload</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label class="sr-only" for="inlineFormInputName2">Nome</label>
+                                @*<input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Insira seu nome">*@
+                                @Html.TextBoxFor(n => n.Nome, new { @placeholder = "Digite o Título", @class = "form-control mb-2 mr-sm-2", @name = "nome", @id = "nome" })
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                @*<textarea class="col-md-12">Insira sua Biografia aqui</textarea>*@
+                                @Html.TextAreaFor(n => n.Apresentacao, new { @placeholder = "Sobre mim", rows = "15", cols = "80", @class = "col-md-12", @name = "nome", @id = "descricao" })
+                            </div>
+                        </div>
+
+                        <!--<div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label class="sr-only" for="inlineFormInputGroupUsername2">redes sociais</label>
+                                <div class="input-group mb-2 mr-sm-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fab fa-facebook-f"></i></div>
+                                    </div>
+                                    @*<input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Facebook">*@
+                                    @Html.TextBoxFor(n => n.FabebookLink, new { @placeholder = "Facebook", @class = "form-control", @name = "nome", @id = "urlFacebook" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label class="sr-only" for="inlineFormInputGroupUsername2">redes sociais</label>
+                                <div class="input-group mb-2 mr-sm-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fab fa-instagram"></i></div>
+                                    </div>
+                                    @*<input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Instagram">*@
+                                    @Html.TextBoxFor(n => n.IntagramLink, new { @placeholder = "Instagram", @class = "form-control", @name = "InstagramLink", @id = "urlFacebook" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label class="sr-only" for="inlineFormInputGroupUsername2">redes sociais</label>
+                                <div class="input-group mb-2 mr-sm-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fab fa-twitter"></i></div>
+                                    </div>
+                                    @*<input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Twitter">*@
+                                    @Html.TextBoxFor(n => n.TwitterLink, new { @placeholder = "Twitter", @class = "form-control", @name = "InstagramLink", @id = "urlFacebook" })
+                                </div>
+                            </div>
+                        </div>-->
+                        @*<button type="button" class="btn btn-primary mb-2" id="btnVerificar">Salvar</button>*@
+                        <button type="submit" class="btn btn-primary mb-2">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal"></div>
+</section>
+@section scripts{
+    <script src="~/Scripts/pages/curriculo.js"></script>
+    <script src="~/Scripts/pages/whiteLabel.js"></script>
+    <link href="~/Content/loading.css" rel="stylesheet" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+    <script>
+        //function VerificarImagem() {
+        //    if ($("#file").val() != null && $("#file").val() != "") {
+        //        $("#btnSalvar").click();
+        //    }
+        //    else {
+        //        $("#file").notify("Por favor, Insira uma imagem!", { position: "right" });
+        //    }
+
+        //}
+
+        function ImagemSucess() {
+            if ($("#file").val() != null && $("#file").val() != "") {
+                $("#file").notify("Imagem salvo com sucesso", { position: "right", className: "success" });
+                $(".custom-file-label.imgF").text($("#file").val());
+            }
+        }
+
+        $(document).ready(function () {
+            $('#descricao').summernote();
+            $(".popover-content").css("display", "none");
+        });
+
+    </script>
+}

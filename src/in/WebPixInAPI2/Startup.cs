@@ -12,6 +12,8 @@ namespace WebPixInAPI2
 {
     public class Startup
     {
+        private static IConfiguration configuration;
+
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -30,6 +32,7 @@ namespace WebPixInAPI2
             // Add framework services.
             services.AddMvc();
         }
+       
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

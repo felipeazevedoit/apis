@@ -1,0 +1,392 @@
+﻿<link href="~/assets-saude/css/chat.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Chat";
+}
+
+@model SaudeComVc_Home.Models.ChatViewModel
+
+<input type="hidden" id="foto" name="name" value="@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar" />
+<input type="hidden" id="extensao" name="name" value="@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.AvatarExtension.Replace(".","")" />
+
+<input type="hidden" id="fotoD" name="name" value="@TempData["DestinatarioFoto"]" />
+<input type="hidden" id="extensaoD" name="name" value="@TempData["ExtensaoDestinatario"]" />
+
+<section id="section-chat">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center mb-5">
+                <div id="frame">
+                    <div id="sidepanel">
+                        @*<div id="profile">
+                                <div class="wrap">
+                                    <img id="profile-img" src="http://emilcarlsson.se/assets/mikeross.png" class="online" alt="" />
+                                    <p>Mike Ross</p>
+                                    <i class="fa fa-chevron-down expand-button" aria-hidden="true"></i>
+                                    <!-- <div id="status-options">
+                                        <ul>
+                                            <li id="status-online" class="active"><span class="status-circle"></span> <p>Online</p></li>
+                                            <li id="status-away"><span class="status-circle"></span> <p>Away</p></li>
+                                            <li id="status-busy"><span class="status-circle"></span> <p>Busy</p></li>
+                                            <li id="status-offline"><span class="status-circle"></span> <p>Offline</p></li>
+                                        </ul>
+                                    </div> -->
+                                    <!-- <div id="expanded">
+                                        <label for="twitter"><i class="fab fa-facebook-square"></i></label>
+                                        <input name="twitter" type="text" value="mikeross" />
+                                        <label for="twitter"><i class="fab fa-twitter"></i></label>
+                                        <input name="twitter" type="text" value="ross81" />
+                                        <label for="twitter"><i class="fab fa-instagram"></i></label>
+                                        <input name="twitter" type="text" value="mike.ross" />
+                                    </div> -->
+                                </div>
+                            </div>*@
+                        @*<div id="search">
+                                <label for=""><i class="fa fa-search" aria-hidden="true"></i></label>
+                                <input type="text" placeholder="Search contacts..." />
+                            </div>*@
+                        <div id="contacts">
+                            <ul class="list-unstyled">
+                                @foreach (var item in Model.Usuarios)
+                                {
+                                    <li class="contact" id="@item.ID" onclick="openChat(@item.ID, @SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario)">
+                                        <div class="wrap">
+                                            @if (string.IsNullOrEmpty(item.ProfileAvatar))
+                                            {
+                                                <img src="~/img/avatar.png" />
+                                            }
+                                            else
+                                            {
+                                                <img src="data:image/@item.AvatarExtension.Replace(".", string.Empty);base64,@item.ProfileAvatar" />
+                                            }
+                                            <div class="meta">
+                                                <p class="name">@item.Nome</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
+
+                                @*<li class="contact active">
+                                        <div class="wrap">
+                                            <span class="contact-status busy"></span>
+                                            <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
+                                            <div class="meta">
+                                                <p class="name">Harvey Specter</p>
+                                                <p class="preview">Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="contact">
+                                        <div class="wrap">
+                                            <span class="contact-status away"></span>
+                                            <img src="http://emilcarlsson.se/assets/rachelzane.png" alt="" />
+                                            <div class="meta">
+                                                <p class="name">Rachel Zane</p>
+                                                <p class="preview">I was thinking that we could have chicken tonight, sounds good?</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="contact">
+                                        <div class="wrap">
+                                            <span class="contact-status online"></span>
+                                            <img src="http://emilcarlsson.se/assets/donnapaulsen.png" alt="" />
+                                            <div class="meta">
+                                                <p class="name">Donna Paulsen</p>
+                                                <p class="preview">Mike, I know everything! I'm Donna..</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="contact">
+                                        <div class="wrap">
+                                            <span class="contact-status busy"></span>
+                                            <img src="http://emilcarlsson.se/assets/jessicapearson.png" alt="" />
+                                            <div class="meta">
+                                                <p class="name">Jessica Pearson</p>
+                                                <p class="preview">Have you finished the draft on the Hinsenburg deal?</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="contact">
+                                        <div class="wrap">
+                                            <span class="contact-status"></span>
+                                            <img src="http://emilcarlsson.se/assets/haroldgunderson.png" alt="" />
+                                            <div class="meta">
+                                                <p class="name">Harold Gunderson</p>
+                                                <p class="preview">Thanks Mike! :)</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="contact">
+                                        <div class="wrap">
+                                            <span class="contact-status"></span>
+                                            <img src="http://emilcarlsson.se/assets/danielhardman.png" alt="" />
+                                            <div class="meta">
+                                                <p class="name">Daniel Hardman</p>
+                                                <p class="preview">We'll meet again, Mike. Tell Jessica I said 'Hi'.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="contact">
+                                        <div class="wrap">
+                                            <span class="contact-status busy"></span>
+                                            <img src="http://emilcarlsson.se/assets/katrinabennett.png" alt="" />
+                                            <div class="meta">
+                                                <p class="name">Katrina Bennett</p>
+                                                <p class="preview">I've sent you the files for the Garrett trial.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="contact">
+                                        <div class="wrap">
+                                            <span class="contact-status"></span>
+                                            <img src="http://emilcarlsson.se/assets/charlesforstman.png" alt="" />
+                                            <div class="meta">
+                                                <p class="name">Charles Forstman</p>
+                                                <p class="preview">Mike, this isn't over.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="contact">
+                                        <div class="wrap">
+                                            <span class="contact-status"></span>
+                                            <img src="http://emilcarlsson.se/assets/jonathansidwell.png" alt="" />
+                                            <div class="meta">
+                                                <p class="name">Jonathan Sidwell</p>
+                                                <p class="preview"><span>You:</span> That's bullshit. This deal is solid.</p>
+                                            </div>
+                                        </div>
+                                    </li>*@
+                            </ul>
+                        </div>
+                        <!-- <div id="bottom-bar">
+                            <button id="addcontact"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> <span>Add contact</span></button>
+                            <button id="settings"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> <span>Settings</span></button>
+                        </div> -->
+                    </div>
+                    <div class="content">
+                        <div class="contact-profile fade" id="headerDest">
+                            <div id="fotoName">
+                                @*@if (TempData["DestinatarioFoto"] != null)
+                                    {
+                                        <img src="data:image/.@TempData["ExtensaoDestinatario"].ToString();base64,@TempData["DestinatarioFoto"].ToString()" />
+                                    }
+                                    else
+                                    {
+                                        <img src="~/Img/avatar.png" alt="" />
+                                    }
+                                    @if (TempData["NomeDestinatario"] != null)
+                                    {
+                                        <p>@TempData["NomeDestinatario"].ToString()</p>
+                                    }
+                                    else
+                                    {
+                                        <p>Nome não encontrado</p>
+                                    }*@
+                            </div>
+                            <div class="social-media">
+                                <i class="fab fa-facebook-square"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                        <div class="messages">
+                            <ul id="chat">
+                                @*<li class="sent"><p>How the hell am I supposed to get a jury to believe you when I am not even sure that I do?!</p></li>
+                                    <li class="replies">
+                                        <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
+                                        <p>When you're backed against the wall, break the god damn thing down.</p>
+                                    </li>
+                                    <li class="replies">
+                                        <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
+                                        <p>Excuses don't win championships.</p>
+                                    </li>
+                                    <li class="sent">
+                                        <img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
+                                        <p>Oh yeah, did Michael Jordan tell you that?</p>
+                                    </li>
+                                    <li class="replies">
+                                        <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
+                                        <p>No, I told him that.</p>
+                                    </li>
+                                    <li class="replies">
+                                        <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
+                                        <p>What are your choices when someone puts a gun to your head?</p>
+                                    </li>
+                                    <li class="sent">
+                                        <img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
+                                        <p>What are you talking about? You do what they say or they shoot you.</p>
+                                    </li>
+                                    <li class="replies">
+                                        <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
+                                        <p>Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
+                                    </li>*@
+                            </ul>
+                        </div>
+                        <div class="message-input">
+                            <div class="wrap">
+                                <input type="text" style="height:47px !important" id="mensagem" placeholder="Escrever mensagem..." />
+                                <button class="submit" onclick="enviarMensagem()"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts
+{
+    @*<script src="https://use.typekit.net/hoy3lrg.js"></script>
+        <script>try { Typekit.load({ async: true }); } catch (e) { }</script>*@
+
+    <script>
+
+        $(function () {
+            timeoutMessages();
+        });
+
+        function timeoutMessages() {
+            setTimeout(getMessages, 2000);
+        }
+
+        function getMessages() {
+            var element = $('.active');
+            if (element == null || element == undefined || element.length == 0) {
+                return;
+            }
+
+            var destinatario = $('.active').attr('id');
+            remetente = @Json.Encode(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario);
+
+            openChat(destinatario, remetente);
+        }
+
+        function openChat(destinatarioId, remetenteId) {
+
+            $('.active').removeClass('active');
+            $('#' + destinatarioId).addClass('active');
+
+            var usuarioId = @Json.Encode(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario);
+
+            var envio = {
+                destinatarioId,
+                remetenteId,
+            };
+
+            JSON.stringify(envio);
+
+             $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                url: '/Chat/BuscarMensagensAsync',
+                type: 'GET',
+                contentType: 'application/json; charset=utf-8',
+                data: envio,
+                 success: function (data) {
+                     console.log(data);
+
+                     BuscarHeaderComFoto(destinatarioId);
+
+                     $('#chat').empty();
+                     $.each(data, function (key, item) {
+
+                         if (item.RemetenteId == usuarioId) {
+                             if ($('#foto').val() != null) {
+                                 $('#chat').append('<li class="replies"><img src="data:image/.' + $('#extensao').val() + ';base64,' + $('#foto').val() + '" /><p>' + item.Descricao + '</p ></li>');
+                             }
+                             else {
+                                 $('#chat').append('<li class="replies"><img src="../Img/avatar.png" /><p>' + item.Descricao + '</p ></li>');
+                             }
+
+
+                         }
+                         else {
+                             if ($('#fotoD').val() != null) {
+                                 $('#chat').append('<li class="sent"><img src="data:image/.' + $('#extensaoD').val() + ';base64,' + $('#fotoD').val() + '" /><p>' + item.Descricao + '</p ></li>');
+                             }
+                             else {
+                                 $('#chat').append('<li class="sent"><img src="../Img/avatar.png" /><p>' + item.Descricao + '</p ></li>');
+                             }
+                         }
+                         //BuscarHeaderComFoto(item.DestinatarioId);
+                     });
+
+                     timeoutMessages();
+                     $('#headerDest').removeClass('fade');
+                }
+             });
+        }
+
+        function enviarMensagem () {
+
+            var element = $('.active');
+            if (element == null || element == undefined || element.length == 0) {
+                alert('Selecione um contato.');
+                return;
+            }
+
+            var usuarioId = @Json.Encode(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario);
+            var envio = {
+                remetenteId: usuarioId,
+                destinatarioId: $('.active').attr('id'),
+                descricao: $('#mensagem').val(),
+            };
+
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                url: '/Chat/EnviarMensagemAsync',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(envio),
+                success: function (data) {
+                    console.log(data);
+                    $('#mensagem').val('');
+
+                   if (item.RemetenteId == usuarioId) {
+                        $('#chat').append('<li class="replies"><p>' + item.Descricao + '</p ></li>');
+                    }
+                    else {
+                        $('#chat').append('<li class="sent"><p>' + item.Descricao + '</p ></li>');
+                    }
+                }
+            });
+            };
+
+    function BuscarHeaderComFoto(DestinatarioId) {
+        $.ajax({
+            headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+            type: "POST",
+            url: "/Chat/BuscarDados?id=" + DestinatarioId,
+            contentType: 'application/json; charset=utf-8',
+            success: function (response) {
+                console.log(response);
+                $("#fotoName").empty();
+
+
+                if (response.ProfileAvatar != null) {
+                    $("#fotoName").append('<img src="data:image/' + response.AvatarExtension + ';base64,' + response.ProfileAvatar + '" />');
+                }
+                else {
+                    $("#fotoName").append('<img src="../Img/avatar.png" />');
+                }
+
+                if (response.Nome != null) {
+                    $("#fotoName").append('<p>' + response.Nome + '</p>');
+                }
+                else {
+                    $("#fotoName").append('<p>Nome não encontrado</p>');
+                }
+
+            }
+        });
+    };
+    </script>
+}

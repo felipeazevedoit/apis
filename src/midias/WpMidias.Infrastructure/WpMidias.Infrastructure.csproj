@@ -7,11 +7,16 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
-    <PackageReference Include="TServices.Comum" Version="1.0.1-CI-20190818-151415" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\WpMidias.Entities\WpMidias.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="TServices.Comum">
+      <HintPath>..\..\common\bin\Debug\netcoreapp2.1\TServices.Comum.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

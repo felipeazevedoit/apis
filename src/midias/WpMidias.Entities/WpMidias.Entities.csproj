@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="TServices.Comum" Version="1.0.1-CI-20190818-151415" />
+    <Reference Include="TServices.Comum">
+      <HintPath>..\..\common\bin\Debug\netcoreapp2.1\TServices.Comum.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

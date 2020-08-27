@@ -1,0 +1,287 @@
+﻿<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+
+@{
+    ViewBag.Title = "Cadastro de Notícias";
+}
+
+@model SaudeComVoce.Models.NoticiaViewModel
+
+<style>
+    .tag {
+        color: Highlight !important;
+    }
+</style>
+<section id="cadastro-noticia">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box">
+                    @using (Html.BeginForm("Cadastro", "Noticias", FormMethod.Post, new { @id = "form", @enctype = "multipart/form-data" }))
+                    {
+                        if (TempData["noticiaResult"] != null)
+                        {
+                            <div class="alert alert-danger" id="errorBox" role="alert">
+                                @TempData["noticiaResult"].ToString()
+                            </div>
+                        }
+                <form>
+                    <input type="hidden" name="viewAdmin" value="@ViewBag.Admin" />
+                    @Html.HiddenFor(n => n.CodigoExterno)
+                    @Html.HiddenFor(n => n.ID)
+                    @Html.HiddenFor(n => n.DataCriacao)
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label class="sr-only" for="inlineFormInputName2">Titulo</label>
+                            @Html.TextBoxFor(n => n.Nome, new { @placeholder = "Insira o titulo da notícia", @class = "form-control mb-2 mr-sm-2", @id = "titulo" })
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="custom-file">
+                                    @*<input type="file" class="custom-file-input" id="inputGroupFile">*@
+                                    @Html.TextBoxFor(n => n.Thumbnail, new { @class = "custom-file-input", @type = "file", @id = "thumbnail" })
+                                    <label class="custom-file-label" for="inputGroupFile" aria-describedby="inputGroupFileAddon"> Selecione a imagem</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label class="sr-only" for="inlineFormInputGroupUsername2">Descrição</label>
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="far fa-keyboard"></i></div>
+                                </div>
+                                @*<input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Descrição Opcional">*@
+                                @Html.TextBoxFor(n => n.Descricao, new { @placeholder = "Descrição Opcional", @class = "form-control", @id = "descricao" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            @*<select id="inputState" class="form-control">
+                    <option selected>Tipo de notícia...</option>
+                    <option>01</option>
+                    <option>01</option>
+                    <option>01</option>
+                    <option>01</option>
+                    <option>01</option>
+                </select>*@
+                            @Html.DropDownListFor(u => u.TipoNoticia, (IEnumerable<SelectListItem>)ViewBag.TiposNoticias, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @*<select id="inputState" class="form-control">
+                    <option selected>Tipo de notícia...</option>
+                    <option>01</option>
+                    <option>01</option>
+                    <option>01</option>
+                    <option>01</option>
+                    <option>01</option>
+                </select>*@
+                            @Html.DropDownListFor(u => u.Categoria, (IEnumerable<SelectListItem>)TempData["Categorias"], new { @class = "form-control chosen-select" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @*<select id="inputState" class="form-control">
+                    <option selected>Tipo de notícia...</option>
+                    <option>01</option>
+                    <option>01</option>
+                    <option>01</option>
+                    <option>01</option>
+                    <option>01</option>
+                </select>*@
+                            @Html.DropDownListFor(u => u.Grupo, (IEnumerable<SelectListItem>)TempData["Grupos"], new { @class = "form-control chosen-select" })
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            @*<textarea>Insira o conteúdo aqui</textarea>*@
+                            @Html.TextAreaFor(n => n.Conteudo, new { @id = "summernote", @name = "corpo", @rows = 10 })
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="sr-only" for="inlineFormInputGroupUsername2">Descrição</label>
+                            @*<input type="text" data-role="tagsinput" value="jQuery,Script,Net">*@
+                            @Html.TextBoxFor(n => n.Tags, new { @placeholder = "", @class = "form-control", @name = "Tags", @id = "tags" })
+                        </div>
+                        @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario == 13)
+                        {
+                            <div class="form-group col-md-6">
+                                @Html.CheckBoxFor(n => n.Ativo, new { @class = "checkbox", @value = "true" })
+                                Visível
+                            </div>
+                        }
+
+                    </div>
+
+                    @if (ViewBag.Admin)
+                    {
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="sr-only" for="inlineFormInputGroupUsername2">médico</label>
+                                <div class="input-group mb-2 mr-sm-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><button type="button" id="btGetMedicos"><i class="far fa-keyboard"></i></button></div>
+                                    </div>
+                                    <input type="text" class="form-control" id="nomeMedicoSelecionado" placeholder="Referenciar médico">
+                                    <input id="idMedicoSelecionado" type="hidden" class="form-control lista" disabled="disabled" />
+                                    <input id="crmMedicoSelecionado" type="hidden" class="form-control lista" disabled="disabled" />
+                                </div>
+                                <span class="label label-warning fade text-center" id="return">Warning Label</span>
+                            </div>
+                        </div>
+                    }
+                    <button type="button" onclick="ValidarImg()" class="btn btn-primary mb-2">Cadastrar notícia</button>
+                    <button type="submit" class="btn btn-primary mb-2" style="display:none" id="cad">Cadastrar notícia</button>
+                </form>
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class=" modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div id="titleNoticia"></div>
+                    </div>
+                    <div class="modal-body">
+                        <div id="artigo"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalMedicos" role="dialog">
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+@section Scripts {
+    <link href="~/Plugin/tagsInput/bootstrap-tagsinput.css" rel="stylesheet" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+    <script src="~/Plugin/tagsInput/bootstrap-tagsinput.js"></script>
+    <script src="~/Scripts/plugins/jquery.dataTables.min.js"></script>
+    <script>
+
+                     @*<input type="hidden" id="CodigoExterno" name="CodigoExterno" value="@Model.CodigoExterno" />
+                            <input type="hidden" name="viewAdmin" value="@ViewBag.Admin" />*@
+            popoulamedicoResponsavel();
+
+            function popoulamedicoResponsavel() {
+
+                var codigoExterno = $('#CodigoExterno').val();
+                var data = {
+                    "idCliente": 12,
+                    "idExterno": codigoExterno
+                };
+                console.log(JSON.stringify(data));
+
+                $.ajax({
+                    url: "http://201.73.1.17:5300/api/Seguranca/WpMedicos/BuscarPorIdExterno/12/999",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    type: 'POST',
+                    data: JSON.stringify(data),
+                    success: function (result) {
+                        console.log(result);
+                        if (result != null && result != undefined) {
+                            $('#idMedicoSelecionado').val(result.id);
+                            $('#nomeMedicoSelecionado').val(result.nome);
+                            $('#crmMedicoSelecionado').val(result.crm);
+                            $('#CodigoExterno').val(result.codigoExterno);
+                            $('#tbMedicoSelecionado').fadeIn();
+                            console.log("k");
+                        }
+                    }
+                });
+            }
+
+
+            $('#tbMedicoSelecionado').hide();
+            $("#tags").tagsinput('items');
+            $(document).ready(function () {
+                $('#summernote').summernote();
+
+                $(".note-btn-group").click(function () {
+                    var item = $('.modal-backdrop');
+                    item.remove();
+                });
+            });
+
+            $('#btnCadastrar').click(function () {
+                $('#form').submit();
+
+            });
+
+            //modalMedicos
+
+
+            $('#btGetMedicos').click(function () {
+                $.ajax({
+                    url: "/Medico/_listarMedicos",
+                    success: function (result) {
+                        $("#modalMedicos").html(result);
+                        $('#listagemTable').DataTable();
+                        $("#modalMedicos").modal();
+                        $('#tbMedicoSelecionado').hide();
+                    }
+                });
+            });
+
+            $('#btnVisualizar').click(function () {
+                var titulo = $('#titulo').val();
+                $('#titleNoticia').html("<h1>" + titulo + "</h1>");
+                $('#artigo').html($('#summernote').val());
+                $("#myModal").modal();
+            });
+
+    </script>
+    <script>
+        $(function () {
+            var result = '@TempData["noticiaResult"]';
+
+            if (result != '') {
+                $("#return").removeClass("fade");
+                $("#return").text(result);
+            };
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $(".popover-content").css("display", "none");
+        })
+    </script>
+    <script>
+        function ValidarImg() {
+            if ($("#thumbnail").val() == null || $("#thumbnail").val() == "") {
+                $.notify("Por favor insira uma imagem para a notícia!");
+            }
+            else {
+                $("#cad").click();
+            }
+        }
+    </script>
+}
+
+

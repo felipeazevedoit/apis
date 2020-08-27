@@ -1,0 +1,14 @@
+F:\work\Framework\src\log\WpLogs.Services\bin\Debug\netcoreapp2.1\WpLogs.Services.deps.json
+F:\work\Framework\src\log\WpLogs.Services\bin\Debug\netcoreapp2.1\WpLogs.Services.dll
+F:\work\Framework\src\log\WpLogs.Services\bin\Debug\netcoreapp2.1\WpLogs.Services.pdb
+F:\work\Framework\src\log\WpLogs.Services\bin\Debug\netcoreapp2.1\WpLogs.Entities.dll
+F:\work\Framework\src\log\WpLogs.Services\bin\Debug\netcoreapp2.1\WpLogs.Infrastructure.dll
+F:\work\Framework\src\log\WpLogs.Services\bin\Debug\netcoreapp2.1\WpLogs.Infrastructure.pdb
+F:\work\Framework\src\log\WpLogs.Services\bin\Debug\netcoreapp2.1\WpLogs.Entities.pdb
+F:\work\Framework\src\log\WpLogs.Services\obj\Debug\netcoreapp2.1\WpLogs.Services.csprojAssemblyReference.cache
+F:\work\Framework\src\log\WpLogs.Services\obj\Debug\netcoreapp2.1\WpLogs.Services.csproj.CoreCompileInputs.cache
+F:\work\Framework\src\log\WpLogs.Services\obj\Debug\netcoreapp2.1\WpLogs.Services.AssemblyInfoInputs.cache
+F:\work\Framework\src\log\WpLogs.Services\obj\Debug\netcoreapp2.1\WpLogs.Services.AssemblyInfo.cs
+F:\work\Framework\src\log\WpLogs.Services\obj\Debug\netcoreapp2.1\WpLogs.Services.csproj.CopyComplete
+F:\work\Framework\src\log\WpLogs.Services\obj\Debug\netcoreapp2.1\WpLogs.Services.dll
+F:\work\Framework\src\log\WpLogs.Services\obj\Debug\netcoreapp2.1\WpLogs.Services.pdb

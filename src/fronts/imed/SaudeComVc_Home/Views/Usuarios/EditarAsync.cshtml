@@ -1,0 +1,123 @@
+﻿<link href="~/Css/Responsivo.css" rel="stylesheet" />
+<link href="~/Css/meusDados.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Editar";
+}
+@model SaudeComVoce.Models.UsuarioViewModel
+
+<div class="container" id="usuarioEditar">
+    <div class="infos">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="miolo" class="card striped-tabled-with-hover card-wizard">
+
+                    <div class="card-header text-center cores box-flex">
+                        <h4 class="text-center fadeInDown-1">@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome</h4>
+                    </div>
+
+                    <div class="card-body" style="margin-top: 5%;">
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="tab1" role="tabpanel">
+
+                                @using (Html.BeginForm("AlterarUsuario", "Usuario", FormMethod.Post, new { @class = "form-horizontal", name = "form1" }))
+                                {
+                                    @Html.HiddenFor(u => u.VAdmin, new { id = "vAdmin" })
+                                    @Html.HiddenFor(u => u.ID, new { id = "id" })
+                                    <input type="hidden" id="b64Img" value="@Model.ProfileAvatar" />
+                                    <input type="hidden" id="extension" value="@Model.AvatarExtension.Replace(".", string.Empty)" />
+                                    <div class="form-group" style="margin-bottom: 5%;">
+                                        <div class="row">
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-6 text-center">
+                                                @if (!string.IsNullOrEmpty(Model.Avatar))
+                                                {
+                                                    <img src="data:image/@Model.AvatarExtension.Replace(".", string.Empty);base64,@Model.ProfileAvatar" id="userPhoto" style="height:100px; width:auto;" class="text-center img-rounded img-circle img-responsive" />
+                                                }
+                                                else
+                                                {
+                                                    <img src="~/img/avatar.png" id="userPhoto" style="height:100px; width:auto;" class="text-center img-rounded img-circle img-responsive" />
+                                                }
+                                            </div>
+                                            <div class="col-md-3"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-md-3 control-label" for="Nome">Foto do usuário</label>
+                                            <div class="col-md-7">
+                                                <input type="file" id="file" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-md-3 control-label" for="Nome">Nome do Usuário</label>
+                                            <div class="col-md-7">
+                                                @Html.TextBoxFor(u => u.Nome, new { id = "nome", placeholder = "Nome do usuário", name = "Nome", @class = "form-control" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label for="login" class="col-md-3 control-label">E-mail/Login</label>
+                                            <div class="col-md-7">
+                                                @Html.HiddenFor(u => u.Login)
+                                                @Html.TextBoxFor(u => u.Login, new { id = "login", placeholder = "E-mail do usuário", name = "email", type = "email", @class = "form-control", @disabled = "disabled" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label for="senha" class="col-md-3 control-label">Senha</label>
+                                            <div class="col-md-7">
+                                                @Html.TextBoxFor(u => u.Senha, new { id = "senha", placeholder = "Senha do usuário", name = "senha", type = "password", @class = "form-control" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label for="confirmarSenha" class="col-md-3 control-label">Confirmar Senha</label>
+                                            <div class="col-md-7">
+                                                @Html.TextBoxFor(u => u.SenhaConfirmada, new { id = "confirmarSenha", placeholder = "confirme a senha do usuário", name = "senha", type = "password", @class = "form-control" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label for="credencial" class="col-md-3 control-label">Credencial</label>
+                                            <div class="col-md-7">
+                                                @Html.HiddenFor(u => u.UsuarioXPerfil.IdPerfil)
+                                                @Html.DropDownListFor(u => u.Perfil, (IEnumerable<SelectListItem>)ViewBag.Perfis, new { @class = "form-control perfis", @disabled = "disabled", id = "credencial" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-footer">
+                                        <div class="row">
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-6">
+                                                <span class="fade" id="lblSpan"></span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <button type="button" onclick="atualizarUsuarioMedico()" id="btnEditar" class="btn btn-fill btn-primary pull-left">Salvar</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/pages/usuario-editar.js"></script>
+}

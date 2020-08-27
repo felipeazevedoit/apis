@@ -1,0 +1,12 @@
+D:\work\Framework\src\whiteLabel\Paginas.Api.Infrastructure\bin\Debug\netcoreapp2.1\Paginas.Api.Infrastructure.deps.json
+D:\work\Framework\src\whiteLabel\Paginas.Api.Infrastructure\bin\Debug\netcoreapp2.1\Paginas.Api.Infrastructure.dll
+D:\work\Framework\src\whiteLabel\Paginas.Api.Infrastructure\bin\Debug\netcoreapp2.1\Paginas.Api.Infrastructure.pdb
+D:\work\Framework\src\whiteLabel\Paginas.Api.Infrastructure\bin\Debug\netcoreapp2.1\Paginas.Api.Entities.dll
+D:\work\Framework\src\whiteLabel\Paginas.Api.Infrastructure\bin\Debug\netcoreapp2.1\Paginas.Api.Entities.pdb
+D:\work\Framework\src\whiteLabel\Paginas.Api.Infrastructure\obj\Debug\netcoreapp2.1\Paginas.Api.Infrastructure.csprojAssemblyReference.cache
+D:\work\Framework\src\whiteLabel\Paginas.Api.Infrastructure\obj\Debug\netcoreapp2.1\Paginas.Api.Infrastructure.AssemblyInfoInputs.cache
+D:\work\Framework\src\whiteLabel\Paginas.Api.Infrastructure\obj\Debug\netcoreapp2.1\Paginas.Api.Infrastructure.AssemblyInfo.cs
+D:\work\Framework\src\whiteLabel\Paginas.Api.Infrastructure\obj\Debug\netcoreapp2.1\Paginas.Api.Infrastructure.csproj.CoreCompileInputs.cache
+D:\work\Framework\src\whiteLabel\Paginas.Api.Infrastructure\obj\Debug\netcoreapp2.1\Paginas.Api.Infrastructure.csproj.CopyComplete
+D:\work\Framework\src\whiteLabel\Paginas.Api.Infrastructure\obj\Debug\netcoreapp2.1\Paginas.Api.Infrastructure.dll
+D:\work\Framework\src\whiteLabel\Paginas.Api.Infrastructure\obj\Debug\netcoreapp2.1\Paginas.Api.Infrastructure.pdb

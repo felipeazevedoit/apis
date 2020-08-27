@@ -1,0 +1,232 @@
+﻿@using Newtonsoft.Json;
+@{
+    ViewBag.Title = "Feed de Notícias";
+}
+
+@model SaudeComVc_Home.Models.FichaFeed
+@{
+    int ultimoId = 0;
+}
+
+@if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+{
+    <input type="hidden" id="user" value="@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario" />
+    <input type="hidden" id="perfil" value="@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.idPerfil" />
+}
+
+<section id="section-paciente-admin">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 d-none d-lg-block">
+                <div id="sidebar-2">
+                    <div class="menu-fixed">
+                        <ul class="list-unstyled m-0">
+                            @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.idPerfil == 12)
+                            {
+                                <li><a href="@Url.Action("EditarAsync", "Usuarios", new { id = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario })">Meus Dados</a></li>
+                            }
+                            else if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.idPerfil == 14)
+                            {
+                                <li><a href="@Url.Action("Editar", "Paciente", new { id = SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario })">Meus Dados</a></li>
+                            }
+                            <li><a href="@Url.Action("Formulario", "Paciente")">Ficha de Saúde</a></li>
+                            <li><a href="@Url.Action("Feed", "Paciente")">Feed de Notícias</a></li>
+                            <li><a href="@Url.Action("Sair", "Login")">Sair</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="photo-mask">
+                            @if (SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado != null && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0)
+                            {
+                                if (!string.IsNullOrEmpty(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar))
+                                {
+                                    <img class="photo"
+                                         src="data:image/@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.AvatarExtension.Replace(".", "");base64,@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.ProfileAvatar" style="width:80%;margin-right:15%;height:50%" />
+                                }
+                                else
+                                {
+                                    <img class="photo" src="~/Img/avatar.png" style="width:80%;margin-right:15%;height:50%" />
+                                }
+                            }
+                        </div>
+                        <p class="name"><span><b>@SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.Nome</b></span>@*<br>Cardiologista<br>*@</p>
+                        @if (TempData["Convenio"] != null)
+                        {
+                            <a class="defaut-btn-gradient font-weight-bold -before" href="#.">@TempData["Convenio"].ToString()</a>
+                        }
+                        else
+                        {
+                            <a class="defaut-btn-gradient font-weight-bold -before" href="#.">Sem plano de saúde</a>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-10">
+                <div class="box">
+                    <div class="avatar">
+                        <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                                <h3 class="title-dynamic -title"><span class="text-book">Últimas</span><br>Notícias</h3>
+                            </div>
+
+                            <div class="col-lg-6 align-self-center">
+                                <form class="form-inline form-paciente">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Pesquisar notícia">
+                                    <button type="submit" class="btn btn-primary mb-2"><i class="flaticon-magnifying-glass"></i> Pesquisar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="panelNoticia" class="row scrollpane">
+                        @foreach (var item in Model.Noticias)
+                        {
+                            if (ultimoId == 0)
+                            {
+                                ultimoId = item.ID;
+                            }
+                            <a href="/Noticias/Index/@item.ID">
+                                <div class="row">
+                                    <div class="col-lg-2"></div>
+                                    <div class="col-lg-8" id="result-pai">
+                                        <div class="-news" id="result">
+                                            @if (item.Midia != null)
+                                            {
+                                                <img class="img-news img-fluid"
+                                                     src="data:image/@item.Midia.Extensao.Replace(".", "");base64,@item.Midia.ArquivoB64" style="width:50000px !important; height:300px" />
+                                            }
+                                            <div class="title-news mt-3">
+                                                <ul class="list-unstyled list-inline m-0">
+                                                    <li class="list-inline-item"><i class="flaticon-calendar-1"></i> @item.DataCriacao.ToString("dd/MM/yyyy")</li>
+                                                    <li class="list-inline-item">Autor: @(item.Medico == null ? "Imed.fit" : item.Medico.Nome)</li>
+
+                                                </ul>
+                                                <h5 class="title-dynamic m-0">@item.Nome</h5>
+                                                <p class="card-text">@item.Descricao</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+                        @*<div class="response"></div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-4">
+                <div class="loader" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="row"></div>
+    </div>
+</section>
+<div id="modalPerguntas"></div>
+
+@section Scripts
+{
+    <script>
+        let _ultimoId = @ultimoId;
+
+        $(document).ready(() => {
+            let isBusca = false;
+            let root = document.getElementById("panelNoticia");
+
+            $(document).scroll(function (event) {
+                event.preventDefault();
+                var docHeight = $("#section-paciente-admin").height();
+                var winScrolled = $(window).height() + $(window).scrollTop();
+                if ((docHeight - winScrolled) < 1) {
+                    $(".loader").show();
+
+                    if (isBusca == false)
+                        BuscarNotificias();
+                }
+            });
+
+            function BuscarNotificias() {
+                //FeedPost
+                isBusca = true;
+
+                $.ajax({
+                    url: '@Url.Action("FeedPost","Paciente").Trim()' + '?lastId=' + _ultimoId,
+                    method: "GET"
+                }).done(function (data) {
+                    let html = "";
+
+                    data.map(function (item, index) {
+                        if (index == 0)
+                            _ultimoId = item.ID;
+
+                        html += " <a href='/Noticias/Index/"+ item.ID+ "'>";
+                        html += "<div class='col-lg-12' id='result-pai'>";
+                        html += "<div class='-news' id='result'>";
+
+                        if (item.Midia != null && item.Midia != undefined) {
+                            html += " <img class='img-news img-fluid'src='data:image/" + item.Midia.Extensao.replace('.', '') + ";base64," + item.Midia.ArquivoB64 + "' style='width:50000px !important' />";
+                        }
+
+                        html += "<div class='title-news mt-3'>";
+                        html += "<ul class='list-unstyled list-inline m-0'>";
+                        html += "<li class='list-inline-item'><i class='flaticon-calendar-1'></i>"+  item.DataCriacao + "</li>";
+                        html += "<li class='list-inline-item'>Autor:" + (item.Medico == null ? 'Saúde Com Você' : item.Medico.Nome) + "</li></ul>";
+                        html += "<h5 class='title-dynamic m-0'>" + item.Nome + "</h5>";
+                        html += "<p class='card-text'>" + item.Descricao + "</p>";
+                        html += "</div></div></div></a>";
+                    });
+
+                    $(root).append(html);
+
+                    $(".loader").hide();
+
+                    isBusca = false;
+
+                }).fail(function (error) {
+                    console.log("erro", error);
+
+                    $(".loader").hide();
+                    isBusca = false;
+                });
+            }
+        });
+    </script>
+    <script>
+
+
+        $(function () {
+                if ($("#perfil").val() != 12)
+            {
+                    var result = '@TempData["loginResult"]';
+
+                    if (result != '') {
+                        carregaModalLogin(result);
+                    };
+
+                    var usuario = @Json.Encode(SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado != null && SaudeComVoce.Helpers.PixCoreValues.UsuarioLogado.IdUsuario > 0);
+
+                    if(usuario)
+                    {
+                        var temPerguntas = @Json.Encode(Model.Perguntas != null && @Model.Perguntas.Count() > 0);
+                        if (temPerguntas) {
+                        $.ajax({
+                            method: "GET",
+                            url: '@Url.Action("_Perguntas", "Home", new { id = Model.Perguntas == null ? 0 : Model.Perguntas.FirstOrDefault()?.ID })',
+                        }).done(function (response) {
+                            //console.log(response);
+                            $('#modalPerguntas').html(response);
+                            $('#perguntas').modal('show');
+                            });
+                        };
+                    }
+                }
+            $(".chosen-select").chosen({ no_results_text: "Nada encontrado!" });
+            $(".chosen-select").chosen({ allow_single_deselect: true });
+            });
+
+    </script>
+}

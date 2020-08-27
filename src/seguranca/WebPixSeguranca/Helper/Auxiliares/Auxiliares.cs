@@ -1,4 +1,5 @@
 ﻿using Entity;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Repository;
@@ -18,15 +19,16 @@ namespace WebPixSeguranca.Helper.Auxiliares
 {
     public class Auxiliares
     {
+
         public static async Task<MotorAuxViewModel> GetInfoMotorAux(string aux, int idcliente)
         {
             try
             {
+                ConfigurationHelper helper = new ConfigurationHelper();
                 using (HttpClient client = new HttpClient())
                 {
-                    //http://18.229.17.132:5400/api/
-                    //http://localhost:5400
-                    client.BaseAddress = new Uri("http://inapi.mundowebpix.com.br:5400");
+                   
+                    client.BaseAddress = new Uri(helper.GetConfiguration("URLIn"));
                     var url = "api/motoraux/acessarmotor/" + aux;
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     HttpResponseMessage response = await client.GetAsync(url);
@@ -46,6 +48,7 @@ namespace WebPixSeguranca.Helper.Auxiliares
                 return new MotorAuxViewModel();
             }
         }
+
         public static async Task<bool> verificaPermissaoAsync(AcaoViewModel acao, int idusuario, int idCliente)
         {
             var permissao = await PermissaoDAO.CarregarPermissaoByUsuarioAsync(idusuario);
@@ -198,5 +201,7 @@ namespace WebPixSeguranca.Helper.Auxiliares
 
             return VA;
         }
+        
+       
     }
 }

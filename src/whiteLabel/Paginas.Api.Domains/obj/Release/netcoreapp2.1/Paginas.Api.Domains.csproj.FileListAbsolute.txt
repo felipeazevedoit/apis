@@ -1,0 +1,14 @@
+D:\work\Framework\src\whiteLabel\Paginas.Api.Domains\bin\Release\netcoreapp2.1\Paginas.Api.Domains.deps.json
+D:\work\Framework\src\whiteLabel\Paginas.Api.Domains\bin\Release\netcoreapp2.1\Paginas.Api.Domains.dll
+D:\work\Framework\src\whiteLabel\Paginas.Api.Domains\bin\Release\netcoreapp2.1\Paginas.Api.Domains.pdb
+D:\work\Framework\src\whiteLabel\Paginas.Api.Domains\bin\Release\netcoreapp2.1\Paginas.Api.Entities.dll
+D:\work\Framework\src\whiteLabel\Paginas.Api.Domains\bin\Release\netcoreapp2.1\Paginas.Api.Infrastructure.dll
+D:\work\Framework\src\whiteLabel\Paginas.Api.Domains\bin\Release\netcoreapp2.1\Paginas.Api.Infrastructure.pdb
+D:\work\Framework\src\whiteLabel\Paginas.Api.Domains\bin\Release\netcoreapp2.1\Paginas.Api.Entities.pdb
+D:\work\Framework\src\whiteLabel\Paginas.Api.Domains\obj\Release\netcoreapp2.1\Paginas.Api.Domains.csprojAssemblyReference.cache
+D:\work\Framework\src\whiteLabel\Paginas.Api.Domains\obj\Release\netcoreapp2.1\Paginas.Api.Domains.AssemblyInfoInputs.cache
+D:\work\Framework\src\whiteLabel\Paginas.Api.Domains\obj\Release\netcoreapp2.1\Paginas.Api.Domains.AssemblyInfo.cs
+D:\work\Framework\src\whiteLabel\Paginas.Api.Domains\obj\Release\netcoreapp2.1\Paginas.Api.Domains.csproj.CoreCompileInputs.cache
+D:\work\Framework\src\whiteLabel\Paginas.Api.Domains\obj\Release\netcoreapp2.1\Paginas.Api.Domains.csproj.CopyComplete
+D:\work\Framework\src\whiteLabel\Paginas.Api.Domains\obj\Release\netcoreapp2.1\Paginas.Api.Domains.dll
+D:\work\Framework\src\whiteLabel\Paginas.Api.Domains\obj\Release\netcoreapp2.1\Paginas.Api.Domains.pdb

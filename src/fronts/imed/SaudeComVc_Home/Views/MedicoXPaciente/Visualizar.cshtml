@@ -1,0 +1,165 @@
+﻿@model SaudeComVoce.Models.PacienteViewModel
+
+@{
+    ViewBag.Title = "Ficha técnica de saúde: " + Model.Nome;
+}
+
+    <style>
+        .boxm{
+            padding-bottom:150px !important;
+            padding-top:95px !important;
+        }
+    </style>
+
+<section id="section-medico-admin">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 d-none d-lg-block">
+                <div class="menu-fixed" id="sidebar">
+                    <ul class="list-unstyled m-0">
+                        <li><a href="@Url.Action("Pessoal", "WhiteLabel")">Curriculo</a></li>
+                        <li><a href="@Url.Action("CadastrarNoticia", "Noticias")">Publicar Notícia</a></li>
+                        <li><a href="@Url.Action("Portifolio", "WhiteLabel")">Fotos</a></li>
+                        <li><a href="@Url.Action("Index", "MedicoXPaciente")">Pacientes</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-10">
+                <div class="box">
+                    <div class="avatar">
+                        <div class="row">
+                            <div class="col-lg-2 align-self-center">
+                                <div class="photo-mask">
+                                    @if (Model.ProfileAvatar != null)
+                                    {
+                                        <img src="data:image/@Model.Extensao;base64,@Model.ProfileAvatar" class="photo" />
+                                    }
+                                    else
+                                    {
+                                        <img src="~/Img/avatar.png" class="photo" />
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 align-self-center">
+                                <p class="name"><span>Ficha técnica de saúde</span><br>@Model.Nome<br><span>Última alteraçao: <b>@Model.DateAlteracao.ToShortDateString()</b></span></p>
+                            </div>
+
+                            <div class="col-lg-6 align-self-center">
+                                <form class="form-inline form-paciente">
+                                    <select class="form-control mb-2 mr-sm-2 " id="inlineFormCustomSelectPref">
+                                        <option selected>Escolha um paciente</option>
+                                        @foreach (var item in TempData["MedicoXPaciente"] as IEnumerable<SaudeComVoce.Models.PacienteViewModel>)
+                                        {
+                                            <option value="@item.ID" id="@item.ID">@item.Nome</option>
+                                        }
+                                    </select>
+                                    <button type="button" class="btn btn-primary mb-2" onclick="PesquisarPac()"><i class="flaticon-magnifying-glass"></i> Pesquisar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-lg-4">
+                            <div class="box-card">
+                                <div class="row">
+                                    <div class="col-lg-4 align-self-center">
+                                        <i class="flaticon-18 -icon-box text-gradient"></i>
+                                    </div>
+
+                                    <div class="col-lg-8 align-self-center">
+                                        <h4 class="title-dynamic -title m-0"><span class="text-book">Paciente com</span><br>@TempData["Idade"] anos</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="box-card">
+                                <div class="row">
+                                    <div class="col-lg-4 align-self-center">
+                                        <i class="flaticon-scale -icon-box text-gradient"></i>
+                                    </div>
+
+                                    <div class="col-lg-8 align-self-center">
+                                        <h4 class="title-dynamic -title m-0"><span class="text-book">Paciente com</span><br>@TempData["Peso"] Kilos</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="box-card">
+                                <div class="row">
+                                    <div class="col-lg-4 align-self-center">
+                                        <i class="flaticon-height -icon-box text-gradient"></i>
+                                    </div>
+
+                                    <div class="col-lg-8 align-self-center">
+                                        <h4 class="title-dynamic -title m-0"><span class="text-book">paciente com</span><br>@TempData["Altura"]m</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-lg-12 align-self-center">
+                            <h3 class="title-dynamic -title"><span class="text-book">Anotações sobre</span><br>O Paciente <span class="text-gradient">@Model.Nome</span></h3>
+                            <p>
+                                IMC: <b>@TempData["IMC"].ToString().Substring(0, 2)%</b> <br />
+                                O paciente está: <b>@TempData["IMCt"]</b> de acordo com o IMC <br />
+                                Perguntas Respondidas:
+                            </p>
+                            <a class="-aux font-weight-bold" href="#.">Sim: @TempData["RespostasS"]</a>
+                            <a class="-aux font-weight-bold -before" href="#.">Não: @TempData["RespostasN"]</a>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-lg-12">
+                            <h3 class="title-dynamic -title"><span class="text-book">Informações adicionais</span><br>do paciente</h3>
+                            <p class="m-0">Entrada do paciente: <b>@Model.DataCriacao.ToShortDateString() ás @Model.DataCriacao.ToShortTimeString()</b></p>
+                            <p class="m-0">Total de notícias visualizadas: @TempData["nVisu"]</p>
+                            <p class="m-0">Total da ficha de saúde respondidas: @TempData["Respostas"] ou @TempData["RespostasPorcentagem"]%</p>
+                            @if (Model.Termo == true)
+                            {
+                                <a class="defaut-btn-gradient font-weight-bold -before mt-3" href="@Url.Action("Index", "VisualizarFicha", new { id = Model.CodigoExterno })">ver ficha do paciente</a>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts
+{
+    <script>
+        function PesquisarPac() {
+         var idPac = $("#inlineFormCustomSelectPref").val();
+             window.location.href = '/MedicoXPaciente/Visualizar?id=' + idPac;
+            @*$.ajax({
+                type: "POST",
+                url: '@Url.Action("Redirecionar", "MedicoXPaciente")',
+                data: { id: idPac },
+                dataType: "json",
+                success: function (response) {
+                   
+                }
+            });*@
+        }
+
+    </script>
+    <script>
+        $(".chosen-select").chosen({ no_results_text: "Nada encontrado!" });
+        $(".chosen-select").chosen({ allow_single_deselect: true });
+
+        //$(".chosen-container").css("height", '50px');
+    </script>
+}

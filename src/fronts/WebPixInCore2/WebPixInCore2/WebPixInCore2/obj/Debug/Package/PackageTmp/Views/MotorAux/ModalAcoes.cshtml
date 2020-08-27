@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<WebPixCoreIn.Models.AcaoViewModel>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row" style="margin: 10px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Ações do Motor:<a href="~/MotorAux/Edit/@ViewBag.IdMotor">@ViewBag.Motor</a></h4>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button onclick="editarAcao()" type="button" class="btn btn-default pull-left">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button type="button" onclick="adicionarAcao(@ViewBag.IdMotor)" class="btn btn-default pull-right">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </div>    
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table" id="acoes">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Tipo Ação
+                                </th>
+                                <th>
+                                    Nome
+                                </th>
+                                <th>
+                                    Motor Auxiliar
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="radio">
+                                            <input type="radio" name="acaoRadio" value="@item.ID" id="@item.ID">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @item.ID
+                                    </td>
+                                    <td>
+                                        @item.idTipoAcao
+                                    </td>
+                                    <td onclick="mostrarParametros(@item.ID)">
+                                        @item.Nome
+                                    </td>
+                                    <td>
+                                        @item.MotorAuxiliar
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

@@ -1,0 +1,40 @@
+﻿.card-body {
+}
+
+.card-header {
+    margin-bottom: 5%;
+}
+
+#label {
+    color: grey;
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+#btnSalvar {
+    border-color: transparent;
+    color: #FFF;
+    margin: 3% 0%;
+    margin-bottom: 20%;
+    background-color: #39b54a;
+    box-shadow: #073d0e;
+}
+
+.salvar {
+    border-color: transparent;
+    color: #FFF;
+    margin: 3% 0%;
+    margin-bottom: 20%;
+    background-color: #39b54a;
+    box-shadow: #073d0e;
+}
+
+    .salvar:hover {
+        border-color: transparent;
+        color: #FFF;
+        margin: 3% 0%;
+        margin-bottom: 20%;
+        background-color: #39b54a;
+        box-shadow: #073d0e;
+    }

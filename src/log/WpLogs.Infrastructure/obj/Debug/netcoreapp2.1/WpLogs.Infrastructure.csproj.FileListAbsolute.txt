@@ -1,0 +1,12 @@
+F:\work\Framework\src\log\WpLogs.Infrastructure\bin\Debug\netcoreapp2.1\WpLogs.Infrastructure.deps.json
+F:\work\Framework\src\log\WpLogs.Infrastructure\bin\Debug\netcoreapp2.1\WpLogs.Infrastructure.dll
+F:\work\Framework\src\log\WpLogs.Infrastructure\bin\Debug\netcoreapp2.1\WpLogs.Infrastructure.pdb
+F:\work\Framework\src\log\WpLogs.Infrastructure\bin\Debug\netcoreapp2.1\WpLogs.Entities.dll
+F:\work\Framework\src\log\WpLogs.Infrastructure\bin\Debug\netcoreapp2.1\WpLogs.Entities.pdb
+F:\work\Framework\src\log\WpLogs.Infrastructure\obj\Debug\netcoreapp2.1\WpLogs.Infrastructure.csprojAssemblyReference.cache
+F:\work\Framework\src\log\WpLogs.Infrastructure\obj\Debug\netcoreapp2.1\WpLogs.Infrastructure.csproj.CoreCompileInputs.cache
+F:\work\Framework\src\log\WpLogs.Infrastructure\obj\Debug\netcoreapp2.1\WpLogs.Infrastructure.AssemblyInfoInputs.cache
+F:\work\Framework\src\log\WpLogs.Infrastructure\obj\Debug\netcoreapp2.1\WpLogs.Infrastructure.AssemblyInfo.cs
+F:\work\Framework\src\log\WpLogs.Infrastructure\obj\Debug\netcoreapp2.1\WpLogs.Infrastructure.csproj.CopyComplete
+F:\work\Framework\src\log\WpLogs.Infrastructure\obj\Debug\netcoreapp2.1\WpLogs.Infrastructure.dll
+F:\work\Framework\src\log\WpLogs.Infrastructure\obj\Debug\netcoreapp2.1\WpLogs.Infrastructure.pdb

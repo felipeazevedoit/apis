@@ -1,0 +1,6 @@
+F:\work\Framework\src\mensagens\Mensagens.Entities\bin\Debug\Mensagens.Entities.dll
+F:\work\Framework\src\mensagens\Mensagens.Entities\bin\Debug\Mensagens.Entities.pdb
+F:\work\Framework\src\mensagens\Mensagens.Entities\obj\Debug\Mensagens.Entities.csprojAssemblyReference.cache
+F:\work\Framework\src\mensagens\Mensagens.Entities\obj\Debug\Mensagens.Entities.csproj.CoreCompileInputs.cache
+F:\work\Framework\src\mensagens\Mensagens.Entities\obj\Debug\Mensagens.Entities.dll
+F:\work\Framework\src\mensagens\Mensagens.Entities\obj\Debug\Mensagens.Entities.pdb

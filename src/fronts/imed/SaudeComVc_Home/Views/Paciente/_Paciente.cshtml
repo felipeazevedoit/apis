@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = "_Paciente";
+}
+
+@model IEnumerable<SaudeComVc_Home.Models.ConvenioViewModel>
+
+    <style>
+        .form-group {
+            margin-bottom:0;
+        }
+    </style>
+
+
+    <div class="modal fade" id="paciente" tabindex="-1" role="dialog" aria-labelledby="registroTitle" aria-hidden="true" style="font-size:13px">
+        <div class="modal-dialog modal-lg" role="document">
+            @if (@TempData["convite"] != null && !string.IsNullOrEmpty(TempData["convite"].ToString()))
+            {
+                <input type="hidden" id="token" value="@TempData["convite"]" />
+            }
+            <div class="modal-content">
+                <div class="modal-header" style="padding-bottom:1%; padding-top:1%">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Ficha do Paciente</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body body-others" style="padding-top:1%; padding-bottom:1%;">
+                    <form name="form1">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="nome">Nome Completo</label>
+                                <input type="email" class="form-control" id="nome">
+                                <span class="off" id="lblNome">*Obrigatório</span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="cpf">CPF</label>
+                                <input type="text" class="form-control" id="cpf" onBlur="ValidarCPF(form1.cpf);" onKeyPress="MascaraCPF(form1.cpf);" maxlength="14">
+                                <span class="off" id="lblCpf">*Obrigatórioo</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="cbmConvenio">Convênios</label>
+                                <select id="cbmConvenio" class="form-control chosen-select">
+                                    <option id="0" value="0" selected>Escolha um convênio...</option>
+                                    @foreach (var item in Model)
+                                    {
+                                        <option id="@item.ID" value="@item.ID">@item.Nome</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="cmbSexo">Gênero</label>
+                                <select class="form-control" id="cmbSexo">
+                                    <option>Homem</option>
+                                    <option>Mulher</option>
+                                    <option>Não se aplica</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="datanascimento">Data de nascimento</label>
+                                <input type="date" class="form-control" id="datanascimento">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="peso">Peso(Kilogramas)</label>
+                                <input type="text" class="form-control" id="peso" onKeyPress="MascaraPeso();" maxlength="5">
+                                <span class="off" id="lblPeso">*Obrigatório</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="altura">Altura(Metros)</label>
+                                <input type="text" class="form-control" id="altura" onKeyPress="MascaraAltura();" maxlength="4">
+                                <span class="off" id="lblAltura">*Obrigatório</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12" style="height:75px">
+                                <label for="telefone">Telefone</label>
+                                <input type="text" class="form-control" id="telefone" onKeyPress="TelMask();" maxlength="14">
+                                <span class="off" id="lblTelefone">*Obrigatório</span><br>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="cep">CEP</label>
+                                <input type="text" class="form-control" id="cep" onfocusout="preencherEndereco($('#cep').val())" onKeyPress="MascaraCep(form1.cep);" maxlength="9">
+                                <span class="off" id="lblCep">*Obrigatório</span>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="local">Endereço</label>
+                                <input type="text" class="form-control" id="local" readonly>
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="numero">Número</label>
+                                <input type="number" class="form-control" id="numero" onfocusout="preencherEndereco($('#cep').val())">
+                                <span class="off" id="lblNumero">*Obrigatório</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="email">E-mail</label>
+                                <input type="text" class="form-control" id="email" onfocusout="validarEmail()">
+                                <span class="off" id="lblEmail">*Obrigatório</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="confirmarEmail">Confirmar E-mail</label>
+                                <input type="text" class="form-control" id="confirmarEmail" onfocusout="validarCEmail()">
+                                <span class="off" id="lblConfirmarEmail">*Obrigatório</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="senha">Senha</label>
+                                <input type="password" class="form-control" id="senha">
+                                <span class="off" id="lblSenha">*Obrigatório</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="confirmarSenha">Confirmar senha</label>
+                                <input type="password" class="form-control" id="confirmarSenha">
+                                <span class="off" id="lblConfirmarSenha">*Obrigatório</span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="ckbTermos">
+                                <label class="form-check-label" for="ckbTermos">
+                                    Você aceita os <a href="/Termos/Index" target="_blank">Termos de Uso do Sistema?</a>
+                                </label>
+                                <span class="off" id="lblTermos">*Obrigatório</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="defaut-btn-back" onClick="carregaModalEscolha()">Voltar</a>
+                    <a href="#" class="defaut-btn-gradient" onclick="cadastrarPaciente()" id="btnCadastrar">Cadastrar</a>
+                </div>
+            </div>
+        </div>
+    </div>

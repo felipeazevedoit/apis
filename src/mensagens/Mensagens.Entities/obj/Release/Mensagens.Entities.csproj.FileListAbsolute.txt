@@ -1,0 +1,12 @@
+F:\work\Framework\src\mensagens\Mensagens.Entities\bin\Release\Mensagens.Entities.dll
+F:\work\Framework\src\mensagens\Mensagens.Entities\bin\Release\Mensagens.Entities.pdb
+F:\work\Framework\src\mensagens\Mensagens.Entities\obj\Release\Mensagens.Entities.csprojAssemblyReference.cache
+F:\work\Framework\src\mensagens\Mensagens.Entities\obj\Release\Mensagens.Entities.csproj.CoreCompileInputs.cache
+F:\work\Framework\src\mensagens\Mensagens.Entities\obj\Release\Mensagens.Entities.dll
+F:\work\Framework\src\mensagens\Mensagens.Entities\obj\Release\Mensagens.Entities.pdb
+D:\work\Framework\src\mensagens\Mensagens.Entities\bin\Release\Mensagens.Entities.dll
+D:\work\Framework\src\mensagens\Mensagens.Entities\bin\Release\Mensagens.Entities.pdb
+D:\work\Framework\src\mensagens\Mensagens.Entities\obj\Release\Mensagens.Entities.csprojAssemblyReference.cache
+D:\work\Framework\src\mensagens\Mensagens.Entities\obj\Release\Mensagens.Entities.csproj.CoreCompileInputs.cache
+D:\work\Framework\src\mensagens\Mensagens.Entities\obj\Release\Mensagens.Entities.dll
+D:\work\Framework\src\mensagens\Mensagens.Entities\obj\Release\Mensagens.Entities.pdb

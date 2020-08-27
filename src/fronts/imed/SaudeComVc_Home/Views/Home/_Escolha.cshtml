@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "_Escolha";
+}
+<div class="modal fade modal-registro" id="registro" tabindex="-1" role="dialog" aria-labelledby="registroTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content content-aux">
+            <button type="button" class="close close-aux" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body body-aux">
+                <div class="row">
+                    <div class="col-lg-6 text-center p-0">
+                        <a href="#" onClick="carregaModalLista()"><img src="~/assets-saude/images/homem.png" class="img-fluid"></a>
+                        <a href="#" onClick="carregaModalLista()" class="btn-medico">Você é da área da saúde?</a>
+                    </div>
+                    <div class="col-lg-6 text-center p-0">
+                        <a href="#" onClick="carregaModalPaciente()"><img src="~/assets-saude/images/mulher.png" class="img-fluid"></a>
+                        <a href="#" onClick="carregaModalPaciente()" class="btn-paciente">Você é paciente?</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

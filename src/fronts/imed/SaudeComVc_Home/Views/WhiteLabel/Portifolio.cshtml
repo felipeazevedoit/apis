@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Portifolio";
+}
+
+@model IEnumerable<SaudeComVoce.Models.MidiaViewModel>
+
+<section id="cadastro-portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box">
+                    <form>
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <div class="input-group mt-3">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" onchange="SubmitButtonOnclick()" id="upload" name="upload">
+                                        <label class="custom-file-label" for="inputGroupFile03">Adicionar imagens</label>
+                                    </div>
+                                </div>
+                                <span style="color:forestgreen" class="fade" id="sucessImg">*Imagem adicionada com sucesso</span>
+                            </div>
+                        </div>
+                        @*<button type="submit" class="btn btn-primary mb-2 mt-2">Cadastrar</button>*@
+                    </form>
+                    @foreach (var item in Model)
+                    {
+                        <img src="data:image/@item.Extensao.Replace(".", "");base64, @item.ArquivoB64"  class="img-fluid rounded" onclick="excluirFoto(@item.ID)" alt="Alternate Text" width="25%" height="150" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section scripts{
+    <script src="~/Scripts/pages/whiteLabel.js"></script>
+    <link href="~/Content/loading.css" rel="stylesheet" />
+}

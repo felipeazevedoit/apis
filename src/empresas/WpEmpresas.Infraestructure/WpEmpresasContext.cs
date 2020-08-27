@@ -19,7 +19,7 @@ namespace WpEmpresas.Infraestructure
         {
             base.OnConfiguring(optionsBuilder);
             //optionsBuilder.UseSqlServer(@"Server=187.84.228.245;Database=WebPixEmpresas;Trusted_Connection=True;Integrated Security = True;");
-            optionsBuilder.UseSqlServer(@"Data Source=187.84.232.164;Initial Catalog=WebPixEmpresas;Persist Security Info=True;User ID=sa;Password=!Nm-&8;");
+            optionsBuilder.UseSqlServer(@"Server=179.188.38.126;Database=WebPixEmpresas;Trusted_Connection=True;Integrated Security=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

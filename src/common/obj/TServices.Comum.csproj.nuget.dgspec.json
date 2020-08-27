@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\common\\TServices.Comum.csproj": {}
+    "D:\\work\\Framework\\src\\common\\TServices.Comum.csproj": {}
   },
   "projects": {
-    "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\common\\TServices.Comum.csproj": {
+    "D:\\work\\Framework\\src\\common\\TServices.Comum.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\common\\TServices.Comum.csproj",
+        "projectUniqueName": "D:\\work\\Framework\\src\\common\\TServices.Comum.csproj",
         "projectName": "TServices.Comum",
-        "projectPath": "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\common\\TServices.Comum.csproj",
-        "packagesPath": "C:\\Users\\felip\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\common\\obj\\",
+        "projectPath": "D:\\work\\Framework\\src\\common\\TServices.Comum.csproj",
+        "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
+        "outputPath": "D:\\work\\Framework\\src\\common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\felip\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -83,7 +82,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,115 @@
+﻿@media only screen and (max-width: 650px) {
+    #imgCara {
+        margin-left: 30%;
+        margin-right: 40%;
+        width: 35%;
+        margin-bottom: 5%;
+    }
+
+    #quais {
+        font-size: 25px;
+        color: gray;
+        margin-left: 5%;
+        padding-top: 5%;
+    }
+
+    #buttons {
+        margin-left: 75%;
+        padding-bottom: 5%;
+    }
+
+    .opa {
+        padding-bottom: 15%;
+        margin-bottom: 15%;
+    }
+
+    #btnMais {
+        width: 75%
+    }
+
+    .outrot {
+        width: 75%;
+        margin-left: 12%;
+        margin-right: 5%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+}
+
+@media only screen and (min-width: 650px) {
+    #row {
+        margin-right: 50%;
+    }
+
+    #md3 {
+        margin-left: 10%
+    }
+
+    #questao {
+        margin-left: 16%
+    }
+
+    #quais {
+        font-size: 25px;
+        color: gray;
+        margin-left: 5%;
+        padding-top: 5%;
+    }
+
+    #omd3 {
+        margin: 0;
+        padding: 0;
+    }
+
+    #orow {
+        padding-bottom: 5%;
+    }
+
+    #op {
+        padding: 0;
+        margin: 0;
+        margin-left: 35%;
+    }
+
+    #md10 {
+        margin: 0;
+        padding: 0
+    }
+
+    .opa {
+        width: 95%;
+    }
+
+    #md12 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .outrot {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    #rows {
+        margin: 0;
+        padding: 0;
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+
+    #cardC {
+        margin-top: 5%;
+        padding-bottom: 15%;
+    }
+
+    #imgCara {
+        width: 25%;
+    }
+    .descer
+    {
+        padding-top:12%;
+    }
+}

@@ -1,0 +1,52 @@
+﻿@media only screen and (max-width: 600px) {
+    #imgMedico {
+        margin-left:32%;
+        margin-top:5%;
+        width:30%;
+    }
+    #txtNome {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    #lblDescricaoComent {
+        background-image: url('../Img/balão-de-mensagem-png.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-x: -25%;
+        background-position-y: 40%;
+        margin-bottom: 5%;
+        margin-top: 5%;
+    }
+    #btnComentario {
+        margin-right: 6%;
+        margin-left: 10%;
+        margin-top: 0.5%;
+        height: 48px;
+        width: 88%;
+        padding-bottom:5%;
+    }
+    #rolew {
+        margin-top:10%;
+    }
+}
+
+@media only screen and (min-width: 650px) {
+    #imgMedico {
+        margin:5%;
+        width:80%
+    }
+    #btnComentario {
+        margin-right:6%;
+        margin-left:10%;
+        margin-top:0.5%; 
+        height:48px;
+        width:80%;
+    }
+    #lblDescricaoComent {
+        margin-top: 1%;
+    }
+    #rolew {
+        margin-top: 1%;
+    }
+}
+

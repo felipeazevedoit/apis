@@ -12,7 +12,8 @@ namespace WebPixRepository
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=191.252.0.50;Initial Catalog=WebPixIn;Persist Security Info=True;User ID=dev;Password=123456;");
+            
+            optionsBuilder.UseSqlServer(@"Data Source=179.188.38.126,9000;Initial Catalog=WebPixIn;Persist Security Info=True;User ID=sa;Password=WebPix@2020;");
         }
     }
 }

@@ -1,0 +1,9 @@
+D:\work\Framework\src\whiteLabel\Paginas.Api.Entities\bin\Release\netcoreapp2.1\Paginas.Api.Entities.deps.json
+D:\work\Framework\src\whiteLabel\Paginas.Api.Entities\bin\Release\netcoreapp2.1\Paginas.Api.Entities.dll
+D:\work\Framework\src\whiteLabel\Paginas.Api.Entities\bin\Release\netcoreapp2.1\Paginas.Api.Entities.pdb
+D:\work\Framework\src\whiteLabel\Paginas.Api.Entities\obj\Release\netcoreapp2.1\Paginas.Api.Entities.csprojAssemblyReference.cache
+D:\work\Framework\src\whiteLabel\Paginas.Api.Entities\obj\Release\netcoreapp2.1\Paginas.Api.Entities.AssemblyInfoInputs.cache
+D:\work\Framework\src\whiteLabel\Paginas.Api.Entities\obj\Release\netcoreapp2.1\Paginas.Api.Entities.AssemblyInfo.cs
+D:\work\Framework\src\whiteLabel\Paginas.Api.Entities\obj\Release\netcoreapp2.1\Paginas.Api.Entities.csproj.CoreCompileInputs.cache
+D:\work\Framework\src\whiteLabel\Paginas.Api.Entities\obj\Release\netcoreapp2.1\Paginas.Api.Entities.dll
+D:\work\Framework\src\whiteLabel\Paginas.Api.Entities\obj\Release\netcoreapp2.1\Paginas.Api.Entities.pdb

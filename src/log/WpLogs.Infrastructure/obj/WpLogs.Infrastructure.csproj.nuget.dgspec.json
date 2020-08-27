@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\log\\WpLogs.Infrastructure\\WpLogs.Infrastructure.csproj": {}
+    "D:\\work\\Framework\\src\\log\\WpLogs.Infrastructure\\WpLogs.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\log\\WpLogs.Entities\\WpLogs.Entities.csproj": {
+    "D:\\work\\Framework\\src\\log\\WpLogs.Entities\\WpLogs.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\log\\WpLogs.Entities\\WpLogs.Entities.csproj",
+        "projectUniqueName": "D:\\work\\Framework\\src\\log\\WpLogs.Entities\\WpLogs.Entities.csproj",
         "projectName": "WpLogs.Entities",
-        "projectPath": "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\log\\WpLogs.Entities\\WpLogs.Entities.csproj",
-        "packagesPath": "C:\\Users\\felip\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\log\\WpLogs.Entities\\obj\\",
+        "projectPath": "D:\\work\\Framework\\src\\log\\WpLogs.Entities\\WpLogs.Entities.csproj",
+        "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
+        "outputPath": "D:\\work\\Framework\\src\\log\\WpLogs.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\felip\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -59,26 +58,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     },
-    "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\log\\WpLogs.Infrastructure\\WpLogs.Infrastructure.csproj": {
+    "D:\\work\\Framework\\src\\log\\WpLogs.Infrastructure\\WpLogs.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\log\\WpLogs.Infrastructure\\WpLogs.Infrastructure.csproj",
+        "projectUniqueName": "D:\\work\\Framework\\src\\log\\WpLogs.Infrastructure\\WpLogs.Infrastructure.csproj",
         "projectName": "WpLogs.Infrastructure",
-        "projectPath": "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\log\\WpLogs.Infrastructure\\WpLogs.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\felip\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\log\\WpLogs.Infrastructure\\obj\\",
+        "projectPath": "D:\\work\\Framework\\src\\log\\WpLogs.Infrastructure\\WpLogs.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
+        "outputPath": "D:\\work\\Framework\\src\\log\\WpLogs.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\felip\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -90,8 +93,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\log\\WpLogs.Entities\\WpLogs.Entities.csproj": {
-                "projectPath": "C:\\Users\\felip\\Source\\Repos\\Framework\\src\\log\\WpLogs.Entities\\WpLogs.Entities.csproj"
+              "D:\\work\\Framework\\src\\log\\WpLogs.Entities\\WpLogs.Entities.csproj": {
+                "projectPath": "D:\\work\\Framework\\src\\log\\WpLogs.Entities\\WpLogs.Entities.csproj"
               }
             }
           }
@@ -130,7 +133,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     }
