@@ -171,7 +171,7 @@ namespace SaudeComVc_Home.Controllers
                 var url = ConfigurationManager.AppSettings["UrlAPI"];
 
                 var helper = new ServiceHelper();
-                var result = await helper.GetAsync<IEnumerable<RespostaViewModel>>("http://201.73.1.17:82/api/", $"Respostas/GetByIdExterno12/" + codExt);
+                var result = await helper.GetAsync<IEnumerable<RespostaViewModel>>("http://179.188.38.126:82/api/", $"Respostas/GetByIdExterno12/" + codExt);
 
                 return result;
 

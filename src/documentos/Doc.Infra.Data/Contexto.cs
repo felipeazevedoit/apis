@@ -13,7 +13,7 @@ namespace Doc.Infra.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=179.188.38.126;Database=staffproDoc;Trusted_Connection=True;Integrated Security = True;");
+            optionsBuilder.UseSqlServer(@"Server=179.188.38.126,9000;Database=staffproDoc;Trusted_Connection=True;Integrated Security = True;");
             //optionsBuilder.UseSqlServer(@"Data Source=18.229.17.132;Initial Catalog=staffproDoc;Persist Security Info=True;User ID=sa;Password=!Nm-&8;");
         }
     }

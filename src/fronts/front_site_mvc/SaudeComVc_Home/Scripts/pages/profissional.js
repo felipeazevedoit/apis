@@ -27,7 +27,7 @@ function cadProfissional() {
         console.log(getDataUsuarioProfissional());
 
 
-        var urlU = "http://201.73.1.17:5300/api/Seguranca/Principal/salvarUsuario/12/999";
+        var urlU = "http://servicepix.com.br:5300/api/Seguranca/Principal/salvarUsuario/12/999";
 
         var usuario = { 'usuario': getDataUsuarioProfissional() };
         console.log(JSON.stringify(usuario));
@@ -85,7 +85,7 @@ function cadProfissional() {
                     }
                 }
 
-                var urlP = "http://201.73.1.17:5300/api/Seguranca/wpProfissionais/SalvarProfissional/12/999";
+                var urlP = "http://servicepix.com.br:5300/api/Seguranca/wpProfissionais/SalvarProfissional/12/999";
 
                 var profissional = { 'profissional': getDataProfissional() };
                 console.log(JSON.stringify(profissional));
@@ -144,7 +144,7 @@ function perfil(data,obj) {
     }
 
 
-    var urlPerfil = "http://201.73.1.17:5300/api/Perfil/SaveUsuarioXPerfil";
+    var urlPerfil = "http://servicepix.com.br:5300/api/Perfil/SaveUsuarioXPerfil";
 
     var perfila = getDataPerfil();
     console.log(JSON.stringify(perfila));
@@ -174,7 +174,7 @@ $(document).ready(function () {
 });
 
 //function carregarArea() {
-//    var url = "http://201.73.1.17:5300/api/Seguranca/wpProfissionais/BuscarServico/12/999";
+//    var url = "http://servicepix.com.br:5300/api/Seguranca/wpProfissionais/BuscarServico/12/999";
 
 //    $.ajax({
 //        type: "GET",
@@ -216,7 +216,7 @@ function vincular(obj, data) {
         }
     }
 
-    var urlP = "http://201.73.1.17:5300/api/Seguranca/wpProfissionais/VincluarProfissionalServico/12/999";
+    var urlP = "http://servicepix.com.br:5300/api/Seguranca/wpProfissionais/VincluarProfissionalServico/12/999";
 
     var servico = {'profissionalServico': getDataServico() };
     console.log(JSON.stringify(servico));

@@ -1,5 +1,5 @@
 ﻿//function carregarArea() {
-//    var url = "http://201.73.1.17:5300/api/Seguranca/wpProfissionais/BuscarServico/12/999";
+//    var url = "http://servicepix.com.br:5300/api/Seguranca/wpProfissionais/BuscarServico/12/999";
 
 //    $.ajax({
 //        type: "GET",
@@ -48,7 +48,7 @@ function cadFornecedor() {
         console.log(getDataUsuarioFornecedor());
 
 
-        var urlU = "http://201.73.1.17:5300/api/Seguranca/Principal/salvarUsuario/12/999";
+        var urlU = "http://servicepix.com.br:5300/api/Seguranca/Principal/salvarUsuario/12/999";
 
         var usuario = { 'usuario': getDataUsuarioFornecedor() };
         console.log(JSON.stringify(usuario));
@@ -111,7 +111,7 @@ function cadFornecedor() {
                     }
                 }
 
-                var urlC = "http://201.73.1.17:5300/api/Seguranca/wpEmpresas/SalvarEmpresas/12/999";
+                var urlC = "http://servicepix.com.br:5300/api/Seguranca/wpEmpresas/SalvarEmpresas/12/999";
 
                 var fornecedor = { 'empresa': getDataFornecedor() };
                 console.log(JSON.stringify(fornecedor));

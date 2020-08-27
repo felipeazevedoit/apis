@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "026I0SxxJ4Vey8BlZVfiKG3URSuDF1bj9FEVwUROHl8yCevLKOtiqwqWFE3Cn6j/vzWUluQMNFsY42MnyK9B4A==",
+  "dgSpecHash": "XWeiaDNx2odrHIjqqHtMSMKdwI8TTN+c4xC6jhMviTKEjrFDw8Whmc/Kf6DwdLRxykXEuY+xkez2gKqXDgxvsw==",
   "success": true,
   "projectFilePath": "D:\\work\\Framework\\src\\qrcode\\WpQrCode.Entities\\WpQrCode.Entities.csproj",
   "expectedPackageFiles": [
@@ -12,11 +12,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.dotnethostresolver\\2.1.0\\microsoft.netcore.dotnethostresolver.2.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\2.1.0\\microsoft.netcore.platforms.2.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\2.1.0\\microsoft.netcore.targets.2.1.0.nupkg.sha512",
-    "C:\\Users\\Luca-\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\Luca-\\.nuget\\packages\\runtime.win-x64.microsoft.netcore.app\\2.1.0\\runtime.win-x64.microsoft.netcore.app.2.1.0.nupkg.sha512",
-    "C:\\Users\\Luca-\\.nuget\\packages\\runtime.win-x64.microsoft.netcore.dotnetapphost\\2.1.0\\runtime.win-x64.microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",
-    "C:\\Users\\Luca-\\.nuget\\packages\\runtime.win-x64.microsoft.netcore.dotnethostpolicy\\2.1.0\\runtime.win-x64.microsoft.netcore.dotnethostpolicy.2.1.0.nupkg.sha512",
-    "C:\\Users\\Luca-\\.nuget\\packages\\runtime.win-x64.microsoft.netcore.dotnethostresolver\\2.1.0\\runtime.win-x64.microsoft.netcore.dotnethostresolver.2.1.0.nupkg.sha512"
+    "C:\\Users\\Luca-\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

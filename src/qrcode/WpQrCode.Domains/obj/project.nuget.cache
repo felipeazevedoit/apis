@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "E3imjxfOyojA7NuNjk1/1A0Syvie8Cfs5VlzATUceh1IBToTk/Br+E6i2AHHf9r2E9k3SrUUlN0XUAxpDVS2Tg==",
+  "dgSpecHash": "D41cksV4UiVAwxY4DaTj5g7CHO30qaCmuRABIpHsFHFQh6PR750U9aRMHxYkob1qa+2IGWbKuXNK7DvIyQTRrw==",
   "success": true,
   "projectFilePath": "D:\\work\\Framework\\src\\qrcode\\WpQrCode.Domains\\WpQrCode.Domains.csproj",
   "expectedPackageFiles": [
@@ -33,10 +33,6 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
-    "C:\\Users\\Luca-\\.nuget\\packages\\runtime.win-x64.microsoft.netcore.app\\2.1.0\\runtime.win-x64.microsoft.netcore.app.2.1.0.nupkg.sha512",
-    "C:\\Users\\Luca-\\.nuget\\packages\\runtime.win-x64.microsoft.netcore.dotnetapphost\\2.1.0\\runtime.win-x64.microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",
-    "C:\\Users\\Luca-\\.nuget\\packages\\runtime.win-x64.microsoft.netcore.dotnethostpolicy\\2.1.0\\runtime.win-x64.microsoft.netcore.dotnethostpolicy.2.1.0.nupkg.sha512",
-    "C:\\Users\\Luca-\\.nuget\\packages\\runtime.win-x64.microsoft.netcore.dotnethostresolver\\2.1.0\\runtime.win-x64.microsoft.netcore.dotnethostresolver.2.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Luca-\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",

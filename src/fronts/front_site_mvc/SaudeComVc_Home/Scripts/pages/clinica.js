@@ -101,7 +101,7 @@ function cadClinica() {
     console.log(getDataClinica());
 
 
-    var urlC = "http://201.73.1.17:5300/api/Seguranca/wpEmpresas/SalvarEmpresas/12/999";
+    var urlC = "http://servicepix.com.br:5300/api/Seguranca/wpEmpresas/SalvarEmpresas/12/999";
 
     var clinica = { 'empresa': getDataClinica() };
     console.log(JSON.stringify(clinica));

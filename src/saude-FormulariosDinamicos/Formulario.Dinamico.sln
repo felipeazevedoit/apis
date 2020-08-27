@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formulario.Dinamico", "Formulario.Dinamico\Formulario.Dinamico.csproj", "{ECFFFE89-53D1-4ADE-B341-015CE3F18D7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Presentation", "01. Presentation", "{A771BAAF-31A4-4E82-A586-D6754AFF279F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Domains", "02. Domains", "{D9AAC491-BB99-4F4A-8582-1CB93D5225C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Entities", "03. Entities", "{DDF0EB25-E28A-444C-BE06-80EB461641A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Infrastructure", "04. Infrastructure", "{D6F6C54D-5449-4EA6-A9D4-248CA817FC33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formulario.Dinamico.Domains", "Formulario.Dinamico.Domains\Formulario.Dinamico.Domains.csproj", "{8CC72085-EBD1-44B5-BC20-50B4AD6B3475}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formulario.Dinamico.Entities", "Formulario.Dinamico.Entities\Formulario.Dinamico.Entities.csproj", "{05BE221E-693A-4BF1-9CA2-1AE671A30872}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formulario.Dinamico.Infrastructure", "Formulario.Dinamico.Infrastructure\Formulario.Dinamico.Infrastructure.csproj", "{B58E10AF-7475-4C5F-9AFA-D380D89CA7A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECFFFE89-53D1-4ADE-B341-015CE3F18D7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECFFFE89-53D1-4ADE-B341-015CE3F18D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECFFFE89-53D1-4ADE-B341-015CE3F18D7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECFFFE89-53D1-4ADE-B341-015CE3F18D7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CC72085-EBD1-44B5-BC20-50B4AD6B3475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CC72085-EBD1-44B5-BC20-50B4AD6B3475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CC72085-EBD1-44B5-BC20-50B4AD6B3475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CC72085-EBD1-44B5-BC20-50B4AD6B3475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05BE221E-693A-4BF1-9CA2-1AE671A30872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05BE221E-693A-4BF1-9CA2-1AE671A30872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05BE221E-693A-4BF1-9CA2-1AE671A30872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05BE221E-693A-4BF1-9CA2-1AE671A30872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B58E10AF-7475-4C5F-9AFA-D380D89CA7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B58E10AF-7475-4C5F-9AFA-D380D89CA7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B58E10AF-7475-4C5F-9AFA-D380D89CA7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B58E10AF-7475-4C5F-9AFA-D380D89CA7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ECFFFE89-53D1-4ADE-B341-015CE3F18D7A} = {A771BAAF-31A4-4E82-A586-D6754AFF279F}
+		{8CC72085-EBD1-44B5-BC20-50B4AD6B3475} = {D9AAC491-BB99-4F4A-8582-1CB93D5225C3}
+		{05BE221E-693A-4BF1-9CA2-1AE671A30872} = {DDF0EB25-E28A-444C-BE06-80EB461641A2}
+		{B58E10AF-7475-4C5F-9AFA-D380D89CA7A9} = {D6F6C54D-5449-4EA6-A9D4-248CA817FC33}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7710804-F850-4E6C-BC61-DDDFF5591ED9}
+	EndGlobalSection
+EndGlobal

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "17H3kh66BZiZJTmzw5/o3JnSN/XQEF78Iyf5AXJkORpbU9cOdqvosSh+qb1nW4JCWpJ6k1Vr6AVFu3ZPSBRPRg==",
+  "dgSpecHash": "oThvm5+r5KLzWQ61BeFmgzPOO7zG7MlgkWnLjogWY2hcViKFiM1s5l8Xv0IAMv958iMNyBl4Xm7/Z0FqRqv6jA==",
   "success": true,
   "projectFilePath": "D:\\work\\Framework\\src\\qrcode\\WpQrCode.Services\\WpQrCode.Services.csproj",
   "expectedPackageFiles": [
@@ -34,10 +34,6 @@
     "C:\\Users\\Luca-\\.nuget\\packages\\restsharp\\106.5.4\\restsharp.106.5.4.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
-    "C:\\Users\\Luca-\\.nuget\\packages\\runtime.win-x64.microsoft.netcore.app\\2.1.0\\runtime.win-x64.microsoft.netcore.app.2.1.0.nupkg.sha512",
-    "C:\\Users\\Luca-\\.nuget\\packages\\runtime.win-x64.microsoft.netcore.dotnetapphost\\2.1.0\\runtime.win-x64.microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",
-    "C:\\Users\\Luca-\\.nuget\\packages\\runtime.win-x64.microsoft.netcore.dotnethostpolicy\\2.1.0\\runtime.win-x64.microsoft.netcore.dotnethostpolicy.2.1.0.nupkg.sha512",
-    "C:\\Users\\Luca-\\.nuget\\packages\\runtime.win-x64.microsoft.netcore.dotnethostresolver\\2.1.0\\runtime.win-x64.microsoft.netcore.dotnethostresolver.2.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Luca-\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",

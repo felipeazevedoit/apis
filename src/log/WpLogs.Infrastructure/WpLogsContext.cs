@@ -13,7 +13,7 @@ namespace WpLogs.Infrastructure
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"Server=179.188.38.126;Database=WebPixEmpresas;Trusted_Connection=True;Integrated Security=True;");
+            optionsBuilder.UseSqlServer(@"Server=179.188.38.126,9000;Database=WebPixEmpresas;Trusted_Connection=True;Integrated Security=True;");
             //optionsBuilder.UseSqlServer(@"Data Source=18.229.17.132;Initial Catalog=Logs;Persist Security Info=True;User ID=sa;Password=StaffPro@123;");
         }
     }

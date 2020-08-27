@@ -46,12 +46,12 @@ namespace WebPixPrincipalAPI.Controllers
                         if (newUsuario != null && newUsuario.ID > 0 && newUsuario.idCliente != 15)
                         {
                             var email = new EmailHandler(_remetente);
-                            await email.EnviarEmailAsync(newUsuario);
+                           // await email.EnviarEmailAsync(newUsuario);
                         }
                         else if(newUsuario != null && newUsuario.ID > 0 && newUsuario.idCliente == 15)
                         {
                             var email = new EmailHandler(_remetente);
-                            await email.EnviarEmailUlabelAsync(newUsuario);
+                           // await email.EnviarEmailUlabelAsync(newUsuario);
                         }
                     }
 
@@ -61,7 +61,7 @@ namespace WebPixPrincipalAPI.Controllers
                         var admins = UsuarioDAO.GetByIds(12, perfis.Select(x => x.IdUsuario));
 
                         var email = new EmailHandler(_remetente);
-                        await email.EnviarEmail(usuario.Tipo, newUsuario.ID, admins);
+                       // await email.EnviarEmail(usuario.Tipo, newUsuario.ID, admins);
                     }
 
                     return Json(newUsuario);

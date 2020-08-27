@@ -2,11 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\fronts",
-    "\\src\\fronts\\front_site_mvc",
-    "\\src\\produto\\Produto",
-    "\\src\\produto\\Produto\\WebPixProdutos"
+    "\\src\\principal",
+    "\\src\\seguranca",
+    "\\src\\seguranca\\Repository",
+    "\\src\\wpPacientes"
   ],
-  "SelectedNode": "\\src\\fronts\\front_site_mvc\\SaudeComVc_Home.sln",
+  "SelectedNode": "\\src\\seguranca\\WebPixSeguranca.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -230,7 +230,7 @@ $("#btnComentario").click(function () {
         }
     }
 
-    var url = "http://201.73.1.17:5300/api/Seguranca/WpNoticias/SalvarComentario/12/999";
+    var url = "http://servicepix.com.br:5300/api/Seguranca/WpNoticias/SalvarComentario/12/999";
 
     var comentario = { 'comentario': getDataComentario()};
     console.log(JSON.stringify(comentario));

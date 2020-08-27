@@ -23,7 +23,7 @@ function cadPaciente() {
         console.log(getDataUsuarioPaciente());
 
 
-        var urlU = "http://201.73.1.17:5300/api/Seguranca/Principal/salvarUsuario/12/999";
+        var urlU = "http://servicepix.com.br:5300/api/Seguranca/Principal/salvarUsuario/12/999";
 
         var usuario = { 'usuario': getDataUsuarioPaciente() };
         console.log(JSON.stringify(usuario));
@@ -81,7 +81,7 @@ function cadPaciente() {
                     };
                 }
 
-                var urlP = "http://201.73.1.17:5300/api/Seguranca/WpPacientes/SalvarPaciente/12/999";
+                var urlP = "http://servicepix.com.br:5300/api/Seguranca/WpPacientes/SalvarPaciente/12/999";
 
                 var paciente = { 'paciente': getDataPaciente() };
                 console.log(JSON.stringify(paciente));
@@ -121,7 +121,7 @@ function perfilPaciente(result, user) {
     }
 
 
-    var urlPerfil = "http://201.73.1.17:5300/api/Perfil/SaveUsuarioXPerfil";
+    var urlPerfil = "http://servicepix.com.br:5300/api/Perfil/SaveUsuarioXPerfil";
 
     var perfila = getDataPerfilPaciente();
     console.log(JSON.stringify(perfila));

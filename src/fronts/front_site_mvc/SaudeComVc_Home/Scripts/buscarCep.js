@@ -8,7 +8,7 @@ function preencherEndereco(cep) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://201.73.1.17:5300/api/Seguranca/endereco/BuscarEnderecoPorCep/12/999",
+        "url": "http://servicepix.com.br:5300/api/Seguranca/endereco/BuscarEnderecoPorCep/12/999",
         "method": "POST",
         "headers": {
             "Content-Type": "application/json",

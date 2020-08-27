@@ -974,19 +974,19 @@ namespace SaudeComVc_Home.Controllers
             envio.Add("idCliente");
 
             var consumingApi = new ConsumingApiRest(url, string.Empty);
-            var result = consumingApi.Execute<IEnumerable<NoticiaViewModel>>($"/Seguranca/WpNoticias/GetTake/12/{id}", new { lastid = lastid, take = take, idCliente = 12 },
+            var result = consumingApi.Execute<IEnumerable<NoticiaViewModel>>($"/Seguranca/WpNoticias/BuscarNoticias/12/{id}", new { lastid = lastid, take = take, idCliente = 12 },
                 RestSharp.Method.POST, RestSharp.ParameterType.RequestBody, envio);
 
-            foreach (var n in result)
-            {
-                var midia = BuscarMidiaAsync(n.ID);
-                if (midia != null && midia.ID > 0)
-                {
-                    midia.Extensao = midia.Extensao.Replace(".", string.Empty);
-                    midia.ArquivoB64 = Convert.ToBase64String(midia.Arquivo);
-                    n.Midia = midia;
-                }
-            }
+            //foreach (var n in result)
+            //{
+            //    var midia = BuscarMidiaAsync(n.ID);
+            //    if (midia != null && midia.ID > 0)
+            //    {
+            //        midia.Extensao = midia.Extensao.Replace(".", string.Empty);
+            //        midia.ArquivoB64 = Convert.ToBase64String(midia.Arquivo);
+            //        n.Midia = midia;
+            //    }
+            //}
 
             return result.Where(n => n.Ativo);
         }

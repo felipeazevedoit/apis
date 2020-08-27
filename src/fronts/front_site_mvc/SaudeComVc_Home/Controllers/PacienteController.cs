@@ -259,7 +259,7 @@ namespace SaudeComVc_Home.Controllers
             try
             {
                 var helper = new ServiceHelper();
-                var result = await helper.GetAsync<IEnumerable<PerguntaViewModel>>("http://201.73.1.17:82/api/", $"Perguntas/12/" + id);
+                var result = await helper.GetAsync<IEnumerable<PerguntaViewModel>>("http://179.188.38.126:82/api/", $"Perguntas/12/" + id);
 
                 var perguntas = new List<PerguntaViewModel>();
 
@@ -287,7 +287,7 @@ namespace SaudeComVc_Home.Controllers
         public async Task<IEnumerable<PerguntaViewModel>> BuscarPerguntasAsync()
         {
             var helper = new ServiceHelper();
-            var result = await helper.GetAsync<IEnumerable<PerguntaViewModel>>("http://201.73.1.17:82/api/", $"Perguntas/12/{ PixCoreValues.UsuarioLogado.IdUsuario }");
+            var result = await helper.GetAsync<IEnumerable<PerguntaViewModel>>("http://179.188.38.126:82/api/", $"Perguntas/12/{ PixCoreValues.UsuarioLogado.IdUsuario }");
             return result;
         }
 
@@ -597,7 +597,7 @@ namespace SaudeComVc_Home.Controllers
                 resposta.Status = 1;
 
                 var helper = new ServiceHelper();
-                var result = await helper.PostAsync<RespostaViewModel>("http://201.73.1.17:82/api/", "Respostas/", resposta);
+                var result = await helper.PostAsync<RespostaViewModel>("http://179.188.38.126:82/api/", "Respostas/", resposta);
 
                 var pergunta = _perguntas.FirstOrDefault(p => p.ID.Equals(result.PerguntaId));
                 if (pergunta != null && pergunta.Respostas != null)
