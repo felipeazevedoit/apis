@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\erede-csharp\eRede\eRede\eRede.csproj" />
+    <ProjectReference Include="..\WpPagamentos\WpPagamentos.Entidade.csproj" />
+  </ItemGroup>
+
+</Project>

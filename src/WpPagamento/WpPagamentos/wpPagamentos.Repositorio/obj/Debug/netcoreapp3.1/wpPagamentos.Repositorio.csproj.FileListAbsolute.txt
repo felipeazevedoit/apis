@@ -1,0 +1,14 @@
+D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\bin\Debug\netcoreapp3.1\wpPagamentos.Repositorio.deps.json
+D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\bin\Debug\netcoreapp3.1\wpPagamentos.Repositorio.dll
+D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\bin\Debug\netcoreapp3.1\wpPagamentos.Repositorio.pdb
+D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\bin\Debug\netcoreapp3.1\wpPagamento.Infra.dll
+D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\bin\Debug\netcoreapp3.1\WpPagamentos.Entidade.dll
+D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\bin\Debug\netcoreapp3.1\wpPagamento.Infra.pdb
+D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\bin\Debug\netcoreapp3.1\WpPagamentos.Entidade.pdb
+D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.csprojAssemblyReference.cache
+D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.AssemblyInfoInputs.cache
+D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.AssemblyInfo.cs
+D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.csproj.CoreCompileInputs.cache
+D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.csproj.CopyComplete
+D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.dll
+D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.pdb

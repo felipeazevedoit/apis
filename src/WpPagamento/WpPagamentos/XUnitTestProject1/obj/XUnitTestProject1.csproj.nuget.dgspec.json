@@ -1,0 +1,334 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\XUnitTestProject1\\XUnitTestProject1.csproj": {}
+  },
+  "projects": {
+    "D:\\work\\erede-csharp\\eRede\\eRede\\eRede.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\work\\erede-csharp\\eRede\\eRede\\eRede.csproj",
+        "projectName": "eRede",
+        "projectPath": "D:\\work\\erede-csharp\\eRede\\eRede\\eRede.csproj",
+        "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
+        "outputPath": "D:\\work\\erede-csharp\\eRede\\eRede\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Json.NET.Web": {
+              "target": "Package",
+              "version": "[1.0.49, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.6.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamento.Dominio\\WpPagamento.Dominio.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamento.Dominio\\WpPagamento.Dominio.csproj",
+        "projectName": "WpPagamento.Dominio",
+        "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamento.Dominio\\WpPagamento.Dominio.csproj",
+        "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
+        "outputPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamento.Dominio\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\WpPagamentos.Servico.csproj": {
+                "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\WpPagamentos.Servico.csproj"
+              },
+              "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {
+                "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\WpPagamentos.Servico.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\WpPagamentos.Servico.csproj",
+        "projectName": "WpPagamentos.Servico",
+        "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\WpPagamentos.Servico.csproj",
+        "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
+        "outputPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\work\\erede-csharp\\eRede\\eRede\\eRede.csproj": {
+                "projectPath": "D:\\work\\erede-csharp\\eRede\\eRede\\eRede.csproj"
+              },
+              "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {
+                "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj",
+        "projectName": "WpPagamentos.Entidade",
+        "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj",
+        "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
+        "outputPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\XUnitTestProject1\\XUnitTestProject1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\XUnitTestProject1\\XUnitTestProject1.csproj",
+        "projectName": "XUnitTestProject1",
+        "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\XUnitTestProject1\\XUnitTestProject1.csproj",
+        "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
+        "outputPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\XUnitTestProject1\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamento.Dominio\\WpPagamento.Dominio.csproj": {
+                "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamento.Dominio\\WpPagamento.Dominio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

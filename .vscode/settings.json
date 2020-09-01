@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "Qlick_PROD_Final",
+            "driver": "MSSQL",
+            "mssqlOptions": {
+                "appName": "SQLTools",
+                "encrypt": true,
+                "useUTC": true
+            },
+            "name": "SevIT",
+            "password": "WebPix@2020",
+            "port": 9000,
+            "previewLimit": 50,
+            "server": "179.188.38.126",
+            "username": "sa"
+        }
+    ]
+}

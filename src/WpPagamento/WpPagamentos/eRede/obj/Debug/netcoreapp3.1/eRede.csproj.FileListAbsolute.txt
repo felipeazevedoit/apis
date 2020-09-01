@@ -1,0 +1,9 @@
+D:\work\erede-csharp-core\eRede\obj\Debug\netcoreapp3.1\eRede.AssemblyInfoInputs.cache
+D:\work\erede-csharp-core\eRede\obj\Debug\netcoreapp3.1\eRede.AssemblyInfo.cs
+D:\work\erede-csharp-core\eRede\obj\Debug\netcoreapp3.1\eRede.csproj.CoreCompileInputs.cache
+D:\work\erede-csharp-core\eRede\bin\Debug\netcoreapp3.1\eRede.deps.json
+D:\work\erede-csharp-core\eRede\bin\Debug\netcoreapp3.1\eRede.dll
+D:\work\erede-csharp-core\eRede\obj\Debug\netcoreapp3.1\eRede.csprojAssemblyReference.cache
+D:\work\erede-csharp-core\eRede\bin\Debug\netcoreapp3.1\eRede.pdb
+D:\work\erede-csharp-core\eRede\obj\Debug\netcoreapp3.1\eRede.dll
+D:\work\erede-csharp-core\eRede\obj\Debug\netcoreapp3.1\eRede.pdb

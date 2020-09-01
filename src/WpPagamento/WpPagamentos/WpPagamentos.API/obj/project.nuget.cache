@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "oAoY0/duBFEk+h8zS0t6CC1AKz3ehY8fxVyf0b0wKZeoMCURj7TJ+ZlT6oAeSbIvbPDZOQe0B0HizC2NxOHFrQ==",
+  "success": true,
+  "projectFilePath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.API\\WpPagamentos.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Luca-\\.nuget\\packages\\json.net.web\\1.0.49\\json.net.web.1.0.49.nupkg.sha512",
+    "C:\\Users\\Luca-\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Luca-\\.nuget\\packages\\restsharp\\106.11.4\\restsharp.106.11.4.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'Json.NET.Web 1.0.49' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v3.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "Json.NET.Web",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}

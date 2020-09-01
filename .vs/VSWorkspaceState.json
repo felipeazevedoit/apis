@@ -2,11 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\principal",
-    "\\src\\seguranca",
-    "\\src\\seguranca\\Repository",
-    "\\src\\wpPacientes"
+    "\\src\\WebPixEntrega",
+    "\\src\\WpPagamento\\WpPagamentos"
   ],
-  "SelectedNode": "\\src\\seguranca\\WebPixSeguranca.sln",
+  "SelectedNode": "\\src\\WebPixEntrega\\WebPixEntrega.sln",
   "PreviewInSolutionExplorer": false
 }

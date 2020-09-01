@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\wpContextEntrega\wpContextEntrega.csproj" />
+    <ProjectReference Include="..\wpEntity\wpEntity.csproj" />
+    <ProjectReference Include="..\wpService\wpService.csproj" />
+  </ItemGroup>
+
+</Project>

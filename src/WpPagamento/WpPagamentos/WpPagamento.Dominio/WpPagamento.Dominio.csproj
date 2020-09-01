@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WpPagamentos.Servico\WpPagamentos.Servico.csproj" />
+    <ProjectReference Include="..\WpPagamentos\WpPagamentos.Entidade.csproj" />
+  </ItemGroup>
+
+</Project>
