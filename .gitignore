@@ -75,3 +75,4 @@
 *.suo
 /src/admin/.vs/SaudeComVc_Home/v16/Server/sqlite3
 /src/.vs
+/src
