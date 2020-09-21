@@ -7,6 +7,7 @@
         public bool Meio { get; set; }
         public double Valor { get; set; }
         public int Parcela { get; set; }
+        public string tidErede { get; set; }      
 
     }
 }

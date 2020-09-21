@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WpPagamentos.API.Helper;
+using WpPagamentos.API.Model;
 
 namespace WpPagamentos.API
 {
@@ -13,14 +15,22 @@ namespace WpPagamentos.API
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+
+            MainAsync().Wait();
+
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+        static async Task MainAsync()
+        {
+            var url = await AuxNotStatic.GetInfoMotorAux("WpPagamentos", 1);
+            var host = new WebHostBuilder()
+                .UseKestrel()
+                .UseUrls(url.Url)
+                //.UseUrls("http://localhost:5000")
+                .UseStartup<Startup>()
+                .Build();
+
+            host.Run();
+        }
     }
 }

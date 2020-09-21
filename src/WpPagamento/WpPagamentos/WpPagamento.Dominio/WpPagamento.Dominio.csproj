@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\wpPagamentos.Repositorio\wpPagamentos.Repositorio.csproj" />
     <ProjectReference Include="..\WpPagamentos.Servico\WpPagamentos.Servico.csproj" />
     <ProjectReference Include="..\WpPagamentos\WpPagamentos.Entidade.csproj" />
   </ItemGroup>

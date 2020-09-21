@@ -18,7 +18,7 @@ namespace WpPagamentos.API.Helper
                 {
                     var list = "http://inapi.servicepix.com.br:5400/api/";
                     client.BaseAddress = new Uri(list);
-                    var url = "api/motoraux/acessarmotor/" + aux;
+                    var url = "motoraux/acessarmotor/" + aux;
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     HttpResponseMessage response = await client.GetAsync(url);
                     if (response.IsSuccessStatusCode)

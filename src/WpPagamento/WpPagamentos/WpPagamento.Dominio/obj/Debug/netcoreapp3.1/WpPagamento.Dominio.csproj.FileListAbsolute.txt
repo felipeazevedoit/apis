@@ -14,3 +14,7 @@ D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\bin\Debug\net
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\bin\Debug\netcoreapp3.1\WpPagamentos.Entidade.pdb
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\bin\Debug\netcoreapp3.1\eRede.pdb
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\obj\Debug\netcoreapp3.1\WpPagamento.Dominio.csproj.CopyComplete
+D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\bin\Debug\netcoreapp3.1\wpPagamento.Infra.dll
+D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\bin\Debug\netcoreapp3.1\wpPagamentos.Repositorio.dll
+D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\bin\Debug\netcoreapp3.1\wpPagamentos.Repositorio.pdb
+D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\bin\Debug\netcoreapp3.1\wpPagamento.Infra.pdb

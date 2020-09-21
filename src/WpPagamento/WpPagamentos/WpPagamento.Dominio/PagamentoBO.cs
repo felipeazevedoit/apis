@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WpPagamentos.Entidade;
 using WpPagamentos.Servico;
+using rep = wpPagamentos.Repositorio;
 
 namespace WpPagamento.Dominio
 {
@@ -22,8 +23,28 @@ namespace WpPagamento.Dominio
             }
             else
             {
-                EredeServ2 rede = new EredeServ2();
-                await rede.CreditAsync(loja);
+                try
+                {
+                    EredeServ2 rede = new EredeServ2();
+                    string ret = await rede.CreditAsync(loja);
+                    if (ret != "")
+                    {
+                        try
+                        {
+                            loja.propiedades.tidErede = ret;
+                            rep.Loja repo = new rep.Loja();
+                            repo.Add(loja);
+                        }
+                        catch (Exception e)
+                        {
+                            return "Houve falha ao salvar o pagamento";
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    return "Houve falha na captura";
+                }
             }
             return "deu certo";
         }

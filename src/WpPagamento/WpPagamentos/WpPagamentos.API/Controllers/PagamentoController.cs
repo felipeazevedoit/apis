@@ -15,7 +15,7 @@ namespace WpPagamentos.API.Controllers
     public class PagamentoController : ControllerBase
     {
         [HttpPost]
-        public async Task<IActionResult> RealizarPagamentoAsync([FromBody] Loja loja, string token)
+        public async Task<IActionResult> RealizarPagamentoAsync([FromBody]Loja loja, string token)
         {
 
             if (await Seguranca.validaTokenAsync(token))

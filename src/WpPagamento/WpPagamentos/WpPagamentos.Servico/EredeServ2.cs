@@ -69,7 +69,7 @@ namespace WpPagamentos.Servico
         /// <param name="pv"></param>
         /// <param name="token"></param>
         /// <param name="environment"></param>
-        public async Task CreditAsync(Loja loja)
+        public async Task<string> CreditAsync(Loja loja)
         {
             var config = await PrincipalServ.BuscarConfiguracoesAsync(16, 999);
 
@@ -78,7 +78,7 @@ namespace WpPagamentos.Servico
             environment = eRede.Environment.Sandbox();
 
             //cartao
-            System.Reflection.PropertyInfo pi = loja.meioPagamento.Configuracao.GetType().GetProperty("cartao");
+             System.Reflection.PropertyInfo pi = loja.meioPagamento.Configuracao.GetType().GetProperty("cartao");
             String cartao = (String)(pi.GetValue(loja.meioPagamento.Configuracao, null));
 
             //codSeg
@@ -117,14 +117,16 @@ namespace WpPagamentos.Servico
 
                 if (response.returnCode == "00")
                 {
-                   // Console.WriteLine("Tudo certo. TID: {0}", response.tid);
-
+                    return response.tid;
                 }
             }
             catch (RedeException e)
             {
                 Console.WriteLine("Opz[{0}]: {1}", e.error.returnCode, e.error.returnMessage);
+                return "";
             }
+
+            return "";
         }
     }
 }

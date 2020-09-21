@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\WebPixEntrega",
+    "\\src\\WpPagamento",
     "\\src\\WpPagamento\\WpPagamentos"
   ],
-  "SelectedNode": "\\src\\WebPixEntrega\\WebPixEntrega.sln",
+  "SelectedNode": "\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.sln",
   "PreviewInSolutionExplorer": false
 }
