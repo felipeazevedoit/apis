@@ -15,7 +15,7 @@ namespace wpPagamento.Infra.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.7")
+                .HasAnnotation("ProductVersion", "3.1.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -56,58 +56,14 @@ namespace wpPagamento.Infra.Migrations
                     b.Property<int>("idPedido")
                         .HasColumnType("int");
 
-                    b.Property<int?>("meioPagamentoID")
-                        .HasColumnType("int");
-
                     b.Property<int?>("propiedadesID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("meioPagamentoID");
-
                     b.HasIndex("propiedadesID");
 
                     b.ToTable("loja");
-                });
-
-            modelBuilder.Entity("WpPagamentos.Entidade.MeioPagamento", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UsuarioCriacao")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UsuarioEdicao")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("dataCriacao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("dataEdicao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("idCliente")
-                        .HasColumnType("int");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("meioPagamentos");
                 });
 
             modelBuilder.Entity("WpPagamentos.Entidade.Propriedades", b =>
@@ -159,6 +115,9 @@ namespace wpPagamento.Infra.Migrations
                     b.Property<int>("idCliente")
                         .HasColumnType("int");
 
+                    b.Property<string>("tidErede")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ID");
 
                     b.ToTable("Propiedade");
@@ -166,10 +125,6 @@ namespace wpPagamento.Infra.Migrations
 
             modelBuilder.Entity("WpPagamentos.Entidade.Loja", b =>
                 {
-                    b.HasOne("WpPagamentos.Entidade.MeioPagamento", "meioPagamento")
-                        .WithMany()
-                        .HasForeignKey("meioPagamentoID");
-
                     b.HasOne("WpPagamentos.Entidade.Propriedades", "propiedades")
                         .WithMany()
                         .HasForeignKey("propiedadesID");

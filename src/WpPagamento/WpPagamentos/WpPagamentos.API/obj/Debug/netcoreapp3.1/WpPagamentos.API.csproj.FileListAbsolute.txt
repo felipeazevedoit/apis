@@ -10,8 +10,6 @@ D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\bin\Debug\netcor
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\WpPagamentos.API.csprojAssemblyReference.cache
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\WpPagamentos.API.AssemblyInfoInputs.cache
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\WpPagamentos.API.AssemblyInfo.cs
-D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\WpPagamentos.API.csproj.CoreCompileInputs.cache
-D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\WpPagamentos.API.MvcApplicationPartsAssemblyInfo.cache
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\WpPagamentos.API.RazorTargetAssemblyInfo.cache
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\staticwebassets\WpPagamentos.API.StaticWebAssets.Manifest.cache
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\staticwebassets\WpPagamentos.API.StaticWebAssets.xml
@@ -290,3 +288,6 @@ C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcor
 C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\WpPagamentos.API.dll
 C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\WpPagamentos.API.pdb
 C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\WpPagamentos.API.genruntimeconfig.cache
+D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\WpPagamentos.API.csproj.CoreCompileInputs.cache
+D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\WpPagamentos.API.MvcApplicationPartsAssemblyInfo.cache

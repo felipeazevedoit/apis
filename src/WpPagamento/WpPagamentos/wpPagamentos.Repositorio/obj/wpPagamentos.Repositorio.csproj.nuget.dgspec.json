@@ -1,18 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamentos.Repositorio\\wpPagamentos.Repositorio.csproj": {}
+    "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamentos.Repositorio\\wpPagamentos.Repositorio.csproj": {}
   },
   "projects": {
-    "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamento.Infra\\wpPagamento.Infra.csproj": {
+    "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamento.Infra\\wpPagamento.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamento.Infra\\wpPagamento.Infra.csproj",
+        "projectUniqueName": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamento.Infra\\wpPagamento.Infra.csproj",
         "projectName": "wpPagamento.Infra",
-        "projectPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamento.Infra\\wpPagamento.Infra.csproj",
+        "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamento.Infra\\wpPagamento.Infra.csproj",
         "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamento.Infra\\obj\\",
+        "outputPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamento.Infra\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -27,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {
-                "projectPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj"
+              "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {
+                "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj"
               }
             }
           }
@@ -86,15 +89,18 @@
         }
       }
     },
-    "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamentos.Repositorio\\wpPagamentos.Repositorio.csproj": {
+    "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamentos.Repositorio\\wpPagamentos.Repositorio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamentos.Repositorio\\wpPagamentos.Repositorio.csproj",
+        "projectUniqueName": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamentos.Repositorio\\wpPagamentos.Repositorio.csproj",
         "projectName": "wpPagamentos.Repositorio",
-        "projectPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamentos.Repositorio\\wpPagamentos.Repositorio.csproj",
+        "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamentos.Repositorio\\wpPagamentos.Repositorio.csproj",
         "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamentos.Repositorio\\obj\\",
+        "outputPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamentos.Repositorio\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -109,8 +115,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamento.Infra\\wpPagamento.Infra.csproj": {
-                "projectPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamento.Infra\\wpPagamento.Infra.csproj"
+              "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamento.Infra\\wpPagamento.Infra.csproj": {
+                "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\wpPagamento.Infra\\wpPagamento.Infra.csproj"
               }
             }
           }
@@ -142,15 +148,18 @@
         }
       }
     },
-    "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {
+    "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj",
+        "projectUniqueName": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj",
         "projectName": "WpPagamentos.Entidade",
-        "projectPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj",
+        "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj",
         "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\obj\\",
+        "outputPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

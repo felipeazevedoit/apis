@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace WpPagamentos.Entidade
 {
 
-
+    [NotMapped]
     public class MeioPagamento : Base
     {
 

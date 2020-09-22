@@ -10,7 +10,7 @@ namespace WpPagamento.Dominio
 {
     public class PagamentoBO
     {
-        public async Task<string> GerarPagamentoSimplesErede(Loja loja)
+        public async Task<bool> GerarPagamentoSimplesErede(Loja loja)
         {
             if(loja.propiedades.Recalculo == true)
             {
@@ -38,21 +38,26 @@ namespace WpPagamento.Dominio
                             loja.meioPagamento.dataEdicao = DateTime.Now;
                             loja.dataCriacao = DateTime.Now;
                             loja.dataEdicao = DateTime.Now;
+                            rep.Propriedades PropriRep  = new rep.Propriedades();
+                            var id = PropriRep.Add(loja.propiedades);
                             rep.Loja repo = new rep.Loja();
                             repo.Add(loja);
                         }
                         catch (Exception e)
                         {
-                            return "Houve falha ao salvar o pagamento";
+                            //Colocar log aqui 
+                            return false;
                         }
                     }
                 }
                 catch (Exception e)
                 {
-                    return "Houve falha na captura";
+                    //Colocar log aqui 
+                    return false;
                 }
             }
-            return "deu certo";
+            //Colocar log aqui 
+            return true;
         }
     }
 }
