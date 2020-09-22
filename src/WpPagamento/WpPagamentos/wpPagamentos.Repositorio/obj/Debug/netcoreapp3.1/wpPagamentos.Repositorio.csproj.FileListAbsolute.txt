@@ -12,3 +12,17 @@ D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debu
 D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.csproj.CopyComplete
 D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.dll
 D:\work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.pdb
+C:\Work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\bin\Debug\netcoreapp3.1\wpPagamentos.Repositorio.deps.json
+C:\Work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\bin\Debug\netcoreapp3.1\wpPagamentos.Repositorio.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\bin\Debug\netcoreapp3.1\wpPagamentos.Repositorio.pdb
+C:\Work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\bin\Debug\netcoreapp3.1\wpPagamento.Infra.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\bin\Debug\netcoreapp3.1\WpPagamentos.Entidade.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\bin\Debug\netcoreapp3.1\wpPagamento.Infra.pdb
+C:\Work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\bin\Debug\netcoreapp3.1\WpPagamentos.Entidade.pdb
+C:\Work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.csprojAssemblyReference.cache
+C:\Work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.AssemblyInfoInputs.cache
+C:\Work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.AssemblyInfo.cs
+C:\Work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.csproj.CoreCompileInputs.cache
+C:\Work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.csproj.CopyComplete
+C:\Work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\wpPagamentos.Repositorio\obj\Debug\netcoreapp3.1\wpPagamentos.Repositorio.pdb

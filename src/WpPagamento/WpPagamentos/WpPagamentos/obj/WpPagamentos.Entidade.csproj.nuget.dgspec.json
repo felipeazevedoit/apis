@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {}
+    "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {}
   },
   "projects": {
-    "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {
+    "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj",
+        "projectUniqueName": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj",
         "projectName": "WpPagamentos.Entidade",
-        "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj",
+        "projectPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj",
         "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
-        "outputPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\obj\\",
+        "outputPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

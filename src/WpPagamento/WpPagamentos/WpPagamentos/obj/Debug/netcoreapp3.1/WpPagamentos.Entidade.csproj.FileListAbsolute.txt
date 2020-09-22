@@ -7,3 +7,12 @@ D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos\obj\Debug\netcoreapp
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos\obj\Debug\netcoreapp3.1\WpPagamentos.Entidade.csproj.CoreCompileInputs.cache
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos\obj\Debug\netcoreapp3.1\WpPagamentos.Entidade.dll
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos\obj\Debug\netcoreapp3.1\WpPagamentos.Entidade.pdb
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos\bin\Debug\netcoreapp3.1\WpPagamentos.Entidade.deps.json
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos\bin\Debug\netcoreapp3.1\WpPagamentos.Entidade.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos\bin\Debug\netcoreapp3.1\WpPagamentos.Entidade.pdb
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos\obj\Debug\netcoreapp3.1\WpPagamentos.Entidade.csprojAssemblyReference.cache
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos\obj\Debug\netcoreapp3.1\WpPagamentos.Entidade.AssemblyInfoInputs.cache
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos\obj\Debug\netcoreapp3.1\WpPagamentos.Entidade.AssemblyInfo.cs
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos\obj\Debug\netcoreapp3.1\WpPagamentos.Entidade.csproj.CoreCompileInputs.cache
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos\obj\Debug\netcoreapp3.1\WpPagamentos.Entidade.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos\obj\Debug\netcoreapp3.1\WpPagamentos.Entidade.pdb

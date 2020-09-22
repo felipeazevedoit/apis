@@ -32,6 +32,12 @@ namespace WpPagamento.Dominio
                         try
                         {
                             loja.propiedades.tidErede = ret;
+                            loja.propiedades.dataCriacao = DateTime.Now;
+                            loja.propiedades.dataEdicao = DateTime.Now;
+                            loja.meioPagamento.dataCriacao = DateTime.Now;
+                            loja.meioPagamento.dataEdicao = DateTime.Now;
+                            loja.dataCriacao = DateTime.Now;
+                            loja.dataEdicao = DateTime.Now;
                             rep.Loja repo = new rep.Loja();
                             repo.Add(loja);
                         }

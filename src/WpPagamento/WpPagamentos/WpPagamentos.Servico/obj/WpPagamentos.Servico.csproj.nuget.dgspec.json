@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\WpPagamentos.Servico.csproj": {}
+    "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\WpPagamentos.Servico.csproj": {}
   },
   "projects": {
-    "D:\\work\\erede-csharp\\eRede\\eRede\\eRede.csproj": {
+    "C:\\Work\\erede-csharp\\eRede\\eRede\\eRede.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\work\\erede-csharp\\eRede\\eRede\\eRede.csproj",
+        "projectUniqueName": "C:\\Work\\erede-csharp\\eRede\\eRede\\eRede.csproj",
         "projectName": "eRede",
-        "projectPath": "D:\\work\\erede-csharp\\eRede\\eRede\\eRede.csproj",
+        "projectPath": "C:\\Work\\erede-csharp\\eRede\\eRede\\eRede.csproj",
         "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
-        "outputPath": "D:\\work\\erede-csharp\\eRede\\eRede\\obj\\",
+        "outputPath": "C:\\Work\\erede-csharp\\eRede\\eRede\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -53,11 +50,11 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[12.0.3, )"
+              "version": "[12.0.2, )"
             },
             "RestSharp": {
               "target": "Package",
-              "version": "[106.11.4, )"
+              "version": "[106.6.9, )"
             }
           },
           "imports": [
@@ -74,18 +71,15 @@
         }
       }
     },
-    "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\WpPagamentos.Servico.csproj": {
+    "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\WpPagamentos.Servico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\WpPagamentos.Servico.csproj",
+        "projectUniqueName": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\WpPagamentos.Servico.csproj",
         "projectName": "WpPagamentos.Servico",
-        "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\WpPagamentos.Servico.csproj",
+        "projectPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\WpPagamentos.Servico.csproj",
         "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
-        "outputPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\obj\\",
+        "outputPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos.Servico\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -100,11 +94,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\work\\erede-csharp\\eRede\\eRede\\eRede.csproj": {
-                "projectPath": "D:\\work\\erede-csharp\\eRede\\eRede\\eRede.csproj"
+              "C:\\Work\\erede-csharp\\eRede\\eRede\\eRede.csproj": {
+                "projectPath": "C:\\Work\\erede-csharp\\eRede\\eRede\\eRede.csproj"
               },
-              "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {
-                "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj"
+              "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {
+                "projectPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj"
               }
             }
           }
@@ -136,18 +130,15 @@
         }
       }
     },
-    "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {
+    "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj",
+        "projectUniqueName": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj",
         "projectName": "WpPagamentos.Entidade",
-        "projectPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj",
+        "projectPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\WpPagamentos.Entidade.csproj",
         "packagesPath": "C:\\Users\\Luca-\\.nuget\\packages\\",
-        "outputPath": "D:\\work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\obj\\",
+        "outputPath": "C:\\Work\\Framework\\src\\WpPagamento\\WpPagamentos\\WpPagamentos\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Luca-\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

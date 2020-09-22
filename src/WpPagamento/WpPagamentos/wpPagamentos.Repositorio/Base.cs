@@ -94,7 +94,14 @@ namespace wpPagamentos.Repositorio
             {
                 context.Entry(item).State = EntityState.Added;
             }
-            return context.SaveChanges();
+            try
+            {
+                return context.SaveChanges();
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
 
         }
         public virtual void Update(params T[] items)

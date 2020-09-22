@@ -12,3 +12,17 @@ D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\bin\Debug\ne
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\bin\Debug\netcoreapp3.1\eRede.pdb
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\bin\Debug\netcoreapp3.1\WpPagamentos.Entidade.pdb
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\obj\Debug\netcoreapp3.1\WpPagamentos.Servico.csproj.CopyComplete
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\bin\Debug\netcoreapp3.1\WpPagamentos.Servico.deps.json
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\bin\Debug\netcoreapp3.1\WpPagamentos.Servico.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\bin\Debug\netcoreapp3.1\WpPagamentos.Servico.pdb
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\bin\Debug\netcoreapp3.1\eRede.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\bin\Debug\netcoreapp3.1\WpPagamentos.Entidade.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\bin\Debug\netcoreapp3.1\eRede.pdb
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\bin\Debug\netcoreapp3.1\WpPagamentos.Entidade.pdb
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\obj\Debug\netcoreapp3.1\WpPagamentos.Servico.csprojAssemblyReference.cache
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\obj\Debug\netcoreapp3.1\WpPagamentos.Servico.AssemblyInfoInputs.cache
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\obj\Debug\netcoreapp3.1\WpPagamentos.Servico.AssemblyInfo.cs
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\obj\Debug\netcoreapp3.1\WpPagamentos.Servico.csproj.CoreCompileInputs.cache
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\obj\Debug\netcoreapp3.1\WpPagamentos.Servico.csproj.CopyComplete
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\obj\Debug\netcoreapp3.1\WpPagamentos.Servico.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.Servico\obj\Debug\netcoreapp3.1\WpPagamentos.Servico.pdb

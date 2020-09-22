@@ -1,5 +1,6 @@
 ﻿using eRede;
 using eRede.Service.Error;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,26 +77,22 @@ namespace WpPagamentos.Servico
             pv = config.Where(x => x.Chave == "PVERede").FirstOrDefault().Valor;
             token = config.Where(x => x.Chave == "TokenErede").FirstOrDefault().Valor;
             environment = eRede.Environment.Sandbox();
-
+            
             //cartao
-             System.Reflection.PropertyInfo pi = loja.meioPagamento.Configuracao.GetType().GetProperty("cartao");
-            String cartao = (String)(pi.GetValue(loja.meioPagamento.Configuracao, null));
+           
+            String cartao = GetPropValue(loja.meioPagamento.Configuracao, "cartao").ToString();
 
             //codSeg
-            pi = loja.meioPagamento.Configuracao.GetType().GetProperty("codSeg");
-            String codSeg = (String)(pi.GetValue(loja.meioPagamento.Configuracao, null));
+            String codSeg = GetPropValue(loja.meioPagamento.Configuracao, "codSeg").ToString();
 
             //MesVenc
-            pi = loja.meioPagamento.Configuracao.GetType().GetProperty("MesVenc");
-            String MesVenc = (String)(pi.GetValue(loja.meioPagamento.Configuracao, null));
+            String MesVenc = GetPropValue(loja.meioPagamento.Configuracao, "MesVenc").ToString();
 
             //AnoVen
-            pi = loja.meioPagamento.Configuracao.GetType().GetProperty("AnoVen");
-            String AnoVen = (String)(pi.GetValue(loja.meioPagamento.Configuracao, null));
+            String AnoVen = GetPropValue(loja.meioPagamento.Configuracao, "AnoVen").ToString();
 
             //Nome
-            pi = loja.meioPagamento.Configuracao.GetType().GetProperty("Nome");
-            String Nome = (String)(pi.GetValue(loja.meioPagamento.Configuracao, null));
+            String Nome = GetPropValue(loja.meioPagamento.Configuracao, "Nome").ToString();
 
             var store = new Store(pv, token, environment);
             int valor = Convert.ToInt32(loja.propiedades.Valor * 100);
@@ -127,6 +124,14 @@ namespace WpPagamentos.Servico
             }
 
             return "";
+        }
+
+        public object GetPropValue(object src, string propName)
+        {
+            JObject obj = JObject.Parse(src.ToString());
+            object VA = obj[propName];
+
+            return VA;
         }
     }
 }

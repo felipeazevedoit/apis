@@ -10,30 +10,30 @@ using WpPagamentos.Entidade;
 
 namespace WpPagamentos.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class PagamentoController : ControllerBase
     {
-        [HttpPost]
-        public async Task<IActionResult> RealizarPagamentoAsync([FromBody]Loja loja, string token)
+        [HttpPost("{token}")]
+        public async Task<string> RealizarPagamento([FromBody] Loja loja, string token)
         {
-
+           
             if (await Seguranca.validaTokenAsync(token))
             {
                 if (loja.idCliente != 0)
                 {
                     PagamentoBO pagamento = new PagamentoBO();
                     if (string.IsNullOrEmpty(await pagamento.GerarPagamentoSimplesErede(loja)))
-                        return Ok("Pagamento realizado com sucesso");
+                        return "Pagamento realizado com sucesso";
                     else
-                        return Ok("Encontramos algum problema ao salvar a Arquivo. Entre em contato com o suporte");
+                        return "Encontramos algum problema realizar o pagamento. Entre em contato com o suporte";
 
                 }
                 else
-                    return Ok("Encontramos algum problema ao salvar a Arquivo. Entre em contato com o suporte");
+                    return "Encontramos algum problema ao realizar o pagamento. Entre em contato com o suporte";
             }
             else
-                return Ok("Você nao tem acesso neste plugin");
+                return "Você nao tem acesso neste plugin";
 
 
         }
