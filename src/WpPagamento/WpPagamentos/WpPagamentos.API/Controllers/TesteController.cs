@@ -23,7 +23,7 @@ namespace WpPagamentos.API.Controllers
                 dataEdicao = DateTime.Now,
                 Descricao = "",
                 idCliente = 16,
-                idPedido = 1323232,
+                idPedido = "1323232",
                 meioPagamento = new MeioPagamento
                 {
                     Nome = "Erede",

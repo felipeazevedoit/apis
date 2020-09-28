@@ -26,6 +26,7 @@ namespace WpPagamento.Dominio
                 try
                 {
                     EredeServ2 rede = new EredeServ2();
+                   //loja.propiedades.Valor = (double)(loja.propiedades.Valor * 0.01) + loja.propiedades.Valor;
                     string ret = await rede.CreditAsync(loja);
                     if (ret != "")
                     {
@@ -42,12 +43,17 @@ namespace WpPagamento.Dominio
                             var id = PropriRep.Add(loja.propiedades);
                             rep.Loja repo = new rep.Loja();
                             repo.Add(loja);
+                            return true;
                         }
                         catch (Exception e)
                         {
                             //Colocar log aqui 
                             return false;
                         }
+                    }
+                    else
+                    {
+                        return false;
                     }
                 }
                 catch (Exception e)
@@ -57,7 +63,7 @@ namespace WpPagamento.Dominio
                 }
             }
             //Colocar log aqui 
-            return true;
+            return false;
         }
     }
 }

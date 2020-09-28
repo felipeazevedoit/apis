@@ -23,7 +23,7 @@ namespace WpPagamentos.API.Controllers
                 if (loja.idCliente != 0)
                 {
                     PagamentoBO pagamento = new PagamentoBO();
-                    if ((await pagamento.GerarPagamentoSimplesErede(loja)) == "deu certo")
+                    if ((await pagamento.GerarPagamentoSimplesErede(loja)) == true)
                         return "Pagamento realizado com sucesso";
                     else
                         return "Encontramos algum problema realizar o pagamento. Entre em contato com o suporte";
