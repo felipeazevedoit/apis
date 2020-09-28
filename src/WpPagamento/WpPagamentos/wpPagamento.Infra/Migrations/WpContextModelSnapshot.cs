@@ -53,8 +53,8 @@ namespace wpPagamento.Infra.Migrations
                     b.Property<int>("idCliente")
                         .HasColumnType("int");
 
-                    b.Property<int>("idPedido")
-                        .HasColumnType("int");
+                    b.Property<string>("idPedido")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("propiedadesID")
                         .HasColumnType("int");

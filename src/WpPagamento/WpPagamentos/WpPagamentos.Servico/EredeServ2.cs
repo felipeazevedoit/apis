@@ -99,7 +99,7 @@ namespace WpPagamentos.Servico
             var transaction = new Transaction
             {
                 amount = valor,
-                reference = loja.idPedido.ToString(),
+                reference = loja.idPedido,
             }.CreditCard(
                 cartao,
                 codSeg,
