@@ -9,7 +9,6 @@
     <ProjectReference Include="..\IntegradorDeVidas.Dominio\IntegradorDeVidas.Dominio.csproj" />
     <ProjectReference Include="..\IntegradorDeVidas.Integracoes\IntegradorDeVidas.Integracoes.csproj" />
     <ProjectReference Include="..\IntegradorDeVidas.Servico\IntegradorDeVidas.Servico.csproj" />
-    <ProjectReference Include="..\IntegradorDeVidas.Teste.Einstein\IntegradorDeVidas.Teste.Einstein.csproj" />
   </ItemGroup>
 
 </Project>
