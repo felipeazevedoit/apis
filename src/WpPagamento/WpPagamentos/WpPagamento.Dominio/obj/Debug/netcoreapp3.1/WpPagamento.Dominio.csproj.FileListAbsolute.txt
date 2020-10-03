@@ -34,7 +34,8 @@ C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\bin\Debug\net
 C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\obj\Debug\netcoreapp3.1\WpPagamento.Dominio.csprojAssemblyReference.cache
 C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\obj\Debug\netcoreapp3.1\WpPagamento.Dominio.AssemblyInfoInputs.cache
 C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\obj\Debug\netcoreapp3.1\WpPagamento.Dominio.AssemblyInfo.cs
-C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\obj\Debug\netcoreapp3.1\WpPagamento.Dominio.csproj.CoreCompileInputs.cache
 C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\obj\Debug\netcoreapp3.1\WpPagamento.Dominio.csproj.CopyComplete
 C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\obj\Debug\netcoreapp3.1\WpPagamento.Dominio.dll
 C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\obj\Debug\netcoreapp3.1\WpPagamento.Dominio.pdb
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\bin\Debug\netcoreapp3.1\Select.Html.dep
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamento.Dominio\obj\Debug\netcoreapp3.1\WpPagamento.Dominio.csproj.CoreCompileInputs.cache

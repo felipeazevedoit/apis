@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspose.PDF" Version="20.9.0" />
+    <PackageReference Include="Select.HtmlToPdf.NetCore" Version="20.1.0" />
+    <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\wpPagamentos.Repositorio\wpPagamentos.Repositorio.csproj" />
     <ProjectReference Include="..\WpPagamentos.Servico\WpPagamentos.Servico.csproj" />
     <ProjectReference Include="..\WpPagamentos\WpPagamentos.Entidade.csproj" />

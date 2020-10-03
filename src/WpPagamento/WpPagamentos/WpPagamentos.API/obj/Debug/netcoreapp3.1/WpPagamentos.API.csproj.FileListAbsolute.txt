@@ -292,3 +292,10 @@ D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\bin\Debug\netcor
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\WpPagamentos.API.csproj.CoreCompileInputs.cache
 D:\work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\obj\Debug\netcoreapp3.1\WpPagamentos.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\bin\Debug\netcoreapp3.1\Select.Html.dep
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\bin\Debug\netcoreapp3.1\Select.HtmlToPdf.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\bin\Debug\netcoreapp3.1\Aspose.PDF.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\bin\Debug\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
+C:\Work\Framework\src\WpPagamento\WpPagamentos\WpPagamentos.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
