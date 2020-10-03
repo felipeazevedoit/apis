@@ -113,16 +113,16 @@ namespace WpPagamento.Dominio
                         }
                         HtmlToPdf pdf = new HtmlToPdf();
                         PdfDocument document = pdf.ConvertUrl("http://149.56.67.0:8012/bol/boleto_itau.php?valorCobrado=" + valorPedido + @"&cliente=" + cliente + "&endereco1=" + endereco1 + "&endereco2=" + endereco2 + "&datavencimento=" + dtVencimentoAPI + "&pedido=" + loja.idPedido);
-                        document.Save(@"C:\boletos_Pagamentos\" + loja.idPedido + "_" + x + ".pdf");
-                        CaminhoPdf.Add(@"C:\boletos_Pagamentos\" + loja.idPedido + "_" + x + ".pdf");
+                        document.Save(@"E:\publicacao\infinito\pdf\" + loja.idPedido + "_" + x + ".pdf");
+                        CaminhoPdf.Add(@"E:\publicacao\infinito\pdf\" + loja.idPedido + "_" + x + ".pdf");
                     }
 
 
                     PdfFileEditor pdfEditor = new PdfFileEditor();
 
-                    pdfEditor.Concatenate(CaminhoPdf.ToArray(), @"C:\boletos_Pagamentos\" + loja.idPedido + ".pdf");
+                    pdfEditor.Concatenate(CaminhoPdf.ToArray(), @"E:\publicacao\infinito\pdf\" + loja.idPedido + ".pdf");
 
-                    for (int x = 0; x <= CaminhoPdf.Count; x++)
+                    for (int x = 0; x <= CaminhoPdf.Count - 1; x++)
                     {
                         if (File.Exists(CaminhoPdf[x]))
                         {
@@ -130,7 +130,7 @@ namespace WpPagamento.Dominio
                         }
                     }
 
-
+                    return @"E:\publicacao\infinito\pdf\" + loja.idPedido + ".pdf";
 
                 }
 
@@ -145,12 +145,11 @@ namespace WpPagamento.Dominio
         }
         public object GetPropValue(object src, string propName)
         {
-            var json = Newtonsoft.Json.JsonConvert.SerializeObject(src);
-
-            JObject obj = JObject.Parse(json);
+            JObject obj = JObject.Parse(src.ToString());
             object VA = obj[propName];
 
             return VA;
         }
     }
+
 }

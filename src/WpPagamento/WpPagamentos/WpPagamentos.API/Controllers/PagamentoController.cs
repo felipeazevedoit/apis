@@ -37,5 +37,42 @@ namespace WpPagamentos.API.Controllers
 
 
         }
+
+        [HttpPost("{token}")]
+        public async Task<string> RealizarPagamentoBoleto([FromBody] Loja loja, string token)
+        {
+
+            if (await Seguranca.validaTokenAsync(token))
+            {
+                if (loja.idCliente != 0)
+                {
+                    try
+                    {
+                        PagamentoBO pagamento = new PagamentoBO();
+                        string caminhoBoleto = pagamento.GerarBoleto(loja);
+                        if (caminhoBoleto != "Houve uma falha ao gerar boleto")
+                        {
+
+                            return caminhoBoleto;
+                        }
+                            
+                        else
+                            return "Encontramos algum problema realizar o pagamento. Entre em contato com o suporte";
+                    }
+                    catch
+                    {
+                        return "Encontramos algum problema ao realizar o pagamento. Entre em contato com o suporte";
+                    }
+
+                }
+                else
+                    return "Encontramos algum problema ao realizar o pagamento. Entre em contato com o suporte";
+            }
+            else
+                return "Você nao tem acesso neste plugin";
+
+
+        }
+
     }
 }
