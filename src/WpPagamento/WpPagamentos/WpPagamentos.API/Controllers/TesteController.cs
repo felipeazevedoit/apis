@@ -9,7 +9,7 @@ using WpPagamentos.Entidade;
 namespace WpPagamentos.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class TesteController : ControllerBase
     {
         [HttpGet]
@@ -23,7 +23,7 @@ namespace WpPagamentos.API.Controllers
                 dataEdicao = DateTime.Now,
                 Descricao = "",
                 idCliente = 16,
-                idPedido = 1323232,
+                idPedido = "1323232",
                 meioPagamento = new MeioPagamento
                 {
                     Nome = "Erede",
@@ -60,6 +60,59 @@ namespace WpPagamentos.API.Controllers
             };
 
             await pagamento.GerarPagamentoSimplesErede(loja);
+
+            return "";
+        }
+        [HttpGet]
+        public async Task<string> Teste2Async()
+        {
+            PagamentoBO pagamento = new PagamentoBO();
+            Loja loja = new Loja
+            {
+                Ativo = true,
+                dataCriacao = DateTime.Now,
+                dataEdicao = DateTime.Now,
+                Descricao = "",
+                idCliente = 16,
+                idPedido = "1323232",
+                meioPagamento = new MeioPagamento
+                {
+                    Nome = "Erede",
+                    Ativo = true,
+                    Configuracao = new
+                    {
+                        cartao = "5448280000000007",
+                        codSeg = "123",
+                        MesVenc = "01",
+                        AnoVen = "2021",
+                        Nome = "Lucas Fernando",
+                        endereco1 = "Rua teste n32",
+                        endereco2 = "São Paulo / SP",
+                        dataVencimento = DateTime.Now.AddDays(3)
+                    },
+                    idCliente = 16
+                },
+                Nome = "eRede",
+                propiedades = new Propriedades
+                {
+                    idCliente = 16,
+                    Descricao = "",
+                    Ativo = true,
+                    Parcela = 12,
+                    Nome = "Propriedades E-Rede",
+                    dataCriacao = DateTime.Now,
+                    dataEdicao = DateTime.Now,
+                    Meio = false,
+                    Moeda = 1,
+                    Recalculo = false,
+                    Status = 1,
+                    UsuarioCriacao = 1,
+                    UsuarioEdicao = 1,
+                    Valor = 100
+                }
+            };
+
+            pagamento.GerarBoleto(loja);
 
             return "";
         }
