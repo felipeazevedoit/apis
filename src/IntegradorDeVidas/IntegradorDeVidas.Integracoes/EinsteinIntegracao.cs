@@ -1,7 +1,8 @@
 ﻿using IntegradorDeVidas.Dominio.Einstein;
-using Newtonsoft.Json;
 using RestSharp;
 using System;
+using System.Linq;
+using System.Text.Json;
 
 namespace IntegradorDeVidas.Integracoes
 {
@@ -10,8 +11,9 @@ namespace IntegradorDeVidas.Integracoes
         private RestClient Client { get; set; }
         private string LoginApi { get; set; }
         private string SenhaApi { get; set; }
+        private string Url { get; set; }
 
-
+        public string Token { get; set; }
 
         public EinsteinIntegracao(TipoAcaoIntegracao tipoRequest)
         {
@@ -25,6 +27,8 @@ namespace IntegradorDeVidas.Integracoes
             Client = new RestClient(GetUrlClinetePorTipoIntegracao(TipoAcaoIntegracao.UrlPadrao));
             LoginApi = GetLoginApi();
             SenhaApi = GetSenhaApi();
+            Url = GetUrlClinetePorTipoIntegracao(TipoAcaoIntegracao.UrlPadrao);
+            Token = GetToken();
         }
 
 
@@ -65,7 +69,7 @@ namespace IntegradorDeVidas.Integracoes
 
         public RestRequest RequestnAddParametro(object obj, RestRequest request)
         {
-            var jsonObject = JsonConvert.SerializeObject(obj);
+            var jsonObject = JsonSerializer.Serialize(obj);
             request.AddParameter("application/json", jsonObject);
             return request;
         }
@@ -73,14 +77,69 @@ namespace IntegradorDeVidas.Integracoes
         {
             try
             {
-                SetClientRestCadastrarVida();
-                GetResponse(RequestnAddParametro(vidas, GetRequestComToken()));
+                Console.WriteLine("Iniciando processo de importação de vidas");
+                if(vidas.ValidarListaDeVidas().Count() == 0)
+                {
+                    Url += GetUrlClinetePorTipoIntegracao(TipoAcaoIntegracao.CadastroVidas);
+                    
+                    Console.WriteLine("URL: "+Url);
+                    Console.WriteLine("");
+                    Console.WriteLine("USER: " + GetLoginApi());
+                    Console.WriteLine("");
+                    Console.WriteLine("Token: " + Token);
+                    Console.WriteLine("");
+
+                    var data = ConverterVidasToJson(vidas);
+                    Console.WriteLine("DATA: " + data);
+
+                    var client = new RestClient(Url)
+                    {
+                        Timeout = -1
+                    };
+                    var request = new RestRequest(Method.POST);
+                    request.AddHeader("Authorization", Token);
+                    request.AddHeader("Content-Type", "application/json");
+                    request.AddParameter("application/json", data, ParameterType.RequestBody);
+                    Console.WriteLine("");
+
+                    Console.WriteLine("===========================================");
+
+                    Console.WriteLine(JsonSerializer.Serialize(request));
+
+                    IRestResponse response = client.Execute(request);
+                    Console.WriteLine("RESPONSE: " + response.Content);
+                    var result = JsonSerializer.Deserialize<ResultRequest>(response.Content);
+
+                    Console.WriteLine("RESULT: "+ result);
+                    if (result != null)
+                    {
+                        //gravar futuramente no banco
+                        Console.WriteLine(result);
+                    }
+                }
+                else
+                {
+                    foreach (var item in vidas.ValidarListaDeVidas())
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+      
+
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
   
+        }
+
+
+        private string ConverterVidasToJson(ImportadorVidas vidas)
+        {
+
+            return JsonSerializer.Serialize(vidas);
         }
 
         private void SetClientRestCadastrarVida()
@@ -107,18 +166,19 @@ namespace IntegradorDeVidas.Integracoes
 
         public string GetToken()
         {
-           return Login().token;
+           var token = Login();
+            return token.token;
         }
 
         public Root Login()
         {
             try
             {
-                return JsonConvert.DeserializeObject<Root>(new EinsteinIntegracao(TipoAcaoIntegracao.Login).GetResponse().Content);
+                return JsonSerializer.Deserialize<Root>(new EinsteinIntegracao(TipoAcaoIntegracao.Login).GetResponse().Content);
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
             return null;
         }

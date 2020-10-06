@@ -17,21 +17,15 @@ namespace IntegradorDeVidas.Servico
 
         }
 
-        public bool CadastrarVidas(Vida vidas)
+        public bool CadastrarVidas(Vida vida)
         {
-            var import = new ImportadorVidas(vidas);
-            if (import.ValidarListaDeVidas().Count() == 0)
-            {
-                new EinsteinIntegracao().CadastrarVidas(import);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            
+            var import = new ImportadorVidas(vida);
+
+            new EinsteinIntegracao().CadastrarVidas(import);
+            return true;
+
         }
 
-       
+
     }
 }
