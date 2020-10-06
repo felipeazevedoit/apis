@@ -61,7 +61,7 @@ namespace IntegradorDeVidas.Integracoes
 
         public RestRequest GetRequestComToken()
         {
-            var request =  new RestRequest(Method.POST);
+            var request = new RestRequest(Method.POST);
             request.AddHeader("Authorization", "Bearer " + GetToken() + " ");
             request.AddHeader("Content-Type", "application/json");
             return request;
@@ -78,11 +78,11 @@ namespace IntegradorDeVidas.Integracoes
             try
             {
                 Console.WriteLine("Iniciando processo de importação de vidas");
-                if(vidas.ValidarListaDeVidas().Count() == 0)
+                if (vidas.ValidarListaDeVidas().Count() == 0)
                 {
                     Url += GetUrlClinetePorTipoIntegracao(TipoAcaoIntegracao.CadastroVidas);
-                    
-                    Console.WriteLine("URL: "+Url);
+
+                    Console.WriteLine("URL: " + Url);
                     Console.WriteLine("");
                     Console.WriteLine("USER: " + GetLoginApi());
                     Console.WriteLine("");
@@ -103,14 +103,12 @@ namespace IntegradorDeVidas.Integracoes
                     Console.WriteLine("");
 
                     Console.WriteLine("===========================================");
-
-                    Console.WriteLine(JsonSerializer.Serialize(request));
-
+                    
                     IRestResponse response = client.Execute(request);
                     Console.WriteLine("RESPONSE: " + response.Content);
                     var result = JsonSerializer.Deserialize<ResultRequest>(response.Content);
 
-                    Console.WriteLine("RESULT: "+ result);
+                    Console.WriteLine("RESULT: " + result);
                     if (result != null)
                     {
                         //gravar futuramente no banco
@@ -124,15 +122,15 @@ namespace IntegradorDeVidas.Integracoes
                         Console.WriteLine(item);
                     }
                 }
-      
+
 
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("ERRO: "+ex.Message);
             }
-  
+
         }
 
 
@@ -144,7 +142,7 @@ namespace IntegradorDeVidas.Integracoes
 
         private void SetClientRestCadastrarVida()
         {
-            this.Client = new RestClient(GetUrlClinetePorTipoIntegracao(TipoAcaoIntegracao.UrlPadrao)    
+            this.Client = new RestClient(GetUrlClinetePorTipoIntegracao(TipoAcaoIntegracao.UrlPadrao)
                 + GetUrlClinetePorTipoIntegracao(TipoAcaoIntegracao.CadastroVidas));
         }
         private string GetLoginApi()
@@ -166,7 +164,7 @@ namespace IntegradorDeVidas.Integracoes
 
         public string GetToken()
         {
-           var token = Login();
+            var token = Login();
             return token.token;
         }
 

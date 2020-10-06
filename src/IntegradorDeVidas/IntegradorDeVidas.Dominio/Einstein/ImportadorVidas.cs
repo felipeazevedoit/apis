@@ -7,51 +7,46 @@ namespace IntegradorDeVidas.Dominio.Einstein
 {
     public class ImportadorVidas
     {
-        public string Type {  get; set; }
-        public string Postback {  get; set; }
-        public string Operacao {  get; set; }
-        public List<Vida> Dados {  get; set; }
+        public string type { get; set; }
+        public string postback { get; set; }
+        public string operacao { get; set; }
+        public List<Vida> dados { get; set; }
 
         public ImportadorVidas()
         {
             SetValuesThis();
-            Dados = new List<Vida>();
+            dados = new List<Vida>();
         }
 
         public ImportadorVidas(List<Vida> vidas)
         {
-            Dados = vidas;
+            dados = vidas;
             SetValuesThis();
         }
 
         private void SetValuesThis()
         {
-            Type = "text";
-            Postback = "https://minhaapidepostback.com.br/postback";
-            Operacao = "A";
+            type = "ext";
+            postback = "https://minhaapidepostback.com.br/postback";
+            operacao = "A";
         }
 
         public ImportadorVidas(Vida vida)
         {
-            Type = "text";
-            Postback = "https://minhaapidepostback.com.br/postback";
-            Operacao = "A";
-            Dados = new List<Vida>
-            {
-                vida
-            };
+            SetValuesThis();
+            dados = new List<Vida> { vida };
         }
 
         public List<string> ValidarListaDeVidas()
         {
             var erros = new List<string>();
-            if (Dados.Count() < 1)
+            if (dados.Count() < 1)
                 erros.Add("É preciso que haja ao menos um registro de vida para esta operação.");
             else
             {
-                foreach (var item in Dados)
+                foreach (var item in dados)
                 {
-                    if(item.DNAS == null)
+                    if (item.DNAS == null)
                         erros.Add("DNAS - Não pode ser nulo");
                     if (item.EMAIL == null)
                         erros.Add("EMAIL - Não pode ser nulo");
@@ -81,10 +76,10 @@ namespace IntegradorDeVidas.Dominio.Einstein
                         erros.Add("VAL_DE - Não pode ser nulo");
                 }
             }
-            if (Dados.Count() >= 100)
+            if (dados.Count() >= 100)
                 erros.Add("Só permitido inserir 100 itens por requisição");
 
-           
+
 
 
             return erros;
