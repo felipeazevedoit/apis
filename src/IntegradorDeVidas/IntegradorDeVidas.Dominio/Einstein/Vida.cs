@@ -16,5 +16,6 @@
         public string VAL_ATE { get; set; }
         public string PRODUTO { get; set; }
         public string NCPFTITULAR { get; set; }
+        public string NCAR { get; set; }
     }
 }
