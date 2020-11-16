@@ -6,5 +6,6 @@ namespace WpDocumentos.Dominio
 {
     public class DocumentoBO
     {
+        
     }
 }
