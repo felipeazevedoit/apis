@@ -47,7 +47,7 @@ namespace SaudeComVc_Home.Controllers
             {
                 var helper = new ServiceHelper();
 
-                var notificacoes = helper.Get<IEnumerable<NotificacaoViewModel>>("http://201.73.1.17:85/",
+                var notificacoes = helper.Get<IEnumerable<NotificacaoViewModel>>("http://servicepix.com.br:82/",
                     $"api/Notificacoes/GetByIdExterno/{ 12 }/{ PixCoreValues.UsuarioLogado.IdUsuario }");
 
                 //var nc = new NoticiasController();

@@ -240,7 +240,7 @@ namespace SaudeComVc_Home.Controllers
                     };
 
                     var helper = new ServiceHelper();
-                    var result = await helper.PostAsync<NotificacaoViewModel>("http://201.73.1.17:85/", "api/Notificacoes", notificacao);
+                    var result = await helper.PostAsync<NotificacaoViewModel>("http://servicepix.com.br:82/", "api/Notificacoes", notificacao);
                 }
                 catch (Exception e)
                 {
@@ -885,18 +885,25 @@ namespace SaudeComVc_Home.Controllers
             var result = serviceConsuming.Execute<List<NoticiaViewModel>>("/Seguranca/WpNoticias/BuscarPublicas/12/999", null, RestSharp.Method.GET, RestSharp.ParameterType.QueryString);
 
             //TODO: Achar uma forma de melhorar essa busca
-            result
-                .ForEach(n =>
-                {
-                    var midia = BuscarMidiaAsync(n.ID);
-                    if (midia != null)
-                    {
-                        midia.Extensao = midia.Extensao.Replace(".", string.Empty);
-                        midia.ArquivoB64 = Convert.ToBase64String(midia.Arquivo);
-                        n.Midia = midia;
-                    }
-                });
-
+            if (result != null)
+            {
+                result
+                  .ForEach(n =>
+                  {
+                      var midia = BuscarMidiaAsync(n.ID);
+                      if (midia != null)
+                      {
+                          midia.Extensao = midia.Extensao.Replace(".", string.Empty);
+                          midia.ArquivoB64 = Convert.ToBase64String(midia.Arquivo);
+                          n.Midia = midia;
+                      }
+                  });
+                return result.Where(n => n.Ativo);
+            }
+            else
+            {
+                return null;
+            }
             //foreach (var n in result)
             //{
             //    var midia = await BuscarMidiaAsync(n.ID);
@@ -904,8 +911,8 @@ namespace SaudeComVc_Home.Controllers
             //    midia.ArquivoB64 = Convert.ToBase64String(midia.Arquivo);
             //    n.Midia = midia;
             //}
-
-            return result.Where(n => n.Ativo);
+           
+            
         }
 
         public string BuscarNoticiasPrivadasAsync(int id)
@@ -947,13 +954,13 @@ namespace SaudeComVc_Home.Controllers
             return result.Where(n => n.Ativo);
         }
 
-        public IEnumerable<NoticiaViewModel> BuscarPrivadasTakeAsync(int id, int lastid, int take = 10)
+        public async Task<List<NoticiaViewModel>> BuscarPrivadasTakeAsync(int id, int lastid, int take = 10)
         {
             var url = ConfigurationManager.AppSettings["UrlAPI"];
 
-            //var helper = new ServiceHelper();
-            //var result2 = await helper.GetAsync<IEnumerable<NoticiaViewModel>>(url,
-            //    $"/Seguranca/WpNoticias/BuscarNoticias/12/'" + id + "'");
+            var helper = new ServiceHelper();
+            var result2 = await helper.GetAsync<IEnumerable<NoticiaViewModel>>(url,
+                $"/Seguranca/WpNoticias/BuscarNoticias/12/'" + id + "'");
 
             var envio = new List<string>();
             envio.Add("lastid");
@@ -961,21 +968,26 @@ namespace SaudeComVc_Home.Controllers
             envio.Add("idCliente");
 
             var consumingApi = new ConsumingApiRest(url, string.Empty);
-            var result = consumingApi.Execute<IEnumerable<NoticiaViewModel>>($"/Seguranca/WpNoticias/GetTake/12/{id}", new { lastid = lastid, take = take, idCliente = 12 },
+            var result = consumingApi.Execute<IEnumerable<NoticiaViewModel>>($"/Seguranca/WpNoticias/GetTake/12/{id}", new
+            {
+                lastid = lastid,
+                take = take,
+                idCliente = 12
+            },
                 RestSharp.Method.POST, RestSharp.ParameterType.RequestBody, envio);
 
-            foreach (var n in result)
-            {
-                var midia = BuscarMidiaAsync(n.ID);
-                if (midia != null && midia.ID > 0)
-                {
-                    midia.Extensao = midia.Extensao.Replace(".", string.Empty);
-                    midia.ArquivoB64 = Convert.ToBase64String(midia.Arquivo);
-                    n.Midia = midia;
-                }
-            }
+            //foreach (var n in result)
+            //{
+            //    var midia = BuscarMidiaAsync(n.ID);
+            //    if (midia != null && midia.ID > 0)
+            //    {
+            //        midia.Extensao = midia.Extensao.Replace(".", string.Empty);
+            //        midia.ArquivoB64 = Convert.ToBase64String(midia.Arquivo);
+            //        n.Midia = midia;
+            //    }
+            //}
 
-            return result.Where(n => n.Ativo);
+            return result2.Where(n => n.Ativo).Take(10).ToList();
         }
 
         private MidiaViewModel BuscarMidiaAsync(int? id)

@@ -37,7 +37,7 @@ namespace SaudeComVc_Home.Controllers
             try
             {
                 var helper = new ServiceHelper();
-                var result = await helper.GetAsync<IEnumerable<PerguntaViewModel>>("http://201.73.1.17:82/api/", $"Perguntas/12/" + id);
+                var result = await helper.GetAsync<IEnumerable<PerguntaViewModel>>("http://servicepix.com.br:82/api/", $"Perguntas/12/" + id);
 
                 var perguntas = new List<PerguntaViewModel>();
 

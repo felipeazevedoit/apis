@@ -26,7 +26,7 @@ function  cadMedico() {
 
         //salvar usuario
 
-        var urlU = "http://201.73.1.17:5300/api/Seguranca/Principal/salvarUsuario/12/999";
+        var urlU = "http://servicepix.com.br:5300/api/Seguranca/Principal/salvarUsuario/12/999";
 
         var usuario = { 'usuario': getDataUsuarioMedico() };
         console.log(JSON.stringify(usuario));
@@ -99,7 +99,7 @@ function medico(data)
         }
     }
 
-    var urlM = "http://201.73.1.17:5300/api/Seguranca/WpMedicos/SalvarMedico/12/999";
+    var urlM = "http://servicepix.com.br:5300/api/Seguranca/WpMedicos/SalvarMedico/12/999";
 
     var medico = { 'medico': getDataMedico() };
     console.log(JSON.stringify(medico));
@@ -132,7 +132,7 @@ function perfilMedico(data, obj) {
     }
 
 
-    var urlPerfil = "http://201.73.1.17:5300/api/Perfil/SaveUsuarioXPerfil";
+    var urlPerfil = "http://servicepix.com.br:5300/api/Perfil/SaveUsuarioXPerfil";
 
     var perfila = getDataPerfilMedico();
     console.log(JSON.stringify(perfila));
@@ -175,7 +175,7 @@ function pagina(obj, data) {
     }
 
 
-    var urlMP = "http://201.73.1.17:5300/api/Seguranca/Paginas/SalvarPagina/12/" + data.id + "";
+    var urlMP = "http://servicepix.com.br:5300/api/Seguranca/Paginas/SalvarPagina/12/" + data.id + "";
 
     var paginaa = { 'pagina': getDataPagina() };
     console.log(JSON.stringify(paginaa));
@@ -215,7 +215,7 @@ function pagina(obj, data) {
 }
 
 //function carregarEspecialidade() {
-//    var url = "http://201.73.1.17:5300/api/Seguranca/WpMedicos/BuscarEspecialidades/12/999";
+//    var url = "http://servicepix.com.br:5300/api/Seguranca/WpMedicos/BuscarEspecialidades/12/999";
 
 //    $.ajax({
 //        type: "GET",

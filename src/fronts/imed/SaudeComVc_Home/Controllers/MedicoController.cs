@@ -39,6 +39,11 @@ namespace SaudeComVc_Home.Controllers
             return PartialView("_listarMedicos", await BuscarMedicosAsync());
         }
 
+        internal Task GetMedicosByIdsExternosSimpleAsync(object p)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<ActionResult> _Medico()
         {
 

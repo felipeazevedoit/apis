@@ -28,7 +28,7 @@ namespace SaudeComVc_Home.Controllers
             }
 
             var nc = new NoticiasController();
-            var noticiasPrivadas = nc.BuscarPrivadasTakeAsync(PixCoreValues.UsuarioLogado.IdUsuario, 0);
+            var noticiasPrivadas = await nc.BuscarPrivadasTakeAsync(PixCoreValues.UsuarioLogado.IdUsuario, 0);
 
             var mc = new MedicoController();
             var medicos = await mc.GetMedicosByIdsExternosSimpleAsync(noticiasPrivadas.Select(n => n.CodigoExterno));
@@ -76,12 +76,12 @@ namespace SaudeComVc_Home.Controllers
             var noticiasPrivadas = nc.BuscarPrivadasTakeAsync(PixCoreValues.UsuarioLogado.IdUsuario, lastId);
 
             var mc = new MedicoController();
-            var medicos = await mc.GetMedicosByIdsExternosSimpleAsync(noticiasPrivadas.Select(n => n.CodigoExterno));
+            //var medicos = await mc.GetMedicosByIdsExternosSimpleAsync(noticiasPrivadas.Select(n => n.CodigoExterno));
 
-            foreach (var item in noticiasPrivadas)
-            {
-                item.Medico = medicos.FirstOrDefault(m => m.CodigoExterno.Equals(item.CodigoExterno));
-            }
+            //foreach (var item in noticiasPrivadas)
+            //{
+            //    item.Medico = medicos.FirstOrDefault(m => m.CodigoExterno.Equals(item.CodigoExterno));
+            //}
 
             var convenios = await BuscarConveniosAsync();
             var pac = await BuscarPacienteAsync(Usuario.IdUsuario);
@@ -98,12 +98,12 @@ namespace SaudeComVc_Home.Controllers
         {
             var helper = new ServiceHelper();
 
-            var oldNotificacao = await helper.GetAsync<NotificacaoViewModel>("http://201.73.1.17:85/", $"api/Notificacoes/{ 12 }/{ notificacao.ID }");
+            var oldNotificacao = await helper.GetAsync<NotificacaoViewModel>("http://servicepix.com.br:82/", $"api/Notificacoes/{ 12 }/{ notificacao.ID }");
 
             oldNotificacao.DateAlteracao = DateTime.Now;
             oldNotificacao.NotificacaoStatusId = 2;
 
-            var result = await helper.PostAsync<NotificacaoViewModel>("http://201.73.1.17:85/", "/api/Notificacoes", oldNotificacao);
+            var result = await helper.PostAsync<NotificacaoViewModel>("http://servicepix.com.br:82/", "/api/Notificacoes", oldNotificacao);
         }
 
         [HttpPost]
@@ -129,7 +129,7 @@ namespace SaudeComVc_Home.Controllers
                     DateAlteracao = DateTime.Now,
                 };
 
-                var result = await helper.PostAsync<NotificacaoViewModel>("http://201.73.1.17:85/", "api/Notificacoes", notificacaoCadastro);
+                var result = await helper.PostAsync<NotificacaoViewModel>("http://servicepix.com.br:82/", "api/Notificacoes", notificacaoCadastro);
 
                 var notificacaoTelemedicina = new NotificacaoViewModel()
                 {
@@ -147,7 +147,7 @@ namespace SaudeComVc_Home.Controllers
                     DateAlteracao = DateTime.Now,
                 };
 
-                result = await helper.PostAsync<NotificacaoViewModel>("http://201.73.1.17:85/", "api/Notificacoes", notificacaoTelemedicina);
+                result = await helper.PostAsync<NotificacaoViewModel>("http://servicepix.com.br:82/", "api/Notificacoes", notificacaoTelemedicina);
             }
             catch (Exception e)
             {
@@ -259,7 +259,7 @@ namespace SaudeComVc_Home.Controllers
             try
             {
                 var helper = new ServiceHelper();
-                var result = await helper.GetAsync<IEnumerable<PerguntaViewModel>>("http://201.73.1.17:82/api/", $"Perguntas/12/" + id);
+                var result = await helper.GetAsync<IEnumerable<PerguntaViewModel>>("http://servicepix.com.br:82/api/", $"Perguntas/12/" + id);
 
                 var perguntas = new List<PerguntaViewModel>();
 
@@ -287,7 +287,7 @@ namespace SaudeComVc_Home.Controllers
         public async Task<IEnumerable<PerguntaViewModel>> BuscarPerguntasAsync()
         {
             var helper = new ServiceHelper();
-            var result = await helper.GetAsync<IEnumerable<PerguntaViewModel>>("http://201.73.1.17:82/api/", $"Perguntas/12/{ PixCoreValues.UsuarioLogado.IdUsuario }");
+            var result = await helper.GetAsync<IEnumerable<PerguntaViewModel>>("http://servicepix.com.br:82/api/", $"Perguntas/12/{ PixCoreValues.UsuarioLogado.IdUsuario }");
             return result;
         }
 
@@ -597,7 +597,7 @@ namespace SaudeComVc_Home.Controllers
                 resposta.Status = 1;
 
                 var helper = new ServiceHelper();
-                var result = await helper.PostAsync<RespostaViewModel>("http://201.73.1.17:82/api/", "Respostas/", resposta);
+                var result = await helper.PostAsync<RespostaViewModel>("http://servicepix.com.br:82/api/", "Respostas/", resposta);
 
                 var pergunta = _perguntas.FirstOrDefault(p => p.ID.Equals(result.PerguntaId));
                 if (pergunta != null && pergunta.Respostas != null)
