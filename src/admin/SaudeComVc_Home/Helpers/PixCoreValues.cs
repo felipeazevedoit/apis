@@ -96,7 +96,7 @@ namespace SaudeComVoce.Helpers
                         user.Avatar = Usuario.Avatar;
                         user.idPerfil = Usuario.UsuarioXPerfil == null ? 0 : Usuario.UsuarioXPerfil.IdPerfil;
                         user.ProfileAvatar = Usuario.ProfileAvatar;
-                        user.AvatarExtension = Usuario.AvatarExtension.Replace(".", string.Empty);
+                        //user.AvatarExtension = Usuario.AvatarExtension.Replace(".", string.Empty);
 
                         if (_current.Response.Cookies.AllKeys.Contains("UsuarioLogadoSaudeSite") && _current.Request.Cookies["UsuarioLogadoSaudeSite"] != null)
                         {

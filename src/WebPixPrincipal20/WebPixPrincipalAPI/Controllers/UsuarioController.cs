@@ -137,10 +137,10 @@ namespace WebPixPrincipalAPI.Controllers
                 Usuario user = UsuarioDAO.GetUsuario(login, senha, idCliente);
                 if (user != null)
                 {
-                    FileSystemManager.GetFile($"{ user.Nome }_{ user.ID }", out var path, out var extension, out var file);
-                    user.AvatarExtension = extension;
-                    user.Avatar = path;
-                    user.ProfileAvatar = file;
+                    //FileSystemManager.GetFile($"{ user.Nome }_{ user.ID }", out var path, out var extension, out var file);
+                   // user.AvatarExtension = extension;
+                    //user.Avatar = path;
+                    //user.ProfileAvatar = file;
 
                     return user;
                 }

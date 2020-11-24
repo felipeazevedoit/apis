@@ -137,8 +137,8 @@ namespace WebPixPrincipalRepository
             {
                 using (var db = new WebPixContext())
                 {
-                    var users = db.Usuario.Where(x => x.idCliente.Equals(idCliente) && x.Login.Equals(login));
-                    var user =  users.FirstOrDefault();
+                    var user = db.Usuario.Where(x => x.idCliente.Equals(idCliente) && x.Login.Equals(login)).First();
+                    //var user =  users.FirstOrDefault();
 
                     if (user != null)
                     {
@@ -149,7 +149,7 @@ namespace WebPixPrincipalRepository
                             return user;
                         }
                     }
-
+                    var teste = GetByEmail(login);
                     throw new Exception("Usuário não encontrado.");
                 }
             }
