@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="api\wpf\" />
+    <Folder Include="api\soa\" />
+    <Folder Include="api\rest\" />
+    <Folder Include="database\mongoDb\" />
+    <Folder Include="database\postgre\" />
+    <Folder Include="database\sqlserver\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.19.100" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WpComunic.Repositorio\WpComunic.Repositorio.csproj" />
+    <ProjectReference Include="..\WpComunicacoes.Entidades\WpComunicacoes.Entidades.csproj" />
+  </ItemGroup>
+
+</Project>

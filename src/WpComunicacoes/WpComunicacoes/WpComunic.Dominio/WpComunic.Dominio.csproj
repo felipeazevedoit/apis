@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WpComunic.Repositorio\WpComunic.Repositorio.csproj" />
+    <ProjectReference Include="..\WpComunic.Servico\WpComunic.Servico.csproj" />
+    <ProjectReference Include="..\WpComunicacoes.Entidades\WpComunicacoes.Entidades.csproj" />
+    <ProjectReference Include="..\WpComunic\WpComunic.csproj" />
+  </ItemGroup>
+
+</Project>
