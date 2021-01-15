@@ -5,22 +5,23 @@ using System.Linq;
 using System.Text;
 using Oracle.ManagedDataAccess.Client;
 using WpComunic.Repositorio;
+using WpComunic.Tradutor;
 using WpComunicacoes.Entidades;
 
 namespace WpComunic.database.oracle
 {
     public class ComunicOracle
     {
-        public object RealizarComunicacaoOracle(MotorExterno motor)
+        public string RealizarComunicacaoOracle(MotorExterno motor)
         {
             var metodo = motor.metodo.First();
             DataBaseRep dataBaseRep = new DataBaseRep();
             DataBase database = dataBaseRep.GetDataBaseByTipo("Oracle");
-
+            TradutorDataTable saida = new TradutorDataTable();
             switch (metodo.Meio)
             {
                 case "proc":
-                    return comunicOracleProc(metodo, database);
+                    return saida.ReturnObjectClassOutput(comunicOracleProc(metodo, database),metodo);
                 case "query":
                     return comunicOracleQuery(metodo, database);
             
@@ -30,12 +31,12 @@ namespace WpComunic.database.oracle
 
         }
 
-        private object comunicOracleQuery(Metodo metodo, DataBase database)
+        private string comunicOracleQuery(Metodo metodo, DataBase database)
         {
             throw new NotImplementedException();
         }
 
-        private List<object> comunicOracleProc(Metodo metodo, DataBase database)
+        private DataTable comunicOracleProc(Metodo metodo, DataBase database)
         {
             var cnn = database.connectionString;
             using OracleConnection con = new OracleConnection(cnn);
@@ -48,22 +49,28 @@ namespace WpComunic.database.oracle
 
                 OracleCommand cmd = new OracleCommand(metodo.Endpoint, con);
 
+
                 foreach (Propriedades prop in metodo.ClasseEntrada.propriedades)
                 {
-                    if(prop.tipo == "string")
+                    if (prop.tipo == "string")
                         cmd.Parameters.Add(new OracleParameter(prop.NomeExterno, OracleDbType.Varchar2, prop.valor, ParameterDirection.Input));
-                    if(prop.tipo == "int")
+                    if (prop.tipo == "int")
                         cmd.Parameters.Add(new OracleParameter(prop.NomeExterno, OracleDbType.Int32, Convert.ToInt32(prop.valor), ParameterDirection.Input));
-                }
-                cmd.Parameters.Add(new OracleParameter("outCursor", OracleDbType.RefCursor, ParameterDirection.Output));
+                    if (prop.tipo == "cursor")
+                        cmd.Parameters.Add(new OracleParameter("outCursor", OracleDbType.RefCursor, ParameterDirection.Output));
+                    if (prop.tipo == "bool")
+                        cmd.Parameters.Add(new OracleParameter(prop.NomeExterno, OracleDbType.Int32, Convert.ToBoolean(prop.valor), ParameterDirection.Input));
 
+
+                }
                 cmd.CommandType = CommandType.StoredProcedure;
                 OracleDataAdapter sd = new OracleDataAdapter(cmd);
                 // con.Open();
 
                 sd.Fill(dt);
                 con.Close();
-                return dt.AsEnumerable().ToList<object>();
+
+                return dt;
             }
             catch (Exception ex)
             {

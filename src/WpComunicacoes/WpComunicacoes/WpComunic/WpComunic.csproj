@@ -9,6 +9,7 @@
     <Folder Include="api\soa\" />
     <Folder Include="api\rest\" />
     <Folder Include="database\mongoDb\" />
+    <Folder Include="database\mySql\" />
     <Folder Include="database\postgre\" />
     <Folder Include="database\sqlserver\" />
   </ItemGroup>

@@ -39,6 +39,7 @@ namespace WebPixPrincipalAPI.Controllers
                 return Json("Você nao tem acesso e esse plugin");
         }
 
+
         [ActionName("GetAllEstilo")]
         [HttpGet("{idCliente}/{token}")]
         public async Task<IEnumerable<Estilo>> GetAllEstilo(int idCliente, string token)

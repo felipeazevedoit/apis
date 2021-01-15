@@ -33,6 +33,12 @@ namespace Repository.Migrations
 
                     b.Property<int>("Status");
 
+                    b.Property<decimal>("SubTotal");
+
+                    b.Property<decimal>("Total");
+
+                    b.Property<int?>("TransportadoraID");
+
                     b.Property<int>("UsuarioCriacao");
 
                     b.Property<int>("UsuarioEdicao");
@@ -45,7 +51,153 @@ namespace Repository.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("TransportadoraID");
+
                     b.ToTable("Cart");
+                });
+
+            modelBuilder.Entity("Entity.Expressao", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Ativo");
+
+                    b.Property<string>("Descricao");
+
+                    b.Property<string>("ExpressaoStr");
+
+                    b.Property<string>("Motor");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("PropriedadesID");
+
+                    b.Property<int>("Status");
+
+                    b.Property<int>("UsuarioCriacao");
+
+                    b.Property<int>("UsuarioEdicao");
+
+                    b.Property<int>("Valor");
+
+                    b.Property<DateTime>("dataCriacao");
+
+                    b.Property<DateTime>("dataEdicao");
+
+                    b.Property<int>("idCliente");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("PropriedadesID");
+
+                    b.ToTable("Expressao");
+                });
+
+            modelBuilder.Entity("Entity.Produto", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Ativo");
+
+                    b.Property<int?>("CarrinhoID");
+
+                    b.Property<string>("CodExterno");
+
+                    b.Property<string>("Descricao");
+
+                    b.Property<int>("Estoque");
+
+                    b.Property<int>("EstoqueMinimo");
+
+                    b.Property<string>("Fabrinte");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<double>("Preco");
+
+                    b.Property<int>("Status");
+
+                    b.Property<int>("UsuarioCriacao");
+
+                    b.Property<int>("UsuarioEdicao");
+
+                    b.Property<DateTime>("dataCriacao");
+
+                    b.Property<DateTime>("dataEdicao");
+
+                    b.Property<int>("idCliente");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("CarrinhoID");
+
+                    b.ToTable("Produto");
+                });
+
+            modelBuilder.Entity("Entity.Propriedades", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Ativo");
+
+                    b.Property<int?>("CarrinhoID");
+
+                    b.Property<string>("Descricao");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("Status");
+
+                    b.Property<int>("UsuarioCriacao");
+
+                    b.Property<int>("UsuarioEdicao");
+
+                    b.Property<DateTime>("dataCriacao");
+
+                    b.Property<DateTime>("dataEdicao");
+
+                    b.Property<int>("idCliente");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("CarrinhoID");
+
+                    b.ToTable("Propriedades");
+                });
+
+            modelBuilder.Entity("Entity.Transportadora", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Ativo");
+
+                    b.Property<string>("Descricao");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("Status");
+
+                    b.Property<string>("Tipo");
+
+                    b.Property<int>("UsuarioCriacao");
+
+                    b.Property<int>("UsuarioEdicao");
+
+                    b.Property<double>("ValorEntrega");
+
+                    b.Property<DateTime>("dataCriacao");
+
+                    b.Property<DateTime>("dataEdicao");
+
+                    b.Property<int>("idCliente");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Transportadora");
                 });
 
             modelBuilder.Entity("Entity.Vendedor", b =>
@@ -78,6 +230,35 @@ namespace Repository.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Vendedor");
+                });
+
+            modelBuilder.Entity("Entity.Carrinho", b =>
+                {
+                    b.HasOne("Entity.Transportadora", "Transportadora")
+                        .WithMany()
+                        .HasForeignKey("TransportadoraID");
+                });
+
+            modelBuilder.Entity("Entity.Expressao", b =>
+                {
+                    b.HasOne("Entity.Propriedades")
+                        .WithMany("Expressao")
+                        .HasForeignKey("PropriedadesID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Entity.Produto", b =>
+                {
+                    b.HasOne("Entity.Carrinho")
+                        .WithMany("Produtos")
+                        .HasForeignKey("CarrinhoID");
+                });
+
+            modelBuilder.Entity("Entity.Propriedades", b =>
+                {
+                    b.HasOne("Entity.Carrinho")
+                        .WithMany("Propiedades")
+                        .HasForeignKey("CarrinhoID");
                 });
 #pragma warning restore 612, 618
         }

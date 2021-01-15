@@ -103,8 +103,8 @@ namespace UnitTestProject1
                 NomeExterno = "p_CONSULTA",
                 Nome = "Consulta",
                 valor = "MARCA_EMPRESARIAL",
-                tipo = "string"
-
+                tipo = "string",
+                Ordem = 1
             };
             Propriedades prop2 = new Propriedades
             {
@@ -112,7 +112,8 @@ namespace UnitTestProject1
                 NomeExterno = "p_ID_MRC",
                 Nome = "idMarca",
                 valor = "0",
-                tipo = "int"
+                tipo = "int",
+                Ordem = 2
 
             };
             Propriedades prop3 = new Propriedades
@@ -121,7 +122,8 @@ namespace UnitTestProject1
                 NomeExterno = "p_ID_EMP_GCOM",
                 Nome = "idEmpresa",
                 valor = "0",
-                tipo = "int"
+                tipo = "int",
+                Ordem = 3
 
             };
             Propriedades prop4 = new Propriedades
@@ -130,7 +132,8 @@ namespace UnitTestProject1
                 NomeExterno = "p_ID_ETB_GCOM",
                 Nome = "id_ETB",
                 valor = "0",
-                tipo = "int"
+                tipo = "int",
+                Ordem = 4
 
             };
             Propriedades prop5 = new Propriedades
@@ -139,16 +142,28 @@ namespace UnitTestProject1
                 NomeExterno = "DC_MRC",
                 Nome = "DC_MRC",
                 valor = "",
-                tipo = "string"
+                tipo = "string",
+                Ordem = 5
 
             };
             Propriedades prop6 = new Propriedades
             {
                 idCliente = 16,
+                NomeExterno = "outCursor",
+                Nome = "outCursor",
+                valor = "",
+                tipo = "cursor",
+                Ordem = 6
+
+            };
+            Propriedades prop7 = new Propriedades
+            {
+                idCliente = 16,
                 NomeExterno = "P_ID_SHOP",
                 Nome = "P_ID_SHOP",
                 valor = "0",
-                tipo = "int"
+                tipo = "int",
+                Ordem = 7
 
             };
 
@@ -158,17 +173,15 @@ namespace UnitTestProject1
             propriedades.Add(prop4);
             propriedades.Add(prop5);
             propriedades.Add(prop6);
-
-            metodo.ClasseEntrada.propriedades = propriedades;
+            propriedades.Add(prop7);
+            var Lista = propriedades.OrderBy(x => x.Ordem).ToList();
+            metodo.ClasseEntrada.propriedades = Lista;
 
             motor.metodo = new List<Metodo>();
             motor.metodo.Add(metodo);
 
             WpComunic.Dominio.ComunicacaoBO comunicacao = new WpComunic.Dominio.ComunicacaoBO();
-            comunicacao.RealizaComunicacao(motor);
-
-
-
+            var ret = comunicacao.RealizaComunicacao(motor);
 
         }
     }

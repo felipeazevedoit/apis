@@ -23,5 +23,9 @@
         {
             get; set;
         }
+        public string TipoSaida
+        {
+            get;set;
+        }
     }
 }

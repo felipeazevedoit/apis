@@ -190,6 +190,9 @@ namespace WpComunic.Infra.Migrations
                     b.Property<string>("Tipo")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TipoSaida")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("UsuarioCriacao")
                         .HasColumnType("int");
 
@@ -287,6 +290,9 @@ namespace WpComunic.Infra.Migrations
 
                     b.Property<string>("NomeExterno")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Ordem")
+                        .HasColumnType("int");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");

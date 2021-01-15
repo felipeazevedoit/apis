@@ -12,7 +12,7 @@ namespace Mensagens.Infrastructure
     {
         public DbSet<Mensagem> Mensagens { get; set; }
         public MensagensContext()
-            : base("Server=179.188.38.126,9000;Database=Mensagens;Trusted_Connection=True;Integrated Security=True;")
+            : base(@"Server=localhost\SQLEXPRESS;Database=Mensagens;Trusted_Connection=True;Integrated Security=True;")
         //public MensagensContext()
         //   : base(@"data source=187.84.228.245;database=Mensagens;Integrated Security=SSPI;persist security info=True;")
         {

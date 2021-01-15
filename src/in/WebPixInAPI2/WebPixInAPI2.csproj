@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
+    <UserSecretsId>924b8812-1842-4ab5-a29c-23d0d248a210</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

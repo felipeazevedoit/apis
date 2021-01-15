@@ -16,8 +16,8 @@ namespace wpContextEntrega
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // optionsBuilder.UseSqlServer(@"Server=DESKTOP-9B04LJT\SQLEXPRESS;Database=WebPixPrincipal;Trusted_Connection=True;Integrated Security = True;");
-            optionsBuilder.UseSqlServer(@"Data Source=179.188.38.126,9000;Initial Catalog=WebPixEntrega;Persist Security Info=True;User ID=sa;Password=WebPix@2020;");
+             optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=WebPixEntrega;Trusted_Connection=True;Integrated Security = True;");
+           // optionsBuilder.UseSqlServer(@"Data Source=179.188.38.126,9000;Initial Catalog=WebPixEntrega;Persist Security Info=True;User ID=sa;Password=WebPix@2020;");
         }
 
     }

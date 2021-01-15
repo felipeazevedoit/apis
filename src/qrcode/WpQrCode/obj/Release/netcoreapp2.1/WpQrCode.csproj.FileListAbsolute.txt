@@ -52,3 +52,4 @@ D:\work\Framework\src\qrcode\WpQrCode\obj\Release\netcoreapp2.1\WpQrCode.csproj.
 D:\work\Framework\src\qrcode\WpQrCode\obj\Release\netcoreapp2.1\WpQrCode.dll
 D:\work\Framework\src\qrcode\WpQrCode\obj\Release\netcoreapp2.1\WpQrCode.pdb
 D:\work\Framework\src\qrcode\WpQrCode\obj\Release\netcoreapp2.1\WpQrCode.genruntimeconfig.cache
+D:\work\Framework\src\qrcode\WpQrCode\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs

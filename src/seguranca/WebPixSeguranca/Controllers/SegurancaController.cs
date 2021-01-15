@@ -1,4 +1,4 @@
- using System;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -17,8 +17,8 @@ namespace WebPixSeguranca.Controllers
     {
         // POST: api/Seguranca
         [HttpPost("{aux}/{acao}/{idcliente}/{idusuario}")]
-        public async Task<JsonResult> Post(string aux, string acao, int idcliente, int idusuario, [FromBody]Object conteudo)
-         {
+        public async Task<JsonResult> Post(string aux, string acao, int idcliente, int idusuario, [FromBody] Object conteudo)
+        {
             var ip = await GetIpAsync();
 
             var MotorAux = await Auxiliares.GetInfoMotorAux(aux, idcliente);
@@ -27,10 +27,10 @@ namespace WebPixSeguranca.Controllers
             if (await Auxiliares.VerificaUsuarioPermissaoAsync(acoesUsuario, idusuario, idcliente))
             {
 
-                var token = TokenBO.GerateTokenValido(acoesUsuario.Caminho,idusuario,idcliente, ip);
+                var token = TokenBO.GerateTokenValido(acoesUsuario.Caminho, idusuario, idcliente, ip);
                 LogBo.Send(acao, acoesUsuario.Caminho, idusuario, idcliente, token.ID, ip);
 
-                Object retorno = await Auxiliares.GetRetornoAuxAsync(MotorAux, acoesUsuario, token, conteudo,idcliente);
+                Object retorno = await Auxiliares.GetRetornoAuxAsync(MotorAux, acoesUsuario, token, conteudo, idcliente);
 
 
 
@@ -38,7 +38,7 @@ namespace WebPixSeguranca.Controllers
             }
             else
             {
-                LogBo.Send(acao, acao, idusuario, idcliente,0, ip);
+                LogBo.Send(acao, acao, idusuario, idcliente, 0, ip);
 
                 return Json(new { error = "Houve um erro ou sem permissao" });
 
@@ -46,7 +46,7 @@ namespace WebPixSeguranca.Controllers
         }
 
 
-       
+
 
         // GET: api/Seguranca
         [HttpGet("{aux}/{acao}/{idcliente}/{idusuario}")]
@@ -56,7 +56,7 @@ namespace WebPixSeguranca.Controllers
 
             var MotorAux = await Auxiliares.GetInfoMotorAux(aux, idcliente);
             AcaoViewModel acoesUsuario = MotorAux.Acoes.Where(x => x.Nome == acao).FirstOrDefault();
-            
+
             if (await Auxiliares.VerificaUsuarioPermissaoAsync(acoesUsuario, idusuario, idcliente))
             {
                 var token = TokenBO.GerateTokenValido(acoesUsuario.Caminho, idusuario, idcliente, ip);

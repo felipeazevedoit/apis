@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
     <NoWin32Manifest>true</NoWin32Manifest>
+    <UserSecretsId>6b8268e2-5207-4f47-8b4f-b5c2e33d0847</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

@@ -13,8 +13,8 @@ namespace WpQrCode.Infrastructure
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            //optionsBuilder.UseSqlServer(@"Server=191.252.0.50;Database=WebPixEmpresas;Trusted_Connection=True;Integrated Security=True;");
-            optionsBuilder.UseSqlServer(@"Data Source=179.188.38.126,9000;Initial Catalog=WebPixQrCodes;Persist Security Info=True;User ID=sa;Password=WebPix@2020;");
+            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=WebPixQrCodes;Trusted_Connection=True;Integrated Security=True;");
+            //optionsBuilder.UseSqlServer(@"Data Source=179.188.38.126,9000;Initial Catalog=WebPixQrCodes;Persist Security Info=True;User ID=sa;Password=WebPix@2020;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

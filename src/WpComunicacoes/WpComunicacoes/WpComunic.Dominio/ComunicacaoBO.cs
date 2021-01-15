@@ -17,7 +17,7 @@ namespace WpComunic.Dominio
     public class ComunicacaoBO
     {
 
-        public object RealizaComunicacao(MotorExterno motor)
+        public string RealizaComunicacao(MotorExterno motor)
         {
 
             switch (motor.tipo)
@@ -34,22 +34,22 @@ namespace WpComunic.Dominio
             return null;
         }
 
-        private object comunicWpf(Metodo metodo)
+        private string comunicWpf(Metodo metodo)
         {
             throw new NotImplementedException();
         }
 
-        private object comunicSOA(Metodo metodo)
+        private string comunicSOA(Metodo metodo)
         {
             throw new NotImplementedException();
         }
 
-        private object comunicRest(Metodo metodo)
+        private string comunicRest(Metodo metodo)
         {
             throw new NotImplementedException();
         }
 
-        private object comunicDatabase(MotorExterno motor)
+        private string comunicDatabase(MotorExterno motor)
         {
             var metodo = motor.metodo.FirstOrDefault();
             switch (metodo.Tipo)

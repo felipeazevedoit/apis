@@ -16,7 +16,7 @@ namespace WpNoticias.Infrastructure
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"Server=179.188.38.126,9000;Database=WpNoticias;Trusted_Connection=True;Integrated Security = True;");
+            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=WpNoticias;Trusted_Connection=True;Integrated Security = True;");
             //optionsBuilder.UseSqlServer(@"Data Source=187.84.232.164;Initial Catalog=WpNoticias;Persist Security Info=True;User ID=sa;Password=StaffPro@123;");
         }
     }

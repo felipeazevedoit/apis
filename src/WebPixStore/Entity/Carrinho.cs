@@ -10,6 +10,7 @@ namespace Entity
         public List<Produto> Produtos { get; set; }   
         public Transportadora Transportadora { get; set; }
         public List<Propriedades> Propiedades { get; set; }
+        [NotMapped]
         public List<string> Menssagens { get; set; }
         public Decimal Total { get; set; }
         public Decimal SubTotal { get; set; }

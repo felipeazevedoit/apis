@@ -214,16 +214,16 @@ namespace WebPixPrincipalAPI.Controllers
                         var updated = UsuarioDAO.Save(user);
                         if(updated != null && updated.ID> 0)
                         {
-                            Email emai = new Email();
-                            emai.Conteudo = "Solicitação de nova senha \r \r Nova Senha : " + newPassword;
-                            emai.Titulo = "Nova Senha";
-                            string remetente = "noreplay@imedfit.com";
-                            string destinatario = user.Email;
+                            //Email emai = new Email();
+                            //emai.Conteudo = "Solicitação de nova senha \r \r Nova Senha : " + newPassword;
+                            //emai.Titulo = "Nova Senha";
+                            //string remetente = "noreplay@imedfit.com";
+                            //string destinatario = user.Email;
                             
                             
-                            updated.Senha = user.Senha;
-                            var email = new EmailBO();
-                            await email.EnviaSimplesEmailAsync(emai,remetente,destinatario,idCliente);
+                            //updated.Senha = user.Senha;
+                            //var email = new EmailBO();
+                            //await email.EnviaSimplesEmailAsync(emai,remetente,destinatario,idCliente);
                         }
                     }
 

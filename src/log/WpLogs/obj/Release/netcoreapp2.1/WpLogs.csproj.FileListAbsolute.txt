@@ -52,3 +52,4 @@ D:\work\Framework\src\log\WpLogs\obj\Release\netcoreapp2.1\WpLogs.csproj.CopyCom
 D:\work\Framework\src\log\WpLogs\obj\Release\netcoreapp2.1\WpLogs.dll
 D:\work\Framework\src\log\WpLogs\obj\Release\netcoreapp2.1\WpLogs.pdb
 D:\work\Framework\src\log\WpLogs\obj\Release\netcoreapp2.1\WpLogs.genruntimeconfig.cache
+D:\work\Framework\src\log\WpLogs\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs

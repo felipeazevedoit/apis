@@ -18,8 +18,8 @@ namespace WpMedicos.Infrastructure
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            //optionsBuilder.UseSqlServer(@"Server=WIN-2V8OOHSRMOD;Database=WpMedicos;Trusted_Connection=True;Integrated Security = True;");
-            optionsBuilder.UseSqlServer(@"Data Source=179.188.38.126,9000;Initial Catalog=WpMedicos;Persist Security Info=True;User ID=sa;Password=WebPix@2020;");
+            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=WpMedicos;Trusted_Connection=True;Integrated Security = True;");
+           // optionsBuilder.UseSqlServer(@"Data Source=179.188.38.126,9000;Initial Catalog=WpMedicos;Persist Security Info=True;User ID=sa;Password=WebPix@2020;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
